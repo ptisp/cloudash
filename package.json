@@ -1,0 +1,20 @@
+{
+  "name": "cloudy",
+  "version": "0.0.1",
+  "homepage": "http://ptisp.pt",
+  "description": "Cloudy Panel",
+  "dependencies": {
+    "express": "4.1.x",
+    "opennebula": "*",
+    "emailjs": "0.3.x",
+    "colors": "0.6.x",
+    "async": "0.7.x",
+    "mongodb": "*",
+    "body-parser": "1.2.x",
+    "errorhandler": "1.0.x"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "PTisp <dev@ptisp.pt>"
+}
