@@ -1,0 +1,779 @@
+@font-face {
+	font-family: 'hosticons';
+	src:url('hosticons.eot?9cij7b');
+	src:url('hosticons.eot?#iefix9cij7b') format('embedded-opentype'),
+		url('hosticons.woff?9cij7b') format('woff'),
+		url('hosticons.ttf?9cij7b') format('truetype'),
+		url('hosticons.svg?9cij7b#hosticons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[hosticons]:before {
+  font-family: hosticons; /* BYO icon font, mapped smartly */
+  content: attr(hosticons);
+  speak: none; /* Not to be trusted, but hey. */
+}
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'hosticons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-youtube:before {
+	content: "\e600";
+}
+.icon-www:before {
+	content: "\e601";
+}
+.icon-wordpress:before {
+	content: "\e602";
+}
+.icon-woman:before {
+	content: "\e603";
+}
+.icon-wireframe:before {
+	content: "\e604";
+}
+.icon-windows:before {
+	content: "\e605";
+}
+.icon-wifi:before {
+	content: "\e606";
+}
+.icon-whmcs:before {
+	content: "\e607";
+}
+.icon-vps_windows:before {
+	content: "\e608";
+}
+.icon-vps_unmanagedwindows:before {
+	content: "\e609";
+}
+.icon-vps_unmanagedlinux:before {
+	content: "\e60a";
+}
+.icon-vps_unmanaged:before {
+	content: "\e60b";
+}
+.icon-vps_managedlinux:before {
+	content: "\e60c";
+}
+.icon-vps_managed:before {
+	content: "\e60d";
+}
+.icon-vps_location:before {
+	content: "\e60e";
+}
+.icon-vps_linux:before {
+	content: "\e60f";
+}
+.icon-vps_activated:before {
+	content: "\e610";
+}
+.icon-vnc_console:before {
+	content: "\e611";
+}
+.icon-vms:before {
+	content: "\e612";
+}
+.icon-virtualization:before {
+	content: "\e613";
+}
+.icon-vimeo:before {
+	content: "\e614";
+}
+.icon-user:before {
+	content: "\e615";
+}
+.icon-user_accept:before {
+	content: "\e616";
+}
+.icon-uptime:before {
+	content: "\e617";
+}
+.icon-unmanaged:before {
+	content: "\e618";
+}
+.icon-unlock:before {
+	content: "\e619";
+}
+.icon-un_managed:before {
+	content: "\e61a";
+}
+.icon-twitter:before {
+	content: "\e61b";
+}
+.icon-tv:before {
+	content: "\e61c";
+}
+.icon-toxic_gases:before {
+	content: "\e61d";
+}
+.icon-tour_pic:before {
+	content: "\e61e";
+}
+.icon-tlds:before {
+	content: "\e61f";
+}
+.icon-telephone:before {
+	content: "\e620";
+}
+.icon-target:before {
+	content: "\e621";
+}
+.icon-tablet:before {
+	content: "\e622";
+}
+.icon-support:before {
+	content: "\e623";
+}
+.icon-streaming_base:before {
+	content: "\e624";
+}
+.icon-streaming_advanced:before {
+	content: "\e625";
+}
+.icon-storage:before {
+	content: "\e626";
+}
+.icon-storage_professional:before {
+	content: "\e627";
+}
+.icon-storage_medium:before {
+	content: "\e628";
+}
+.icon-storage_inicial:before {
+	content: "\e629";
+}
+.icon-storage_base:before {
+	content: "\e62a";
+}
+.icon-storage_advanced:before {
+	content: "\e62b";
+}
+.icon-stop:before {
+	content: "\e62c";
+}
+.icon-star:before {
+	content: "\e62d";
+}
+.icon-ssl_wildcard:before {
+	content: "\e62e";
+}
+.icon-ssl_organization:before {
+	content: "\e62f";
+}
+.icon-ssl_certificated:before {
+	content: "\e630";
+}
+.icon-ssl_alpha:before {
+	content: "\e631";
+}
+.icon-ssd:before {
+	content: "\e632";
+}
+.icon-squares:before {
+	content: "\e633";
+}
+.icon-squares_more:before {
+	content: "\e634";
+}
+.icon-speed:before {
+	content: "\e635";
+}
+.icon-specials:before {
+	content: "\e636";
+}
+.icon-specials_vps:before {
+	content: "\e637";
+}
+.icon-specials_resseler:before {
+	content: "\e638";
+}
+.icon-specials_hosting:before {
+	content: "\e639";
+}
+.icon-specials_dedicated:before {
+	content: "\e63a";
+}
+.icon-special_cloud:before {
+	content: "\e63b";
+}
+.icon-sound_off:before {
+	content: "\e63c";
+}
+.icon-software:before {
+	content: "\e63d";
+}
+.icon-softaculous:before {
+	content: "\e63e";
+}
+.icon-skype:before {
+	content: "\e63f";
+}
+.icon-sign:before {
+	content: "\e640";
+}
+.icon-sharethis:before {
+	content: "\e641";
+}
+.icon-setings:before {
+	content: "\e642";
+}
+.icon-services:before {
+	content: "\e643";
+}
+.icon-servers_compare:before {
+	content: "\e644";
+}
+.icon-security:before {
+	content: "\e645";
+}
+.icon-search:before {
+	content: "\e646";
+}
+.icon-rss:before {
+	content: "\e647";
+}
+.icon-refresh:before {
+	content: "\e648";
+}
+.icon-reference:before {
+	content: "\e649";
+}
+.icon-recycle:before {
+	content: "\e64a";
+}
+.icon-recruit:before {
+	content: "\e64b";
+}
+.icon-reboot:before {
+	content: "\e64c";
+}
+.icon-ram_memory:before {
+	content: "\e64d";
+}
+.icon-raid:before {
+	content: "\e64e";
+}
+.icon-raid_cards:before {
+	content: "\e64f";
+}
+.icon-promotion:before {
+	content: "\e650";
+}
+.icon-private_whois:before {
+	content: "\e651";
+}
+.icon-prev_step:before {
+	content: "\e652";
+}
+.icon-pounds:before {
+	content: "\e653";
+}
+.icon-pinterest:before {
+	content: "\e654";
+}
+.icon-phone:before {
+	content: "\e655";
+}
+.icon-paypal:before {
+	content: "\e656";
+}
+.icon-payments:before {
+	content: "\e657";
+}
+.icon-painel_tour:before {
+	content: "\e658";
+}
+.icon-operating_systems:before {
+	content: "\e659";
+}
+.icon-on:before {
+	content: "\e65a";
+}
+.icon-off:before {
+	content: "\e65b";
+}
+.icon-nodes:before {
+	content: "\e65c";
+}
+.icon-next_step:before {
+	content: "\e65d";
+}
+.icon-new:before {
+	content: "\e65e";
+}
+.icon-network:before {
+	content: "\e65f";
+}
+.icon-memory_burstable:before {
+	content: "\e660";
+}
+.icon-medal:before {
+	content: "\e661";
+}
+.icon-marker:before {
+	content: "\e662";
+}
+.icon-marker_less:before {
+	content: "\e663";
+}
+.icon-marker_add:before {
+	content: "\e664";
+}
+.icon-management_monitoring:before {
+	content: "\e665";
+}
+.icon-managed:before {
+	content: "\e666";
+}
+.icon-man:before {
+	content: "\e667";
+}
+.icon-male:before {
+	content: "\e668";
+}
+.icon-lock:before {
+	content: "\e669";
+}
+.icon-location:before {
+	content: "\e66a";
+}
+.icon-location_more:before {
+	content: "\e66b";
+}
+.icon-load_balancing:before {
+	content: "\e66c";
+}
+.icon-live_migration:before {
+	content: "\e66d";
+}
+.icon-live_chat:before {
+	content: "\e66e";
+}
+.icon-linux:before {
+	content: "\e66f";
+}
+.icon-linkedin:before {
+	content: "\e670";
+}
+.icon-link:before {
+	content: "\e671";
+}
+.icon-less:before {
+	content: "\e672";
+}
+.icon-leasetoown:before {
+	content: "\e673";
+}
+.icon-knowledgebase:before {
+	content: "\e674";
+}
+.icon-justify_center:before {
+	content: "\e675";
+}
+.icon-ips:before {
+	content: "\e676";
+}
+.icon-ipmi_kvm:before {
+	content: "\e677";
+}
+.icon-info:before {
+	content: "\e678";
+}
+.icon-humidity_control:before {
+	content: "\e679";
+}
+.icon-how_function:before {
+	content: "\e67a";
+}
+.icon-housing:before {
+	content: "\e67b";
+}
+.icon-home:before {
+	content: "\e67c";
+}
+.icon-high_availability:before {
+	content: "\e67d";
+}
+.icon-helpdesk:before {
+	content: "\e67e";
+}
+.icon-help:before {
+	content: "\e67f";
+}
+.icon-hardware:before {
+	content: "\e680";
+}
+.icon-hammer:before {
+	content: "\e681";
+}
+.icon-growth:before {
+	content: "\e682";
+}
+.icon-grooveshark:before {
+	content: "\e683";
+}
+.icon-github:before {
+	content: "\e684";
+}
+.icon-getting_started:before {
+	content: "\e685";
+}
+.icon-forrst:before {
+	content: "\e686";
+}
+.icon-flickr:before {
+	content: "\e687";
+}
+.icon-flag:before {
+	content: "\e688";
+}
+.icon-fire_system:before {
+	content: "\e689";
+}
+.icon-fiber_optics:before {
+	content: "\e68a";
+}
+.icon-female:before {
+	content: "\e68b";
+}
+.icon-fast_check:before {
+	content: "\e68c";
+}
+.icon-facebook:before {
+	content: "\e68d";
+}
+.icon-exclamation:before {
+	content: "\e68e";
+}
+.icon-evernote:before {
+	content: "\e68f";
+}
+.icon-emc_hardware:before {
+	content: "\e690";
+}
+.icon-email_corporate:before {
+	content: "\e691";
+}
+.icon-ecommerce:before {
+	content: "\e692";
+}
+.icon-dribbble:before {
+	content: "\e693";
+}
+.icon-downtime:before {
+	content: "\e694";
+}
+.icon-domains:before {
+	content: "\e695";
+}
+.icon-dollar:before {
+	content: "\e696";
+}
+.icon-document:before {
+	content: "\e697";
+}
+.icon-deviantart:before {
+	content: "\e698";
+}
+.icon-developer:before {
+	content: "\e699";
+}
+.icon-desktop:before {
+	content: "\e69a";
+}
+.icon-delete:before {
+	content: "\e69b";
+}
+.icon-dedicated_managed:before {
+	content: "\e69c";
+}
+.icon-dedicated_location:before {
+	content: "\e69d";
+}
+.icon-dedicated_activated:before {
+	content: "\e69e";
+}
+.icon-datacenter:before {
+	content: "\e69f";
+}
+.icon-cycle:before {
+	content: "\e6a0";
+}
+.icon-customers:before {
+	content: "\e6a1";
+}
+.icon-credit_card:before {
+	content: "\e6a2";
+}
+.icon-cpu:before {
+	content: "\e6a3";
+}
+.icon-cooler:before {
+	content: "\e6a4";
+}
+.icon-control_painel:before {
+	content: "\e6a5";
+}
+.icon-compass:before {
+	content: "\e6a6";
+}
+.icon-code:before {
+	content: "\e6a7";
+}
+.icon-cloud_upload:before {
+	content: "\e6a8";
+}
+.icon-cloud_unmanaged:before {
+	content: "\e6a9";
+}
+.icon-cloud_storage:before {
+	content: "\e6aa";
+}
+.icon-cloud_servers:before {
+	content: "\e6ab";
+}
+.icon-cloud_security:before {
+	content: "\e6ac";
+}
+.icon-cloud_resellerwindows:before {
+	content: "\e6ad";
+}
+.icon-cloud_resellerpack4:before {
+	content: "\e6ae";
+}
+.icon-cloud_resellerpack3:before {
+	content: "\e6af";
+}
+.icon-cloud_resellerpack2:before {
+	content: "\e6b0";
+}
+.icon-cloud_resellerpack1:before {
+	content: "\e6b1";
+}
+.icon-cloud_resellerlinux:before {
+	content: "\e6b2";
+}
+.icon-cloud_reseller:before {
+	content: "\e6b3";
+}
+.icon-cloud_infrastructure:before {
+	content: "\e6b4";
+}
+.icon-cloud_hostingwindows:before {
+	content: "\e6b5";
+}
+.icon-cloud_hostingprofessional:before {
+	content: "\e6b6";
+}
+.icon-cloud_hostinglinux:before {
+	content: "\e6b7";
+}
+.icon-cloud_hostinginicial:before {
+	content: "\e6b8";
+}
+.icon-cloud_hostingbase:before {
+	content: "\e6b9";
+}
+.icon-cloud_hostingadvanced:before {
+	content: "\e6ba";
+}
+.icon-cloud_hosting:before {
+	content: "\e6bb";
+}
+.icon-cloud_download:before {
+	content: "\e6bc";
+}
+.icon-cloud_backups:before {
+	content: "\e6bd";
+}
+.icon-cloud_backup:before {
+	content: "\e6be";
+}
+.icon-cloud_activated:before {
+	content: "\e6bf";
+}
+.icon-cctvideo_system:before {
+	content: "\e6c0";
+}
+.icon-cart:before {
+	content: "\e6c1";
+}
+.icon-cart_remove:before {
+	content: "\e6c2";
+}
+.icon-cart_more:before {
+	content: "\e6c3";
+}
+.icon-cart_less:before {
+	content: "\e6c4";
+}
+.icon-calendar:before {
+	content: "\e6c5";
+}
+.icon-bolt:before {
+	content: "\e6c6";
+}
+.icon-blog:before {
+	content: "\e6c7";
+}
+.icon-bell:before {
+	content: "\e6c8";
+}
+.icon-behance:before {
+	content: "\e6c9";
+}
+.icon-bebo:before {
+	content: "\e6ca";
+}
+.icon-battery_average-:before {
+	content: "\e6cb";
+}
+.icon-bandwidth_traffic:before {
+	content: "\e6cc";
+}
+.icon-auto_scaling:before {
+	content: "\e6cd";
+}
+.icon-apple:before {
+	content: "\e6ce";
+}
+.icon-api:before {
+	content: "\e6cf";
+}
+.icon-anti_spam:before {
+	content: "\e6d0";
+}
+.icon-android:before {
+	content: "\e6d1";
+}
+.icon-alpha:before {
+	content: "\e6d2";
+}
+.icon-align_center:before {
+	content: "\e6d3";
+}
+.icon-add:before {
+	content: "\e6d4";
+}
+.icon-access_control:before {
+	content: "\e6d5";
+}
+.icon-accept:before {
+	content: "\e6d6";
+}
+.icon-battery_empty-:before {
+	content: "\e6d7";
+}
+.icon-battery_low-:before {
+	content: "\e6d8";
+}
+.icon-battery_charged-:before {
+	content: "\e6d9";
+}
+.icon-chars_datacenter:before {
+	content: "\e6da";
+}
+.icon-clip:before {
+	content: "\e6db";
+}
+.icon-cloud_managed:before {
+	content: "\e6dc";
+}
+.icon-cloud_location:before {
+	content: "\e6dd";
+}
+.icon-cloud:before {
+	content: "\e6de";
+}
+.icon-cloudflare:before {
+	content: "\e6df";
+}
+.icon-dedicated_unmanaged:before {
+	content: "\e6e0";
+}
+.icon-dedicated_server:before {
+	content: "\e6e1";
+}
+.icon-envato:before {
+	content: "\e6e2";
+}
+.icon-euro:before {
+	content: "\e6e3";
+}
+.icon-graph:before {
+	content: "\e6e4";
+}
+.icon-google_plus:before {
+	content: "\e6e5";
+}
+.icon-infrastructure:before {
+	content: "\e6e6";
+}
+.icon-installation:before {
+	content: "\e6e7";
+}
+.icon-location_less:before {
+	content: "\e6e8";
+}
+.icon-location_center:before {
+	content: "\e6e9";
+}
+.icon-menu:before {
+	content: "\e6ea";
+}
+.icon-migration:before {
+	content: "\e6eb";
+}
+.icon-portspeed_mbps:before {
+	content: "\e6ec";
+}
+.icon-play:before {
+	content: "\e6ed";
+}
+.icon-remove:before {
+	content: "\e6ee";
+}
+.icon-root:before {
+	content: "\e6ef";
+}
+.icon-spam:before {
+	content: "\e6f0";
+}
+.icon-sound_on:before {
+	content: "\e6f1";
+}
+.icon-ssl_domain:before {
+	content: "\e6f2";
+}
+.icon-ssl_extended:before {
+	content: "\e6f3";
+}
+.icon-streaming:before {
+	content: "\e6f4";
+}
+.icon-streaming_professional:before {
+	content: "\e6f5";
+}
+.icon-ups_generators:before {
+	content: "\e6f6";
+}
+.icon-vps_servers:before {
+	content: "\e6f7";
+}
+.icon-vps_managedwindows:before {
+	content: "\e6f8";
+}
+.icon-upgrade_downgrade:before {
+	content: "\e6f9";
+}
