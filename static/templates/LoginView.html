@@ -1,20 +1,41 @@
 <div class="login container">
-	<form class="form-signin">
-		<h2 class="form-signin-heading">Please sign in</h2>
 
-		<div class="input-group">
+	<form class="form-header">
+		<h2 class="m-b-5">Please Login</h2>
+	    <p>Complete the fields below and login</p>
+    </form>
+
+	<form class="form-login">
+		<div class="avatar m-b-20"><img src="assets/img/avatar.png" class="img-responsive"></div>
+		<div class="input-group m-b-10">
 			<span class="input-group-addon form-invert"><i class="icon-user"></i></span>
 			<input type="text" class="form-control" placeholder="Username">
 		</div>
-		<div class="input-group">
+		<div class="input-group m-b-10">
 			<span class="input-group-addon form-invert"><i class="icon-lock"></i></span>
 			<input type="text" class="form-control" placeholder="Password">
 		</div>
-			<div class="checkbox">
-				<label>
-				<input type="checkbox" value="remember-me"> Remember me
-				</label>
-			</div>
-		<button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button>
+		<button class="btn btn-lg btn-cloudy btn-block" type="submit">Login</button>
 	</form>
+
+	<form class="form-footer">
+		<div class="panel-group joined" id="accordion01">
+			<div class="panel panel-invert">
+				<div class="panel-heading">
+					<h4 class="panel-title ff">
+						<a data-toggle="collapse" data-parent="#accordion01" href="#collapseaccordionOne" class="collapsed f-12"><i class="icon-lock"></i> Forgot password?</a>
+					</h4>
+				</div>
+				<div id="collapseaccordionOne" class="panel-collapse collapse" style="height: 0px;">
+					<div class="panel-body ff">
+						<div class="input-group m-b-10">
+			               <span class="input-group-addon form-invert"><i class="icon-email_corporate"></i></span>
+			               <input type="text" class="form-control" placeholder="Your email address">
+			            </div>
+			            <button class="btn btn-lg btn-success btn-block" type="submit">Send Request</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>	
 </div>
