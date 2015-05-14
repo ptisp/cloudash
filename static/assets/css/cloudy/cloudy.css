@@ -10,7 +10,7 @@ body {
 /* LOGIN */
 .form-login {
   max-width: 350px;
-  padding: 40px;
+  padding: 20px 40px 40px 40px;
   margin: 0 auto;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -29,12 +29,9 @@ body {
   text-align: center;
 }
 .avatar {
-  width: 100px;
-  padding: 12px;
-  border-radius: 50%;
+  width: 200px;
+  padding: 10px;
   margin: 0 auto;
-  background-color: #fff;
-  margin-bottom: 20px !important;
 }
 .ff {
   padding: 15px 40px !important;

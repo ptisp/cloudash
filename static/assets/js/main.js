@@ -108,15 +108,15 @@ var Router = Backbone.Router.extend({
     $('#content').html(login.render().el);
   },
   verifyLogin: function(loggedFunction) {
-    var self = this;
-    if (!sessionStorage.keyo) {
-      app.navigate('/login', {
-        trigger: true
-      });
-    } else {
+    //var self = this;
+    //if (!sessionStorage.keyo) {
+    //  app.navigate('/login', {
+    //    trigger: true
+    //  });
+    //} else {
       window.logged = true;
       loggedFunction();
-    }
+    //}
   }
 });
 
