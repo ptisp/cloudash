@@ -3,8 +3,172 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #fff;
+  background-color: #f1f1f5;
   font-family: 'Lato', sans-serif, Helvetica, Arial;
+}
+.f-22 {
+  font-size: 22px;
+}
+.f-24 {
+  font-size: 24px;
+}
+.f-26 {
+  font-size: 26px;
+}
+.f-28 {
+  font-size: 28px;
+}
+.f-30 {
+  font-size: 30px;
+}
+.f-32 {
+  font-size: 32px;
+}
+.f-34 {
+  font-size: 34px;
+}
+.f-36 {
+  font-size: 36px;
+}
+.f-38 {
+  font-size: 38px;
+}
+.f-40 {
+  font-size: 40px;
+}
+.f-42 {
+  font-size: 42px;
+}
+/* Background Color */
+.bg-white {
+  background-color: #fff !important;
+  color: #111111 !important;
+}
+.bg-cream {
+  background-color: #cbcbc3 !important;
+  color: #111111 !important;
+}
+.bg-gray-dark {
+  background-color: #8a959b !important;
+  color: #fff !important;
+}
+
+.bg-blue-light {
+  background-color: #60c2e8 !important;
+  color: #FFF !important;
+}
+.bg-blue {
+  background-color: #19a7d8 !important;
+  color: #FFF !important;
+}
+.bg-yellow {
+  background-color: #FBC70E !important;
+  color: #FFF !important;
+}
+.bg-gold {
+  background-color: #dbb025 !important;
+  color: #FFF !important;
+}
+.bg-red {
+  background-color: #C75757 !important;
+  color: #FFF !important;
+}
+.bg-green {
+  background-color: #65b245 !important;
+  color: #FFF !important;
+}
+.bg-dark {
+  background-color: #414142 !important;
+  color: #FFF !important;
+}
+.bg-black {
+  background-color: #212122 !important;
+  color: #FFF !important;
+}
+/* FULL WIDTH Background Color LIGHT */
+.bg-gray {
+  background-color: #bccbd3 !important;
+  color: #111111 !important;
+}
+.bg-gray-light {
+  background-color: #e3e4e5 !important;
+  color: #111111 !important;
+}
+.bg-green-light {
+  background-color: #eff7e9 !important;
+  color: #111 !important;
+}
+.bg-yellow-light {
+  background-color: #f6f5eb !important;
+  color: #111 !important;
+}
+.bg-red-light {
+  background-color: #f8efee !important;
+  color: #111 !important;
+}
+.bg-blue-light {
+  background-color: #e9f6fa !important;
+  color: #111 !important;
+}
+.bg-orange-light {
+  background-color: #ffebc7 !important;
+  color: #111 !important;
+}
+.bg-cream-light {
+  background-color: #f2f5f8 !important;
+  color: #111 !important;
+}
+/* TEXT Color */
+.c-ptisp {
+  color: #21abe0 !important;
+}
+.c-ptisp-dark {
+  color: #0d5677 !important;
+}
+.c-white {
+  color: #fff !important;
+}
+.c-gray {
+  color: #bccbd3 !important;
+}
+.c-gray-light {
+  color: #e3e4e5 !important;
+}
+.c-gray-dark {
+  color: #8a959b !important;
+}
+.c-blue-light {
+  color: #60c2e8 !important;
+}
+.c-blue {
+  color: #19a7d8 !important;
+}
+.c-blue-cl {
+  color: #29b5c7 !important;
+}
+.c-blue-cd {
+  color: #008798 !important;
+}
+.c-blue-dark {
+  color: #0d5677 !important;
+}
+.c-yellow {
+  color: #FBC70E !important;
+}
+.c-gold {
+  color: #dbb025 !important;
+}
+.c-red {
+  color: #C75757 !important;
+}
+.c-green {
+  color: #65b245 !important;
+}
+.c-dark {
+  color: #414142 !important;
+}
+.c-black {
+  color: #212122 !important;
 }
 
 /* LOGIN */
@@ -49,23 +213,139 @@ body {
   background-color: #008798;
 }
 .panel-group.joined>.panel>.panel-heading h4 a:before {
-	content: '\e685';
-	display: inline-block;
-	font-family: 'hosticons';
-	color: rgba(115, 120, 129, 0.7);
-	padding: 10px 15px;
-	padding: 0;
-	float: right;
-	font-size: 14px;
-	margin-left: 13px;
-	top: 0;
-	-moz-transition: all 300ms ease-in-out;
-	-o-transition: all 300ms ease-in-out;
-	-webkit-transition: all 300ms ease-in-out;
-	transition: all 300ms ease-in-out;
+  content: '\e685';
+  display: inline-block;
+  font-family: 'hosticons';
+  color: rgba(115, 120, 129, 0.7);
+  padding: 10px 15px;
+  padding: 0;
+  float: right;
+  font-size: 14px;
+  margin-left: 13px;
+  top: 0;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
-
-
+/* HOME */
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #29b5c7;
+}
+/* TABLES */
+table.table.clip {
+  background-color: #fff;
+  border-spacing: 5px 0px;
+  padding: 8px 0px;
+  border-collapse: separate;
+}
+table.table.clip > thead > tr > th {
+  padding: 15px;
+}
+table.table.clip > tbody> tr > td {
+  padding: 15px;
+  font-family: 'lato';
+  border-top: 1px solid #e3e4e5;
+}
+table.table.clip > tbody> tr > td:last-child {
+  padding: 15px;
+  font-size: 16px;
+  font-family: 'lato';
+  font-weight: 700;
+}
+table.table.clip th {
+  text-transform: uppercase;
+  font-family: 'lato';
+  font-size: 13px;
+  font-weight: 700;
+}
+.table > thead:first-child > tr:first-child > th{
+  font-size: 14px;
+  color: #29b5c7;
+  font-weight: 700;
+}
+/* HEADER */
+.header {
+  margin-bottom: 0px;
+  margin-bottom: 30px;
+}
+/* PROFILE USER */
+.profile-usercloudy img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  background-color: #e3e4e5;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+.profile-usertitle-name {
+  color: #111;
+  font-size: 14px;
+}
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #29b5c7;
+  font-size: 12px;
+}
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+/* BTN CLOUDY */
+.btn-lg.btn-cloudy.btn-icon {
+  position: relative;
+  padding-right: 39px;
+  border: 0;
+}
+.btn-lg.btn-cloudy.btn-icon i {
+  background-color: #008798;
+  padding: 12px 13px;
+  font-size: 14px;
+}
+.btn-sm.btn-cloudy.btn-icon {
+  position: relative;
+  padding-right: 39px;
+  border: 0;
+}
+.btn-sm.btn-cloudy.btn-icon i {
+  background-color: #29b5c7;
+  padding: 7px 12px;
+  font-size: 14px;
+}
+.btn-xs.btn-cloudy.btn-icon {
+  position: relative;
+  padding-right: 39px;
+  border: 0;
+}
+.btn-xs.btn-cloudy.btn-icon i {
+  background-color: #29b5c7;
+  padding: 3px 14px;
+  font-size: 14px;
+}
 
 
 
