@@ -300,6 +300,7 @@ body {
   .sidebar-nav.vertical {display: none;}
   .profile-usercloudy {text-align: center; margin-bottom: 20px;}
   .table-responsive {border: none;}
+  .profile-userbuttons {margin-bottom: 20px; width: 100%; display: inline-block;}
 }
 @media (min-width: 768px) {
   .sidebar-nav.responsive {display: none;}
