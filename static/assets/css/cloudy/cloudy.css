@@ -283,14 +283,23 @@ body {
   background-color: #29b5c7;
 }
 /* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */ 
-/*  991px */
-@media(min-width: 991px) {
+/*  992px */
+@media(max-width: 992px) {
+  .f-18 {font-size: 16px;}
+}
+@media(min-width: 992px) {
   .sidebar-nav.responsive {display: none;}
   .sidebar-nav.vertical {display: block}
+  .f-18 {font-size: 16px;}
 }
 /*  768px */
 @media (max-width: 768px) {
+  body {padding-top: 0px;padding-bottom: 0px;}
+  .sidebar-nav.responsive {padding-left: 0px;padding-right: 0px;}
+  .footer .container {padding-left: 0px;padding-right: 0px;}
   .sidebar-nav.vertical {display: none;}
+  .profile-usercloudy {text-align: center; margin-bottom: 20px;}
+  .table-responsive {border: none;}
 }
 @media (min-width: 768px) {
   .sidebar-nav.responsive {display: none;}
@@ -407,6 +416,14 @@ table.table.clip th {
   margin-bottom: 0px;
   margin-bottom: 30px;
 }
+/* FOOTER */
+.f-inside {
+  width: 100%;
+  display: inline-block;
+  color: #212122;
+  background: #FFF;
+  padding: 20px 15px 20px 15px;
+}
 /* PROFILE USER */
 .profile-usercloudy img {
   width: 20%;
@@ -435,7 +452,6 @@ table.table.clip th {
   text-align: center;
   margin-top: 10px;
 }
-
 
 
 
