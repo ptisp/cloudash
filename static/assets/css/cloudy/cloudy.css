@@ -6,6 +6,7 @@ body {
   background-color: #f1f1f5;
   font-family: 'Lato', sans-serif, Helvetica, Arial;
 }
+/* FONT SIZE */
 .f-22 {
   font-size: 22px;
 }
@@ -39,7 +40,7 @@ body {
 .f-42 {
   font-size: 42px;
 }
-/* Background Color */
+/* BACKGROUND COLOR */
 .bg-white {
   background-color: #fff !important;
   color: #111111 !important;
@@ -52,14 +53,13 @@ body {
   background-color: #8a959b !important;
   color: #fff !important;
 }
-
-.bg-blue-light {
-  background-color: #60c2e8 !important;
-  color: #FFF !important;
+.bg-blue-cl {
+  background-color: #29b5c7 !important;
+  color: #fff !important;
 }
-.bg-blue {
-  background-color: #19a7d8 !important;
-  color: #FFF !important;
+.bg-blue-cd {
+  background-color: #008798!important;
+  color: #fff !important;
 }
 .bg-yellow {
   background-color: #FBC70E !important;
@@ -118,12 +118,12 @@ body {
   background-color: #f2f5f8 !important;
   color: #111 !important;
 }
-/* TEXT Color */
-.c-ptisp {
-  color: #21abe0 !important;
+/* TEXT COlOR */
+.c-blue-cl {
+  color: #29b5c7 !important;
 }
-.c-ptisp-dark {
-  color: #0d5677 !important;
+.c-blue-cd {
+  color: #008798 !important;
 }
 .c-white {
   color: #fff !important;
@@ -142,12 +142,6 @@ body {
 }
 .c-blue {
   color: #19a7d8 !important;
-}
-.c-blue-cl {
-  color: #29b5c7 !important;
-}
-.c-blue-cd {
-  color: #008798 !important;
 }
 .c-blue-dark {
   color: #0d5677 !important;
@@ -169,6 +163,141 @@ body {
 }
 .c-black {
   color: #212122 !important;
+}
+/* FLOAT */
+.f-right {
+  float: right !important;
+}
+.f-left {
+  float: left !important;
+}
+/* WIDTH MIN & MAX*/
+.w-min-50 {
+  min-width: 50px !important;
+}
+.w-min-100 {
+  min-width: 100px !important;
+}
+.w-min-150 {
+  min-width: 150px !important;
+}
+.w-min-200 {
+  min-width: 200px !important;
+}
+.w-min-250 {
+  min-width: 250px !important;
+}
+.w-min-300 {
+  min-width: 300px !important;
+}
+.w-max-50 {
+  max-width: 50px !important;
+}
+.w-max-100 {
+  max-width: 100px !important;
+}
+.w-max-150 {
+  max-width: 150px !important;
+}
+.w-max-200 {
+  max-width: 200px !important;
+}
+.w-max-250 {
+  max-width: 250px !important;
+}
+.w-max-300 {
+  max-width: 300px !important;
+}
+/* BTN CLOUDY */
+.btn-lg.btn-cloudy.btn-icon {
+  position: relative;
+  padding-right: 39px;
+  border: 0;
+}
+.btn-lg.btn-cloudy.btn-icon i {
+  background-color: #008798;
+  padding: 12px 13px;
+  font-size: 14px;
+}
+.btn-sm.btn-cloudy.btn-icon {
+  position: relative;
+  padding-right: 39px;
+  border: 0;
+}
+.btn-sm.btn-cloudy.btn-icon i {
+  background-color: #29b5c7;
+  padding: 7px 12px;
+  font-size: 14px;
+}
+.btn-xs.btn-cloudy.btn-icon {
+  position: relative;
+  padding-right: 39px;
+  border: 0;
+}
+.btn-xs.btn-cloudy.btn-icon i {
+  background-color: #29b5c7;
+  padding: 3px 14px;
+  font-size: 14px;
+}
+.btn-xl.btn-cloudy.btn-icon {
+  position: relative;
+  padding-right: 39px;
+  border: 0;
+}
+.btn-xl.btn-cloudy.btn-icon i {
+  background-color: #008798;
+  padding: 15px 15px;
+  font-size: 18px;
+}
+.btn-xl, .btn-group-xl > .btn {
+  padding: 15px 0px;
+  line-height: 1.33;
+  border-radius: 0px;
+}
+.btn-lg, .btn-group-lg > .btn {
+  padding: 13.5px 8px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 0px;
+}
+.btn-cloudy-light {
+  color: #fff;
+  border: none;
+  border-radius: 1px;
+  background-color: #29b5c7;
+}
+.btn-cloudy-light:hover {
+  color: #fff ;
+  border: none ;
+  background-color: #008798;
+}
+.btn-cloudy-dark {
+  color: #fff;
+  border: none;
+  border-radius: 1px;
+  background-color: #008798;
+}
+.btn-cloudy-dark:hover {
+  color: #fff ;
+  border: none ;
+  background-color: #29b5c7;
+}
+/* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */ 
+/*  991px */
+@media(min-width: 991px) {
+  .sidebar-nav.responsive {display: none;}
+  .sidebar-nav.vertical {display: block}
+}
+/*  768px */
+@media (max-width: 768px) {
+  .sidebar-nav.vertical {display: none;}
+}
+@media (min-width: 768px) {
+  .sidebar-nav.responsive {display: none;}
+  .sidebar-nav .navbar ul {float: none;}
+  .sidebar-nav .navbar ul:not {display: block;}
+  .sidebar-nav .navbar li {float: none; display: block;}
+  .sidebar-nav .navbar li a {padding-top: 15px; padding-bottom: 15px;}
 }
 
 /* LOGIN */
@@ -228,23 +357,14 @@ body {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
-/* HOME */
-/* make sidebar nav vertical */ 
-@media (min-width: 768px) {
-  .sidebar-nav .navbar ul {
-    float: none;
-  }
-  .sidebar-nav .navbar ul:not {
-    display: block;
-  }
-  .sidebar-nav .navbar li {
-    float: none;
-    display: block;
-  }
-  .sidebar-nav .navbar li a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
+/* NAV BAR COLLAPSE */
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #29b5c7;
+  color: #fff;
+}
+a {
+  color: #008798;
+  text-decoration: none;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #fff;
@@ -289,18 +409,18 @@ table.table.clip th {
 }
 /* PROFILE USER */
 .profile-usercloudy img {
-  float: none;
-  margin: 0 auto;
-  width: 50%;
-  height: 50%;
-  background-color: #e3e4e5;
+  width: 20%;
+  display: inline-block;
+  background-color: #29b5c7;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
   -webkit-border-radius: 50% !important;
   -moz-border-radius: 50% !important;
   border-radius: 50% !important;
 }
 .profile-usertitle {
-  text-align: center;
-  margin-top: 20px;
+  display: inline-block;
+  vertical-align: middle;
 }
 .profile-usertitle-name {
   color: #111;
@@ -314,37 +434,6 @@ table.table.clip th {
 .profile-userbuttons {
   text-align: center;
   margin-top: 10px;
-}
-/* BTN CLOUDY */
-.btn-lg.btn-cloudy.btn-icon {
-  position: relative;
-  padding-right: 39px;
-  border: 0;
-}
-.btn-lg.btn-cloudy.btn-icon i {
-  background-color: #008798;
-  padding: 12px 13px;
-  font-size: 14px;
-}
-.btn-sm.btn-cloudy.btn-icon {
-  position: relative;
-  padding-right: 39px;
-  border: 0;
-}
-.btn-sm.btn-cloudy.btn-icon i {
-  background-color: #29b5c7;
-  padding: 7px 12px;
-  font-size: 14px;
-}
-.btn-xs.btn-cloudy.btn-icon {
-  position: relative;
-  padding-right: 39px;
-  border: 0;
-}
-.btn-xs.btn-cloudy.btn-icon i {
-  background-color: #29b5c7;
-  padding: 3px 14px;
-  font-size: 14px;
 }
 
 
