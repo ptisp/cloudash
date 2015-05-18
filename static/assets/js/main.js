@@ -17,6 +17,8 @@ var Router = Backbone.Router.extend({
       this.currentView.delegateEvents();
     }
     var rendered = view.render();
+    elem.removeClass('col-sm-12');
+    elem.addClass('col-sm-9');
     elem.html(rendered.el);
   },
   routes: {
@@ -81,6 +83,7 @@ var Router = Backbone.Router.extend({
           model: window.profile
         }).render().el);
         window.scrollTo(0, 0);
+        $('#sidemenu').html(new MenuView().render().el);
         $('#footer').html(new FooterView().render().el);
       });
     });
@@ -102,10 +105,14 @@ var Router = Backbone.Router.extend({
     });
   },
   login: function() {
-    var login = new LoginView();
     $('#header').html('');
     $('#footer').html('');
-    $('#content').html(login.render().el);
+    $('#sidemenu').html('');
+    
+    $('#content').removeClass('col-sm-9');
+    $('#content').addClass('col-sm-12');
+
+    $('#content').html(new LoginView().render().el);
   },
   verifyLogin: function(loggedFunction) {
     //var self = this;
@@ -121,7 +128,7 @@ var Router = Backbone.Router.extend({
 });
 
 
-templateLoader.load(['FooterView', 'LoginView', 'HomeView', 'HeaderView'],
+templateLoader.load(['FooterView', 'LoginView', 'HomeView', 'HeaderView', 'MenuView'],
   function() {
     var language = localStorage.getItem('lang');
     if (language === null) {

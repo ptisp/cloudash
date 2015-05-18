@@ -208,6 +208,16 @@ body {
 .w-max-300 {
   max-width: 300px !important;
 }
+/* POSITION */
+.p-relative {
+  position: relative;
+}
+.p-absolute {
+  position: absolute;
+}
+.p-fixed {
+  position: fixed;
+}
 /* BTN CLOUDY */
 .btn-lg.btn-cloudy.btn-icon {
   position: relative;
@@ -302,13 +312,14 @@ body {
   .profile-usercloudy {text-align: center; margin-bottom: 20px;}
   .table-responsive {border: none;}
   .profile-userbuttons {margin-bottom: 20px; width: 100%; display: inline-block;}
+  .user-drop {display: none;}
+  .add-machine { min-width: 100% !important;}
 }
 @media (min-width: 768px) {
   .sidebar-nav.responsive {display: none;}
   .sidebar-nav .navbar ul {float: none;}
   .sidebar-nav .navbar ul:not {display: block;}
   .sidebar-nav .navbar li {float: none; display: block;}
-  .sidebar-nav .navbar li a {padding-top: 15px; padding-bottom: 15px;}
 }
 
 /* LOGIN */
@@ -438,6 +449,7 @@ table.table.clip th {
   border-radius: 50% !important;
 }
 .profile-usertitle {
+  text-align: left;
   display: inline-block;
   vertical-align: middle;
 }
@@ -457,10 +469,20 @@ table.table.clip th {
 .pallete-item {
   width: 100%;
   float: left;
-  text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
-
+.open > .dropdown-menu.user-menu {
+  left: -115px;
+}
+.sidebar-nav .navbar .dropdown-menu {
+  width: 100%;
+}
+.sidebar-nav .navbar .dropdown-menu li:hover {
+  background-color: #e3e4e5;
+}
+.no-pl {
+  padding-left: 0px !important;
+}
 
 
 

@@ -33,7 +33,16 @@
 			<div class="col-sm-3">
 				<!-- SIDEBAR USER -->
 				<div class="profile-usercloudy">
-					<img src="http://ptis.pt/avatar-ruben" class="img-responsive m-r-15"  alt="" />
+					<span class="p-relative">
+						<img src="http://ptis.pt/avatar-ruben" class="dropdown-toggle img-responsive m-r-15" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</span>
 					<div class="profile-usertitle">
 						<div class="profile-usertitle-name">
 							Rúben Rodrigues
@@ -45,32 +54,31 @@
 				</div>
 		    </div>
 
-		    <div class="col-sm-5">
-		    	<!-- SIDEBAR BUTTONS -->
+		    <div class="col-sm-3">
+		    	<!-- SIDEBAR BUTTONS 
 				<div class="profile-userbuttons f-left">
 					<button type="button" class="btn btn-success btn-xs f-12">Follow</button>
 					<button type="button" class="btn btn-danger btn-xs f-12">Message</button>
-				</div>
+				</div>-->
+		    </div>
 
-		    	<!-- DROPDOWN PROFILE BUTTON 
-				<div class="btn-group f-right">
+
+
+		    <div class="col-sm-6">
+		    	<!-- DROPDOWN PROFILE BUTTON -->
+				<div class="btn-group f-right user-drop m-l-5">
 					<button class="btn btn-cloudy-light btn-lg dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">
 						<i class="icon-user f-18 "></i> <span class="caret"></span>
 					</button>
-					<ul class="dropdown-menu">
+					<ul class="dropdown-menu user-menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
 						<li><a href="#">Something else here</a></li>
 						<li class="divider"></li>
 						<li><a href="#">Separated link</a></li>
 					</ul>
-		        </div>-->
-		    </div>
-
-
-
-		    <div class="col-sm-4">
-		    	<button type="button" class="btn btn-block btn-xl btn-cloudy btn-icon w-min-250 f-right">Create new machine<i class="icon-cloud_servers"></i></button>
+		        </div>
+		    	<button type="button" class="btn btn-xl btn-cloudy btn-icon w-min-250 f-right add-machine">Create new machine<i class="icon-cloud_servers"></i></button>
 		    </div>
 
 	    </div>
