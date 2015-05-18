@@ -286,6 +286,7 @@ body {
 /*  992px */
 @media(max-width: 992px) {
   .f-18 {font-size: 16px;}
+  .stat {float: left; width: 50%;}
 }
 @media(min-width: 992px) {
   .sidebar-nav.responsive {display: none;}
@@ -452,6 +453,12 @@ table.table.clip th {
 .profile-userbuttons {
   text-align: center;
   margin-top: 10px;
+}
+.pallete-item {
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 
