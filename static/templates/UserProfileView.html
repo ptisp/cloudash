@@ -1,3 +1,181 @@
 <div class="user-profile">
-  User Profile View
+  <!-- tab light -->
+	<div class="row">
+		<ul class="nav nav-tabs cloudy bordered">
+			<li class="active">
+				<a href="#profile" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-user f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-user"></i> Profile</span>
+				</a>
+			</li>
+			<li>
+				<a href="#security" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-lock f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-lock"></i> Security</span>
+				</a>
+			</li>
+			<li>
+				<a href="#notifications" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-bell f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-bell"></i> Notifications</span>
+				</a>
+			</li>
+			<li>
+				<a href="#alerts" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-flag f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-flag"></i> Alerts</span>
+				</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane fade active in" id="profile">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="profile-usercloudy clip-body">
+							<span class="p-relative">
+								<img src="http://www.gravatar.com/avatar/bf00250c419f0d09475f70558c373acc" class="dropdown-toggle img-responsive m-r-15" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
+							</span>
+							<div class="profile-usertitle">
+								<div class="profile-usertitle-name">
+									Rúben Rodrigues
+								</div>
+								<div class="profile-usertitle-email">
+									ruben@empresa.pt
+								</div>
+								<div class="profile-usertitle-job">
+									Web Designer
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<p class="">You can update your contacts using the button below.</p>
+						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5">
+							Edit Profile<i class="icon-user"></i>
+						</button>
+					</div>
+				</div>
+
+				<div id="collapseOne" class="panel-collapse collapse" style="height: auto;">
+					<hr>
+					<div class="row">
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span>Nome</span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-user"></i></span>
+									<input type="text" class="form-control cloudy" value="your name">
+								</div>
+						    </div>
+
+						    <div class="clip-body">
+								<p class="text-left"><span>Country</span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-flag"></i></span>
+									<input type="text" class="form-control cloudy" value="your country">
+								</div>
+						    </div>
+						    <div class="clip-body">
+								<p class="text-left"><span>Address</span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
+									<input type="text" class="form-control cloudy" value="your adress">
+								</div>
+						    </div>
+					    </div>
+
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span>Email Adress</span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-email_corporate"></i></span>
+									<input type="text" class="form-control cloudy" value="your email adress" title="">
+								</div>
+						    </div>
+
+						    <div class="clip-body">
+								<p class="text-left"><span>VAT</span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-reference"></i></span>
+									<input type="text" class="form-control cloudy" value="your vat" title="">
+								</div>
+						    </div>
+						    <div class="clip-body">
+								<p class="text-left"><span>Zip code</span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-location_more"></i></span>
+									<input type="text" class="form-control cloudy" value="your zip code">
+								</div>
+						    </div>
+						</div>
+					</div>
+					<a href="#cliplink" class="btn btn-block btn-lg btn-success">Save</a>
+				</div>
+			</div>
+
+			<div class="tab-pane fade in" id="security">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="profile-usercloudy clip-body">
+							<span class="p-relative">
+								<img src="http://www.gravatar.com/avatar/bf00250c419f0d09475f70558c373acc" class="dropdown-toggle img-responsive m-r-15" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
+							</span>
+							<div class="profile-usertitle">
+								<div class="profile-usertitle-name">
+									Rúben Rodrigues
+								</div>
+								<div class="profile-usertitle-email">
+									ruben@empresa.pt
+								</div>
+								<div class="profile-usertitle-job">
+									Web Designer
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<p class="">To change new password please use the button below</p>
+						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success btn-icon m-b-5">
+							Change Password<i class="icon-lock"></i>
+						</button>
+					</div>
+				</div>
+
+				<div id="collapseTwo" class="panel-collapse collapse" style="height: auto;">
+					<hr>
+					<div class="row">
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span>New Password</span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
+									<input type="password" class="form-control cloudy" value="new password">
+								</div>
+						    </div>
+					    </div>
+
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span>Repeat Password</span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-unlock"></i></span>
+									<input type="password" class="form-control cloudy" value="repeat password" title="">
+								</div>
+						    </div>
+						</div>
+					</div>
+					<p class="">By saving you consent to change new password. Click Save to update your password.</p>
+					<a href="#cliplink" class="btn btn-block btn-lg btn-success">Save</a>
+				</div>
+			</div>
+			<div class="tab-pane fade in" id="notifications">	
+					<p>Luckily friends do ashamed to do suppose. Tried meant mr smile so. Exquisite behaviour as to middleton perfectly. Chicken no wishing waiting am. Say concerns dwelling graceful six humoured. Whether mr up savings talking an. Active mutual nor father mother exeter change six did all. </p>
+			</div>
+			<div class="tab-pane fade in" id="alerts">	
+					<p>Luckily friends do ashamed to do suppose. Tried meant mr smile so. Exquisite behaviour as to middleton perfectly. Chicken no wishing waiting am. Say concerns dwelling graceful six humoured. Whether mr up savings talking an. Active mutual nor father mother exeter change six did all. </p>
+			</div>
+		</div>	
+	</div>
 <div>
