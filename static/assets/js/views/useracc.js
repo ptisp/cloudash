@@ -6,6 +6,10 @@ window.UserAccView = Backbone.View.extend({
     $(this.el).html(this.template());
 
     return this;
+
+    // POPOVER & TOOLTIP
+	$("[rel='popover']").popover();
+	$("[rel='tooltip']").tooltip();
   }
 
 });

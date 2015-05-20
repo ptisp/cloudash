@@ -423,6 +423,15 @@ table.table.clip th {
   color: #29b5c7;
   font-weight: 700;
 }
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f1f1f5;
+}
+.table-striped > tbody > tr:nth-of-type(odd):hover {
+  background-color: #e3e4e5;
+}
+.table-striped > tbody > tr:hover {
+  background-color: #e3e4e5;
+}
 /* HEADER */
 .header {
   margin-bottom: 0px;
@@ -583,7 +592,12 @@ table.table.clip th {
   border: none;
   border-radius: 1px;
 }
-
+.btn-xs, .btn-group-xs > .btn {
+  padding: 0px 10px;
+  font-size: 13px !important;
+  line-height: 1.5;
+  border-radius: 1px;
+}
 
 
 
