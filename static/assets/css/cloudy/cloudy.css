@@ -208,6 +208,10 @@ body {
 .w-max-300 {
   max-width: 300px !important;
 }
+/* WIDTH % */
+.w-100 {
+  width: 100% !important;
+}
 /* POSITION */
 .p-relative {
   position: relative;
@@ -297,6 +301,7 @@ body {
 @media(max-width: 992px) {
   .f-18 {font-size: 16px;}
   .stat {float: left; width: 50%;}
+  .plans .cloudy-plans-specs { padding: 10px 0px !important; font-size: 14px !important;}
 }
 @media(min-width: 992px) {
   .sidebar-nav.responsive {display: none;}
@@ -313,12 +318,20 @@ body {
   .profile-userbuttons {margin-bottom: 20px; width: 100%; display: inline-block;}
   .user-drop {display: none;}
   .add-machine { min-width: 100% !important;}
+  .plans .cloudy-plans {width: 25% !important;}
 }
 @media (min-width: 768px) {
   .sidebar-nav.responsive {display: none;}
   .sidebar-nav .navbar ul {float: none;}
   .sidebar-nav .navbar ul:not {display: block;}
   .sidebar-nav .navbar li {float: none; display: block;}
+}
+/*  580px */
+@media (max-width: 580px) {
+  .plans .cloudy-plans {width: 50% !important;}
+}
+@media (min-width: 580px) {
+
 }
 
 /* LOGIN */
@@ -604,6 +617,36 @@ section {
   padding: 30px 0px 30px 0px;
   margin-bottom: 30px;
 }
+/* CLOUDY PLANS */
+.plans .cloudy-plans {
+  border: solid 5px #fff;
+}
+.plans .cloudy-plans-specs {
+  padding: 15px 10px;
+  font-family: 'Lato', sans-serif, Helvetica, Arial;
+}
+.plans .cloudy-plans-specs p:last-child {
+  margin-bottom: 0px;
+}
+.btn-cloudy:hover, .btn-cloudy:focus, .btn-cloudy.focus, .btn-cloudy:active, .btn-cloudy.active, .open > .dropdown-toggle.btn-cloudy {
+  color: #fff;
+  background-color: #008798;
+  border-color: #008798;
+}
+/* BOLD FONT */
+.b01 { 
+  font-family: 'Lato', Arial, serif;
+  font-weight: 300;
+}
+.b02 { 
+  font-family: 'Lato', Arial, serif;
+  font-weight: 400;
+}
+.b03 { 
+  font-family: 'Lato', Arial, serif;
+  font-weight: 700;
+}
+
 
 
 
