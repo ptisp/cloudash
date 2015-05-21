@@ -29,7 +29,19 @@ var Router = Backbone.Router.extend({
     'vm/edit': 'vmedit',
     'manage/profile': 'manprofile',
     'manage/account': 'manaccount',
+    'domain/dns': 'domaindns',
     '*notFound': 'index'
+  },
+  domaindns: function() {
+    var self = this;
+    templateLoader.load(["DomDnsView"], function() {
+      self.verifyLogin(function() {
+        var v = new DomDnsView({
+          model: window.profile
+        });
+        self.showView(v, $('#content'));
+      });
+    });
   },
   vmadd: function() {
     var self = this;
@@ -108,7 +120,7 @@ var Router = Backbone.Router.extend({
     $('#header').html('');
     $('#footer').html('');
     $('#sidemenu').html('');
-    
+
     $('#content').removeClass('col-sm-9');
     $('#content').addClass('col-sm-12');
 
