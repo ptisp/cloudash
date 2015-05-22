@@ -23,44 +23,141 @@
 				    <label class="btn btn-cloudy col-sm-3 cloudy-plans **active**">
 				    	<input type="radio" checked>
 				    	<div class="cloudy-plans-specs"> 
+				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
 				    		<p class="b03"><i class="icon-ram_memory"></i> <span>5GB RAM</span></p>
 				    		<p><i class="icon-ssd"></i> 30GB SSD</p>
-				    		<p><i class="icon-cpu"></i> 3 CPU</p> 
+				    		<p><i class="icon-cpu"></i> 3CPU</p> 
 				    	</div>
 				    </label>
 
 				    <label class="btn btn-cloudy col-sm-3 cloudy-plans"> 
 				    	<input type="radio"> 
 				    	<div class="cloudy-plans-specs"> 
-				    		<p class="b03"><i class="icon-ram_memory"></i> <span>5GB RAM</span></p>
-				    		<p><i class="icon-ssd"></i> 30GB SSD</p>
-				    		<p><i class="icon-cpu"></i> 3 CPU</p> 
+				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
+				    		<p class="b03"><i class="icon-ram_memory"></i> <span>12GB RAM</span></p>
+				    		<p><i class="icon-ssd"></i> 45GB SSD</p>
+				    		<p><i class="icon-cpu"></i> 4CPU</p> 
 				    	</div>
 				    </label>
 
 				    <label class="btn btn-cloudy col-sm-3 cloudy-plans"> 
 				    	<input type="radio">
 				    	<div class="cloudy-plans-specs"> 
-				    		<p class="b03"><i class="icon-ram_memory"></i> <span>5GB RAM</span></p>
-				    		<p><i class="icon-ssd"></i> 30GB SSD</p>
-				    		<p><i class="icon-cpu"></i> 3 CPU</p> 
+				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
+				    		<p class="b03"><i class="icon-ram_memory"></i> <span>25GB RAM</span></p>
+				    		<p><i class="icon-ssd"></i> 60GB SSD</p>
+				    		<p><i class="icon-cpu"></i> 5CPU</p> 
 				    	</div>
 				    </label>
 
 				    <label class="btn btn-cloudy col-sm-3 cloudy-plans"> 
 				    	<input type="radio">
-				    	<div class="cloudy-plans-specs"> 
-				    		<p class="b03"><i class="icon-ram_memory"></i> <span>5GB RAM</span></p>
-				    		<p><i class="icon-ssd"></i> 30GB SSD</p>
-				    		<p><i class="icon-cpu"></i> 3 CPU</p> 
+				    	<div class="cloudy-plans-specs">
+				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
+				    		<p class="b03"><i class="icon-ram_memory"></i> <span>115GB RAM</span></p>
+				    		<p><i class="icon-ssd"></i> 90GB SSD</p>
+				    		<p><i class="icon-cpu"></i> 6CPU</p> 
 				    	</div>
 				    </label>
 				</div>
-				
+		    </div>
+	    </div>
+	    <div class="col-md-12">
+	    	<p class="text-left"><span>Configuration</span></p>
+	    	<div class="row">
+			    <div class="clip-body">
+					<div class="col-md-4">
+				        <div class="clip-body">
+				        	<p class="text-left">RAM GB</p>
+							<div class="range range-cloudy">
+								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value">
+								<output id="rangeInfo">1</output>
+							</div>
+				        </div>
+				    </div>
+				    <div class="col-md-4">
+				        <div class="clip-body">
+				        	<p class="text-left">DISK SSD</p>
+								<div class="range range-cloudy">
+									<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
+									<output id="rangeGold">1</output>
+								</div>
+				        </div>
+				    </div>
+				    <div class="col-md-4">
+				        <div class="clip-body">
+				        	<p class="text-left">CPU GB</p>
+							<div class="range range-cloudy">
+								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
+								<output id="rangeDanger">1</output>
+							</div>
+				        </div>
+				    </div>
+				</div>
+		    </div>
+	    </div>
+	    <div class="col-md-12">
+		    <div class="clip-body">
+				<p class="text-left"><span>Pick an Image</span></p>
+
+				<div class="btn-group plans soft w-100" data-toggle="buttons">
+
+				    <label class="btn btn-default col-sm-2 cloudy-plans **active**">
+				    	<input type="radio" checked>
+				    	<div class="cloudy-plans-specs"> 
+				    		<img src="assets/img/soft/ubuntu.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>Ubuntu</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
+				    	<input type="radio"> 
+				    	<div class="cloudy-plans-specs"> 
+				    		<img src="assets/img/soft/debian.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>Debian</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs"> 
+				    		<img src="assets/img/soft/centos.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>CentOS</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<img src="assets/img/soft/fedora.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>Fedora</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<img src="assets/img/soft/opensuse.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>OpenSuse</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<img src="assets/img/soft/coreos.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>CoreOS</span></p>
+				    	</div>
+				    </label>
+				</div>
 		    </div>
 	    </div>
 		<div class="col-md-12">
-			<a href="#cliplink" class="btn btn-block btn-lg btn-success">Save</a>
+			<a href="#cliplink" class="btn btn-block btn-lg btn-success">Create Machine</a>
 		</div>
 	</section>
 <div>
