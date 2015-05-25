@@ -7,7 +7,7 @@ var insertUser = function(db, callback) {
   db.collection('users').insertOne({
     'auth': {
       'username': 'admin',
-      'password': '685fdb8ff67c6916d71dca92be127c72'
+      'password': '21232f297a57a5a743894a0e4a801fc3'
     },
     'about': {
       'name': 'ADMIN',
@@ -34,7 +34,7 @@ var insertUser = function(db, callback) {
   });
 };
 
-MongoClient.connect(process.env.CLOUDY, function(err, db) {
+MongoClient.connect(process.env.CLOUDY_MONGODB, function(err, db) {
   assert.equal(null, err);
   insertUser(db, function() {
     db.close();

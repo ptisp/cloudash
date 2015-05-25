@@ -20,7 +20,7 @@ window.LoginView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json.message);
+        console.log(json);
       }
     );
   },
