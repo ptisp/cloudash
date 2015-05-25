@@ -9,14 +9,14 @@ window.LoginView = Backbone.View.extend({
     var self = this;
 
     var user = $('.usernameinput').val();
-    var pass = this.createhash($('.passwordinput').val());
+    var hash = this.createhash($('.passwordinput').val());
 
     var credential = user + ':' + hash;
     window.sessionStorage.setItem('keyo', btoa(credential));
 
-    modem('POST', '/user/login/',
+    modem('POST', 'user/login',
       function(json) {
-        self.log(user, pass);
+        self.log(user, hash);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);

@@ -10,7 +10,7 @@
       var user = encrip.split(':')[0];
       var pass = encrip.replace(user+':','');
 
-      modem('GET', 'login/'+user+'/'+pass,
+      modem('GET', 'user/login',
         function(json) {
           self.set('username', json.output.auth.username);
           self.set('gravatar', CryptoJS.MD5(json.output.auth.username).toString());
