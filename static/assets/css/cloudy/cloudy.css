@@ -296,7 +296,7 @@ body {
   border: none ;
   background-color: #29b5c7;
 }
-/* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */ 
+/* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */
 /*  1199px */
 @media(max-width: 1199px) {
   .plans.soft p {font-size: 13px;}
@@ -660,15 +660,15 @@ section {
   border: 2px solid #008798;
 }
 /* BOLD FONT */
-.b01 { 
+.b01 {
   font-family: 'Lato', Arial, serif;
   font-weight: 300;
 }
-.b02 { 
+.b02 {
   font-family: 'Lato', Arial, serif;
   font-weight: 400;
 }
-.b03 { 
+.b03 {
   font-family: 'Lato', Arial, serif;
   font-weight: 700;
 }
@@ -689,20 +689,7 @@ section {
   border-radius: 50%;
   display: inline-block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.likehref{
+  cursor: pointer;
+  cursor: hand; 
+}

@@ -1,0 +1,34 @@
+{
+  "header": {
+    "manprofile": "Perfil",
+    "manusers": "Utilizadores",
+    "newvm": "Nova Máquina Virtual",
+    "logout": "Sair"
+  },
+  "userprofile": {
+    "tabs": {
+      "profile": "Perfil",
+      "security": "Segurança",
+      "notifications": "Notificações",
+      "alerts": "Alertas"
+    },
+    "profile": {
+      "msg": "Pode editar o seu perfil no botão abaixo.",
+      "btnedit": "Editar Perfil",
+      "name": "Nome",
+      "country": "País",
+      "address": "Endereço",
+      "email": "Email",
+      "nif": "NIF",
+      "zip": "Código Postal",
+      "btnsave": "Actualizar"
+    },
+    "security": {
+      "msg": "Pode alterar a sua password no botão abaixo.",
+      "btnedit": "Editar Password",
+      "newpass": "Nova Password",
+      "reppass": "Repetir Password",
+      "btnsave": "Actualizar"
+    }
+  }
+}

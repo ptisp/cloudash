@@ -5,25 +5,13 @@
 			<li class="active">
 				<a href="#profile" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-user f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-user m-r-5"></i> Profile</span>
+					<span class="hidden-xs f-16"><i class="icon-user m-r-5"></i><span data-i18n="userprofile.tabs.profile"></span></span>
 				</a>
 			</li>
 			<li>
 				<a href="#security" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-lock f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-lock m-r-5"></i> Security</span>
-				</a>
-			</li>
-			<li>
-				<a href="#notifications" data-toggle="tab">
-					<span class="visible-xs"><i class="icon-bell f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-bell m-r-5"></i> Notifications</span>
-				</a>
-			</li>
-			<li>
-				<a href="#alerts" data-toggle="tab">
-					<span class="visible-xs"><i class="icon-flag f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-flag m-r-5"></i> Alerts</span>
+					<span class="hidden-xs f-16"><i class="icon-lock m-r-5"></i><span data-i18n="userprofile.tabs.security"></span></span>
 				</a>
 			</li>
 		</ul>
@@ -33,26 +21,22 @@
 					<div class="col-md-6">
 						<div class="profile-usercloudy clip-body">
 							<span class="p-relative">
-								<img src="http://www.gravatar.com/avatar/bf00250c419f0d09475f70558c373acc" class="dropdown-toggle img-responsive m-r-15" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
+								<img src="http://www.gravatar.com/avatar/" class="dropdown-toggle img-responsive m-r-15 profilegravatar" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
 							</span>
 							<div class="profile-usertitle">
 								<div class="profile-usertitle-name">
-									Rúben Rodrigues
-								</div>
-								<div class="profile-usertitle-email">
-									ruben@empresa.pt
+									<%= name %>
 								</div>
 								<div class="profile-usertitle-job">
-									Web Designer
+									<%= username %>
 								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-md-6">
-						<p class="">You can update your contacts using the button below.</p>
-						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5">
-							Edit Profile<i class="icon-user"></i>
+						<p class="" data-i18n="userprofile.profile.msg"></p>
+						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5"><span data-i18n="userprofile.profile.btnedit"></span><i class="icon-user"></i>
 						</button>
 					</div>
 				</div>
@@ -62,55 +46,56 @@
 					<div class="row">
 						<div class="col-md-6">
 						    <div class="clip-body">
-								<p class="text-left"><span>Full Name</span></p>
+								<p class="text-left"><span data-i18n="userprofile.profile.name"></span></p>
 								<div class="input-group">
 									<span class="input-group-addon cloudy"><i class="icon-user"></i></span>
-									<input type="text" class="form-control cloudy" value="your name">
+									<input type="text" class="form-control cloudy pname" placeholder="Name">
 								</div>
 						    </div>
 
 						    <div class="clip-body">
-								<p class="text-left"><span>Country</span></p>
+								<p class="text-left"><span data-i18n="userprofile.profile.country"></span></p>
 								<div class="input-group">
 									<span class="input-group-addon cloudy"><i class="icon-flag"></i></span>
-									<input type="text" class="form-control cloudy" value="your country">
+									<input type="text" class="form-control cloudy pcountry" placeholder="County">
 								</div>
 						    </div>
 						    <div class="clip-body">
-								<p class="text-left"><span>Address</span></p>
+								<p class="text-left"><span data-i18n="userprofile.profile.address"></span></p>
 								<div class="input-group">
 									<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
-									<input type="text" class="form-control cloudy" value="your adress">
+									<input type="text" class="form-control cloudy paddress" placeholder="Address">
 								</div>
 						    </div>
 					    </div>
 
 						<div class="col-md-6">
 						    <div class="clip-body">
-								<p class="text-left"><span>Email Adress</span></p>
+								<p class="text-left"><span data-i18n="userprofile.profile.email"></span></p>
 								<div class="input-group">
 									<span class="input-group-addon cloudy"><i class="icon-email_corporate"></i></span>
-									<input type="text" class="form-control cloudy" value="your email adress" title="">
+									<input type="text" class="form-control cloudy pemail" placeholder="Email">
 								</div>
 						    </div>
 
 						    <div class="clip-body">
-								<p class="text-left"><span>VAT</span></p>
+								<p class="text-left"><span data-i18n="userprofile.profile.nif"></span></p>
 								<div class="input-group">
 									<span class="input-group-addon cloudy"><i class="icon-reference"></i></span>
-									<input type="text" class="form-control cloudy" value="your vat" title="">
+									<input type="text" class="form-control cloudy pnif" placeholder="NIF">
 								</div>
 						    </div>
 						    <div class="clip-body">
-								<p class="text-left"><span>Zip code</span></p>
+								<p class="text-left"><span data-i18n="userprofile.profile.zip"></span></p>
 								<div class="input-group">
 									<span class="input-group-addon cloudy"><i class="icon-location_more"></i></span>
-									<input type="text" class="form-control cloudy" value="your zip code">
+									<input type="text" class="form-control cloudy pzip" placeholder="Zip Code">
 								</div>
 						    </div>
 						</div>
 					</div>
-					<a href="#cliplink" class="btn btn-block btn-lg btn-success">Save</a>
+					<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success"><span data-i18n="userprofile.profile.btnsave"></span>
+					</button>
 				</div>
 			</div>
 
@@ -119,26 +104,22 @@
 					<div class="col-md-6">
 						<div class="profile-usercloudy clip-body">
 							<span class="p-relative">
-								<img src="http://www.gravatar.com/avatar/bf00250c419f0d09475f70558c373acc" class="dropdown-toggle img-responsive m-r-15" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
+								<img src="http://www.gravatar.com/avatar/" class="dropdown-toggle img-responsive m-r-15 profilegravatar" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
 							</span>
 							<div class="profile-usertitle">
 								<div class="profile-usertitle-name">
-									Rúben Rodrigues
-								</div>
-								<div class="profile-usertitle-email">
-									ruben@empresa.pt
+									<%= name %>
 								</div>
 								<div class="profile-usertitle-job">
-									Web Designer
+									<%= username %>
 								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-md-6">
-						<p class="">To change new password please use the button below</p>
-						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success btn-icon m-b-5">
-							Change Password<i class="icon-lock"></i>
+						<p class="" data-i18n="userprofile.security.msg"></p>
+						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success btn-icon m-b-5"><span data-i18n="userprofile.security.btnedit"></span><i class="icon-lock"></i>
 						</button>
 					</div>
 				</div>
@@ -148,34 +129,28 @@
 					<div class="row">
 						<div class="col-md-6">
 						    <div class="clip-body">
-								<p class="text-left"><span>New Password</span></p>
+								<p class="text-left"><span data-i18n="userprofile.security.newpass"></span></p>
 								<div class="input-group">
 									<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
-									<input type="password" class="form-control cloudy" value="new password">
+									<input type="password" class="form-control cloudy" placeholder="New Password">
 								</div>
 						    </div>
 					    </div>
 
 						<div class="col-md-6">
 						    <div class="clip-body">
-								<p class="text-left"><span>Repeat Password</span></p>
+								<p class="text-left"><span data-i18n="userprofile.security.reppass"></span></p>
 								<div class="input-group">
 									<span class="input-group-addon cloudy"><i class="icon-unlock"></i></span>
-									<input type="password" class="form-control cloudy" value="repeat password" title="">
+									<input type="password" class="form-control cloudy" placeholder="Repeat Password">
 								</div>
 						    </div>
 						</div>
 					</div>
-					<p class="">By saving you consent to change new password. Click Save to update your password.</p>
-					<a href="#cliplink" class="btn btn-block btn-lg btn-success">Save</a>
+					<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success"><span data-i18n="userprofile.security.btnsave"></span>
+					</button>
 				</div>
 			</div>
-			<div class="tab-pane fade in" id="notifications">	
-					<p>Luckily friends do ashamed to do suppose. Tried meant mr smile so. Exquisite behaviour as to middleton perfectly. Chicken no wishing waiting am. Say concerns dwelling graceful six humoured. Whether mr up savings talking an. Active mutual nor father mother exeter change six did all. </p>
-			</div>
-			<div class="tab-pane fade in" id="alerts">	
-					<p>Luckily friends do ashamed to do suppose. Tried meant mr smile so. Exquisite behaviour as to middleton perfectly. Chicken no wishing waiting am. Say concerns dwelling graceful six humoured. Whether mr up savings talking an. Active mutual nor father mother exeter change six did all. </p>
-			</div>
-		</div>	
+		</div>
 	</div>
 <div>

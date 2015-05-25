@@ -36,10 +36,12 @@ var Router = Backbone.Router.extend({
     var self = this;
     templateLoader.load(["DomDnsView"], function() {
       self.verifyLogin(function() {
-        var v = new DomDnsView({
-          model: window.profile
+        self.loadProfile(function () {
+          var v = new DomDnsView({
+            model: window.profile
+          });
+          self.showView(v, $('#content'));
         });
-        self.showView(v, $('#content'));
       });
     });
   },
@@ -47,10 +49,12 @@ var Router = Backbone.Router.extend({
     var self = this;
     templateLoader.load(["VMAddView"], function() {
       self.verifyLogin(function() {
-        var v = new VMAddView({
-          model: window.profile
+        self.loadProfile(function () {
+          var v = new VMAddView({
+            model: window.profile
+          });
+          self.showView(v, $('#content'));
         });
-        self.showView(v, $('#content'));
       });
     });
   },
@@ -58,10 +62,12 @@ var Router = Backbone.Router.extend({
     var self = this;
     templateLoader.load(["VMEditView"], function() {
       self.verifyLogin(function() {
-        var v = new VMEditView({
-          model: window.profile
+        self.loadProfile(function () {
+          var v = new VMEditView({
+            model: window.profile
+          });
+          self.showView(v, $('#content'));
         });
-        self.showView(v, $('#content'));
       });
     });
   },
@@ -69,10 +75,12 @@ var Router = Backbone.Router.extend({
     var self = this;
     templateLoader.load(["UserProfileView"], function() {
       self.verifyLogin(function() {
-        var v = new UserProfileView({
-          model: window.profile
+        self.loadProfile(function () {
+          var v = new UserProfileView({
+            model: window.profile
+          });
+          self.showView(v, $('#content'));
         });
-        self.showView(v, $('#content'));
       });
     });
   },
@@ -80,10 +88,12 @@ var Router = Backbone.Router.extend({
     var self = this;
     templateLoader.load(["UserAccView"], function() {
       self.verifyLogin(function() {
-        var v = new UserAccView({
-          model: window.profile
+        self.loadProfile(function () {
+          var v = new UserAccView({
+            model: window.profile
+          });
+          self.showView(v, $('#content'));
         });
-        self.showView(v, $('#content'));
       });
     });
   },
@@ -91,12 +101,14 @@ var Router = Backbone.Router.extend({
     this.on('route', function(e) {
       var self = this;
       this.verifyLogin(function() {
-        $('#header').html(new HeaderView({
-          model: window.profile
-        }).render().el);
-        window.scrollTo(0, 0);
-        $('#sidemenu').html(new MenuView().render().el);
-        $('#footer').html(new FooterView().render().el);
+        self.loadProfile(function () {
+          $('#header').html(new HeaderView({
+            model: window.profile
+          }).render().el);
+          window.scrollTo(0, 0);
+          $('#sidemenu').html(new MenuView().render().el);
+          $('#footer').html(new FooterView().render().el);
+        });
       });
     });
   },
@@ -110,13 +122,18 @@ var Router = Backbone.Router.extend({
   home: function() {
     var self = this;
     this.verifyLogin(function() {
-      var homeView = new HomeView({
-        model: window.profile
+      self.loadProfile(function () {
+        var homeView = new HomeView({
+          model: window.profile
+        });
+        self.showView(homeView, $('#content'));
       });
-      self.showView(homeView, $('#content'));
     });
   },
   login: function() {
+    window.profile = null;
+    window.sessionStorage.clear();
+
     $('#header').html('');
     $('#footer').html('');
     $('#sidemenu').html('');
@@ -125,31 +142,61 @@ var Router = Backbone.Router.extend({
     $('#content').addClass('col-sm-12');
 
     $('#content').html(new LoginView().render().el);
+
   },
   verifyLogin: function(loggedFunction) {
-    //var self = this;
-    //if (!sessionStorage.keyo) {
-    //  app.navigate('/login', {
-    //    trigger: true
-    //  });
-    //} else {
+    var self = this;
+    if (!sessionStorage.keyo) {
+      app.navigate('/login', {
+        trigger: true
+      });
+    } else {
       window.logged = true;
       loggedFunction();
-    //}
-  }
+    }
+  },
+  loadProfile: function (dof) {
+    if (!window.profile) {
+      window.calls = [];
+      window.calls.push(dof);
+      window.profile = new Profile();
+      window.profile.fetch(function () {
+        var call;
+        do {
+          call = window.calls.shift();
+          if(call) call();
+        } while(call !== undefined);
+      });
+    } else if(!window.profile.get("username")) {
+      window.calls.push(dof);
+    } else {
+      dof();
+    }
+
+  },
 });
 
 
 templateLoader.load(['FooterView', 'LoginView', 'HomeView', 'HeaderView', 'MenuView'],
   function() {
-    var language = localStorage.getItem('lang');
-    if (language === null) {
-      language = 'pt-PT';
-    }
+    //var language = localStorage.getItem('lang');
+    //if (language === null) {
+    var  language = 'pt-PT';
+    //}
 
     window.language = language;
 
-    app = new Router();
-    Backbone.history.start();
+    $.i18n.init({
+      lng: language,
+      ns: {
+        namespaces: ['ns.common'],
+        defaultNs: 'ns.common'
+      },
+      useLocalStorage: false,
+      useCookie: false,
+    }, function (t) {
+      app = new Router();
+      Backbone.history.start();
+    });
   }
 );
