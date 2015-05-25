@@ -11,7 +11,8 @@
     "async": "0.7.x",
     "mongodb": "*",
     "body-parser": "1.2.x",
-    "errorhandler": "1.0.x"
+    "errorhandler": "1.0.x",
+    "basic-auth": "0.0.x"
   },
   "scripts": {
     "start": "node main.js"

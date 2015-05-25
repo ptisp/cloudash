@@ -7,9 +7,14 @@ window.LoginView = Backbone.View.extend({
   },
   logina: function() {
     var self = this;
+
     var user = $('.usernameinput').val();
     var pass = this.createhash($('.passwordinput').val());
-    modem('GET', 'login/'+user+'/'+pass,
+
+    var credential = user + ':' + hash;
+    window.sessionStorage.setItem('keyo', btoa(credential));
+
+    modem('POST', '/user/login/',
       function(json) {
         self.log(user, pass);
       },

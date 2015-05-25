@@ -5,9 +5,9 @@ var modem = function(type, url, sucess, error, data) {
     type: type || 'GET',
     url: '/api/' + url,
     dataType: 'json',
-    /*beforeSend: function(xhr) {
+    beforeSend: function(xhr) {
       xhr.setRequestHeader('Authorization', 'Basic ' + sessionStorage.keyo);
-    },*/
+    },
     data: data,
     success: sucess,
     error: error
