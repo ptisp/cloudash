@@ -25,7 +25,7 @@ var insertUser = function(db, callback) {
       'lastlogin': '',
       'lastip': ''
     },
-    'type': 'suadmin',
+    'type': 'admin',
     'status': 'active'
   }, function(err, result) {
     assert.equal(err, null);

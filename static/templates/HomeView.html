@@ -1,84 +1,96 @@
-<div class="home">	
+<div class="home">
 
-	<div class="row">
-			<div class="row">
-				<div class="col-md-3 stat">
-			        <div class="pallete-item">
-				      	<dl class="palette palette-default pal">
-	                   	    <div><i class="icon-cloud_servers f-22 m-r-10"></i> <span class="f-16">Machines</span></div>
-	              	    </dl>
-		                <dl class="palette palette-default-hover pal">
-		                    <div><span class="f-22">12</span></div>
-		                </dl>
-			        </div>
-			    </div>
-			    <div class="col-md-3 stat">
-			        <div class="pallete-item">
-				      	<dl class="palette palette-default pal">
-	                   	    <div><i class="icon-ram_memory f-22 m-r-10"></i> <span class="f-16">Memory</span></div>
-	              	    </dl>
-		                <dl class="palette palette-default-hover pal">
-		                    <div><div class="f-22"><span class="c-green">13</span> / <span>34GB</span></div></div>
-		                </dl>
-			        </div>
-			    </div>
-			    <div class="col-md-3 stat">
-			        <div class="pallete-item">
-				      	<dl class="palette palette-default pal">
-	                   	    <div><i class="icon-hardware f-22 m-r-10"></i> <span class="f-16">Storage</span></div>
-	              	    </dl>
-		                <dl class="palette palette-default-hover pal">
-		                    <div><span class="f-22">240GB</span></div>
-		                </dl>
-			        </div>
-			    </div>
-			    <div class="col-md-3 stat">
-			        <div class="pallete-item">
-				      	<dl class="palette palette-default pal">
-	                   	    <div><i class="icon-cloud_activated f-22 m-r-10"></i> <span class="f-16">Status</span></div>
-	              	    </dl>
-		                <dl class="palette palette-default-hover pal">
-		                    <div><span class="f-22">46 active</span></div>
-		                </dl>
-			        </div>
-			    </div>
-			</div>
+  <div class="row">
+    <div class="row">
+      <div class="col-md-3 stat">
+        <div class="pallete-item">
+          <dl class="palette palette-default pal">
+            <div><i class="icon-cloud_servers f-22 m-r-10"></i>
+              <span class="f-16">Machines</span>
+            </div>
+          </dl>
+          <dl class="palette palette-default-hover pal">
+            <div>
+              <span class="f-22 vmtotal">12</span>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="col-md-3 stat">
+        <div class="pallete-item">
+          <dl class="palette palette-default pal">
+            <div><i class="icon-ram_memory f-22 m-r-10"></i>
+              <span class="f-16">Memory</span>
+            </div>
+          </dl>
+          <dl class="palette palette-default-hover pal">
+            <div>
+              <div class="f-22">
+                <span class="c-green ramusage">13</span> /
+                <span>34GB</span>
+              </div>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="col-md-3 stat">
+        <div class="pallete-item">
+          <dl class="palette palette-default pal">
+            <div><i class="icon-hardware f-22 m-r-10"></i>
+              <span class="f-16">Storage</span>
+            </div>
+          </dl>
+          <dl class="palette palette-default-hover pal">
+            <div>
+              <span class="f-22 ">
+								<span class="c-green diskusage">13</span> /
+								<span>1024GB</span>
+							</span>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="col-md-3 stat">
+        <div class="pallete-item">
+          <dl class="palette palette-default pal">
+            <div><i class="icon-cloud_activated f-22 m-r-10"></i>
+              <span class="f-16">Status</span>
+            </div>
+          </dl>
+          <dl class="palette palette-default-hover pal">
+            <div>
+              <span class="f-22 activevm">46 active</span>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
 
-		<div class="table-responsive">
-	     	<table class="table clip">
-				<thead>
-					<tr>
-						<th><i class="icon-cloud"></i> <span>Name</span></th>
-						<th><i class="icon-ips"></i> <span>IP Adress</span></th>
-						<th><i class="icon-ram_memory"></i> <span>Memory</span></th>
-						<th><i class="icon-hardware"></i> <span>Storage</span></th>
-						<th><i class="icon-cloud_activated"></i> <span>Status</span></th>
-					</tr>
-				</thead>
-		        <tbody>
-					<tr class="success">
-						<td><i class="icon-play f-18 m-r-5 c-green"></i> Cloud Server</td>
-						<td>192.141.121.33</td>
-						<td>1GB</td>
-					    <td>25GB</td>
-					    <td>active</td>
-					</tr>
-					<tr class="default">
-						<td><i class="icon-refresh f-18 m-r-5 c-gold"></i> Virtual Machine 02</td>
-						<td>132.241.021.42</td>
-						<td>3GB</td>
-			            <td>50GB</td>
-			            <td>Review</td>
-			        </tr>
-					<tr class="danger">
-						<td><i class="icon-stop f-18 m-r-5 c-red"></i> Virtual Machine 03</td>
-						<td>132.241.021.42</td>
-						<td>5GB</td>
-						<td>75GB</td>
-					    <td>Stop</td>
-					</tr>
-		        </tbody>
-		    </table>
-	    </div>
-	</div>
+    <div class="table-responsive">
+      <table class="table clip" id="vmtable">
+        <thead>
+          <tr>
+            <th><i class="icon-cloud"></i>
+              <span>Name</span>
+            </th>
+            <th><i class="icon-ips"></i>
+              <span>IP Adress</span>
+            </th>
+            <th><i class="icon-ram_memory"></i>
+              <span>Memory</span>
+            </th>
+            <th><i class="icon-hardware"></i>
+              <span>Storage</span>
+            </th>
+            <th><i class="icon-cloud_activated"></i>
+              <span>Status</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="vmtable">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

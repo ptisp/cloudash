@@ -16,7 +16,7 @@ window.LoginView = Backbone.View.extend({
 
     modem('POST', 'user/login',
       function(json) {
-        self.log(user, hash);
+        self.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
@@ -25,12 +25,9 @@ window.LoginView = Backbone.View.extend({
     );
   },
 
-  log: function (user, hash) {
-    var credential = user + ':' + hash;
-    window.sessionStorage.setItem('keyo', btoa(credential));
-
+  log: function (json) {
     window.profile = new Profile();
-    window.profile.fetch(function () {
+    window.profile.fetch(json, function () {
       window.logged = true;
       app.navigate('/home', {
         trigger: true

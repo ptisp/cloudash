@@ -160,7 +160,7 @@ var Router = Backbone.Router.extend({
       window.calls = [];
       window.calls.push(dof);
       window.profile = new Profile();
-      window.profile.fetch(function () {
+      window.profile.fetch(null, function () {
         var call;
         do {
           call = window.calls.shift();
