@@ -1,72 +1,72 @@
 <div class="vm-add">
 	<section class="row bg-white">
 		<div class="col-md-12">
-			<h2 class="m-b-0 m-t-0">Create New Virtual Machine</h2>
+			<h2 class="m-b-0 m-t-0"><span data-i18n="vm.add.title"></span></h2>
 			<p class="">...</p>
 			<hr>
 		</div>
 		<div class="col-md-12">
 		    <div class="clip-body">
-				<p class="text-left"><span>Name</span></p>
+				<p class="text-left"><span data-i18n="vm.add.name"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-cloud_servers"></i></span>
-					<input type="text" class="form-control cloudy" value="enter machine name">
+					<input type="text" class="form-control cloudy hostname" placeholder="VM Name">
 				</div>
 		    </div>
 	    </div>
 	    <div class="col-md-12">
 		    <div class="clip-body">
-				<p class="text-left"><span>Most used configurations</span></p>
+				<p class="text-left"><span data-i18n="vm.add.config"></span></p>
 
 				<div class="btn-group plans w-100" data-toggle="buttons">
 
-				    <label class="btn btn-cloudy col-sm-3 cloudy-plans **active**">
-				    	<input type="radio" checked>
-				    	<div class="cloudy-plans-specs"> 
+				    <label class="btn btn-cloudy col-sm-3 cloudy-plans config active" data-ram="5" data-hdd="30" data-cpu="3">
+				    	<input type="radio" data-ram="5">
+				    	<div class="cloudy-plans-specs">
 				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
 				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
 				    		<p class="b03"><i class="icon-ram_memory"></i> <span>5GB RAM</span></p>
 				    		<p><i class="icon-ssd"></i> 30GB SSD</p>
-				    		<p><i class="icon-cpu"></i> 3CPU</p> 
+				    		<p><i class="icon-cpu"></i> 3CPU</p>
 				    	</div>
 				    </label>
 
-				    <label class="btn btn-cloudy col-sm-3 cloudy-plans"> 
-				    	<input type="radio"> 
-				    	<div class="cloudy-plans-specs"> 
+				    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="12" data-hdd="45" data-cpu="4">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
 				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
 				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
 				    		<p class="b03"><i class="icon-ram_memory"></i> <span>12GB RAM</span></p>
 				    		<p><i class="icon-ssd"></i> 45GB SSD</p>
-				    		<p><i class="icon-cpu"></i> 4CPU</p> 
+				    		<p><i class="icon-cpu"></i> 4CPU</p>
 				    	</div>
 				    </label>
 
-				    <label class="btn btn-cloudy col-sm-3 cloudy-plans"> 
+				    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="25" data-hdd="60" data-cpu="5">
 				    	<input type="radio">
-				    	<div class="cloudy-plans-specs"> 
+				    	<div class="cloudy-plans-specs">
 				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
 				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
 				    		<p class="b03"><i class="icon-ram_memory"></i> <span>25GB RAM</span></p>
 				    		<p><i class="icon-ssd"></i> 60GB SSD</p>
-				    		<p><i class="icon-cpu"></i> 5CPU</p> 
+				    		<p><i class="icon-cpu"></i> 5CPU</p>
 				    	</div>
 				    </label>
 
-				    <label class="btn btn-cloudy col-sm-3 cloudy-plans"> 
+				    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="115" data-hdd="90" data-cpu="6">
 				    	<input type="radio">
 				    	<div class="cloudy-plans-specs">
 				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
 				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
 				    		<p class="b03"><i class="icon-ram_memory"></i> <span>115GB RAM</span></p>
 				    		<p><i class="icon-ssd"></i> 90GB SSD</p>
-				    		<p><i class="icon-cpu"></i> 6CPU</p> 
+				    		<p><i class="icon-cpu"></i> 6CPU</p>
 				    	</div>
 				    </label>
 				</div>
 		    </div>
 	    </div>
-	    <div class="col-md-12">
+	    <div class="col-md-12" style="display:none">
 	    	<p class="text-left"><span>Configuration</span></p>
 	    	<div class="row">
 			    <div class="clip-body">
@@ -102,35 +102,35 @@
 	    </div>
 	    <div class="col-md-12">
 		    <div class="clip-body">
-				<p class="text-left"><span>Pick an Image</span></p>
+				<p class="text-left"><span data-i18n="vm.add.image"></span></p>
 
 				<div class="btn-group plans soft w-100" data-toggle="buttons">
 
-				    <label class="btn btn-default col-sm-2 cloudy-plans **active**">
-				    	<input type="radio" checked>
-				    	<div class="cloudy-plans-specs"> 
+				    <label class="btn btn-default col-sm-2 cloudy-plans img active" data-img="ubuntu">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
 				    		<img src="assets/img/soft/ubuntu.png" class="soft-img m-b-10 img-responsive">
 				    		<p class="b03"><span>Ubuntu</span></p>
 				    	</div>
 				    </label>
 
-				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
-				    	<input type="radio"> 
-				    	<div class="cloudy-plans-specs"> 
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="debian">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
 				    		<img src="assets/img/soft/debian.png" class="soft-img m-b-10 img-responsive">
 				    		<p class="b03"><span>Debian</span></p>
 				    	</div>
 				    </label>
 
-				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="centos">
 				    	<input type="radio">
-				    	<div class="cloudy-plans-specs"> 
+				    	<div class="cloudy-plans-specs">
 				    		<img src="assets/img/soft/centos.png" class="soft-img m-b-10 img-responsive">
 				    		<p class="b03"><span>CentOS</span></p>
 				    	</div>
 				    </label>
 
-				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="fedora">
 				    	<input type="radio">
 				    	<div class="cloudy-plans-specs">
 				    		<img src="assets/img/soft/fedora.png" class="soft-img m-b-10 img-responsive">
@@ -138,7 +138,7 @@
 				    	</div>
 				    </label>
 
-				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="opensuse">
 				    	<input type="radio">
 				    	<div class="cloudy-plans-specs">
 				    		<img src="assets/img/soft/opensuse.png" class="soft-img m-b-10 img-responsive">
@@ -146,7 +146,7 @@
 				    	</div>
 				    </label>
 
-				    <label class="btn btn-default col-sm-2 cloudy-plans"> 
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="coreos">
 				    	<input type="radio">
 				    	<div class="cloudy-plans-specs">
 				    		<img src="assets/img/soft/coreos.png" class="soft-img m-b-10 img-responsive">
@@ -157,7 +157,8 @@
 		    </div>
 	    </div>
 		<div class="col-md-12">
-			<a href="#cliplink" class="btn btn-block btn-lg btn-success">Create Machine</a>
+			<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5 btncreatevm"><span data-i18n="vm.add.btncreate"></span>
+			</button>
 		</div>
 	</section>
 <div>

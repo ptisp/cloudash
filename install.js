@@ -2,7 +2,6 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 
-var ObjectId = require('mongodb').ObjectID;
 var insertUser = function(db, callback) {
   db.collection('users').insertOne({
     'auth': {

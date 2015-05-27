@@ -5,13 +5,13 @@
       <li class="active">
         <a href="#createaccount" data-toggle="tab">
           <span class="visible-xs"><i class="icon-user f-18"></i></span>
-          <span class="hidden-xs f-16"><i class="icon-user m-r-5"></i> Create Account</span>
+          <span class="hidden-xs f-16"><i class="icon-user m-r-5"></i> <span data-i18n="useracc.tabs.new"></span> </span>
         </a>
       </li>
       <li>
         <a href="#useraccounts" data-toggle="tab">
           <span class="visible-xs"><i class="icon-customers f-16"></i></span>
-          <span class="hidden-xs f-16"><i class="icon-customers f-20 m-r-5"></i> User Accounts</span>
+          <span class="hidden-xs f-16"><i class="icon-customers f-20 m-r-5"></i> <span data-i18n="useracc.tabs.new"></span> </span>
         </a>
       </li>
     </ul>
@@ -19,7 +19,7 @@
       <div class="tab-pane fade active in" id="createaccount">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="m-b-0">Create New Account</h2>
+            <h2 class="m-b-0"><span data-i18n="useracc.new.title"></span></h2>
             <p class="">...</p>
           </div>
         </div>
@@ -29,30 +29,30 @@
           <div class="col-md-6">
             <div class="clip-body">
               <p class="text-left">
-                <span>Full Name</span>
+                <span data-i18n="useracc.new.name"></span>
               </p>
               <div class="input-group">
                 <span class="input-group-addon cloudy"><i class="icon-user"></i></span>
-                <input type="text" class="form-control cloudy" value="your name">
+                <input type="text" class="form-control cloudy" placeholder="Name">
               </div>
             </div>
 
             <div class="clip-body">
               <p class="text-left">
-                <span>Country</span>
+                <span data-i18n="useracc.new.country"></span>
               </p>
               <div class="input-group">
                 <span class="input-group-addon cloudy"><i class="icon-flag"></i></span>
-                <input type="text" class="form-control cloudy" value="your country">
+                <input type="text" class="form-control cloudy" placeholder="Country">
               </div>
             </div>
             <div class="clip-body">
               <p class="text-left">
-                <span>Address</span>
+                <span data-i18n="useracc.new.address"></span>
               </p>
               <div class="input-group">
                 <span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
-                <input type="text" class="form-control cloudy" value="your adress">
+                <input type="text" class="form-control cloudy" placeholder="Adsress">
               </div>
             </div>
           </div>
@@ -60,41 +60,42 @@
           <div class="col-md-6">
             <div class="clip-body">
               <p class="text-left">
-                <span>Email Adress</span>
+                <span data-i18n="useracc.new.email"></span>
               </p>
               <div class="input-group">
                 <span class="input-group-addon cloudy"><i class="icon-email_corporate"></i></span>
-                <input type="text" class="form-control cloudy" value="your email adress" title="">
+                <input type="text" class="form-control cloudy" placeholder="Email">
               </div>
             </div>
 
             <div class="clip-body">
               <p class="text-left">
-                <span>VAT</span>
+                <span data-i18n="useracc.new.vat"></span>
               </p>
               <div class="input-group">
                 <span class="input-group-addon cloudy"><i class="icon-reference"></i></span>
-                <input type="text" class="form-control cloudy" value="your vat" title="">
+                <input type="text" class="form-control cloudy" placeholder="VAT / NIF">
               </div>
             </div>
             <div class="clip-body">
               <p class="text-left">
-                <span>Zip code</span>
+                <span data-i18n="useracc.new.zipcode">e</span>
               </p>
               <div class="input-group">
                 <span class="input-group-addon cloudy"><i class="icon-location_more"></i></span>
-                <input type="text" class="form-control cloudy" value="your zip code">
+                <input type="text" class="form-control cloudy" placeholder="Zip Code">
               </div>
             </div>
           </div>
         </div>
-        <a href="#cliplink" class="btn btn-block btn-lg btn-success">Save</a>
+        <button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5"><span data-i18n="useracc.new.btnsave"></span>
+        </button>
       </div>
 
       <div class="tab-pane fade in" id="useraccounts">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="m-b-0">User Accounts</h2>
+            <h2 class="m-b-0"><span data-i18n="useracc.list.title"></span></h2>
             <p class="">...</p>
           </div>
         </div>
@@ -105,24 +106,24 @@
             <thead>
               <tr>
                 <th><i class="icon-user"></i>
-                  <span>Nome</span>
+                  <span data-i18n="useracc.list.tblhead1"></span>
                 </th>
                 <th><i class="icon-telephone"></i>
-                  <span>Contacto</span>
+                  <span data-i18n="useracc.list.tblhead2"></span>
                 </th>
                 <th><i class="icon-email_corporate"></i>
-                  <span>Email</span>
+                  <span data-i18n="useracc.list.tblhead3"></span>
                 </th>
                 <th><i class="icon-user_accept"></i>
-                  <span>Status</span>
+                  <span data-i18n="useracc.list.tblhead4"></span>
                 </th>
                 <th><i class="icon-managed"></i>
-                  <span>Actions</span>
+                  <span data-i18n="useracc.list.tblhead5"></span>
                 </th>
               </tr>
             </thead>
             <tbody class="userstable">
-              
+
             </tbody>
           </table>
         </div>

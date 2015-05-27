@@ -4,11 +4,9 @@ window.HomeView = Backbone.View.extend({
   },
   test: function(evt) {
     if ($(evt.target).hasClass('f-18')) {
-      console.log($(evt.target).parent().parent().attr('data-user'));
-      console.log($(evt.target).parent().parent().attr('data-name'));
+      console.log($(evt.target).parent().parent().attr('data-id'));
     } else {
-      console.log($(evt.target).parent().attr('data-user'));
-      console.log($(evt.target).parent().attr('data-name'));
+      console.log($(evt.target).parent().attr('data-id'));
     }
 
   },
@@ -34,13 +32,13 @@ window.HomeView = Backbone.View.extend({
       var html = '';
       for (var i = 0; i < vms.length; i++) {
         var icon = '<i class="icon-play f-18 m-r-5 c-green"></i>';
-        var classe = 'class="success"';
+        var classe = 'class="success likehref"';
         if (vms[i].details.status === 'stopped') {
           icon = '<i class="icon-stop f-18 m-r-5 c-red"></i>';
-          classe = 'class="danger"';
+          classe = 'class="danger likehref"';
         } else if (vms[i].details.status === 'review') {
           icon = '<i class="icon-refresh f-18 m-r-5 c-gold"></i>';
-          classe = 'class="default"';
+          classe = 'class="default likehref"';
         }
         var auxip = '';
         for (var j = 0; j < vms[i].details.ip.length; j++) {
@@ -49,7 +47,7 @@ window.HomeView = Backbone.View.extend({
             auxip += ', ';
           }
         }
-        html = '<tr ' + classe + ' data-user="'+vms[i].owner+'" data-name="'+vms[i].name+'"><td>' + icon + ' ' + vms[i].name + '</td>';
+        html = '<tr ' + classe + ' data-id="'+vms[i].id+'"><td>' + icon + ' ' + vms[i].name + '</td>';
         html += '<td>' + auxip + '</td>';
         html += '<td>' + vms[i].details.ram + 'MB</td>';
         html += '<td>' + vms[i].details.disk + 'GB</td>';
@@ -74,6 +72,7 @@ window.HomeView = Backbone.View.extend({
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
     $('.vmtable', this.el).html('');
+    $('.home', this.el).i18n();
     this.getvms();
     return this;
   }

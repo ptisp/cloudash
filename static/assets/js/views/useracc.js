@@ -32,6 +32,7 @@ window.UserAccView = Backbone.View.extend({
     $(this.el).html(this.template(this.model.toJSON()));
     $('.userstable', this.el).html('');
     this.getusers();
+    $('.user-account', this.el).i18n();
     return this;
   }
 

@@ -1,8 +1,14 @@
 window.HeaderView = Backbone.View.extend({
   events: {
+    'click .newvm': 'gtnewvm',
     'click .manprofile': 'gtmprofile',
     'click .manusers': 'gtmusers',
     'click .logout': 'gtlogout'
+  },
+  gtnewvm: function() {
+    app.navigate('/vm/add', {
+      trigger: true
+    });
   },
   gtlogout: function() {
     app.navigate('/login', {

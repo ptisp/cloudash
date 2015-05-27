@@ -5,6 +5,17 @@
     "newvm": "Nova Máquina Virtual",
     "logout": "Sair"
   },
+  "home": {
+    "header1": "Total VMs",
+    "header2": "Memória",
+    "header3": "Disco",
+    "header4": "VMs Activas",
+    "tblhead1": "Nome",
+    "tblhead2": "IP(s)",
+    "tblhead3": "Memória",
+    "tblhead4": "Disco",
+    "tblhead5": "Estado"
+  },
   "userprofile": {
     "tabs": {
       "profile": "Perfil",
@@ -29,6 +40,42 @@
       "newpass": "Nova Password",
       "reppass": "Repetir Password",
       "btnsave": "Actualizar"
+    }
+  },
+  "useracc": {
+    "tabs": {
+      "new": "Novo Utilizador",
+      "list": "Gerir Utilizadores"
+    },
+    "new": {
+      "title": "Criar Novo Utilizador",
+      "name": "Nome",
+      "country": "País",
+      "address": "Morada",
+      "email": "Email",
+      "vat": "NIF",
+      "zipcode": "Código Postal",
+      "btnsave": "Adicionar"
+    },
+    "list": {
+      "title": "Lista de Utilizadores",
+      "tblhead1": "Nome",
+      "tblhead2": "Telefone",
+      "tblhead3": "Email",
+      "tblhead4": "Status",
+      "tblhead5": "Opções"
+    }
+  },
+  "vm": {
+    "add": {
+      "title": "Criar nova Máquina Virtual",
+      "name": "Hostname",
+      "config": "Configuração",
+      "image": "Imagem",
+      "btncreate": "Criar"
+    },
+    "edit": {
+
     }
   }
 }
