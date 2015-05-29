@@ -33,6 +33,9 @@ window.HeaderView = Backbone.View.extend({
     $(this.el).html(this.template(this.model.toJSON()));
     this.getgravatar();
     $('.header', this.el).i18n();
+    if (this.model.get('type') !== 'admin') {
+      $('.manusers', this.el).hide();
+    }
     return this;
   }
 

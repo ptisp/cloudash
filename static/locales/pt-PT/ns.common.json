@@ -55,7 +55,12 @@
       "email": "Email",
       "vat": "NIF",
       "zipcode": "Código Postal",
-      "btnsave": "Adicionar"
+      "btnsave": "Adicionar",
+      "pass": "Password",
+      "rpass": "Repita a Password",
+      "phone": "Telefone",
+      "city" : "Cidade",
+      "type": "Tipo de Conta"
     },
     "list": {
       "title": "Lista de Utilizadores",
@@ -77,5 +82,10 @@
     "edit": {
 
     }
+  },
+  "smenu": {
+    "machines": "Máquinas Virtuais",
+    "dns": "Gestor DNS",
+    "images": "Imagens SO"
   }
 }

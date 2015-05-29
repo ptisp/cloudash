@@ -1,4 +1,4 @@
-window.MenuView = Backbone.View.extend({
+window.VMDetailsView = Backbone.View.extend({
   events: {
   },
 

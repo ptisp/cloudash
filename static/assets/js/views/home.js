@@ -19,7 +19,7 @@ window.HomeView = Backbone.View.extend({
         active++;
       }
     }
-    ram = parseFloat(ram / 1024);
+    ram = parseFloat(ram / 1024).toFixed(1);
     $('.vmtotal', this.el).html(vm);
     $('.ramusage', this.el).html(ram);
     $('.diskusage', this.el).html(hdd);
@@ -31,6 +31,10 @@ window.HomeView = Backbone.View.extend({
     } else {
       var html = '';
       for (var i = 0; i < vms.length; i++) {
+        var user = '';
+        if (vms[i].owner !== this.model.get('username')) {
+          user = '<i class="icon-user f-18 m-r-5 pull-right" title="'+ vms[i].owner +'"></i>';
+        }
         var icon = '<i class="icon-play f-18 m-r-5 c-green"></i>';
         var classe = 'class="success likehref"';
         if (vms[i].details.status === 'stopped') {
@@ -47,9 +51,10 @@ window.HomeView = Backbone.View.extend({
             auxip += ', ';
           }
         }
-        html = '<tr ' + classe + ' data-id="'+vms[i].id+'"><td>' + icon + ' ' + vms[i].name + '</td>';
+        html = '<tr ' + classe + ' data-id="'+vms[i]._id+'"><td>' + icon + ' ' + vms[i].details.hostname + ' '+ user +'</td>';
         html += '<td>' + auxip + '</td>';
-        html += '<td>' + vms[i].details.ram + 'MB</td>';
+        if (vms[i].details.ram > 1024) html += '<td>' + vms[i].details.ram/1024 + 'GB</td>';
+        else html += '<td>' + vms[i].details.ram + 'MB</td>';
         html += '<td>' + vms[i].details.disk + 'GB</td>';
         html += '<td>' + vms[i].details.status + '</td>';
         $('.vmtable', this.el).append(html);
@@ -58,7 +63,11 @@ window.HomeView = Backbone.View.extend({
   },
   getvms: function() {
     var self = this;
-    modem('GET', 'vm',
+    var data = {
+      'type': this.model.get('type'),
+      'owner': this.model.get('username')
+    };
+    modem('POST', 'vm/list',
       function(json) {
         self.fillvmtable(json);
         self.fillheaders(json);
@@ -66,7 +75,7 @@ window.HomeView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         console.log(json);
-      }
+      }, data
     );
   },
   render: function() {

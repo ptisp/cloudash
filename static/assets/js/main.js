@@ -106,7 +106,9 @@ var Router = Backbone.Router.extend({
             model: window.profile
           }).render().el);
           window.scrollTo(0, 0);
-          $('#sidemenu').html(new MenuView().render().el);
+          $('#sidemenu').html(new MenuView({
+            model: window.profile
+          }).render().el);
           $('#footer').html(new FooterView().render().el);
         });
       });

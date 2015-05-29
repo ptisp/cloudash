@@ -16,12 +16,13 @@ app.post('/api/user/login', auth, api.user.validateLogin);
 app.post('/api/user', auth, api.user.createUser);
 app.put('/api/user', auth, api.user.updateUser);
 app.get('/api/listusers', auth, api.user.listUsers);
+app.get('/api/user/:user', auth, api.user.getUser);
 app.del('/api/remove/:user', auth, api.user.removeUser);
 
 app.post('/api/vm', auth, api.vm.createVm);
 app.del('/api/vm/:id', auth, api.vm.deleteVm);
 app.get('/api/vm/:id', auth, api.vm.vmDetails);
-app.get('/api/vm', auth, api.vm.vmList);
+app.post('/api/vm/list', auth, api.vm.vmList);
 
 var port = process.env.PORT || 8080;
 
