@@ -2,7 +2,18 @@ window.UserAccView = Backbone.View.extend({
   events: {
     'keyup .ipemail': 'availablemail',
     'keyup .iprepass': 'matchpass',
-    'click .btnadduser': 'adduser'
+    'click .btnadduser': 'adduser',
+    'click .btnedit': 'edituser',
+    'click .btndelete': 'deleteuser'
+  },
+  edituser: function(e) {
+    console.log($(e.target).attr('data-id'));
+    app.navigate('manage/user/'+$(e.target).attr('data-id'), {
+      trigger: true
+    });
+  },
+  deleteuser: function(e) {
+    console.log($(e.target).attr('data-id'));
   },
   adduser: function() {
     if (this.valemail && this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {
@@ -25,7 +36,6 @@ window.UserAccView = Backbone.View.extend({
         'type': $('.iptype').val(),
         'status': 'active'
       };
-      console.log(user);
       modem('POST', 'user',
         function(json) {
           console.log(json);
@@ -69,7 +79,6 @@ window.UserAccView = Backbone.View.extend({
     }, 2500);
   },
   matchpass: function() {
-    console.log(this.passwordcheck($('.ippass').val(), $('.iprepass').val()));
     if (this.passwordcheck($('.ippass').val(), $('.iprepass').val()) === true) {
       $('.iprepass').css("border-color", "green");
     } else {
@@ -87,7 +96,7 @@ window.UserAccView = Backbone.View.extend({
       if (this.model.get('username') === users[i].auth.username) {
         enabled = 'disabled';
       }
-      html += '<td><button type="button" class="btn btn-xs btn-success" data-user="'+users[i].auth.username+'"><i class="icon-managed"></i> Edit</button><button type="button" class="btn btn-xs btn-danger" data-user="'+users[i].auth.username+'" '+enabled+'><i class="icon-delete"></i> Delete</button></td></tr>';
+      html += '<td><button type="button" class="btn btn-xs btn-success btnedit" data-id="'+users[i]._id+'"><i class="icon-managed"></i> Edit</button><button type="button" class="btn btn-xs btn-danger btndelete" data-id="'+users[i]._id+'" '+enabled+'><i class="icon-delete"></i> Delete</button></td></tr>';
       $('.userstable', this.el).append(html);
     }
   },

@@ -28,6 +28,7 @@ var Router = Backbone.Router.extend({
     'vm/add': 'vmadd',
     'vm/edit': 'vmedit',
     'manage/profile': 'manprofile',
+    'manage/user/:id': 'manuserdetails',
     'manage/account': 'manaccount',
     'domain/dns': 'domaindns',
     '*notFound': 'index'
@@ -65,6 +66,19 @@ var Router = Backbone.Router.extend({
         self.loadProfile(function () {
           var v = new VMEditView({
             model: window.profile
+          });
+          self.showView(v, $('#content'));
+        });
+      });
+    });
+  },
+  manuserdetails: function(id) {
+    var self = this;
+    templateLoader.load(["UserDetailsView"], function() {
+      self.verifyLogin(function() {
+        self.loadProfile(function () {
+          var v = new UserDetailsView({
+            id: id
           });
           self.showView(v, $('#content'));
         });
