@@ -1,3 +1,162 @@
 <div class="vm-edit">
-  VM Edit View
+
+
+	<section class="row bg-white">
+
+		<div class="col-md-12">
+			<h2 class="m-b-0 m-t-0"><span data-i18n="vm.edit.titlevm"></span></h2>
+			<p class="">...</p>
+			<hr>
+		</div>
+
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<table class="table clip">
+			         <thead>
+						<tr>
+							<th><i class="icon-cloud"></i>
+								<span data-i18n="home.tblhead1"></span>
+							</th>
+							<th><i class="icon-ips"></i>
+								<span data-i18n="home.tblhead2"></span>
+							</th>
+							<th><i class="icon-ram_memory"></i>
+								<span data-i18n="home.tblhead3"></span>
+							</th>
+							<th><i class="icon-hardware"></i>
+								<span data-i18n="home.tblhead4"></span>
+							</th>
+							<th><i class="icon-cloud_activated"></i>
+								<span data-i18n="home.tblhead5"></span>
+							</th>
+						</tr>
+			        </thead>
+			      <tbody>
+			        <tr class="success">
+						<td><i class="icon-play f-18 m-r-5 c-green"></i> powerto</td>
+						<td>YT 124 856 565</td>
+						<td>12GB</td>
+						<td>45GB</td>
+						<td>Running</td>
+			        </tr>
+			      </tbody>
+			    </table>
+		    </div>
+	    </div>
+	</section>
+
+	<section class="row bg-white">
+
+		<div class="col-md-12">
+			<h2 class="m-b-0 m-t-0"><span data-i18n="vm.edit.title"></span></h2>
+			<p class="">...</p>
+			<hr>
+		</div>
+	
+		<div class="col-md-12">
+			<div class="clip-body">
+				<p class="text-left"><span data-i18n="vm.add.name"></span></p>
+				<div class="input-group">
+					<span class="input-group-addon cloudy"><i class="icon-cloud_servers"></i></span>
+					<input type="text" class="form-control cloudy hostname" placeholder="VM Name">
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<p class="text-left"><span>Configuration</span></p>
+			<div class="row">
+			    <div class="clip-body">
+					<div class="col-md-4">
+				        <div class="clip-body">
+				        	<p class="text-left">RAM GB</p>
+							<div class="range range-cloudy">
+								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value">
+								<output id="rangeInfo">1</output>
+							</div>
+				        </div>
+				    </div>
+				    <div class="col-md-4">
+				        <div class="clip-body">
+				        	<p class="text-left">DISK SSD</p>
+								<div class="range range-cloudy">
+									<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
+									<output id="rangeGold">1</output>
+								</div>
+				        </div>
+				    </div>
+				    <div class="col-md-4">
+				        <div class="clip-body">
+				        	<p class="text-left">CPU GB</p>
+							<div class="range range-cloudy">
+								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
+								<output id="rangeDanger">1</output>
+							</div>
+				        </div>
+				    </div>
+				</div>
+		    </div>
+	    </div>
+
+	    <div class="col-md-12">
+		    <div class="clip-body">
+				<p class="text-left"><span data-i18n="vm.add.image"></span></p>
+
+				<div class="btn-group plans soft w-100" data-toggle="buttons">
+
+				    <label class="btn btn-default col-sm-2 cloudy-plans img active" data-img="ubuntu">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<img src="assets/img/soft/ubuntu.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>Ubuntu</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="debian">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<img src="assets/img/soft/debian.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>Debian</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="centos">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<img src="assets/img/soft/centos.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>CentOS</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="fedora">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<img src="assets/img/soft/fedora.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>Fedora</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="opensuse">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<img src="assets/img/soft/opensuse.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>OpenSuse</span></p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-default col-sm-2 img cloudy-plans" data-img="coreos">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<img src="assets/img/soft/coreos.png" class="soft-img m-b-10 img-responsive">
+				    		<p class="b03"><span>CoreOS</span></p>
+				    	</div>
+				    </label>
+				</div>
+		    </div>
+	    </div>
+
+	    <div class="col-md-12">
+			<button type="button" class="btn btn-block btn-lg btn-success m-b-5"><span data-i18n="vm.edit.btnedit"></span></button>
+		</div>
+    </section>
 <div>

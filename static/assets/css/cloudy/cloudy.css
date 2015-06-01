@@ -622,7 +622,6 @@ table.table.clip th {
 }
 /* SECTION */
 section {
-  display: inline-block;
   padding: 30px 0px 30px 0px;
   margin-bottom: 30px;
 }

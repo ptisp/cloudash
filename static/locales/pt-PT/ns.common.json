@@ -80,7 +80,10 @@
       "btncreate": "Criar"
     },
     "edit": {
-
+      "titlevm": "Sua VM",
+      "title": "Editar VM",
+      "btnedit": "Guardar"
+      
     }
   },
   "smenu": {
