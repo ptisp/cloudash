@@ -6,7 +6,7 @@ window.UserAccView = Backbone.View.extend({
   },
   adduser: function() {
     if (this.valemail && this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {
-      var data = {
+      var user = {
         'auth': {
           'username': $('.ipemail').val(),
           'password': CryptoJS.MD5($('.iprepass').val()).toString()
@@ -25,7 +25,16 @@ window.UserAccView = Backbone.View.extend({
         'type': $('.iptype').val(),
         'status': 'active'
       };
-      console.log(data);
+      console.log(user);
+      modem('POST', 'user',
+        function(json) {
+          console.log(json);
+        },
+        function(xhr, ajaxOptions, thrownError) {
+          var json = JSON.parse(xhr.responseText);
+          console.log(json);
+        }, user
+      );
     } else {
       console.log('Pls check email and/or password');
     }
