@@ -1,3 +1,5 @@
+var timer = 2500;
+
 var modem = function(type, url, sucess, error, data) {
   $.ajax({
     async: true,

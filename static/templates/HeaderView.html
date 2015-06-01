@@ -12,48 +12,25 @@
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-menu"></span>
 							</button>
-						  <img src="assets/img/cloudy-logo-vertical.png" class="img-responsive m-l-15 m-t-15"/>
+							<img src="assets/img/cloudy-logo-vertical.png" class="img-responsive m-l-15 m-t-15" />
 						</div>
 						<div class="navbar-collapse collapse sidebar-navbar-collapse">
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="#"><i class="icon-cloud_servers f-22 m-r-10"></i> <span class="f-18">Machines</span></a></li>
 								<li><a href="#"><i class="icon-wireframe f-22 m-r-10"></i> <span class="f-18">DNS</span></a></li>
 								<li><a href="#"><i class="icon-vnc_console f-22 m-r-10"></i> <span class="f-18">Images</span></a></li>
-									<li class="dropdown">
-									    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-marker_add f-22 m-r-10"></i> <span class="f-18">Add-ons</span> <b class="caret"></b></a>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-										</ul>
-									</li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-marker_add f-22 m-r-10"></i> <span class="f-18">Add-ons</span> <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+									</ul>
+								</li>
 								<li><a href="#"><i class="icon-payments f-22 m-r-10"></i> <span class="f-18">Billing</span></a></li>
 								<li><a href="#"><i class="icon-support f-22 m-r-10"></i> <span class="f-18">Support</span> <span class="badge badge-success f-right">3</span></a></li>
 							</ul>
 						</div>
 					</nav>
-				</div>
-			</div>
-
-			<!-- ALERTS -->
-			<div class="col-sm-12" style="display: none">
-				<div class="alert alert-success alert-dismissable">
-		          <button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
-		          <strong>Success Alert!</strong> You successfully read this important alert message.
-		        </div>
-
-				<div class="alert alert-danger alert-dismissable">
-		          <button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
-		          <strong>Danger Alert!</strong> Change a few things up and try submitting again.
-		        </div>
-
-		        <div class="alert alert-warning alert-dismissable">
-		          <button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
-		          <strong>Warning Alert!</strong> Better check yourself, you're not looking too good.
-		        </div>
-
-				<div class="alert alert-info alert-dismissable">
-					<button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
-					<strong>Info Alert!</strong> This alert needs your attention, but it's not super important.
 				</div>
 			</div>
 
@@ -63,42 +40,105 @@
 					<span class="p-relative">
 						<img src="http://www.gravatar.com/avatar/bf00250c419f0d09475f70558c373acc" class="dropdown-toggle img-responsive m-r-15 headgravatar" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
 						<ul class="dropdown-menu dropdown-standard">
-							<li><a class="manprofile"><span class="likehref" data-i18n="header.manprofile"></span></a></li>
-							<li><a class="manusers"><span class="likehref" data-i18n="header.manusers"></span></a></li>
+							<li>
+								<a class="manprofile">
+									<span class="likehref" data-i18n="header.manprofile"></span>
+								</a>
+							</li>
+							<li>
+								<a class="manusers">
+									<span class="likehref" data-i18n="header.manusers"></span>
+								</a>
+							</li>
 							<li class="divider"></li>
-							<li><a class="logout"><span class="likehref" data-i18n="header.logout"></span></a></li>
+							<li>
+								<a class="logout">
+									<span class="likehref" data-i18n="header.logout"></span>
+								</a>
+							</li>
 						</ul>
 					</span>
 					<div class="profile-usertitle">
 						<div class="profile-usertitle-name">
-							<%= name %>
+							<%=n ame %>
 						</div>
 						<div class="profile-usertitle-job">
-							<%= username %>
+							<%=u sername %>
 						</div>
 					</div>
 				</div>
-		    </div>
+			</div>
 
-		    <div class="col-sm-3"></div>
+			<div class="col-sm-3"></div>
 
 			<!-- DROPDOWN PROFILE BUTTON -->
-		    <div class="col-sm-6">
+			<div class="col-sm-6">
 				<div class="btn-group f-right user-drop m-l-5">
 					<button class="btn btn-cloudy-light btn-lg cloudy ropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">
-						<i class="icon-user f-18 "></i> <span class="caret"></span>
+						<i class="icon-user f-18 "></i>
+						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu dropdown-standard user-menu">
-						<li><a class="manprofile"><span class="likehref" data-i18n="header.manprofile"></span></a></li>
-						<li><a class="manusers"><span class="likehref" data-i18n="header.manusers"></span></a></li>
+						<li>
+							<a class="manprofile">
+								<span class="likehref" data-i18n="header.manprofile"></span>
+							</a>
+						</li>
+						<li>
+							<a class="manusers">
+								<span class="likehref" data-i18n="header.manusers"></span>
+							</a>
+						</li>
 						<li class="divider"></li>
-						<li><a class="logout"><span class="likehref" data-i18n="header.logout"></span></a></li>
+						<li>
+							<a class="logout">
+								<span class="likehref" data-i18n="header.logout"></span>
+							</a>
+						</li>
 					</ul>
-		        </div>
-		    	<button type="button" class="btn btn-xl btn-cloudy btn-icon w-min-250 f-right add-machine newvm"><span data-i18n="header.newvm"></span><i class="icon-cloud_servers"></i></button>
-		    </div>
+				</div>
+				<button type="button" class="btn btn-xl btn-cloudy btn-icon w-min-250 f-right add-machine newvm">
+					<span data-i18n="header.newvm"></span><i class="icon-cloud_servers"></i></button>
+			</div>
 
-	    </div>
-    </div>
+		</div>
 
-<div>
+		<!-- ALERTS -->
+		<div class="col-sm-12">
+			<div class="alert alert-success alert-dismissable" style="display: none">
+				<button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
+				<strong>
+					<span class="suc-title">Success Alert!</span>
+				</strong>
+				<span class="suc-msg">You successfully read this important alert message.</span>
+			</div>
+
+			<div class="alert alert-danger alert-dismissable" style="display: none">
+				<button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
+				<strong>
+					<span class="dng-title">Danger Alert!</span>
+				</strong>
+				<span class="dng-msg">Change a few things up and try submitting again.</span>
+			</div>
+
+			<div class="alert alert-warning alert-dismissable" style="display: none">
+				<button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
+				<strong>
+					<span class="wrn-title">Warning Alert!</span>
+				</strong>
+				<span class="wrn-msg">Better check yourself, you're not looking too good.</span>
+			</div>
+
+			<div class="alert alert-info alert-dismissable" style="display: none">
+				<button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
+				<strong>
+					<span class="info-title">Info Alert!</span>
+				</strong>
+				<span class="info-title">This alert needs your attention, but it's not super important.</span>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div>
