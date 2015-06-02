@@ -296,6 +296,10 @@ body {
   border: none ;
   background-color: #29b5c7;
 }
+/*  PROGRESS BAR */
+.progress-bar-cloudy{
+  background-color: #29b5c7;
+}
 /* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */
 /*  1199px */
 @media(max-width: 1199px) {
@@ -691,4 +695,7 @@ section {
 .likehref{
   cursor: pointer;
   cursor: hand; 
+}
+.p-r-0 {
+  margin-right: 0px !important;
 }
