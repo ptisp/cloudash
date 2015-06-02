@@ -38,8 +38,14 @@
 			<div class="tab-pane fade active in" id="power">
 
 				<div class="row">
+
+					<div class="col-md-12">
+			            <h2 class="m-b-0"><span>Power</span></h2>
+			            <p class="">...</p>
+			            <hr>
+			        </div>
 					<div class="col-md-3 stat">
-						<div class="pallete-item">
+						<div class="pallete-item m-b-0">
 							<dl class="palette palette-default pal">
 								<i class="icon-ram_memory f-22 m-r-10"></i>
 								<span class="f-16">Memória</span>
@@ -54,7 +60,7 @@
 					</div>
 
 					<div class="col-md-3 stat">
-						<div class="pallete-item">
+						<div class="pallete-ite mm-b-0">
 							<dl class="palette palette-default pal">
 								<i class="icon-cpu f-22 m-r-10"></i>
 								<span class="f-16">Processors</span>
@@ -69,7 +75,7 @@
 					</div>
 
 					<div class="col-md-3 stat">
-						<div class="pallete-item">
+						<div class="pallete-item m-b-0">
 							<dl class="palette palette-default pal">
 								<i class="icon-hardware f-22 m-r-10"></i>
 								<span class="f-16">Storage</span>
@@ -84,7 +90,7 @@
 					</div>
 
 					<div class="col-md-3 stat">
-						<div class="pallete-item">
+						<div class="pallete-item m-b-0">
 							<dl class="palette palette-default pal">
 								<i class="icon-cloud_activated f-22 m-r-10"></i>
 								<span class="f-16">State</span>
@@ -94,10 +100,11 @@
 							</dl>
 						</div>
 					</div>
+					<hr>
 			    </div>
 
 				<div id="collapseOne" class="panel-collapse collapse" style="height: auto;">
-					<hr>
+
 					<div class="row">
 						<div class="col-md-6">
 						    <div class="clip-body">
@@ -196,7 +203,13 @@
 			</div>
 
 			<div class="tab-pane fade in" id="console">
+				
 				<div class="row">
+					<div class="col-md-12">
+			            <h2 class="m-b-0"><span>Console</span></h2>
+			            <p class="">...</p>
+			            <hr>
+			        </div>
 					<div class="col-md-12">
 						<div style=" width: 100%; height: 240px; margin-bottom: 20px; background-color: #000"></div>
 					</div>
@@ -224,6 +237,11 @@
 
 			<div class="tab-pane fade in" id="stats">
 				<div class="row">
+					<div class="col-md-12">
+			            <h2 class="m-b-0"><span>Stats</span></h2>
+			            <p class="">...</p>
+			            <hr>
+			        </div>
 					<div class="col-md-6 m-b-30">
 						<p class="text-left">CPU Usage</p>
 						<img src="assets/img/stats/machine-cpu.png" class="img-responsive">
@@ -245,14 +263,80 @@
 
 			<div class="tab-pane fade in" id="storage">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-12">
+			            <h2 class="m-b-0"><span>Storage</span></h2>
+			            <p class="">...</p>
+			            <hr>
+			        </div>
 
+					<div class="col-md-12">
+						<div class="table-responsive">
+				          <table class="table table-striped table-hover  clip">
+				            <thead>
+				              <tr>
+				                <th>
+				                	<i class="icon-cloud"></i>
+				                  	<span>Disk Name</span>
+				                </th>
+				                <th>
+				                	<i class="icon-hardware"></i>
+				                  	<span>Type</span>
+				                </th>
+				                <th>
+				                	<i class="icon-storage_base"></i>
+				                	<span>Size</span>
+				                </th>
+				                <th>
+				                	<i class="icon-managed"></i>
+				                 	<span>Options</span>
+				                </th>
+				              </tr>
+				            </thead>
+				            <tbody>
+				            	<tr>
+				            		<td>Powerto</td>
+				            		<td>SSD</td>
+				            		<td>45GB</td>
+				            		<td>
+				            			<button type="button" class="btn btn-xs btn-success" ><i class="icon-managed"></i> Edit</button>
+				            			<button type="button" class="btn btn-xs btn-danger"><i class="icon-delete"></i> Delete</button>
+				            		</td>
+				            	</tr>
+				            </tbody>
+				          </table>
+				        </div>
+					</div>
+
+					<div class="col-md-4">
+						<select class="form-control cloudy btn-block">
+							<option>SSD</option>
+							<option>HDD</option>
+						</select>
+					</div>
+
+					<div class="col-md-4">
+						<select class="form-control cloudy btn-block">
+							<option>20GB</option>
+							<option>45GB</option>
+							<option>90GB</option>
+							<option>180GB</option>
+							<option>300GB</option>
+						</select>
+					</div>
+
+					<div class="col-md-4">
+						<button type="button" class="btn btn-block btn-lg btn-success disabled" ><i class="icon-accept"></i> Create</button>
 					</div>
 				</div>
 			</div>
 
 			<div class="tab-pane fade in" id="settings">
 				<div class="row">
+					<div class="col-md-12">
+			            <h2 class="m-b-0"><span>Settings</span></h2>
+			            <p class="">...</p>
+			            <hr>
+			        </div>
 					<div class="col-md-6">
 
 					</div>
