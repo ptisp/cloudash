@@ -1,0 +1,91 @@
+{
+  "header": {
+    "manprofile": "Profile",
+    "manusers": "Users",
+    "newvm": "New Virtual Machine",
+    "logout": "Logout"
+  },
+  "home": {
+    "header1": "Number of VMs",
+    "header2": "Memory",
+    "header3": "Storage",
+    "header4": "Active VMs",
+    "tblhead1": "Name",
+    "tblhead2": "IP(s)",
+    "tblhead3": "Memory",
+    "tblhead4": "Storage",
+    "tblhead5": "State"
+  },
+  "userprofile": {
+    "tabs": {
+      "profile": "Profile",
+      "security": "Security"
+    },
+    "profile": {
+      "msg": "Click the button bellow to edit your profile.",
+      "btnedit": "Profile Edit",
+      "name": "Name",
+      "country": "Country",
+      "address": "Address",
+      "email": "Email",
+      "nif": "VAT",
+      "zip": "Zip Code",
+      "btnsave": "Update"
+    },
+    "security": {
+      "msg": "Click the button bellow to change your password.",
+      "btnedit": "Edit Password",
+      "newpass": "New Password",
+      "reppass": "Retype Password",
+      "btnsave": "Update"
+    }
+  },
+  "useracc": {
+    "tabs": {
+      "new": "New User",
+      "list": "Manage Users"
+    },
+    "new": {
+      "title": "Create New User",
+      "name": "Name",
+      "country": "Country",
+      "address": "Address",
+      "email": "Email",
+      "vat": "VAT",
+      "zipcode": "Zip Code",
+      "btnsave": "Create",
+      "pass": "Password",
+      "rpass": "Retype Password",
+      "phone": "Phone",
+      "city" : "City",
+      "type": "User type"
+    },
+    "list": {
+      "title": "Users List",
+      "tblhead1": "Name",
+      "tblhead2": "Phone",
+      "tblhead3": "Email",
+      "tblhead4": "Status",
+      "tblhead5": "Options"
+    }
+  },
+  "vm": {
+    "add": {
+      "title": "Create New Virtual Machine",
+      "name": "Hostname",
+      "config": "Setup",
+      "image": "Image",
+      "btncreate": "Create"
+    },
+    "edit": {
+      "titlevm": "Your VM",
+      "title": "Edit VM",
+      "btnedit": "Save"
+    }
+  },
+  "smenu": {
+    "machines": "Virtual Machines",
+    "dns": "DNS Manager",
+    "images": "OS Images"
+  }
+}

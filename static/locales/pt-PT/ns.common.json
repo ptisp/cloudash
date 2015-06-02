@@ -19,9 +19,7 @@
   "userprofile": {
     "tabs": {
       "profile": "Perfil",
-      "security": "Segurança",
-      "notifications": "Notificações",
-      "alerts": "Alertas"
+      "security": "Segurança"
     },
     "profile": {
       "msg": "Pode editar o seu perfil no botão abaixo.",
@@ -83,7 +81,7 @@
       "titlevm": "Sua VM",
       "title": "Editar VM",
       "btnedit": "Guardar"
-      
+
     }
   },
   "smenu": {
