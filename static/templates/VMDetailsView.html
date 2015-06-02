@@ -1,3 +1,256 @@
 <div class="vm-details">
-  VM Details
+	<!-- tab light -->
+	<div class="row">
+		<ul class="nav nav-tabs cloudy bordered">
+			<li class="active">
+				<a href="#power" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-user f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-on m-r-5"></i><span>Power</span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#console" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-lock f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-vnc_console m-r-5"></i><span>Console</span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#stats" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-user f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-graph m-r-5"></i><span>Stats</span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#storage" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-lock f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-storage_medium m-r-5"></i><span>Storage</span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#settings" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-user f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-managed m-r-5"></i><span>Settings</span></span>
+				</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div class="tab-pane fade active in" id="power">
+
+				<div class="row">
+					<div class="col-md-3 stat">
+						<div class="pallete-item">
+							<dl class="palette palette-default pal">
+								<i class="icon-ram_memory f-22 m-r-10"></i>
+								<span class="f-16">Memória</span>
+							</dl>
+							<dl class="palette palette-default-hover pal">
+								<span class="f-22 c-blue-cl ramusage">12GB</span>
+							</dl>
+						</div>
+					</div>
+
+					<div class="col-md-3 stat">
+						<div class="pallete-item">
+							<dl class="palette palette-default pal">
+								<i class="icon-cpu f-22 m-r-10"></i>
+								<span class="f-16">Processors</span>
+							</dl>
+							<dl class="palette palette-default-hover pal">
+								<span class="f-22 c-blue-cl">2</span>
+							</dl>
+						</div>
+					</div>
+
+					<div class="col-md-3 stat">
+						<div class="pallete-item">
+							<dl class="palette palette-default pal">
+								<i class="icon-hardware f-22 m-r-10"></i>
+								<span class="f-16">Storage</span>
+							</dl>
+							<dl class="palette palette-default-hover pal">
+								<span class="f-22 c-blue-cl diskusage">135GB</span>
+							</dl>
+						</div>
+					</div>
+
+					<div class="col-md-3 stat">
+						<div class="pallete-item">
+							<dl class="palette palette-default pal">
+								<i class="icon-cloud_activated f-22 m-r-10"></i>
+								<span class="f-16">State</span>
+							</dl>
+							<dl class="palette palette-default-hover pal">
+								<span class="f-22 c-green"><i class="icon-play m-r-10"></i> Running</span>
+							</dl>
+						</div>
+					</div>
+			    </div>
+
+				<div id="collapseOne" class="panel-collapse collapse" style="height: auto;">
+					<hr>
+					<div class="row">
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.profile.name"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-user"></i></span>
+									<input type="text" class="form-control cloudy pname" placeholder="Name">
+								</div>
+						    </div>
+
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.profile.country"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-flag"></i></span>
+									<input type="text" class="form-control cloudy pcountry" placeholder="County">
+								</div>
+						    </div>
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.profile.address"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
+									<input type="text" class="form-control cloudy paddress" placeholder="Address">
+								</div>
+						    </div>
+					    </div>
+
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.profile.email"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-email_corporate"></i></span>
+									<input type="text" class="form-control cloudy pemail" placeholder="Email">
+								</div>
+						    </div>
+
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.profile.nif"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-reference"></i></span>
+									<input type="text" class="form-control cloudy pnif" placeholder="NIF">
+								</div>
+						    </div>
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.profile.zip"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-location_more"></i></span>
+									<input type="text" class="form-control cloudy pzip" placeholder="Zip Code">
+								</div>
+						    </div>
+						</div>
+					</div>
+					<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success"><span data-i18n="userprofile.profile.btnsave"></span>
+					</button>
+				</div>
+			</div>
+
+			<div class="tab-pane fade in" id="console">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="profile-usercloudy clip-body">
+							<span class="p-relative">
+								<img src="http://www.gravatar.com/avatar/" class="dropdown-toggle img-responsive m-r-15 profilegravatar" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
+							</span>
+							<div class="profile-usertitle">
+								<div class="profile-usertitle-name">
+									
+								</div>
+								<div class="profile-usertitle-job">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<p class="" data-i18n="userprofile.security.msg"></p>
+						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success btn-icon m-b-5"><span data-i18n="userprofile.security.btnedit"></span><i class="icon-lock"></i>
+						</button>
+					</div>
+				</div>
+
+				<div id="collapseTwo" class="panel-collapse collapse" style="height: auto;">
+					<hr>
+					<div class="row">
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.security.newpass"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
+									<input type="password" class="form-control cloudy" placeholder="New Password">
+								</div>
+						    </div>
+					    </div>
+
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.security.reppass"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-unlock"></i></span>
+									<input type="password" class="form-control cloudy" placeholder="Repeat Password">
+								</div>
+						    </div>
+						</div>
+					</div>
+					<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success"><span data-i18n="userprofile.security.btnsave"></span>
+					</button>
+				</div>
+			</div>
+
+			<div class="tab-pane fade in" id="stats">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="profile-usercloudy clip-body">
+							<span class="p-relative">
+								<img src="http://www.gravatar.com/avatar/" class="dropdown-toggle img-responsive m-r-15 profilegravatar" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
+							</span>
+							<div class="profile-usertitle">
+								<div class="profile-usertitle-name">
+									
+								</div>
+								<div class="profile-usertitle-job">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<p class="" data-i18n="userprofile.security.msg"></p>
+						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTree" class="btn btn-block btn-lg btn-success btn-icon m-b-5"><span data-i18n="userprofile.security.btnedit"></span><i class="icon-lock"></i>
+						</button>
+					</div>
+				</div>
+
+				<div id="collapseTree" class="panel-collapse collapse" style="height: auto;">
+					<hr>
+					<div class="row">
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.security.newpass"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
+									<input type="password" class="form-control cloudy" placeholder="New Password">
+								</div>
+						    </div>
+					    </div>
+
+						<div class="col-md-6">
+						    <div class="clip-body">
+								<p class="text-left"><span data-i18n="userprofile.security.reppass"></span></p>
+								<div class="input-group">
+									<span class="input-group-addon cloudy"><i class="icon-unlock"></i></span>
+									<input type="password" class="form-control cloudy" placeholder="Repeat Password">
+								</div>
+						    </div>
+						</div>
+					</div>
+					<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTree" class="btn btn-block btn-lg btn-success"><span data-i18n="userprofile.security.btnsave"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
 <div>
