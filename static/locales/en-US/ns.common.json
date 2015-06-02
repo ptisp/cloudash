@@ -22,7 +22,7 @@
       "security": "Security"
     },
     "profile": {
-      "msg": "Click the button bellow to edit your profile.",
+      "msg": "Click the button below to edit your profile.",
       "btnedit": "Profile Edit",
       "name": "Name",
       "country": "Country",
@@ -33,7 +33,7 @@
       "btnsave": "Update"
     },
     "security": {
-      "msg": "Click the button bellow to change your password.",
+      "msg": "Click the button below to change your password.",
       "btnedit": "Edit Password",
       "newpass": "New Password",
       "reppass": "Retype Password",

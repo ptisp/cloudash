@@ -1,0 +1,91 @@
+{
+  "header": {
+    "manprofile": "Perfil",
+    "manusers": "Usuarios",
+    "newvm": "Nueva Máquina Virtual",
+    "logout": "Cerrar Sesión"
+  },
+  "home": {
+    "header1": "Número de VMs",
+    "header2": "Memoria",
+    "header3": "Disco",
+    "header4": "VMs Activo",
+    "tblhead1": "Nombre",
+    "tblhead2": "IP(s)",
+    "tblhead3": "Memoria",
+    "tblhead4": "Disco",
+    "tblhead5": "Estado"
+  },
+  "userprofile": {
+    "tabs": {
+      "profile": "Perfil",
+      "security": "Seguridad"
+    },
+    "profile": {
+      "msg": "Clic en el botón de abajo para editar su perfil.",
+      "btnedit": "Editar Perfil",
+      "name": "Nombre",
+      "country": "País",
+      "address": "Dirección",
+      "email": "Email",
+      "nif": "NIF",
+      "zip": "Código Postal",
+      "btnsave": "Actualizar"
+    },
+    "security": {
+      "msg": "Clic en el botón de abajo para cambiar tu contraseña.",
+      "btnedit": "Editar Contraseña",
+      "newpass": "Nueva Contraseña",
+      "reppass": "Vuelva A Escribir La Contraseña",
+      "btnsave": "Actualizar"
+    }
+  },
+  "useracc": {
+    "tabs": {
+      "new": "Nuevo Usuario",
+      "list": "Administrar Usuarios"
+    },
+    "new": {
+      "title": "Crear Nuevo Usuario",
+      "name": "Nombre",
+      "country": "País",
+      "address": "Dirección",
+      "email": "Email",
+      "vat": "NIF",
+      "zipcode": "Código Postal",
+      "btnsave": "Crear",
+      "pass": "Contraseña",
+      "rpass": "Vuelva A Escribir La Contraseña",
+      "phone": "Teléfono",
+      "city" : "Ciudad",
+      "type": "Tipo de Usuario"
+    },
+    "list": {
+      "title": "Lista de Usuarios",
+      "tblhead1": "Nombre",
+      "tblhead2": "Teléfono",
+      "tblhead3": "Email",
+      "tblhead4": "Estado",
+      "tblhead5": "Opciones"
+    }
+  },
+  "vm": {
+    "add": {
+      "title": "Crear Nueva Máquina Virtual",
+      "name": "Hostname",
+      "config": "Configurar",
+      "image": "Imagen",
+      "btncreate": "Crear"
+    },
+    "edit": {
+      "titlevm": "Su VM",
+      "title": "Editar VM",
+      "btnedit": "Guardar"
+    }
+  },
+  "smenu": {
+    "machines": "Máquinas Virtuales",
+    "dns": "Administrador de DNS",
+    "images": "Imagen SO"
+  }
+}
