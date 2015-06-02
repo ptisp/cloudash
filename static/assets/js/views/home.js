@@ -5,8 +5,14 @@ window.HomeView = Backbone.View.extend({
   test: function(evt) {
     if ($(evt.target).hasClass('f-18')) {
       console.log($(evt.target).parent().parent().attr('data-id'));
+      app.navigate('/vm/edit/'+$(evt.target).parent().parent().attr('data-id'), {
+        trigger: true
+      });
     } else {
       console.log($(evt.target).parent().attr('data-id'));
+      app.navigate('/vm/edit/'+$(evt.target).parent().attr('data-id'), {
+        trigger: true
+      });
     }
 
   },
