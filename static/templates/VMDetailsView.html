@@ -5,31 +5,31 @@
 			<li class="active">
 				<a href="#power" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-user f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-on m-r-5"></i><span>Power</span></span>
+					<span class="hidden-xs f-16"><i class="icon-on m-r-5"></i><span data-i18n="vm.edit.tab.power"></span></span>
 				</a>
 			</li>
 			<li>
 				<a href="#console" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-lock f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-vnc_console m-r-5"></i><span>Console</span></span>
+					<span class="hidden-xs f-16"><i class="icon-vnc_console m-r-5"></i><span data-i18n="vm.edit.tab.console"></span></span>
 				</a>
 			</li>
 			<li>
 				<a href="#stats" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-user f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-graph m-r-5"></i><span>Stats</span></span>
+					<span class="hidden-xs f-16"><i class="icon-graph m-r-5"></i><span data-i18n="vm.edit.tab.stats"></span></span>
 				</a>
 			</li>
 			<li>
 				<a href="#storage" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-lock f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-storage_medium m-r-5"></i><span>Storage</span></span>
+					<span class="hidden-xs f-16"><i class="icon-storage_medium m-r-5"></i><span data-i18n="vm.edit.tab.storage"></span></span>
 				</a>
 			</li>
 			<li>
 				<a href="#settings" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-user f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-managed m-r-5"></i><span>Settings</span></span>
+					<span class="hidden-xs f-16"><i class="icon-managed m-r-5"></i><span data-i18n="vm.edit.tab.setting"></span></span>
 				</a>
 			</li>
 		</ul>
@@ -40,18 +40,18 @@
 				<div class="row">
 
 					<div class="col-md-12">
-			            <h2 class="m-b-0"><span>Power</span></h2>
-			            <p class="">...</p>
+			            <h2 class="m-b-0"><span data-i18n="vm.edit.power.title"></span></h2>
+			            <p class=""  data-i18n="vm.edit.power.subtitle"></p>
 			            <hr>
 			        </div>
 					<div class="col-md-3 stat">
 						<div class="pallete-item m-b-0">
 							<dl class="palette palette-default pal">
 								<i class="icon-ram_memory f-22 m-r-10"></i>
-								<span class="f-16">Memória</span>
+								<span class="f-16" data-i18n="vm.edit.power.memory"></span>
 							</dl>
 							<dl class="palette palette-default-hover pal">
-								<span class="f-22 c-blue-cl ramusage">12GB</span>
+								<span class="f-22 c-blue-cl ramusage"></span>
 							</dl>
 							<div class="progress animation-sm">
 					        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="20" style="width: 20%;">20</div>
@@ -63,10 +63,10 @@
 						<div class="pallete-ite mm-b-0">
 							<dl class="palette palette-default pal">
 								<i class="icon-cpu f-22 m-r-10"></i>
-								<span class="f-16">Processors</span>
+								<span class="f-16"  data-i18n="vm.edit.power.cpu"></span>
 							</dl>
 							<dl class="palette palette-default-hover pal">
-								<span class="f-22 c-blue-cl">2</span>
+								<span class="f-22 c-blue-cl cpu"></span>
 							</dl>
 							<div class="progress animation-sm">
 					        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="45" style="width: 45%;">45</div>
@@ -78,10 +78,10 @@
 						<div class="pallete-item m-b-0">
 							<dl class="palette palette-default pal">
 								<i class="icon-hardware f-22 m-r-10"></i>
-								<span class="f-16">Storage</span>
+								<span class="f-16" data-i18n="vm.edit.power.storage"></span>
 							</dl>
 							<dl class="palette palette-default-hover pal">
-								<span class="f-22 c-blue-cl diskusage">135GB</span>
+								<span class="f-22 c-blue-cl diskusage"></span>
 							</dl>
 							<div class="progress animation-sm">
 					        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="10" style="width: 10%;">10</div>
@@ -93,94 +93,38 @@
 						<div class="pallete-item m-b-0">
 							<dl class="palette palette-default pal">
 								<i class="icon-cloud_activated f-22 m-r-10"></i>
-								<span class="f-16">State</span>
+								<span class="f-16" data-i18n="vm.edit.power.state"></span>
 							</dl>
 							<dl class="palette palette-default-hover pal">
-								<span class="f-22 c-green"><i class="icon-play m-r-10"></i> Running</span>
+								<span class="f-22 c-green state"></span>
 							</dl>
 						</div>
 					</div>
 					<hr>
 			    </div>
 
-				<div id="collapseOne" class="panel-collapse collapse" style="height: auto;">
-
-					<div class="row">
-						<div class="col-md-6">
-						    <div class="clip-body">
-								<p class="text-left"><span data-i18n="userprofile.profile.name"></span></p>
-								<div class="input-group">
-									<span class="input-group-addon cloudy"><i class="icon-user"></i></span>
-									<input type="text" class="form-control cloudy pname" placeholder="Name">
-								</div>
-						    </div>
-
-						    <div class="clip-body">
-								<p class="text-left"><span data-i18n="userprofile.profile.country"></span></p>
-								<div class="input-group">
-									<span class="input-group-addon cloudy"><i class="icon-flag"></i></span>
-									<input type="text" class="form-control cloudy pcountry" placeholder="County">
-								</div>
-						    </div>
-						    <div class="clip-body">
-								<p class="text-left"><span data-i18n="userprofile.profile.address"></span></p>
-								<div class="input-group">
-									<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
-									<input type="text" class="form-control cloudy paddress" placeholder="Address">
-								</div>
-						    </div>
-					    </div>
-
-						<div class="col-md-6">
-						    <div class="clip-body">
-								<p class="text-left"><span data-i18n="userprofile.profile.email"></span></p>
-								<div class="input-group">
-									<span class="input-group-addon cloudy"><i class="icon-email_corporate"></i></span>
-									<input type="text" class="form-control cloudy pemail" placeholder="Email">
-								</div>
-						    </div>
-
-						    <div class="clip-body">
-								<p class="text-left"><span data-i18n="userprofile.profile.nif"></span></p>
-								<div class="input-group">
-									<span class="input-group-addon cloudy"><i class="icon-reference"></i></span>
-									<input type="text" class="form-control cloudy pnif" placeholder="NIF">
-								</div>
-						    </div>
-						    <div class="clip-body">
-								<p class="text-left"><span data-i18n="userprofile.profile.zip"></span></p>
-								<div class="input-group">
-									<span class="input-group-addon cloudy"><i class="icon-location_more"></i></span>
-									<input type="text" class="form-control cloudy pzip" placeholder="Zip Code">
-								</div>
-						    </div>
-						</div>
-					</div>
-					<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success"><span data-i18n="userprofile.profile.btnsave"></span>
-					</button>
-				</div>
 				<hr>
 
 				<div class="row">
 
 					<div class="col-md-3">
-						<button type="button"  class="btn btn-block btn-lg btn-success disabled"><i class="icon-play"></i> <span>Start</span></button>
+						<button type="button"  class="btn btn-block btn-lg btn-success disabled"><i class="icon-play"></i> <span data-i18n="btns.start"></span></button>
 					</div>
 
 					<div class="col-md-3">
-						<button type="button"  class="btn btn-block btn-lg btn-warning"><i class="icon-less"></i> <span>Pause</span></button>
+						<button type="button"  class="btn btn-block btn-lg btn-warning"><i class="icon-less"></i> <span data-i18n="btns.pause"></span></button>
 					</div>
 
 					<!-- Stop button -->
 					<div class="col-md-3">
 						<div class="btn-group">
-							<button type="button" class="btn btn-lg btn-danger"><i class="icon-stop"></i> <span> Stop</button>
+							<button type="button" class="btn btn-lg btn-danger"><i class="icon-stop"></i> <span data-i18n="btns.stop"></span></button>
 							<button type="button" class="btn btn-lg btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<span class="caret"></span>
 								<span class="sr-only">Toggle Dropdown</span>
 							</button>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#"><i class="icon-on"></i> Hard Stop</a></li>
+								<li><a class="likehref"><i class="icon-on"></i> <span data-i18n="btns.hstop"></span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -188,26 +132,26 @@
 					<!-- Restart button -->
 					<div class="col-md-3">
 						<div class="btn-group">
-							<button type="button" class="btn btn-lg btn-cloudy"><i class="icon-next_step"></i> <span> Restart</button>
+							<button type="button" class="btn btn-lg btn-cloudy"><i class="icon-next_step"></i> <span data-i18n="btns.restart"></span> </button>
 							<button type="button" class="btn btn-lg btn-cloudy dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<span class="caret"></span>
 								<span class="sr-only">Toggle Dropdown</span>
 							</button>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#"><i class="icon-on"></i> Hard Reset</a></li>
+								<li><a class="likehref"><i class="icon-on"></i> <span data-i18n="btns.hrestart"></span></a></li>
 							</ul>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 
 			<div class="tab-pane fade in" id="console">
-				
+
 				<div class="row">
 					<div class="col-md-12">
-			            <h2 class="m-b-0"><span>Console</span></h2>
-			            <p class="">...</p>
+			            <h2 class="m-b-0"><span data-i18n="vm.edit.console.title"></span></h2>
+			            <p class="" data-i18n="vm.edit.console.subtitle"></p>
 			            <hr>
 			        </div>
 					<div class="col-md-12">
@@ -226,11 +170,11 @@
 					</div>
 
 					<div class="col-md-4">
-						<button type="button"  class="btn btn-block btn-lg btn-danger"><i class="icon-stop"></i> <span>Hard Reset</span></button>
+						<button type="button"  class="btn btn-block btn-lg btn-danger"><i class="icon-stop"></i> <span data-i18n="btns.restart"></span></button>
 					</div>
 
 					<div class="col-md-4">
-						<button type="button"  class="btn btn-block btn-lg btn-warning"><i class="icon-on"></i> <span>Reboot</span></button>
+						<button type="button"  class="btn btn-block btn-lg btn-warning"><i class="icon-on"></i> <span data-i18n="btns.hrestart"></span></button>
 					</div>
 				</div>
 			</div>
@@ -238,8 +182,8 @@
 			<div class="tab-pane fade in" id="stats">
 				<div class="row">
 					<div class="col-md-12">
-			            <h2 class="m-b-0"><span>Stats</span></h2>
-			            <p class="">...</p>
+			            <h2 class="m-b-0"><span data-i18n="vm.edit.stats.title"></span></h2>
+			            <p class="" data-i18n="vm.edit.stats.subtitle"></p>
 			            <hr>
 			        </div>
 					<div class="col-md-6 m-b-30">
@@ -264,8 +208,8 @@
 			<div class="tab-pane fade in" id="storage">
 				<div class="row">
 					<div class="col-md-12">
-			            <h2 class="m-b-0"><span>Storage</span></h2>
-			            <p class="">...</p>
+			            <h2 class="m-b-0"><span data-i18n="vm.edit.storage.title"></span></h2>
+			            <p class="" data-i18n="vm.edit.storage.subtitle"></p>
 			            <hr>
 			        </div>
 
@@ -333,8 +277,8 @@
 			<div class="tab-pane fade in" id="settings">
 				<div class="row">
 					<div class="col-md-12">
-			            <h2 class="m-b-0"><span>Settings</span></h2>
-			            <p class="">...</p>
+			            <h2 class="m-b-0"><span data-i18n="vm.edit.setting.title"></span></h2>
+			            <p class="" data-i18n="vm.edit.setting.subtitle">...</p>
 			            <hr>
 			        </div>
 					<div class="col-md-6">

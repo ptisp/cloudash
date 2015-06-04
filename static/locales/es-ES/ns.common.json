@@ -78,9 +78,45 @@
       "btncreate": "Crear"
     },
     "edit": {
-      "titlevm": "Su VM",
-      "title": "Editar VM",
-      "btnedit": "Guardar"
+      "tab": {
+        "power": "Energía",
+        "console": "Consola",
+        "stats": "Estadísticas",
+        "storage": "Almacenamiento",
+        "setting": "Ajustes"
+      },
+      "power": {
+        "title": "Energía",
+        "subtitle": "...",
+        "memory": "Memoria",
+        "cpu": "vCPU",
+        "storage": "Disco",
+        "state": "Estado",
+        "btnstart": "Inicia",
+        "btnpause": "Pausar",
+        "btnstop": "Cerrar",
+        "btnhstop": "Cerrar Duro",
+        "btnrestart": "Reinicio",
+        "btnhrestart": "Reinicio Duro"
+      },
+      "console": {
+        "title": "Consola",
+        "subtitle": "...",
+        "btnhreset": "",
+        "btnreset": ""
+      },
+      "stats": {
+        "title": "Estadísticas",
+        "subtitle": ""
+      },
+      "storage": {
+        "title": "Almacenamiento",
+        "subtitle": "..."
+      },
+      "setting": {
+        "title": "Ajustes",
+        "subtitle": "..."
+      }
     }
   },
   "smenu": {

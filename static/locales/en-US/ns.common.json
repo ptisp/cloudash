@@ -78,9 +78,45 @@
       "btncreate": "Create"
     },
     "edit": {
-      "titlevm": "Your VM",
-      "title": "Edit VM",
-      "btnedit": "Save"
+      "tab": {
+        "power": "Power",
+        "console": "Console",
+        "stats": "Stats",
+        "storage": "Storage",
+        "setting": "Settings"
+      },
+      "power": {
+        "title": "Power",
+        "subtitle": "...",
+        "memory": "Memory",
+        "cpu": "vCPU",
+        "storage": "Storage",
+        "state": "State",
+        "btnstart": "Start",
+        "btnpause": "Pause",
+        "btnstop": "Stop",
+        "btnhstop": "Hard Stop",
+        "btnrestart": "Reboot",
+        "btnhrestart": "Hard Reboot"
+      },
+      "console": {
+        "title": "Console",
+        "subtitle": "...",
+        "btnhreset": "",
+        "btnreset": ""
+      },
+      "stats": {
+        "title": "Stats",
+        "subtitle": ""
+      },
+      "storage": {
+        "title": "Storage",
+        "subtitle": "..."
+      },
+      "setting": {
+        "title": "Settings",
+        "subtitle": "..."
+      }
     }
   },
   "smenu": {

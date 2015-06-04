@@ -23,21 +23,17 @@
     },
     "profile": {
       "msg": "Pode editar o seu perfil no botão abaixo.",
-      "btnedit": "Editar Perfil",
       "name": "Nome",
       "country": "País",
       "address": "Endereço",
       "email": "Email",
       "nif": "NIF",
-      "zip": "Código Postal",
-      "btnsave": "Actualizar"
+      "zip": "Código Postal"
     },
     "security": {
       "msg": "Pode alterar a sua password no botão abaixo.",
-      "btnedit": "Editar Password",
       "newpass": "Nova Password",
-      "reppass": "Repetir Password",
-      "btnsave": "Actualizar"
+      "reppass": "Repetir Password"
     }
   },
   "useracc": {
@@ -53,11 +49,10 @@
       "email": "Email",
       "vat": "NIF",
       "zipcode": "Código Postal",
-      "btnsave": "Adicionar",
       "pass": "Password",
       "rpass": "Repita a Password",
       "phone": "Telefone",
-      "city" : "Cidade",
+      "city": "Cidade",
       "type": "Tipo de Conta"
     },
     "list": {
@@ -74,19 +69,58 @@
       "title": "Criar nova Máquina Virtual",
       "name": "Hostname",
       "config": "Configuração",
-      "image": "Imagem",
-      "btncreate": "Criar"
+      "image": "Imagem"
     },
     "edit": {
-      "titlevm": "Sua VM",
-      "title": "Editar VM",
-      "btnedit": "Guardar"
-
+      "tab": {
+        "power": "Energia",
+        "console": "Consola",
+        "stats": "Estatisticas",
+        "storage": "Armazenamento",
+        "setting": "Configurações"
+      },
+      "power": {
+        "title": "Enegia",
+        "subtitle": "...",
+        "memory": "Memoria",
+        "cpu": "vCPU",
+        "storage": "Disco",
+        "state": "Estado"
+      },
+      "console": {
+        "title": "Consola",
+        "subtitle": "..."
+      },
+      "stats": {
+        "title": "Estatisticas",
+        "subtitle": ""
+      },
+      "storage": {
+        "title": "Armazenamento",
+        "subtitle": "..."
+      },
+      "setting": {
+        "title": "Configurações",
+        "subtitle": "..."
+      }
     }
   },
   "smenu": {
     "machines": "Máquinas Virtuais",
     "dns": "Gestor DNS",
     "images": "Imagens SO"
+  },
+  "btns": {
+    "start": "Iniciar",
+    "pause": "Pause",
+    "stop": "Parar",
+    "hstop": "Forçar Parar",
+    "restart": "Reiniciar",
+    "hrestart": "Forçar Reiniciar",
+    "editprofile": "Editar Perfil",
+    "editpassword": "Editar Password",
+    "update": "Actualizar",
+    "add": "Adicionar",
+    "create": "Criar"
   }
 }
