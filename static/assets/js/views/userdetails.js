@@ -19,8 +19,10 @@ window.UserDetailsView = Backbone.View.extend({
   },
   render: function() {
     $(this.el).html(this.template());
+    $('.user-details', this.el).i18n();
     this.getdetails();
     return this;
   }
+
 
 });
