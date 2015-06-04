@@ -1,45 +1,19 @@
 <div class="user-details">
 
 	<section class="row bg-white">
-
+		<!-- USER DETAILS -->
 		<div class="col-md-12">
 			<h2 class="m-b-0 m-t-0"><span>Detalhes de Cliente</span></h2>
 			<p class="">...</p>
 			<hr>
 		</div>
 
-        <!-- Password -->
-        <div class="col-md-6">
-            <div class="clip-body">
-              <p class="text-left">
-                <span data-i18n="useracc.new.pass"></span>
-              </p>
-              <div class="input-group">
-                <span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
-                <input type="password" class="form-control cloudy ippass" placeholder="Password">
-              </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="clip-body">
-				<p class="text-left">
-					<span data-i18n="useracc.new.rpass"></span>
-				</p>
-				<div class="input-group">
-					<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
-					<input type="password" class="form-control cloudy iprepass" placeholder="Retype Password">
-				</div>
-            </div>
-        </div>
-
-        <!-- User Deatils -->
         <div class="col-md-6">
         	<div class="clip-body">
 				<p class="text-left"><span data-i18n="useracc.new.name"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-user"></i></span>
-					<input type="text" class="form-control cloudy ipname" placeholder="Name">
+					<input type="text" class="form-control cloudy ipname" placeholder="Name" disabled>
 				</div>
             </div>
         </div>
@@ -49,7 +23,7 @@
                 <p class="text-left"><span data-i18n="useracc.new.country"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-flag"></i></span>
-					<select id="input_country" class="form-control cloudy ipcountry">
+					<select id="input_country" class="form-control cloudy ipcountry" disabled>
 						<option value="AF">AFGHANISTAN</option>
 						<option value="AX">ALAND ISLANDS</option>
 						<option value="AL">ALBANIA</option>
@@ -300,7 +274,7 @@
             	<p class="text-left"><span data-i18n="useracc.new.city"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
-					<input type="text" class="form-control cloudy ipcity" placeholder="City">
+					<input type="text" class="form-control cloudy ipcity" placeholder="City" disabled>
 				</div>
             </div>
         </div>
@@ -310,7 +284,7 @@
 				<p class="text-left"><span data-i18n="useracc.new.address"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
-					<input type="text" class="form-control cloudy ipaddress" placeholder="Address">
+					<input type="text" class="form-control cloudy ipaddress" placeholder="Address" disabled>
 				</div>
             </div>
         </div>
@@ -320,7 +294,7 @@
 				<p class="text-left"><span data-i18n="useracc.new.phone"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-phone"></i></span>
-					<input type="text" class="form-control cloudy ipphone" placeholder="Phone">
+					<input type="text" class="form-control cloudy ipphone" placeholder="Phone" disabled>
 				</div>
 			</div>
 		</div>
@@ -330,7 +304,7 @@
 				<p class="text-left"><span data-i18n="useracc.new.vat"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-reference"></i></span>
-					<input type="text" class="form-control cloudy ipvat" placeholder="VAT / NIF">
+					<input type="text" class="form-control cloudy ipvat" placeholder="VAT / NIF" disabled>
 				</div>
 			</div>
 		</div>
@@ -340,28 +314,107 @@
 				<p class="text-left"><span data-i18n="useracc.new.zipcode">e</span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-location_more"></i></span>
-					<input type="text" class="form-control cloudy ipzipcode" placeholder="Zip Code">
+					<input type="text" class="form-control cloudy ipzipcode" placeholder="Zip Code" disabled>
 				</div>
 			</div>
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-6 m-b-30">
 			<div class="clip-body">
 				<p class="text-left"><span data-i18n="useracc.new.type"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-star"></i></span>
-					<select id="input_country" class="form-control cloudy iptype">
+					<select id="input_country" class="form-control cloudy iptype" disabled>
 						<option value="user">Utilizador</option>
 						<option value="admin">Administrador</option>
 					</select>
 				</div>
 			</div>
 		</div>
+	</section>
+
+	<section class="row bg-cristal">
+		<!-- SUMMARY VMs -->
+		<div class="col-md-12">
+			<h2 class="m-b-0 m-t-0"><span>Summary VMs</span></h2>
+			<p class="">...</p>
+			<hr>
+		</div>
+
+		<div class="col-md-3 stat">
+			<div class="pallete-item m-b-0">
+				<dl class="palette palette-default pal">
+					<i class="icon-cloud_servers f-22 m-r-10"></i>
+					<span class="f-16">Total VMs</span>
+				</dl>
+				<dl class="palette palette-default-hover pal">
+					<span class="f-22 c-blue-cl ramusage">3</span>
+				</dl>
+				<div class="progress animation-sm">
+		        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="10" style="width: 10%;">10</div>
+		    	</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 stat">
+			<div class="pallete-item m-b-0">
+				<dl class="palette palette-default pal">
+					<i class="icon-ram_memory f-22 m-r-10"></i>
+					<span class="f-16">Memória</span>
+				</dl>
+				<dl class="palette palette-default-hover pal">
+					<span class="f-22 c-blue-cl ramusage">12 GB</span>
+				</dl>
+				<div class="progress animation-sm">
+		        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="20" style="width: 20%;">20</div>
+		    	</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 stat">
+			<div class="pallete-ite mm-b-0">
+				<dl class="palette palette-default pal">
+					<i class="icon-cpu f-22 m-r-10"></i>
+					<span class="f-16">Processors</span>
+				</dl>
+				<dl class="palette palette-default-hover pal">
+					<span class="f-22 c-blue-cl">2</span>
+				</dl>
+				<div class="progress animation-sm">
+		        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="45" style="width: 45%;">45</div>
+		    	</div>
+			</div>
+		</div>
+
+		<div class="col-md-3 stat m-b-30">
+			<div class="pallete-item m-b-0">
+				<dl class="palette palette-default pal">
+					<i class="icon-hardware f-22 m-r-10"></i>
+					<span class="f-16">Storage</span>
+				</dl>
+				<dl class="palette palette-default-hover pal">
+					<span class="f-22 c-blue-cl diskusage">45 GB</span>
+				</dl>
+				<div class="progress animation-sm">
+		        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="10" style="width: 10%;">10</div>
+		    	</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="row bg-white">
+		<!-- OTHERS DETAILS -->
+		<div class="col-md-12">
+			<h2 class="m-b-0 m-t-0"><span>Others Details</span></h2>
+			<p class="">...</p>
+			<hr>
+		</div>
 
 		<div class="col-md-12">
-        	<button type="button" class="btn btn-block btn-lg btn-success btn-icon m-b-5"><span data-i18n="useracc.new.btnsave"></span></button>
-       	</div>
-
+			<div>Client from: <strong>26/04/2014 (1 ano) </strong> </div>
+			<div>Last login: <strong>4/06/2015</strong> </div>
+		</div>
 	</section>
+	
 
 <div>
