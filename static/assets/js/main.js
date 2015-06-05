@@ -32,6 +32,7 @@ var Router = Backbone.Router.extend({
     'manage/user/:id': 'manuserdetails',
     'manage/account': 'manaccount',
     'domain/dns': 'domaindns',
+    'domain/dns/:domain': 'domaindnsdetails',
     '*notFound': 'index'
   },
   domaindns: function() {
@@ -41,6 +42,20 @@ var Router = Backbone.Router.extend({
         self.loadProfile(function () {
           var v = new DomDnsView({
             model: window.profile
+          });
+          self.showView(v, $('#content'));
+        });
+      });
+    });
+  },
+  domaindnsdetails: function(domain) {
+    var self = this;
+    templateLoader.load(["DomDnsDetailsView"], function() {
+      self.verifyLogin(function() {
+        self.loadProfile(function () {
+          var v = new DomDnsDetailsView({
+            model: window.profile,
+            domain: domain
           });
           self.showView(v, $('#content'));
         });
