@@ -303,6 +303,101 @@ body {
 .progress-bar-cloudy{
   background-color: #29b5c7;
 }
+/*  SEARCH INPUT DOMAINS */
+.btn-isd {
+  padding: 12px 25px;
+  line-height: 1.4;
+}
+/*  FIELD INPUT CLOUDY */
+#field-cloudy {
+  border: solid 1px #29b5c7;
+}
+
+/* PAGINATION CLOUDY */
+.pagination-cloudy > li > a,
+.pagination-cloudy > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #008798;
+  text-decoration: none;
+  background-color: #fff;
+  border: none;
+}
+.pagination-cloudy > li:first-child > a,
+.pagination-cloudy > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
+}
+.pagination-cloudy > li:last-child > a,
+.pagination-cloudy > li:last-child > span {
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+.pagination-cloudy > li > a:hover,
+.pagination-cloudy > li > span:hover,
+.pagination-cloudy > li > a:focus,
+.pagination-cloudy > li > span:focus {
+  color: #fff;
+  background-color: #29b5c7;
+  border-color: #008798;
+}
+.pagination-cloudy > .active > a,
+.pagination-cloudy > .active > span,
+.pagination-cloudy > .active > a:hover,
+.pagination-cloudy > .active > span:hover,
+.pagination-cloudy > .active > a:focus,
+.pagination-cloudy > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #008798;
+  border-color: #29b5c7;
+}
+.pagination-cloudy > .disabled > span,
+.pagination-cloudy > .disabled > span:hover,
+.pagination-cloudy > .disabled > span:focus,
+.pagination-cloudy > .disabled > a,
+.pagination-cloudy > .disabled > a:hover,
+.pagination-cloudy > .disabled > a:focus {
+  color: #fff;
+  cursor: not-allowed;
+  background-color: #29b5c7;
+  border-color: #94cdea;
+}
+strong {
+  font-family: 'Lato', sans-serif, Helvetica, Arial !important;
+  font-weight: bold;
+}
+/*  HEIGHT */
+.h10 {
+  height: 10px !important;
+}
+.h20 {
+  height: 20px !important;
+}
+.h30 {
+  height: 30px !important;
+}
+.edit-btn {
+  padding: 5px 10px !important;
+}
+.form-cloudy {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  background-color: #29b5c7;
+  border: none;
+  border-radius: 1px;
+}
+
+
 /* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */
 /*  1199px */
 @media(max-width: 1199px) {

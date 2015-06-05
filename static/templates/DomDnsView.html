@@ -1,3 +1,164 @@
 <div class="domain-dns">
-  Domain DNS
+    <section class="row bg-white">
+		<!-- USER DETAILS -->
+		<div class="col-md-12">
+			<h2 class="m-b-0 m-t-0"><span>Create Domains</span></h2>
+			<p class="">...</p>
+			<hr>
+		</div>
+
+		<div class="col-md-12">
+        	<div class="clip-body">
+
+        		<div class="input-group">
+        			<input type="text" class="form-control input-lg" id="field-cloudy" placeholder="Pesquisar por domínio desejado">
+					<span class="input-group-btn">
+						<button class="btn btn-cloudy btn-isd" type="button"><i class="icon-search"></i> Search</button>
+					</span>
+				</div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+		  	<div class="clip-body">
+		  		<div class="table-responsive">
+					<table cellpadding="0" cellspacing="0" border="0" class="table table-striped clip" id="example">
+						<thead>
+						  <tr>
+						    <th><span>Domain</span></th>
+						    <th><span>Epp-Key</span></th>
+						    <th><span>Billing Cycle</span></th>
+						    <th><span>Availability</span></th>
+						    <th><span>Price</span></th>
+						    <th><span>Action</span></th>
+						  </tr>
+						</thead>
+						<tbody>
+							<tr class="odd">
+								<td class="f-16"><strong><span>oidfvierf.pt</span></strong></td>
+								<td><input type="text" class="form-control input-sm" id="field-cloudy" placeholder="Epp-key"></td>
+								<td>
+									<div class="input">
+						                <select class="form-control cloudy h30">
+						                  <option value="user">1 year</option>
+						                  <option value="admin">2 years</option>
+						                  <option value="admin">3 years</option>
+						                </select>
+						            </div>
+								</td>
+								<td><span class="c-green">Available</span></td>
+								<td class="f-16"><strong>11€</strong></td>
+								<td><span class="btn btn-block btn-sm btn-success btn_buy" data-id="7"><span>Register</span></span></td>
+							</tr>
+
+							<tr class="even">
+								<td class="f-16"><strong><span>erierfvm.eu</span></strong></td>
+								<td><input type="text" class="form-control input-sm" id="field-cloudy" placeholder="Epp-key"></td>
+								<td>
+									<div class="input">
+						                <select class="form-control cloudy h30">
+						                  <option value="user">1 year</option>
+						                  <option value="admin">2 years</option>
+						                  <option value="admin">3 years</option>
+						                </select>
+						            </div>
+								</td>
+								<td><span class="c-yellow">Unavailable</span></td>
+								<td class="f-16"><strong>9€</strong></td>
+								<td><span class="btn btn-block btn-sm btn-warning btn_buy" data-id="2"><span>transfer</span></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+		  	</div>
+		</div>
+	</section>
+
+	<section class="row bg-cristal">
+		<!-- USER DETAILS -->
+		<div class="col-md-12">
+			<h2 class="m-b-0 m-t-0"><span>Domains</span></h2>
+			<p class="">...</p>
+			<hr>
+		</div>
+
+		<div class="col-md-3">
+		    <div class="clip-body">
+		      <div class="lt-bottom_sm">
+
+		        <div class="input-group">
+		          <select name="example_length" id="ddshow" class="form-control cloudy bg-white">
+		            <option value="10">show 10</option>
+		            <option value="25">show 25</option>
+		            <option value="50">show 50</option>
+		            <option value="100">show 100</option>
+		          </select>
+		          <span class="input-group-addon form-cloudy"><i class="icon-align_center"></i></span>
+		        </div>
+
+		      </div>
+		    </div>
+		</div>
+
+		<div class="col-md-9">
+		    <div class="clip-body">
+		      <div class="input-group">
+		      	<span class="input-group-btn"><button class="btn btn-lg btn-cloudy" type="button"><i class="icon-search"></i></button></span>
+		        <input type="search" class="form-control" placeholder="Search">
+		      </div>
+		    </div>
+		</div>
+
+        <div class="col-md-12">
+        	<div class="table-responsive">
+				<table cellpadding="0" cellspacing="0" border="0" class="table table-striped clip" id="example" style="margin-bottom:0px;">
+					<thead>
+					  <tr>
+					    <th class="sorting_asc"><span>Domain</span></th>
+					    <th class="sorting_asc"><span>Expiry</span></th>
+					    <th class="sorting_asc"><span>Status</span></th>
+					    <th class="sorting_asc"><span>Edit</span></th>
+					  </tr>
+					</thead>
+					<tbody>
+						<tr class="odd">
+							<td class="f-16"><strong>oidfvierf.pt</strong></td>
+							<td>2016-04-25</td>
+							<td class="c-green">Active</td>
+							<td>
+								<button class="btn btn-xs btn-cloudy edit-btn" ><i class="icon-search"></i></button>
+								<button class="btn btn-xs btn-danger edit-btn" ><i class="icon-remove"></i></button>
+							</td>
+						</tr>
+
+						<tr class="even">
+							<td class="f-16"><strong>erierfvm.eu</strong></td>
+							<td>0000-00-00</td>
+							<td class="c-yellow">Pending</td>
+							<td>
+								<button class="btn btn-xs btn-cloudy edit-btn" ><i class="icon-search"></i></button>
+								<button class="btn btn-xs btn-danger edit-btn" ><i class="icon-remove"></i></button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<nav class="f-right">
+			  	<ul id="pagination_lg" class="pagination-lg pagination-cloudy pagination">
+	                <li class="first disabled"><a href="">First</a></li>
+	                <li class="prev disabled"><a href=""><div>&lt;</div></a></li>
+	                <li class="page active"><a href="">1</a></li>
+	                <li class="page"><a href="">2</a></li>
+	                <li class="page"><a href="">3</a></li>
+	                <li class="page"><a href="">4</a></li>
+	                <li class="next"><a href=""><div>&gt;</div></a></li>
+	                <li class="last"><a href="">Last</a></li>
+	            </ul>
+			</nav>
+		</div>
+	</section>
+
 <div>

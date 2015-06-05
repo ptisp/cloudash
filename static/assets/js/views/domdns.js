@@ -4,8 +4,11 @@ window.DomDnsView = Backbone.View.extend({
 
   render: function() {
     $(this.el).html(this.template());
+    $('.domain-dns', this.el).i18n();
 
     return this;
+
   }
+  
 
 });
