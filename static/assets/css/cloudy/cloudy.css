@@ -396,7 +396,56 @@ strong {
   border: none;
   border-radius: 1px;
 }
-
+/*  PADDING */
+.p-3 {
+  padding: 3px !important;
+}
+.p-4 {
+  padding: 4px !important;
+}
+.p-5 {
+  padding: 5px !important;
+}
+.p-6 {
+  padding: 6px !important;
+}
+.p-7 {
+  padding: 7px !important;
+}
+.p-8 {
+  padding: 8px !important;
+}
+.p-9 {
+  padding: 9px !important;
+}
+.p-10 {
+  padding: 10px !important;
+}
+.p-15 {
+  padding: 15px !important;
+}
+.p-20 {
+  padding: 20px !important;
+}
+/*  DISPLY BLOCK */
+.db {
+  width: 100%;
+  display: block;
+}
+.dib {
+  width: 100%;
+  display: inline-block;
+}
+/*  TEXT ALIGN*/
+.tac {
+  text-align: center;
+}
+.tal {
+  text-align: left;
+}
+.tar {
+  text-align: right;
+}
 
 /* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */
 /*  1199px */
