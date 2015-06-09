@@ -479,6 +479,7 @@ strong {
   .add-machine { min-width: 100% !important;}
   .plans .cloudy-plans {width: 25% !important;}
   .plans.soft p {font-size: 13px;}
+  .profile-usercloudy img {width: 10% !important;}
 }
 @media (min-width: 768px) {
   .sidebar-nav.responsive {display: none;}
