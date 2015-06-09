@@ -73,11 +73,14 @@
     },
     "edit": {
       "tab": {
+        "titlevms": "Suas VMs",
+        "titledit": "Editar VM(s)",
         "power": "Energia",
         "console": "Consola",
         "stats": "Estatisticas",
         "storage": "Armazenamento",
-        "setting": "Configurações"
+        "setting": "Configurações",
+        "edit": "Editar"
       },
       "power": {
         "title": "Enegia",
@@ -121,6 +124,7 @@
     "editpassword": "Editar Password",
     "update": "Actualizar",
     "add": "Adicionar",
-    "create": "Criar"
+    "create": "Criar",
+    "save": "Guardar"
   }
 }
