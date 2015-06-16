@@ -272,7 +272,7 @@ body {
   border-radius: 0px;
 }
 .btn-lg.cloudy, .btn-group-lg > .btn {
-  padding: 13.5px 8px;
+  padding: 13.5px 15px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 0px;
@@ -451,8 +451,11 @@ strong {
 /*  1199px */
 @media(max-width: 1199px) {
   .plans.soft p {font-size: 13px;}
+
 }
 @media(min-width: 1199px) {
+  .btn-config-responsive {display: none !important;}
+
 
 }
 /*  992px */
@@ -480,12 +483,15 @@ strong {
   .plans .cloudy-plans {width: 25% !important;}
   .plans.soft p {font-size: 13px;}
   .profile-usercloudy img {width: 10% !important;}
+  .btn-config-drop {display: block !important;}
+  .btn-config {display: none !important;}
 }
 @media (min-width: 768px) {
   .sidebar-nav.responsive {display: none;}
   .sidebar-nav .navbar ul {float: none;}
   .sidebar-nav .navbar ul:not {display: block;}
   .sidebar-nav .navbar li {float: none; display: block;}
+  .btn-config-drop {display: none !important;}
 }
 /*  580px */
 @media (max-width: 580px) {
@@ -663,7 +669,7 @@ table.table.clip th {
   margin-bottom: 15px;
 }
 .open > .dropdown-menu.user-menu {
-  left: -112px;
+  left: -90px;
 }
 .sidebar-nav .navbar .dropdown-menu {
   width: 100%;

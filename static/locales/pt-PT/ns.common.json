@@ -77,7 +77,7 @@
         "titledit": "Editar VM(s)",
         "power": "Energia",
         "console": "Consola",
-        "stats": "Estatisticas",
+        "stats": "Estatísticas",
         "storage": "Armazenamento",
         "setting": "Configurações",
         "edit": "Editar"
@@ -96,7 +96,7 @@
       },
       "stats": {
         "title": "Estatisticas",
-        "subtitle": ""
+        "subtitle": "Visão gráfica mais estatisticas de cpu, memória e network."
       },
       "storage": {
         "title": "Armazenamento",

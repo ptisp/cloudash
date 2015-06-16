@@ -35,6 +35,7 @@ window.VMDetailsView = Backbone.View.extend({
   render: function() {
     $(this.el).html(this.template());
     $('.vm-details', this.el).i18n();
+    $('.overme', this.el).tooltip();
     this.getvmdetails();
     return this;
   }

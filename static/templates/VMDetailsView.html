@@ -4,31 +4,25 @@
 		<ul class="nav nav-tabs cloudy bordered">
 			<li class="active">
 				<a href="#power" data-toggle="tab">
-					<span class="visible-xs"><i class="icon-user f-18"></i></span>
+					<span class="visible-xs"><i class="icon-on f-18"></i></span>
 					<span class="hidden-xs f-16"><i class="icon-on m-r-5"></i><span data-i18n="vm.edit.tab.power"></span></span>
 				</a>
 			</li>
 			<li>
 				<a href="#console" data-toggle="tab">
-					<span class="visible-xs"><i class="icon-lock f-18"></i></span>
+					<span class="visible-xs"><i class="icon-vnc_console f-18"></i></span>
 					<span class="hidden-xs f-16"><i class="icon-vnc_console m-r-5"></i><span data-i18n="vm.edit.tab.console"></span></span>
 				</a>
 			</li>
 			<li>
 				<a href="#stats" data-toggle="tab">
-					<span class="visible-xs"><i class="icon-user f-18"></i></span>
+					<span class="visible-xs"><i class="icon-graph f-18"></i></span>
 					<span class="hidden-xs f-16"><i class="icon-graph m-r-5"></i><span data-i18n="vm.edit.tab.stats"></span></span>
 				</a>
 			</li>
 			<li>
-				<a href="#storage" data-toggle="tab">
-					<span class="visible-xs"><i class="icon-lock f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-storage_medium m-r-5"></i><span data-i18n="vm.edit.tab.storage"></span></span>
-				</a>
-			</li>
-			<li>
 				<a href="#settings" data-toggle="tab">
-					<span class="visible-xs"><i class="icon-user f-18"></i></span>
+					<span class="visible-xs"><i class="icon-managed f-18"></i></span>
 					<span class="hidden-xs f-16"><i class="icon-managed m-r-5"></i><span data-i18n="vm.edit.tab.setting"></span></span>
 				</a>
 			</li>
@@ -157,24 +151,13 @@
 					<div class="col-md-12">
 						<div style=" width: 100%; height: 240px; margin-bottom: 20px; background-color: #000"></div>
 					</div>
-					<div class="col-md-4 m-b-15">
-						<select class="form-control cloudy btn-block">
-							<option>Arch Linux</option>
-							<option>Ubuntu Server</option>
-							<option>Fedora</option>
-							<option>FreeBSD</option>
-							<option>OpenNebula</option>
-							<option>SmartOS</option>
-							<option>ReactOS</option>
-						</select>
-					</div>
 
 					<div class="col-md-4 m-b-15">
-						<button type="button"  class="btn btn-block btn-lg btn-danger"><i class="icon-stop"></i> <span data-i18n="btns.restart"></span></button>
+						<button type="button"  class="btn btn-block btn-lg btn-success"><i class="icon-reboot"></i> <span data-i18n="btns.restart"></span></button>
 					</div>
 
 					<div class="col-md-4">
-						<button type="button"  class="btn btn-block btn-lg btn-warning"><i class="icon-on"></i> <span data-i18n="btns.hrestart"></span></button>
+						<button type="button"  class="btn btn-block btn-lg btn-danger"><i class="icon-stop"></i> <span data-i18n="btns.hstop"></span></button>
 					</div>
 				</div>
 			</div>
@@ -182,94 +165,21 @@
 			<div class="tab-pane fade in" id="stats">
 				<div class="row">
 					<div class="col-md-12">
-			            <h2 class="m-b-0"><span data-i18n="vm.edit.stats.title"></span></h2>
+			            <h2><span data-i18n="vm.edit.stats.title"></span></h2>
 			            <p class="" data-i18n="vm.edit.stats.subtitle"></p>
 			            <hr>
 			        </div>
-					<div class="col-md-6 m-b-30">
+					<div class="col-md-12 m-b-30">
 						<p class="text-left">CPU Usage</p>
 						<img src="assets/img/stats/machine-cpu.png" class="img-responsive">
 					</div>
-					<div class="col-md-6 m-b-30">
-						<p class="text-left">Network traffic</p>
+					<div class="col-md-12 m-b-30">
+						<p class="text-left">Memory</p>
 						<img src="assets/img/stats/machine-network.png" class="img-responsive">
 					</div>
-					<div class="col-md-6 m-b-30">
+					<div class="col-md-12 m-b-30">
 						<p class="text-left">Network traffic</p>
 						<img src="assets/img/stats/machine-network.png" class="img-responsive">
-					</div>
-					<div class="col-md-6 m-b-30">
-						<p class="text-left">CPU Usage</p>
-						<img src="assets/img/stats/machine-cpu.png" class="img-responsive">
-					</div>
-				</div>
-			</div>
-
-			<div class="tab-pane fade in" id="storage">
-				<div class="row">
-					<div class="col-md-12">
-			            <h2 class="m-b-0"><span data-i18n="vm.edit.storage.title"></span></h2>
-			            <p class="" data-i18n="vm.edit.storage.subtitle"></p>
-			            <hr>
-			        </div>
-
-					<div class="col-md-12">
-						<div class="table-responsive">
-				          <table class="table table-striped table-hover  clip">
-				            <thead>
-				              <tr>
-				                <th>
-				                	<i class="icon-cloud"></i>
-				                  	<span>Disk Name</span>
-				                </th>
-				                <th>
-				                	<i class="icon-hardware"></i>
-				                  	<span>Type</span>
-				                </th>
-				                <th>
-				                	<i class="icon-storage_base"></i>
-				                	<span>Size</span>
-				                </th>
-				                <th>
-				                	<i class="icon-managed"></i>
-				                 	<span>Options</span>
-				                </th>
-				              </tr>
-				            </thead>
-				            <tbody>
-				            	<tr>
-				            		<td>Powerto</td>
-				            		<td>SSD</td>
-				            		<td>45GB</td>
-				            		<td>
-				            			<button type="button" class="btn btn-xs btn-success" ><i class="icon-managed"></i> Edit</button>
-				            			<button type="button" class="btn btn-xs btn-danger"><i class="icon-delete"></i> Delete</button>
-				            		</td>
-				            	</tr>
-				            </tbody>
-				          </table>
-				        </div>
-					</div>
-
-					<div class="col-md-4 m-b-15">
-						<select class="form-control cloudy btn-block">
-							<option>SSD</option>
-							<option>HDD</option>
-						</select>
-					</div>
-
-					<div class="col-md-4 m-b-15">
-						<select class="form-control cloudy btn-block">
-							<option>20GB</option>
-							<option>45GB</option>
-							<option>90GB</option>
-							<option>180GB</option>
-							<option>300GB</option>
-						</select>
-					</div>
-
-					<div class="col-md-4">
-						<button type="button" class="btn btn-block btn-lg btn-success disabled" ><i class="icon-accept"></i> Create</button>
 					</div>
 				</div>
 			</div>
@@ -281,7 +191,79 @@
 			            <p class="" data-i18n="vm.edit.setting.subtitle">...</p>
 			            <hr>
 			        </div>
-					<div class="col-md-6">
+
+			        <div class="col-md-12">
+				        <div class="table-responsive">
+							<table class="table table-striped clip">
+								<thead>
+									<tr>
+										<th><i class="icon-cloud"></i>
+											<span data-i18n="home.tblhead1"></span>
+										</th>
+										<th><i class="icon-ips"></i>
+											<span data-i18n="home.tblhead2"></span>
+										</th>
+										<th><i class="icon-ram_memory"></i>
+											<span data-i18n="home.tblhead3"></span>
+										</th>
+										<th><i class="icon-hardware"></i>
+											<span data-i18n="home.tblhead4"></span>
+										</th>
+										<th><i class="icon-cloud_activated"></i>
+											<span data-i18n="home.tblhead5"></span>
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr class="default likehref" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+										<td>
+											<i class="icon-refresh f-18 m-r-5 c-gold"></i> powerto 
+											<i class="icon-user f-18 m-r-5 pull-right" title="admin"></i>
+											<i class="icon-unmanaged c-green f-18 m-r-5 pull-right overme" data-trigger="hover" data-placement="top" data-original-title="Delete" title="Clique para configuar VM"></i>
+										</td>
+										<td></td>
+										<td>12GB</td>
+										<td>45GB</td>
+										<td>review</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div id="collapseOne" class="col-md-12 panel-collapse collapse" style="height: auto;">
+
+				    	<p class="text-left"><span>Configuration</span></p>
+				    	<div class="row">
+						    <div class="clip-body">
+
+						    	<div class="col-md-6">
+							        <div class="clip-body">
+							        	<p class="text-left">CPU GB</p>
+										<div class="range range-cloudy">
+											<input class="bg-cream" type="range" name="range" min="2" max="24" value="1" onchange="rangeDanger.value=value">
+											<output id="rangeDanger">2</output>
+										</div>
+							        </div>
+							    </div>
+
+								<div class="col-md-6">
+							        <div class="clip-body">
+							        	<p class="text-left">RAM GB</p>
+										<div class="range range-cloudy">
+											<input class="bg-cream" type="range" name="range" min="12" max="24" value="1" onchange="rangeInfo.value=value">
+											<output id="rangeInfo">12</output>
+										</div>
+							        </div>
+							    </div>
+
+							    <div class="col-md-12">
+									<button class="btn btn-block btn-lg btn-success"><span data-i18n="btns.update"></span> <i class="icon-refresh"></i></button>
+								</div>
+							    
+							</div>
+					    </div>
 
 					</div>
 				</div>
