@@ -25,7 +25,7 @@
         </div>
 
         <hr>
-
+        <h4>Dados de acesso utilizador</h4>
         <div class="row"> <!-- EMAIL USERNAME -->
           <div class="col-md-6">
             <div class="clip-body">
@@ -75,7 +75,9 @@
           </div>
         </div>
 
-        <div class="row" style="margin-top:30px"> <!-- User Deatils -->
+        <hr>
+        <h4>Dados de utilizador</h4>
+        <div class="row"> <!-- User Deatils -->
           <div class="col-md-6">
             <div class="clip-body">
               <p class="text-left">
@@ -386,6 +388,15 @@
                 <input type="text" class="form-control cloudy ipzipcode" placeholder="Zip Code">
               </div>
             </div>
+            
+          </div>
+        </div>
+
+        <hr>
+        <h4>Dados e configurações de utilizador</h4>
+        <div class="row">
+
+          <div class="col-md-6">
             <div class="clip-body">
               <p class="text-left">
                 <span data-i18n="useracc.new.type"></span>
@@ -399,7 +410,39 @@
               </div>
             </div>
           </div>
+
+          <div class="col-md-6">
+            <div class="clip-body">
+              <p class="text-left">RAM GB</p>
+                <div class="range range-cloudy">
+                <input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value">
+                <output id="rangeInfo">1</output>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="clip-body">
+                <p class="text-left">DISK SSD</p>
+                <div class="range range-cloudy">
+                  <input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
+                  <output id="rangeGold">1</output>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-md-6">
+              <div class="clip-body">
+                <p class="text-left">CPU GB</p>
+                <div class="range range-cloudy">
+                <input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
+                <output id="rangeDanger">1</output>
+                </div>
+              </div>
+          </div>
         </div>
+
+
         <button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5 btnadduser"><span data-i18n="btns.add"></span>
         </button>
       </div>
