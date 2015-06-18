@@ -33,7 +33,35 @@ var Router = Backbone.Router.extend({
     'manage/account': 'manaccount',
     'domain/dns': 'domaindns',
     'domain/dns/:domain': 'domaindnsdetails',
+    'support': 'support',
+    'config': 'config',
     '*notFound': 'index'
+  },
+  support: function() {
+    var self = this;
+    templateLoader.load(["SupportView"], function() {
+      self.verifyLogin(function() {
+        self.loadProfile(function () {
+          var v = new SupportView({
+            model: window.profile
+          });
+          self.showView(v, $('#content'));
+        });
+      });
+    });
+  },
+  config: function() {
+    var self = this;
+    templateLoader.load(["ConfigView"], function() {
+      self.verifyLogin(function() {
+        self.loadProfile(function () {
+          var v = new ConfigView({
+            model: window.profile
+          });
+          self.showView(v, $('#content'));
+        });
+      });
+    });
   },
   domaindns: function() {
     var self = this;

@@ -3,7 +3,13 @@ window.HeaderView = Backbone.View.extend({
     'click .newvm': 'gtnewvm',
     'click .manprofile': 'gtmprofile',
     'click .manusers': 'gtmusers',
+    'click .btn-config': 'gtconfig',
     'click .logout': 'gtlogout'
+  },
+  gtconfig: function() {
+    app.navigate('/config', {
+      trigger: true
+    });
   },
   gtnewvm: function() {
     app.navigate('/vm/add', {

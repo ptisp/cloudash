@@ -1,7 +1,13 @@
 window.MenuView = Backbone.View.extend({
   events: {
     'click .gotohome': 'gthome',
-    'click .gotodns': 'gtdns'
+    'click .gotodns': 'gtdns',
+    'click .gotosupport': 'gtsupport'
+  },
+  gtsupport: function() {
+    app.navigate('/support', {
+      trigger: true
+    });
   },
   gthome: function() {
     app.navigate('/home', {

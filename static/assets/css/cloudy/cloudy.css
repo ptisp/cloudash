@@ -446,6 +446,10 @@ strong {
 .tar {
   text-align: right;
 }
+/*  MARGIN */
+.m-0 {
+  margin: 0px !important;
+}
 
 /* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */
 /*  1199px */
