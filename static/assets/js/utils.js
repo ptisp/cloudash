@@ -1,5 +1,9 @@
 var timer = 2500;
 
+var geterrortimer = function() {
+  return 15000;
+};
+
 var modem = function(type, url, sucess, error, data) {
   $.ajax({
     async: true,

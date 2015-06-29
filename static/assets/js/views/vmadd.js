@@ -19,7 +19,6 @@ window.VMAddView = Backbone.View.extend({
     console.log(vmdetails);
     modem('POST', 'vm',
       function(json) {
-        //console.log(json);
         app.navigate('/vm/edit/'+json.id, {
           trigger: true
         });
@@ -27,6 +26,12 @@ window.VMAddView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         console.log(json);
+        $('.dng-title').html('ERRO - Criação de VM');
+        $('.dng-msg').html(json.error);
+        $('.alert-danger').show();
+        setTimeout(function () {
+          $('.alert-danger').hide();
+        }, geterrortimer());
       }, vmdetails
     );
   },
