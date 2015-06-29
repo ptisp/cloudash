@@ -7,7 +7,7 @@ window.VMDetailsView = Backbone.View.extend({
   },
   deletevm: function() {
     console.log(this.model.get('id'));
-    modem('DEL', 'vm/'+this.model.get('id'),
+    modem('DELETE', 'vm/'+this.model.get('id'),
       function(json) {
         console.log(json);
         showSuccess('SUCESSO', 'VM Apagada');
