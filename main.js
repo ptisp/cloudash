@@ -22,7 +22,9 @@ app.delete('/api/remove/:user', auth, api.user.removeUser);
 app.post('/api/vm', auth, api.vm.createVm);
 app.delete('/api/vm/:id', auth, api.vm.deleteVm);
 app.get('/api/vm/:id', auth, api.vm.vmDetails);
-app.post('/api/vm/list', auth, api.vm.vmList);
+app.get('/api/vm', auth, api.vm.vmList);
+
+app.get('/api/image', auth, api.vm.imageList);
 
 app.get('/api/config/getlogo', api.conf.getLogo);
 app.get('/api/config/clearlogo', api.conf.clearLogo);
