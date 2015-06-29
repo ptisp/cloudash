@@ -38,9 +38,24 @@ window.LoginView = Backbone.View.extend({
 
   },
 
+  getlogo: function(){
+    var self = this;
+    modem('GET', 'config/getlogo',
+      function(json) {
+        if (json.file) {
+          $('.img-responsive', self.el).attr('src',json.file.rawfile);
+        }
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+      }
+    );
+  },
+
   render: function() {
     $(this.el).html(this.template());
-
+    this.getlogo();
     return this;
   }
 

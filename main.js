@@ -24,6 +24,9 @@ app.del('/api/vm/:id', auth, api.vm.deleteVm);
 app.get('/api/vm/:id', auth, api.vm.vmDetails);
 app.post('/api/vm/list', auth, api.vm.vmList);
 
+app.get('/api/config/getlogo', api.conf.getLogo);
+app.post('/api/config/savelogo', api.conf.updateLogo);
+
 var port = process.env.PORT || 8080;
 
 console.log('(SYSTEM) Cloudy Panel'.green);
