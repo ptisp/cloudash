@@ -3,40 +3,48 @@ window.VMDetailsView = Backbone.View.extend({
     this.id = options.id;
   },
   events: {
+    'click .deletevm': 'deletevm'
   },
-  fillheader: function(vm) {
-    if (parseInt(vm.details.ram) > 1024) {
-      $('.ramusage', this.el).html(parseInt(vm.details.ram)/1024 + ' GB');
+  deletevm: function() {
+    console.log(this.model.get('id'));
+    modem('DEL', 'vm/'+this.model.get('id'),
+      function(json) {
+        console.log(json);
+        showSuccess('SUCESSO', 'VM Apagada');
+        setTimeout(function () {
+          app.navigate('home', {
+            trigger: true
+          });
+        }, 5000);
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+        showError('ERRO - Criação de VM', json.error);
+      }, vmdetails
+    );
+  },
+  fillheader: function() {
+    if (parseInt(this.model.get('ram')) > 1024) {
+      $('.ramusage', this.el).html(parseInt(this.model.get('ram'))/1024 + ' GB');
     } else {
-      $('.ramusage', this.el).html(parseInt(vm.details.ram) + ' MB');
+      $('.ramusage', this.el).html(parseInt(this.model.get('ram')) + ' MB');
     }
-    $('.cpu', this.el).html(vm.details.vcpu + ' vcpu');
-    $('.diskusage', this.el).html(vm.details.disk + ' GB');
-    if (vm.details.status === 'running') {
+    $('.cpu', this.el).html(this.model.get('vcpu') + ' vcpu');
+    $('.diskusage', this.el).html(this.model.get('disk') + ' GB');
+    if (this.model.get('status') === 'running') {
       $('.state', this.el).html('<i class="icon-play m-r-10"></i> Running');
-    } else if (vm.details.status === 'stopped') {
+    } else if (this.model.get('status') === 'stopped') {
       $('.state', this.el).html('<i class="icon-stop m-r-10"></i> Stopped');
     } else {
       $('.state', this.el).html('<i class="icon-refresh m-r-10"></i> Review');
     }
   },
-  getvmdetails: function() {
-    var self = this;
-    modem('GET', 'vm/'+self.id,
-      function(json) {
-        self.fillheader(json);
-      },
-      function(xhr, ajaxOptions, thrownError) {
-        var json = JSON.parse(xhr.responseText);
-        console.log(json);
-      }
-    );
-  },
   render: function() {
-    $(this.el).html(this.template());
+    $(this.el).html(this.template(this.model.toJSON()));
     $('.vm-details', this.el).i18n();
     $('.overme', this.el).tooltip();
-    this.getvmdetails();
+    this.fillheader();
     return this;
   }
 

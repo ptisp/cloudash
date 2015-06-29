@@ -10,7 +10,7 @@
     "header2": "Memória",
     "header3": "Disco",
     "header4": "VMs Activas",
-    "tblhead1": "Nome",
+    "tblhead1": "Hostname",
     "tblhead2": "IP(s)",
     "tblhead3": "Memória",
     "tblhead4": "Disco",
@@ -75,7 +75,7 @@
       "tab": {
         "titlevms": "Suas VMs",
         "titledit": "Editar VM(s)",
-        "power": "Energia",
+        "power": "Resumo",
         "console": "Consola",
         "stats": "Estatísticas",
         "storage": "Armazenamento",
@@ -83,7 +83,7 @@
         "edit": "Editar"
       },
       "power": {
-        "title": "Enegia",
+        "title": "Resumo",
         "subtitle": "...",
         "memory": "Memoria",
         "cpu": "vCPU",

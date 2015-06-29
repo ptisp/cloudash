@@ -1,7 +1,44 @@
 var timer = 2500;
+var errTimer = 15000;
 
-var geterrortimer = function() {
-  return 15000;
+var showError = function (title, msg) {
+  window.scrollTo(0,0);
+  $('.dng-title').html(title);
+  $('.dng-msg').html(msg);
+  $('.alert-danger').show();
+  setTimeout(function () {
+    $('.alert-danger').hide();
+  }, errTimer);
+};
+
+var showSuccess = function (title, msg) {
+  window.scrollTo(0,0);
+  $('.suc-title').html(title);
+  $('.suc-msg').html(msg);
+  $('.alert-success').show();
+  setTimeout(function () {
+    $('.alert-success').hide();
+  }, errTimer);
+};
+
+var showWarning = function (title, msg) {
+  window.scrollTo(0,0);
+  $('.wrn-title').html(title);
+  $('.wrn-msg').html(msg);
+  $('.alert-warning').show();
+  setTimeout(function () {
+    $('.alert-warning').hide();
+  }, errTimer);
+};
+
+var showInfo = function (title, msg) {
+  window.scrollTo(0,0);
+  $('.info-title').html(title);
+  $('.info-msg').html(msg);
+  $('.alert-info').show();
+  setTimeout(function () {
+    $('.alert-info').hide();
+  }, errTimer);
 };
 
 var modem = function(type, url, sucess, error, data) {

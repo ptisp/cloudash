@@ -120,9 +120,9 @@ var Router = Backbone.Router.extend({
     var self = this;
     templateLoader.load(["VMDetailsView"], function() {
       self.verifyLogin(function() {
-        self.loadProfile(function () {
+        self.loadVM(id, function () {
           var v = new VMDetailsView({
-            id: id
+            model: window.vm
           });
           self.showView(v, $('#content'));
         });
@@ -227,6 +227,10 @@ var Router = Backbone.Router.extend({
       window.logged = true;
       loggedFunction();
     }
+  },
+  loadVM: function(id, dof) {
+    window.vm = new VM();
+    window.vm.fetch(id, dof);
   },
   loadProfile: function (dof) {
     if (!window.profile) {

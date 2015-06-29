@@ -16,7 +16,7 @@ window.VMAddView = Backbone.View.extend({
         'ip': ['']
       }
     };
-    console.log(vmdetails);
+    //console.log(vmdetails);
     modem('POST', 'vm',
       function(json) {
         app.navigate('/vm/edit/'+json.id, {
@@ -26,12 +26,7 @@ window.VMAddView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         console.log(json);
-        $('.dng-title').html('ERRO - Criação de VM');
-        $('.dng-msg').html(json.error);
-        $('.alert-danger').show();
-        setTimeout(function () {
-          $('.alert-danger').hide();
-        }, geterrortimer());
+        showError('ERRO - Criação de VM', json.error);
       }, vmdetails
     );
   },
