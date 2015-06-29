@@ -19,7 +19,10 @@ window.VMAddView = Backbone.View.extend({
     console.log(vmdetails);
     modem('POST', 'vm',
       function(json) {
-        console.log(json);
+        //console.log(json);
+        app.navigate('/vm/edit/'+json.id, {
+          trigger: true
+        });
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
