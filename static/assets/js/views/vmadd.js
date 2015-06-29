@@ -9,15 +9,14 @@ window.VMAddView = Backbone.View.extend({
       'details': {
         'status': 'review',
         'image': $('.img.active').attr('data-img'),
-        'ram': parseInt($('.config.active').attr('data-ram'))*1024,
-        'disk': $('.config.active').attr('data-hdd'),
-        'vcpu': $('.config.active').attr('data-cpu'),
+        'ram': parseInt($('.config.active').attr('data-ram')*1024),
+        'disk': parseInt($('.config.active').attr('data-hdd')),
+        'vcpu': parseInt($('.config.active').attr('data-cpu')),
         'hostname': $('.hostname').val(),
         'ip': ['']
       }
     };
     console.log(vmdetails);
-
     modem('POST', 'vm',
       function(json) {
         console.log(json);
