@@ -41,7 +41,7 @@ window.HeaderView = Backbone.View.extend({
     $('.header', this.el).i18n();
     $('.overme', this.el).tooltip();
     if (this.model.get('type') !== 'admin') {
-      $('.manusers', this.el).hide();
+      $('.adminonly', this.el).hide();
     }
     return this;
   }

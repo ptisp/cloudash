@@ -1,18 +1,19 @@
 window.HomeView = Backbone.View.extend({
   events: {
-    'click #vmtable tbody tr': 'test'
+    'click #vmtable tbody tr': 'gotovm'
   },
-  test: function(evt) {
+  gotovm: function(evt) {
     if ($(evt.target).hasClass('f-18')) {
-      console.log($(evt.target).parent().parent().attr('data-id'));
-      app.navigate('/vm/edit/'+$(evt.target).parent().parent().attr('data-id'), {
+      app.navigate('/vm/edit/'+vmid, {
         trigger: true
       });
     } else {
-      console.log($(evt.target).parent().attr('data-id'));
-      app.navigate('/vm/edit/'+$(evt.target).parent().attr('data-id'), {
-        trigger: true
-      });
+      var vmid = $(evt.target).parent().attr('data-id');
+      if (!isNaN(vmid)) {
+        app.navigate('/vm/edit/'+vmid, {
+          trigger: true
+        });
+      }
     }
 
   },
@@ -33,7 +34,7 @@ window.HomeView = Backbone.View.extend({
   },
   fillvmtable: function(vms) {
     if (vms.length === 0) {
-      $('.vmtable', this.el).html('<tr><td>No VMs to show</td></tr>');
+      $('.vmtable', this.el).html('<tr><td colspan="5">No VMs to show</td></tr>');
     } else {
       var html = '';
       for (var i = 0; i < vms.length; i++) {
