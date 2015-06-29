@@ -11,11 +11,9 @@ window.VMDetailsView = Backbone.View.extend({
       function(json) {
         console.log(json);
         showSuccess('SUCESSO', 'VM Apagada');
-        setTimeout(function () {
           app.navigate('home', {
             trigger: true
           });
-        }, 5000);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
