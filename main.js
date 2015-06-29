@@ -20,6 +20,13 @@ app.get('/api/user/:user', auth, api.user.getUser);
 app.delete('/api/remove/:user', auth, api.user.removeUser);
 
 app.post('/api/vm', auth, api.vm.createVm);
+
+app.post('/api/vm/:id/start', auth, api.vm.startVm);
+app.post('/api/vm/:id/stop/:forced', auth, api.vm.stopVm);
+app.post('/api/vm/:id/stop', auth, api.vm.stopVm);
+app.post('/api/vm/:id/restart/:forced', auth, api.vm.restartVm);
+app.post('/api/vm/:id/restart', auth, api.vm.restartVm);
+
 app.delete('/api/vm/:id', auth, api.vm.deleteVm);
 app.get('/api/vm/:id', auth, api.vm.vmDetails);
 app.get('/api/vm', auth, api.vm.vmList);
