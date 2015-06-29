@@ -22,6 +22,7 @@ app.delete('/api/remove/:user', auth, api.user.removeUser);
 app.post('/api/vm', auth, api.vm.createVm);
 
 app.post('/api/vm/:id/start', auth, api.vm.startVm);
+app.post('/api/vm/:id/pause', auth, api.vm.pauseVm);
 app.post('/api/vm/:id/stop/:forced', auth, api.vm.stopVm);
 app.post('/api/vm/:id/stop', auth, api.vm.stopVm);
 app.post('/api/vm/:id/restart/:forced', auth, api.vm.restartVm);
