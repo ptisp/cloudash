@@ -5,6 +5,14 @@ window.VMDetailsView = Backbone.View.extend({
   events: {
     'click .deletevm': 'deletevm'
   },
+  remove: function() {
+    if(this.loop) {
+      clearInterval(this.loop);
+    }
+    this.$el.remove();
+    this.stopListening();
+    return this;
+  },
   deletevm: function() {
     console.log(this.model.get('id'));
     modem('DELETE', 'vm/'+this.model.get('id'),
@@ -31,23 +39,27 @@ window.VMDetailsView = Backbone.View.extend({
     $('.cpu', this.el).html(this.model.get('vcpu') + ' vcpu');
     $('.diskusage', this.el).html(this.model.get('disk') + ' GB');
     if (this.model.get('status') === 'running') {
-      $('.state', this.el).html('<i class="icon-play m-r-10"></i> Running');
+      $('.state', this.el).addClass('c-green');
+      $('.state', this.el).html('<i class="icon-play m-r-10 c-green"></i> Running');
     } else if (this.model.get('status') === 'stopped') {
-      $('.state', this.el).html('<i class="icon-stop m-r-10"></i> Stopped');
+      $('.state', this.el).addClass('c-red');
+      $('.state', this.el).html('<i class="icon-stop m-r-10 c-red"></i> Stopped');
     } else {
-      $('.state', this.el).html('<i class="icon-refresh m-r-10"></i> Pendding');
+      $('.state', this.el).addClass('c-gold');
+      $('.state', this.el).html('<i class="icon-refresh m-r-10 c-gold"></i> Pending');
     }
   },
   refreshState: function() {
     console.log('Get Status');
     var self = this;
-    this.model = window.vm.fetch(this.model.get('id'), function() {
+    window.vm.fetch(this.model.get('id'), function() {
+      self.model = window.vm;
       if (self.model.get('status') === 'running') {
-        $('.state', self.el).html('<i class="icon-play m-r-10"></i> Running');
+        $('.state', self.el).html('<i class="icon-play m-r-10 c-green"></i> Running');
       } else if (self.model.get('status') === 'stopped') {
-        $('.state', self.el).html('<i class="icon-stop m-r-10"></i> Stopped');
+        $('.state', self.el).html('<i class="icon-stop m-r-10 c-red"></i> Stopped');
       } else {
-        $('.state', self.el).html('<i class="icon-refresh m-r-10"></i> Pendding');
+        $('.state', self.el).html('<i class="icon-refresh m-r-10 c-gold"></i> Pending');
       }
     });
   },
@@ -57,11 +69,10 @@ window.VMDetailsView = Backbone.View.extend({
     $('.vm-details', this.el).i18n();
     $('.overme', this.el).tooltip();
     this.fillheader();
+    var self = this;
 
-    setTimeout(function () {
-      setInterval(function () {
-        self.refreshState(self.el);
-      }, 10000);
+    this.loop = setInterval(function () {
+      self.refreshState(self.el);
     }, 10000);
 
     return this;

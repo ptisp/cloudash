@@ -47,7 +47,7 @@ window.HomeView = Backbone.View.extend({
         if (vms[i].details.status === 'stopped') {
           icon = '<i class="icon-stop f-18 m-r-5 c-red"></i>';
           classe = 'class="danger likehref"';
-        } else if (vms[i].details.status === 'pennding') {
+        } else if (vms[i].details.status === 'pending') {
           icon = '<i class="icon-refresh f-18 m-r-5 c-gold"></i>';
           classe = 'class="default likehref"';
         }

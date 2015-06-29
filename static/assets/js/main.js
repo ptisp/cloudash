@@ -9,13 +9,13 @@ var Router = Backbone.Router.extend({
   showView: function(view, elem, sub) {
     elem.show();
 
-    if (sub === false) {
+
       if (this.currentView)
         this.currentView.close();
 
       this.currentView = view;
       this.currentView.delegateEvents();
-    }
+    
     var rendered = view.render();
     elem.removeClass('col-sm-12');
     elem.addClass('col-sm-9');
