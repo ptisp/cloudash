@@ -21,7 +21,7 @@ window.VMDetailsView = Backbone.View.extend({
         var json = JSON.parse(xhr.responseText);
         console.log(json);
         showError('ERRO - Criação de VM', json.error);
-      }, vmdetails
+      }
     );
   },
   fillheader: function() {
