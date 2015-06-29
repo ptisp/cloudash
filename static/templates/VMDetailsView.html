@@ -102,23 +102,23 @@
 				<div class="row">
 
 					<div class="col-md-3 m-b-15">
-						<button type="button"  class="btn btn-block btn-lg btn-success"><i class="icon-play"></i> <span data-i18n="btns.start"></span></button>
+						<button type="button" data-action="start" class="btn btn-block btn-lg btn-success actionvm"><i data-action="start" class="icon-play"></i> <span data-action="start" data-i18n="btns.start"></span></button>
 					</div>
 
 					<div class="col-md-3 m-b-15">
-						<button type="button"  class="btn btn-block btn-lg btn-warning"><i class="icon-less"></i> <span data-i18n="btns.pause"></span></button>
+						<button type="button" data-action="pause" class="btn btn-block btn-lg btn-warning actionvm"><i data-action="pause" class="icon-less"></i> <span data-action="pause" data-i18n="btns.pause"></span></button>
 					</div>
 
 					<!-- Stop button -->
 					<div class="col-md-3 m-b-15">
 						<div class="btn-group">
-							<button type="button" class="btn btn-lg btn-danger"><i class="icon-stop"></i> <span data-i18n="btns.stop"></span></button>
+							<button type="button" data-action="stop" class="btn btn-lg btn-danger actionvm"><i data-action="stop" class="icon-stop"></i> <span data-action="stop" data-i18n="btns.stop"></span></button>
 							<button type="button" class="btn btn-lg btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<span class="caret"></span>
 								<span class="sr-only">Toggle Dropdown</span>
 							</button>
 							<ul class="dropdown-menu" role="menu">
-								<li><a class="likehref"><i class="icon-on"></i> <span data-i18n="btns.hstop"></span></a></li>
+								<li data-action="hstop" class="actionvm"><a data-action="hstop" class="likehref"><i data-action="hstop" class="icon-on"></i> <span data-action="hstop" data-i18n="btns.hstop"></span></a></li>
 								<li class="deletevm"><a class="likehref"><i class="icon-on"></i> <span data-i18n=""> Delete</span></a></li>
 							</ul>
 						</div>
@@ -127,13 +127,13 @@
 					<!-- Restart button -->
 					<div class="col-md-3">
 						<div class="btn-group">
-							<button type="button" class="btn btn-lg btn-cloudy"><i class="icon-next_step"></i> <span data-i18n="btns.restart"></span> </button>
+							<button type="button" data-action="reboot" class="btn btn-lg btn-cloudy actionvm"><i data-action="reboot" class="icon-next_step"></i> <span data-action="reboot" data-i18n="btns.restart"></span> </button>
 							<button type="button" class="btn btn-lg btn-cloudy dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 								<span class="caret"></span>
 								<span class="sr-only">Toggle Dropdown</span>
 							</button>
 							<ul class="dropdown-menu" role="menu">
-								<li><a class="likehref"><i class="icon-on"></i> <span data-i18n="btns.hrestart"></span></a></li>
+								<li data-action="hreboot" class="actionvm"><a data-action="hreboot" class="likehref"><i data-action="hreboot" class="icon-on"></i> <span data-action="hreboot" data-i18n="btns.hrestart"></span></a></li>
 							</ul>
 						</div>
 					</div>

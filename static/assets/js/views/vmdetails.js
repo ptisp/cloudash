@@ -3,7 +3,34 @@ window.VMDetailsView = Backbone.View.extend({
     this.id = options.id;
   },
   events: {
-    'click .deletevm': 'deletevm'
+    'click .deletevm': 'deletevm',
+    'click .actionvm': 'vmaction'
+  },
+  vmaction: function(evt) {
+    var uri = '';
+    console.log($(evt.target).attr('data-action'));
+    switch ($(evt.target).attr('data-action')) {
+      case 'start': uri = 'vm/'+this.model.get('id')+'/start'; break;
+      case 'pause': uri = 'vm/'+this.model.get('id')+'/pause'; break;
+      case 'stop': uri = 'vm/'+this.model.get('id')+'/stop'; break;
+      case 'hstop': uri = 'vm/'+this.model.get('id')+'/stop/true'; break;
+      case 'reboot': uri = 'vm/'+this.model.get('id')+'/restart'; break;
+      case 'hreboot': uri = 'vm/'+this.model.get('id')+'/restart/true'; break;
+
+    }
+    console.log(uri);
+    
+    modem('POST', uri,
+      function(json) {
+        console.log(json);
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+        showError('ERRO - Criação de VM', json.error);
+      }
+    );
+
   },
   remove: function() {
     if(this.loop) {
@@ -70,11 +97,11 @@ window.VMDetailsView = Backbone.View.extend({
     $('.overme', this.el).tooltip();
     this.fillheader();
     var self = this;
-
+/*
     this.loop = setInterval(function () {
       self.refreshState(self.el);
     }, 10000);
-
+*/
     return this;
   }
 
