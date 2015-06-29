@@ -12,7 +12,8 @@
     "mongodb": "*",
     "body-parser": "1.2.x",
     "errorhandler": "1.0.x",
-    "basic-auth": "0.0.x"
+    "basic-auth": "0.0.x",
+    "opennebula": "*"
   },
   "scripts": {
     "start": "node main.js"
