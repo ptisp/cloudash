@@ -70,11 +70,7 @@ window.HomeView = Backbone.View.extend({
   },
   getvms: function() {
     var self = this;
-    var data = {
-      'type': this.model.get('type'),
-      'owner': this.model.get('username')
-    };
-    modem('POST', 'vm/list',
+    modem('GET', 'vm',
       function(json) {
         self.fillvmtable(json);
         self.fillheaders(json);
@@ -82,7 +78,7 @@ window.HomeView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         console.log(json);
-      }, data
+      }
     );
   },
   render: function() {

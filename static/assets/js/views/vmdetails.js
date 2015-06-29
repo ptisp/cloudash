@@ -38,11 +38,32 @@ window.VMDetailsView = Backbone.View.extend({
       $('.state', this.el).html('<i class="icon-refresh m-r-10"></i> Pendding');
     }
   },
+  refreshState: function() {
+    console.log('Get Status');
+    var self = this;
+    this.model = window.vm.fetch(this.model.get('id'), function() {
+      if (self.model.get('status') === 'running') {
+        $('.state', self.el).html('<i class="icon-play m-r-10"></i> Running');
+      } else if (self.model.get('status') === 'stopped') {
+        $('.state', self.el).html('<i class="icon-stop m-r-10"></i> Stopped');
+      } else {
+        $('.state', self.el).html('<i class="icon-refresh m-r-10"></i> Pendding');
+      }
+    });
+  },
+
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
     $('.vm-details', this.el).i18n();
     $('.overme', this.el).tooltip();
     this.fillheader();
+
+    setTimeout(function () {
+      setInterval(function () {
+        self.refreshState(self.el);
+      }, 10000);
+    }, 10000);
+
     return this;
   }
 
