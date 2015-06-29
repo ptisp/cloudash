@@ -11,9 +11,9 @@ window.VMDetailsView = Backbone.View.extend({
       function(json) {
         console.log(json);
         showSuccess('SUCESSO', 'VM Apagada');
-          app.navigate('home', {
-            trigger: true
-          });
+        app.navigate('home', {
+          trigger: true
+        });
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
@@ -35,7 +35,7 @@ window.VMDetailsView = Backbone.View.extend({
     } else if (this.model.get('status') === 'stopped') {
       $('.state', this.el).html('<i class="icon-stop m-r-10"></i> Stopped');
     } else {
-      $('.state', this.el).html('<i class="icon-refresh m-r-10"></i> Review');
+      $('.state', this.el).html('<i class="icon-refresh m-r-10"></i> Pendding');
     }
   },
   render: function() {

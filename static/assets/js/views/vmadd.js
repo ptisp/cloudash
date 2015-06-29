@@ -7,7 +7,7 @@ window.VMAddView = Backbone.View.extend({
     var vmdetails = {
       'owner': this.model.get('username'),
       'details': {
-        'status': 'review',
+        'status': 'pendding',
         'image': $('.img.active').attr('data-img'),
         'ram': parseInt($('.config.active').attr('data-ram')*1024),
         'disk': parseInt($('.config.active').attr('data-hdd')),
