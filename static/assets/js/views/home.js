@@ -9,7 +9,7 @@ window.HomeView = Backbone.View.extend({
       });
     } else {
       var vmid = $(evt.target).parent().attr('data-id');
-      if (!isNaN(vmid)) {
+      if (vmid) {
         app.navigate('/vm/edit/'+vmid, {
           trigger: true
         });
