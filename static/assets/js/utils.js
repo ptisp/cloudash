@@ -11,6 +11,32 @@ var showError = function (title, msg) {
   }, errTimer);
 };
 
+var formatdate = function(date) {
+  var mes = '' + (date.getMonth() + 1);
+  if (mes.length == 1) {
+    mes = '0' + mes;
+  }
+  var dia = '' + date.getDate();
+  if (dia.length == 1) {
+    dia = '0' + dia;
+  }
+  var sdate = date.getFullYear() + '/' + mes + '/' + dia;
+  var horas = '' + date.getHours();
+  if (horas.length == 1) {
+    horas = '0' + horas;
+  }
+  var min = '' + date.getMinutes();
+  if (min.length == 1) {
+    min = '0' + min;
+  }
+  var seg = '' + date.getSeconds();
+  if (seg.length == 1) {
+    seg = '0' + seg;
+  }
+  sdate += ' - ' + horas + ':' + min + ':' + seg;
+  return sdate;
+};
+
 var showSuccess = function (title, msg) {
   window.scrollTo(0,0);
   $('.suc-title').html(title);

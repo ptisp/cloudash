@@ -902,6 +902,621 @@ table.table thead .sorting_desc_disabled {
 table.table thead .sorting { background: url('../../img/cloudy/sort_both.png') no-repeat center right; }
 table.table thead .sorting_asc { background: url('../../img/cloudy/sort_asc.png') no-repeat center right; }
 table.table thead .sorting_desc { background: url('../../img/cloudy/sort_desc.png') no-repeat center right; }
-
 table.table thead .sorting_asc_disabled { background: url('../../img/cloudy/sort_asc_disabled.png') no-repeat center right; }
 table.table thead .sorting_desc_disabled { background: url('../../img/cloudy/sort_desc_disabled.png') no-repeat center right; }
+
+ul.wysihtml5-toolbar {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+ul.wysihtml5-toolbar > li {
+  float: left;
+  display: list-item;
+  list-style: none;
+  margin: 0 5px 10px 0;
+}
+ul.wysihtml5-toolbar a[data-wysihtml5-command=underline] {
+  text-decoration: underline;
+}
+ul.wysihtml5-toolbar a[data-wysihtml5-command=italic] {
+  font-style: italic;
+}
+ul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {
+  font-family: "aileronbold" !important;
+}
+.btn-muse {
+  color: #212122;
+  border: none;
+  border-radius: 1px;
+  background-color: #e3e4e5;
+}
+.btn-muse:hover {
+  background-color: #d3d5d6;
+}
+[class*="iconlist-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  *margin-right: .3em;
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: url("../../img/glyphicons-halflings.png");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+}
+
+/* White icons with optional class, or on hover/active states of certain elements */
+
+.iconlist-white,
+.nav > .active > a > [class^="iconlist-"],
+.nav > .active > a > [class*=" iconlist-"],
+.dropdown-menu > li > a:hover > [class^="iconlist-"],
+.dropdown-menu > li > a:hover > [class*=" iconlist-"],
+.dropdown-menu > .active > a > [class^="iconlist-"],
+.dropdown-menu > .active > a > [class*=" iconlist-"] {
+  background-image: url("../../img/glyphicons-halflings-white.png");
+}
+
+.iconlist-glass {
+  background-position: 0      0;
+}
+
+.iconlist-music {
+  background-position: -24px 0;
+}
+
+.iconlist-search {
+  background-position: -48px 0;
+}
+
+.iconlist-envelope {
+  background-position: -72px 0;
+}
+
+.iconlist-heart {
+  background-position: -96px 0;
+}
+
+.iconlist-star {
+  background-position: -120px 0;
+}
+
+.iconlist-star-empty {
+  background-position: -144px 0;
+}
+
+.iconlist-user {
+  background-position: -168px 0;
+}
+
+.iconlist-film {
+  background-position: -192px 0;
+}
+
+.iconlist-th-large {
+  background-position: -216px 0;
+}
+
+.iconlist-th {
+  background-position: -240px 0;
+}
+
+.iconlist-th-list {
+  background-position: -264px 0;
+}
+
+.iconlist-ok {
+  background-position: -288px 0;
+}
+
+.iconlist-remove {
+  background-position: -312px 0;
+}
+
+.iconlist-zoom-in {
+  background-position: -336px 0;
+}
+
+.iconlist-zoom-out {
+  background-position: -360px 0;
+}
+
+.iconlist-off {
+  background-position: -384px 0;
+}
+
+.iconlist-signal {
+  background-position: -408px 0;
+}
+
+.iconlist-cog {
+  background-position: -432px 0;
+}
+
+.iconlist-trash {
+  background-position: -456px 0;
+}
+
+.iconlist-home {
+  background-position: 0 -24px;
+}
+
+.iconlist-file {
+  background-position: -24px -24px;
+}
+
+.iconlist-time {
+  background-position: -48px -24px;
+}
+
+.iconlist-road {
+  background-position: -72px -24px;
+}
+
+.iconlist-download-alt {
+  background-position: -96px -24px;
+}
+
+.iconlist-download {
+  background-position: -120px -24px;
+}
+
+.iconlist-upload {
+  background-position: -144px -24px;
+}
+
+.iconlist-inbox {
+  background-position: -168px -24px;
+}
+
+.iconlist-play-circle {
+  background-position: -192px -24px;
+}
+
+.iconlist-repeat {
+  background-position: -216px -24px;
+}
+
+.iconlist-refresh {
+  background-position: -240px -24px;
+}
+
+.iconlist-list-alt {
+  background-position: -264px -24px;
+}
+
+.iconlist-lock {
+  background-position: -287px -24px;
+}
+
+.iconlist-flag {
+  background-position: -312px -24px;
+}
+
+.iconlist-headphones {
+  background-position: -336px -24px;
+}
+
+.iconlist-volume-off {
+  background-position: -360px -24px;
+}
+
+.iconlist-volume-down {
+  background-position: -384px -24px;
+}
+
+.iconlist-volume-up {
+  background-position: -408px -24px;
+}
+
+.iconlist-qrcode {
+  background-position: -432px -24px;
+}
+
+.iconlist-barcode {
+  background-position: -456px -24px;
+}
+
+.iconlist-tag {
+  background-position: 0 -48px;
+}
+
+.iconlist-tags {
+  background-position: -25px -48px;
+}
+
+.iconlist-book {
+  background-position: -48px -48px;
+}
+
+.iconlist-bookmark {
+  background-position: -72px -48px;
+}
+
+.iconlist-print {
+  background-position: -96px -48px;
+}
+
+.iconlist-camera {
+  background-position: -120px -48px;
+}
+
+.iconlist-font {
+  background-position: -144px -48px;
+}
+
+.iconlist-bold {
+  background-position: -167px -48px;
+}
+
+.iconlist-italic {
+  background-position: -192px -48px;
+}
+
+.iconlist-text-height {
+  background-position: -216px -48px;
+}
+
+.iconlist-text-width {
+  background-position: -240px -48px;
+}
+
+.iconlist-align-left {
+  background-position: -264px -48px;
+}
+
+.iconlist-align-center {
+  background-position: -288px -48px;
+}
+
+.iconlist-align-right {
+  background-position: -312px -48px;
+}
+
+.iconlist-align-justify {
+  background-position: -336px -48px;
+}
+
+.iconlist-list {
+  background-position: -360px -48px;
+}
+
+.iconlist-indent-left {
+  background-position: -384px -48px;
+}
+
+.iconlist-indent-right {
+  background-position: -408px -48px;
+}
+
+.iconlist-facetime-video {
+  background-position: -432px -48px;
+}
+
+.iconlist-picture {
+  background-position: -456px -48px;
+}
+
+.iconlist-pencil {
+  background-position: 0 -72px;
+}
+
+.iconlist-map-marker {
+  background-position: -24px -72px;
+}
+
+.iconlist-adjust {
+  background-position: -48px -72px;
+}
+
+.iconlist-tint {
+  background-position: -72px -72px;
+}
+
+.iconlist-edit {
+  background-position: -96px -72px;
+}
+
+.iconlist-share {
+  background-position: -120px -72px;
+}
+
+.iconlist-check {
+  background-position: -144px -72px;
+}
+
+.iconlist-move {
+  background-position: -168px -72px;
+}
+
+.iconlist-step-backward {
+  background-position: -192px -72px;
+}
+
+.iconlist-fast-backward {
+  background-position: -216px -72px;
+}
+
+.iconlist-backward {
+  background-position: -240px -72px;
+}
+
+.iconlist-play {
+  background-position: -264px -72px;
+}
+
+.iconlist-pause {
+  background-position: -288px -72px;
+}
+
+.iconlist-stop {
+  background-position: -312px -72px;
+}
+
+.iconlist-forward {
+  background-position: -336px -72px;
+}
+
+.iconlist-fast-forward {
+  background-position: -360px -72px;
+}
+
+.iconlist-step-forward {
+  background-position: -384px -72px;
+}
+
+.iconlist-eject {
+  background-position: -408px -72px;
+}
+
+.iconlist-chevron-left {
+  background-position: -432px -72px;
+}
+
+.iconlist-chevron-right {
+  background-position: -456px -72px;
+}
+
+.iconlist-plus-sign {
+  background-position: 0 -96px;
+}
+
+.iconlist-minus-sign {
+  background-position: -24px -96px;
+}
+
+.iconlist-remove-sign {
+  background-position: -48px -96px;
+}
+
+.iconlist-ok-sign {
+  background-position: -72px -96px;
+}
+
+.iconlist-question-sign {
+  background-position: -96px -96px;
+}
+
+.iconlist-info-sign {
+  background-position: -120px -96px;
+}
+
+.iconlist-screenshot {
+  background-position: -144px -96px;
+}
+
+.iconlist-remove-circle {
+  background-position: -168px -96px;
+}
+
+.iconlist-ok-circle {
+  background-position: -192px -96px;
+}
+
+.iconlist-ban-circle {
+  background-position: -216px -96px;
+}
+
+.iconlist-arrow-left {
+  background-position: -240px -96px;
+}
+
+.iconlist-arrow-right {
+  background-position: -264px -96px;
+}
+
+.iconlist-arrow-up {
+  background-position: -289px -96px;
+}
+
+.iconlist-arrow-down {
+  background-position: -312px -96px;
+}
+
+.iconlist-share-alt {
+  background-position: -336px -96px;
+}
+
+.iconlist-resize-full {
+  background-position: -360px -96px;
+}
+
+.iconlist-resize-small {
+  background-position: -384px -96px;
+}
+
+.iconlist-plus {
+  background-position: -408px -96px;
+}
+
+.iconlist-minus {
+  background-position: -433px -96px;
+}
+
+.iconlist-asterisk {
+  background-position: -456px -96px;
+}
+
+.iconlist-exclamation-sign {
+  background-position: 0 -120px;
+}
+
+.iconlist-gift {
+  background-position: -24px -120px;
+}
+
+.iconlist-leaf {
+  background-position: -48px -120px;
+}
+
+.iconlist-fire {
+  background-position: -72px -120px;
+}
+
+.iconlist-eye-open {
+  background-position: -96px -120px;
+}
+
+.iconlist-eye-close {
+  background-position: -120px -120px;
+}
+
+.iconlist-warning-sign {
+  background-position: -144px -120px;
+}
+
+.iconlist-plane {
+  background-position: -168px -120px;
+}
+
+.iconlist-calendar {
+  background-position: -192px -120px;
+}
+
+.iconlist-random {
+  width: 16px;
+  background-position: -216px -120px;
+}
+
+.iconlist-comment {
+  background-position: -240px -120px;
+}
+
+.iconlist-magnet {
+  background-position: -264px -120px;
+}
+
+.iconlist-chevron-up {
+  background-position: -288px -120px;
+}
+
+.iconlist-chevron-down {
+  background-position: -313px -119px;
+}
+
+.iconlist-retweet {
+  background-position: -336px -120px;
+}
+
+.iconlist-shopping-cart {
+  background-position: -360px -120px;
+}
+
+.iconlist-folder-close {
+  background-position: -384px -120px;
+}
+
+.iconlist-folder-open {
+  width: 16px;
+  background-position: -408px -120px;
+}
+
+.iconlist-resize-vertical {
+  background-position: -432px -119px;
+}
+
+.iconlist-resize-horizontal {
+  background-position: -456px -118px;
+}
+
+.iconlist-hdd {
+  background-position: 0 -144px;
+}
+
+.iconlist-bullhorn {
+  background-position: -24px -144px;
+}
+
+.iconlist-bell {
+  background-position: -48px -144px;
+}
+
+.iconlist-certificate {
+  background-position: -72px -144px;
+}
+
+.iconlist-thumbs-up {
+  background-position: -96px -144px;
+}
+
+.iconlist-thumbs-down {
+  background-position: -120px -144px;
+}
+
+.iconlist-hand-right {
+  background-position: -144px -144px;
+}
+
+.iconlist-hand-left {
+  background-position: -168px -144px;
+}
+
+.iconlist-hand-up {
+  background-position: -192px -144px;
+}
+
+.iconlist-hand-down {
+  background-position: -216px -144px;
+}
+
+.iconlist-circle-arrow-right {
+  background-position: -240px -144px;
+}
+
+.iconlist-circle-arrow-left {
+  background-position: -264px -144px;
+}
+
+.iconlist-circle-arrow-up {
+  background-position: -288px -144px;
+}
+
+.iconlist-circle-arrow-down {
+  background-position: -312px -144px;
+}
+
+.iconlist-globe {
+  background-position: -336px -144px;
+}
+
+.iconlist-wrench {
+  background-position: -360px -144px;
+}
+
+.iconlist-tasks {
+  background-position: -384px -144px;
+}
+
+.iconlist-filter {
+  background-position: -408px -144px;
+}
+
+.iconlist-briefcase {
+  background-position: -432px -144px;
+}
+
+.iconlist-fullscreen {
+  background-position: -456px -144px;
+}

@@ -40,7 +40,7 @@ window.VMDetailsView = Backbone.View.extend({
     var uri = '';
     var title = '';
     var msg = '';
-    console.log($(evt.target).attr('data-action'));
+    //console.log($(evt.target).attr('data-action'));
     if (!$(evt.target).attr('data-action')) return;
     switch ($(evt.target).attr('data-action')) {
       case 'start':
@@ -74,11 +74,11 @@ window.VMDetailsView = Backbone.View.extend({
         msg = 'VM ' + this.model.get('hostname') + ' Rebotada';
         break;
     }
-    console.log(uri);
+    //console.log(uri);
 
     modem('POST', uri,
       function(json) {
-        console.log(json);
+        //console.log(json);
         showInfo(title, msg);
         self.refreshState();
       },

@@ -33,7 +33,7 @@ window.VMAddView = Backbone.View.extend({
   getimages: function() {
     modem('GET', 'image',
       function(json) {
-        console.log(json);
+        //console.log(json);
         for( var i = 0; i < json.images.length; i++) {
           var img = '';
           if (json.images[i].toLowerCase().indexOf('centos') > -1) {
