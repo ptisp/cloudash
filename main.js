@@ -27,6 +27,7 @@ app.post('/api/vm/:id/stop', auth, api.vm.stopVm);
 app.post('/api/vm/:id/restart/:forced', auth, api.vm.restartVm);
 app.post('/api/vm/:id/restart', auth, api.vm.restartVm);
 app.post('/api/vm', auth, api.vm.createVm);
+app.get('/api/vm/:id/metrics', auth, api.vm.statsVm);
 
 app.delete('/api/vm/:id', auth, api.vm.deleteVm);
 app.get('/api/vm/:id', auth, api.vm.vmDetails);
