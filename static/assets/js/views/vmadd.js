@@ -36,17 +36,17 @@ window.VMAddView = Backbone.View.extend({
         console.log(json);
         for( var i = 0; i < json.images.length; i++) {
           var img = '';
-          if (json.images[i].indexOf('centos') > -1) {
+          if (json.images[i].toLowerCase().indexOf('centos') > -1) {
             img = 'assets/img/soft/centos.png';
-          } else if (json.images[i].indexOf('debian') > -1) {
+          } else if (json.images[i].toLowerCase().indexOf('debian') > -1) {
             img = 'assets/img/soft/debian.png';
-          } else if (json.images[i].indexOf('ubuntu') > -1) {
+          } else if (json.images[i].toLowerCase().indexOf('ubuntu') > -1) {
             img = 'assets/img/soft/ubuntu.png';
-          } else if (json.images[i].indexOf('coreos') > -1) {
+          } else if (json.images[i].toLowerCase().indexOf('coreos') > -1) {
             img = 'assets/img/soft/coreos.png';
-          } else if (json.images[i].indexOf('suse') > -1) {
+          } else if (json.images[i].toLowerCase().indexOf('suse') > -1) {
             img = 'assets/img/soft/opensuse.png';
-          } else if (json.images[i].indexOf('fedora') > -1) {
+          } else if (json.images[i].toLowerCase().indexOf('fedora') > -1) {
             img = 'assets/img/soft/fedora.png';
           } else {
             img = 'assets/img/soft/linux.png';

@@ -1,6 +1,19 @@
 window.HomeView = Backbone.View.extend({
   events: {
-    'click #vmtable tbody tr': 'gotovm'
+    'click #example tbody tr': 'gotovm',
+    'keyup #pesquisa': 'filtro',
+    'change #ddshow': 'show',
+  },
+  show: function() {
+    var index = document.getElementById('ddshow').selectedIndex;
+    var oTable = $('#example').dataTable();
+    var oSettings = oTable.fnSettings();
+    oSettings._iDisplayLength = parseInt(document.getElementsByTagName('option')[index].value);
+    oTable.fnDraw();
+  },
+  filtro: function() {
+    var oTable = $('#example').dataTable();
+    oTable.fnFilter($('#pesquisa').val());
   },
   gotovm: function(evt) {
     if ($(evt.target).hasClass('f-18')) {
@@ -32,47 +45,61 @@ window.HomeView = Backbone.View.extend({
     $('.diskusage', this.el).html(hdd);
     $('.activevm', this.el).html(active);
   },
-  fillvmtable: function(vms) {
-    if (vms.length === 0) {
-      $('.vmtable', this.el).html('<tr><td colspan="5">No VMs to show</td></tr>');
-    } else {
-      var html = '';
-      for (var i = 0; i < vms.length; i++) {
-        var user = '';
-        if (vms[i].owner !== this.model.get('username')) {
-          user = '<i class="icon-user f-18 m-r-5 pull-right" title="'+ vms[i].owner +'"></i>';
-        }
-        var icon = '<i class="icon-refresh f-18 m-r-5 c-gold"></i>';
-        var classe = 'class="default likehref"';
-        if (vms[i].details.status === 'stopped') {
-          icon = '<i class="icon-stop f-18 m-r-5 c-red"></i>';
-          classe = 'class="danger likehref"';
-        } else if (vms[i].details.status === 'running') {
-           icon = '<i class="icon-play f-18 m-r-5 c-green"></i>';
-           classe = 'class="success likehref"';
-        }
-        var auxip = '';
-        for (var j = 0; j < vms[i].details.ip.length; j++) {
-          auxip += vms[i].details.ip[j];
-          if (j !== vms[i].details.ip.length-1) {
-            auxip += ', ';
-          }
-        }
-        html = '<tr ' + classe + ' data-id="'+vms[i]._id+'"><td>' + icon + ' ' + vms[i].details.hostname + ' '+ user +'</td>';
-        html += '<td>' + auxip + '</td>';
-        if (vms[i].details.ram > 1024) html += '<td>' + vms[i].details.ram/1024 + 'GB</td>';
-        else html += '<td>' + vms[i].details.ram + 'MB</td>';
-        html += '<td>' + vms[i].details.disk + 'GB</td>';
-        html += '<td>' + vms[i].details.status + '</td>';
-        $('.vmtable', this.el).append(html);
-      }
-    }
-  },
   getvms: function() {
     var self = this;
+    var handler = function(json) {
+      var oTable = $('#example', self.el).dataTable({
+        "data": json,
+        "columns": [
+          {"data": null,
+            "bSortable": true,
+            "mRender": function(data, type, full) {
+              var icon = '<i class="icon-refresh f-18 m-r-5 c-gold"></i>';
+              if (full.details.status === 'stopped') {
+                icon = '<i class="icon-stop f-18 m-r-5 c-red"></i>';
+              } else if (full.details.status === 'running') {
+                 icon = '<i class="icon-play f-18 m-r-5 c-green"></i>';
+              }
+              return icon + full.details.hostname;
+            }},
+          {"data": "details.ip"},
+          {"data": null,
+            "bSortable": true,
+            "mRender": function(data, type, full) {
+              if (full.details.ram >= 1024)
+                return parseInt(full.details.ram)/1024 + 'GB';
+              else
+                return parseInt(full.details.ram) + 'MB';
+            }},
+          {"data": null,
+            "bSortable": true,
+            "mRender": function(data, type, full) {
+              return parseInt(full.details.disk) + 'GB';
+            }},
+          {"data": "details.status"},
+        ],
+        "fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+            var classe;
+            switch (aData.details.status) {
+              case 'running':
+                classe = 'success likehref';
+                break;
+              case 'stopped':
+                classe = 'danger likehref';
+                break;
+              default:
+                classe = 'default likehref';
+                break;
+            }
+            $(nRow).addClass( classe );
+            $(nRow).attr('data-id',aData._id);
+            return nRow;
+        }
+      });
+    };
     modem('GET', 'vm',
       function(json) {
-        self.fillvmtable(json);
+        handler(json);
         self.fillheaders(json);
       },
       function(xhr, ajaxOptions, thrownError) {
