@@ -42,14 +42,14 @@ window.HomeView = Backbone.View.extend({
         if (vms[i].owner !== this.model.get('username')) {
           user = '<i class="icon-user f-18 m-r-5 pull-right" title="'+ vms[i].owner +'"></i>';
         }
-        var icon = '<i class="icon-play f-18 m-r-5 c-green"></i>';
-        var classe = 'class="success likehref"';
+        var icon = '<i class="icon-refresh f-18 m-r-5 c-gold"></i>';
+        var classe = 'class="default likehref"';
         if (vms[i].details.status === 'stopped') {
           icon = '<i class="icon-stop f-18 m-r-5 c-red"></i>';
           classe = 'class="danger likehref"';
-        } else if (vms[i].details.status === 'pending') {
-          icon = '<i class="icon-refresh f-18 m-r-5 c-gold"></i>';
-          classe = 'class="default likehref"';
+        } else if (vms[i].details.status === 'running') {
+           icon = '<i class="icon-play f-18 m-r-5 c-green"></i>';
+           classe = 'class="success likehref"';
         }
         var auxip = '';
         for (var j = 0; j < vms[i].details.ip.length; j++) {
