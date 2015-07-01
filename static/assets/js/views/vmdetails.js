@@ -188,15 +188,9 @@ window.VMDetailsView = Backbone.View.extend({
   loadCharts: function() {
     modem('GET', 'vm/' + this.model.get('id') + '/metrics',
       function(json) {
-        var cpuChart = new CPUChart('placeHolder1', {
-          'size': 512
-        });
-        var memoryChart = new MemoryChart('placeHolder2', {
-          'size': 512
-        });
-        var networkChart = new NetworkChart('placeHolder3', {
-          'size': 512
-        });
+        var cpuChart = new CPUChart('placeHolder1');
+        var memoryChart = new MemoryChart('placeHolder2');
+        var networkChart = new NetworkChart('placeHolder3');
         cpuChart.init();
         memoryChart.init();
         networkChart.init();

@@ -26,10 +26,18 @@ MemoryChart.prototype.init = function() {
     graph: self.graph,
     tickFormat: function(y) {
       var abs_y = Math.abs(y);
-      if (abs_y === 0) {
+      if (abs_y >= 1073741824) {
+        return parseInt(y / 1073741824) + "TB";
+      } else if (abs_y >= 1048576) {
+        return parseInt(y / 1048576) + "GB";
+      } else if (abs_y >= 1024) {
+        return parseInt(y / 1024) + "MB";
+      } else if (abs_y < 1 && y > 0) {
+        return parseInt(y);
+      } else if (abs_y === 0) {
         return '';
       } else {
-        return y;
+        return parseInt(y);
       }
     },
     ticks: 5,

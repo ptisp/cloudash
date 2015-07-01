@@ -29,7 +29,7 @@ CPUChart.prototype.init = function() {
       if (abs_y === 0) {
         return '';
       } else {
-        return y;
+        return y + '%';
       }
     },
     ticks: 5,
