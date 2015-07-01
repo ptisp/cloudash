@@ -43,8 +43,7 @@ var Router = Backbone.Router.extend({
         self.loadProfile(function () {
           self.loadTicket(id, function () {
             var v = new TicketDetailsView({
-              model: window.profile,
-              ticket: window.ticket,
+              model: window.ticket
             });
             self.showView(v, $('#content'));
           });
