@@ -578,7 +578,7 @@ a {
 /* TABLES */
 table.table.clip {
   background-color: #fff;
-  border-spacing: 5px 0px;
+  border-spacing: 0px 0px !important;
   padding: 8px 0px;
   border-collapse: separate;
 }

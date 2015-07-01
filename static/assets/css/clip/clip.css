@@ -640,7 +640,7 @@
 }
 /* panel success */
 .panel-success>.panel-heading {
-	color: #007D3D; 
+	color: #007D3D;
 	background-color: #bae8b9;
 	padding: 0px;
 	-webkit-border-radius: 1px;
@@ -690,7 +690,7 @@
 }
 /* panel danger */
 .panel-danger>.panel-heading {
-	color: #B11B1B; 
+	color: #B11B1B;
 	background-color: #f4bfbf;
 	padding: 0px;
 	-webkit-border-radius: 1px;
@@ -740,7 +740,7 @@
 }
 /* panel info*/
 .panel-info>.panel-heading {
-	color: #31708F; 
+	color: #31708F;
 	background-color: #A7DCF2;
 	padding: 0px;
 	-webkit-border-radius: 1px;
@@ -790,7 +790,7 @@
 }
 /* panel warning */
 .panel-warning>.panel-heading {
-	color: #8A6D3B; 
+	color: #8A6D3B;
 	background-color: #F8E8AE;
 	padding: 0px;
 	-webkit-border-radius: 1px;
@@ -2909,27 +2909,3 @@ blockquote.invert{
 	z-index: 5;
 	display: inline-block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
