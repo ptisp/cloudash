@@ -177,18 +177,23 @@ window.VMDetailsView = Backbone.View.extend({
   extrainfo: function() {
     var ips = '';
     var ip = this.model.get('ip');
-    for ( var i = 0; i < ip.length; i++) {
+    for (var i = 0; i < ip.length; i++) {
       if (i !== 0) {
         ips += ', ';
       }
       ips += ip[i];
     }
-    $('.infohostanme', this.el).html(this.model.get('hostname') +' - '+ips);
+    $('.infohostanme', this.el).html(this.model.get('hostname') + ' - ' + ips);
   },
   loadCharts: function() {
     modem('GET', 'vm/' + this.model.get('id') + '/metrics',
       function(json) {
         console.log(json);
+
+        var cpuChart = new CPUChart('placeHolder1', {
+          'size': 512
+        });
+        cpuChart.appendData(json.stats);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
