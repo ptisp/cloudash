@@ -5,25 +5,33 @@
 			<li class="active">
 				<a href="#power" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-on f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-on m-r-5"></i><span data-i18n="vm.edit.tab.power"></span></span>
+					<span class="hidden-xs f-16"><i class="icon-on m-r-5"></i>
+						<span data-i18n="vm.edit.tab.power"></span>
+					</span>
 				</a>
 			</li>
 			<li>
 				<a href="#console" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-vnc_console f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-vnc_console m-r-5"></i><span data-i18n="vm.edit.tab.console"></span></span>
+					<span class="hidden-xs f-16"><i class="icon-vnc_console m-r-5"></i>
+						<span data-i18n="vm.edit.tab.console"></span>
+					</span>
 				</a>
 			</li>
 			<li>
 				<a href="#stats" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-graph f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-graph m-r-5"></i><span data-i18n="vm.edit.tab.stats"></span></span>
+					<span class="hidden-xs f-16"><i class="icon-graph m-r-5"></i>
+						<span data-i18n="vm.edit.tab.stats"></span>
+					</span>
 				</a>
 			</li>
 			<li>
 				<a href="#settings" data-toggle="tab">
 					<span class="visible-xs"><i class="icon-managed f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-managed m-r-5"></i><span data-i18n="vm.edit.tab.setting"></span></span>
+					<span class="hidden-xs f-16"><i class="icon-managed m-r-5"></i>
+						<span data-i18n="vm.edit.tab.setting"></span>
+					</span>
 				</a>
 			</li>
 		</ul>
@@ -34,10 +42,12 @@
 				<div class="row">
 
 					<div class="col-md-12">
-			            <h2 class="m-b-0"><span data-i18n="vm.edit.power.title"></span></h2>
-			            <p class="infohostanme"></p>
-			            <hr>
-			        </div>
+						<h2 class="m-b-0">
+							<span data-i18n="vm.edit.power.title"></span>
+						</h2>
+						<p class="infohostanme"></p>
+						<hr>
+					</div>
 					<div class="col-md-3 stat">
 						<div class="pallete-item m-b-0">
 							<dl class="palette palette-default pal">
@@ -48,8 +58,8 @@
 								<span class="f-22 c-blue-cl ramusage"></span>
 							</dl>
 							<div class="progress animation-sm">
-					        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="20" style="width: 20%;">20</div>
-					    	</div>
+								<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="20" style="width: 20%;">20</div>
+							</div>
 						</div>
 					</div>
 
@@ -57,14 +67,14 @@
 						<div class="pallete-ite mm-b-0">
 							<dl class="palette palette-default pal">
 								<i class="icon-cpu f-22 m-r-10"></i>
-								<span class="f-16"  data-i18n="vm.edit.power.cpu"></span>
+								<span class="f-16" data-i18n="vm.edit.power.cpu"></span>
 							</dl>
 							<dl class="palette palette-default-hover pal">
 								<span class="f-22 c-blue-cl cpu"></span>
 							</dl>
 							<div class="progress animation-sm">
-					        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="45" style="width: 45%;">45</div>
-					    	</div>
+								<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="45" style="width: 45%;">45</div>
+							</div>
 						</div>
 					</div>
 
@@ -78,8 +88,8 @@
 								<span class="f-22 c-blue-cl diskusage"></span>
 							</dl>
 							<div class="progress animation-sm">
-					        	<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="10" style="width: 10%;">10</div>
-					    	</div>
+								<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="10" style="width: 10%;">10</div>
+							</div>
 						</div>
 					</div>
 
@@ -95,24 +105,30 @@
 						</div>
 					</div>
 					<hr>
-			    </div>
+				</div>
 
 				<hr>
 
 				<div class="row">
 
 					<div class="col-md-3 m-b-15">
-						<button type="button" data-action="start" id="btnstart" class="btn btn-block btn-lg btn-success actionvm"><i data-action="start" class="icon-play"></i> <span data-action="start" data-i18n="btns.start"></span></button>
+						<button type="button" data-action="start" id="btnstart" class="btn btn-block btn-lg btn-success actionvm"><i data-action="start" class="icon-play"></i>
+							<span data-action="start" data-i18n="btns.start"></span>
+						</button>
 					</div>
 
 					<div class="col-md-3 m-b-15">
-						<button type="button" data-action="pause" id="btnpause" class="btn btn-block btn-lg btn-warning actionvm"><i data-action="pause" class="icon-less"></i> <span data-action="pause" data-i18n="btns.pause"></span></button>
+						<button type="button" data-action="pause" id="btnpause" class="btn btn-block btn-lg btn-warning actionvm"><i data-action="pause" class="icon-less"></i>
+							<span data-action="pause" data-i18n="btns.pause"></span>
+						</button>
 					</div>
 
 					<!-- Stop button -->
 					<div class="col-md-3 m-b-15">
 						<div class="btn-group">
-							<button type="button" data-action="stop" id="btnstop" class="btn btn-lg btn-danger actionvm"><i data-action="stop" class="icon-stop"></i> <span data-action="stop" data-i18n="btns.stop"></span></button>
+							<button type="button" data-action="stop" id="btnstop" class="btn btn-lg btn-danger actionvm"><i data-action="stop" class="icon-stop"></i>
+								<span data-action="stop" data-i18n="btns.stop"></span>
+							</button>
 							<button type="button" class="btn btn-lg btn-danger dropdown-toggle actionvm" data-toggle="dropdown" aria-expanded="false">
 								<span class="caret"></span>
 								<span class="sr-only">Toggle Dropdown</span>
@@ -127,7 +143,9 @@
 					<!-- Restart button -->
 					<div class="col-md-3">
 						<div class="btn-group">
-							<button type="button" data-action="reboot" id="btnreboot" class="btn btn-lg btn-cloudy actionvm"><i data-action="reboot" class="icon-next_step"></i> <span data-action="reboot" data-i18n="btns.restart"></span> </button>
+							<button type="button" data-action="reboot" id="btnreboot" class="btn btn-lg btn-cloudy actionvm"><i data-action="reboot" class="icon-next_step"></i>
+								<span data-action="reboot" data-i18n="btns.restart"></span>
+							</button>
 							<button type="button" id="btnhreboot" class="btn btn-lg btn-cloudy dropdown-toggle actionvm" data-toggle="dropdown" aria-expanded="false">
 								<span class="caret"></span>
 								<span class="sr-only">Toggle Dropdown</span>
@@ -145,20 +163,26 @@
 
 				<div class="row">
 					<div class="col-md-12">
-			            <h2 class="m-b-0"><span data-i18n="vm.edit.console.title"></span></h2>
-			            <p class="" data-i18n="vm.edit.console.subtitle"></p>
-			            <hr>
-			        </div>
+						<h2 class="m-b-0">
+							<span data-i18n="vm.edit.console.title"></span>
+						</h2>
+						<p class="" data-i18n="vm.edit.console.subtitle"></p>
+						<hr>
+					</div>
 					<div class="col-md-12">
 						<div style=" width: 100%; height: 240px; margin-bottom: 20px; background-color: #000"></div>
 					</div>
 
 					<div class="col-md-4 m-b-15">
-						<button type="button"  class="btn btn-block btn-lg btn-success"><i class="icon-reboot"></i> <span data-i18n="btns.restart"></span></button>
+						<button type="button" class="btn btn-block btn-lg btn-success"><i class="icon-reboot"></i>
+							<span data-i18n="btns.restart"></span>
+						</button>
 					</div>
 
 					<div class="col-md-4">
-						<button type="button"  class="btn btn-block btn-lg btn-danger"><i class="icon-stop"></i> <span data-i18n="btns.hstop"></span></button>
+						<button type="button" class="btn btn-block btn-lg btn-danger"><i class="icon-stop"></i>
+							<span data-i18n="btns.hstop"></span>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -166,10 +190,12 @@
 			<div class="tab-pane fade in" id="stats">
 				<div class="row">
 					<div class="col-md-12">
-			            <h2><span data-i18n="vm.edit.stats.title"></span></h2>
-			            <p class="" data-i18n="vm.edit.stats.subtitle"></p>
-			            <hr>
-			        </div>
+						<h2>
+							<span data-i18n="vm.edit.stats.title"></span>
+						</h2>
+						<p class="" data-i18n="vm.edit.stats.subtitle"></p>
+						<hr>
+					</div>
 					<div class="col-md-12 m-b-30">
 						<p class="text-left">CPU Usage</p>
 						<div id="placeHolder1" class="placeholder"></div>
@@ -188,13 +214,15 @@
 			<div class="tab-pane fade in" id="settings">
 				<div class="row">
 					<div class="col-md-12">
-			            <h2 class="m-b-0"><span data-i18n="vm.edit.setting.title"></span></h2>
-			            <p class="" data-i18n="vm.edit.setting.subtitle">...</p>
-			            <hr>
-			        </div>
+						<h2 class="m-b-0">
+							<span data-i18n="vm.edit.setting.title"></span>
+						</h2>
+						<p class="" data-i18n="vm.edit.setting.subtitle">...</p>
+						<hr>
+					</div>
 
-			        <div class="col-md-12">
-				        <div class="table-responsive">
+					<div class="col-md-12">
+						<div class="table-responsive">
 							<table class="table table-striped clip">
 								<thead>
 									<tr>
@@ -235,36 +263,39 @@
 
 					<div id="collapseOne" class="col-md-12 panel-collapse collapse" style="height: auto;">
 
-				    	<p class="text-left"><span>Configuration</span></p>
-				    	<div class="row">
-						    <div class="clip-body">
+						<p class="text-left">
+							<span>Configuration</span>
+						</p>
+						<div class="row">
+							<div class="clip-body">
 
-						    	<div class="col-md-6">
-							        <div class="clip-body">
-							        	<p class="text-left">CPU GB</p>
+								<div class="col-md-6">
+									<div class="clip-body">
+										<p class="text-left">CPU GB</p>
 										<div class="range range-cloudy">
 											<input class="bg-cream" type="range" name="range" min="2" max="24" value="1" onchange="rangeDanger.value=value">
 											<output id="rangeDanger">2</output>
 										</div>
-							        </div>
-							    </div>
+									</div>
+								</div>
 
 								<div class="col-md-6">
-							        <div class="clip-body">
-							        	<p class="text-left">RAM GB</p>
+									<div class="clip-body">
+										<p class="text-left">RAM GB</p>
 										<div class="range range-cloudy">
 											<input class="bg-cream" type="range" name="range" min="12" max="24" value="1" onchange="rangeInfo.value=value">
 											<output id="rangeInfo">12</output>
 										</div>
-							        </div>
-							    </div>
+									</div>
+								</div>
 
-							    <div class="col-md-12">
-									<button class="btn btn-block btn-lg btn-success"><span data-i18n="btns.update"></span> <i class="icon-refresh"></i></button>
+								<div class="col-md-12">
+									<button class="btn btn-block btn-lg btn-success">
+										<span data-i18n="btns.update"></span> <i class="icon-refresh"></i></button>
 								</div>
 
 							</div>
-					    </div>
+						</div>
 
 					</div>
 				</div>
@@ -272,4 +303,3 @@
 		</div>
 
 	</div>
-<div>

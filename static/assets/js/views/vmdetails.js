@@ -197,6 +197,14 @@ window.VMDetailsView = Backbone.View.extend({
         cpuChart.appendData(json.stats);
         memoryChart.appendData(json.stats);
         networkChart.appendData(json.stats);
+
+        window.addEventListener('resize', function() {
+          setTimeout(function() {
+            cpuChart.draw();
+            memoryChart.draw();
+            networkChart.draw();
+          }, 250);
+        });
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
