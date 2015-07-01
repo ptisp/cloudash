@@ -36,12 +36,12 @@ var Router = Backbone.Router.extend({
     'config': 'config',
     '*notFound': 'index'
   },
-  ticket: function() {
+  ticket: function(id) {
     var self = this;
     templateLoader.load(["TicketDetailsView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
-          self.loadTicket(function () {
+          self.loadTicket(id, function () {
             var v = new TicketDetailsView({
               model: window.profile,
               ticket: window.ticket,
