@@ -1,14 +1,14 @@
-var CPUChart = function(placeholder, opts) {
+var MemoryChart = function(placeholder, opts) {
   this.placeholder = placeholder;
 
   this.points = [{
     data: [],
     color: '#F77A52',
-    name: 'CPU (%)'
+    name: 'MB'
   }];
 };
 
-CPUChart.prototype.init = function() {
+MemoryChart.prototype.init = function() {
   var self = this;
 
   this.graph = new Rickshaw.Graph({
@@ -47,7 +47,7 @@ CPUChart.prototype.init = function() {
   });
 };
 
-CPUChart.prototype.draw = function() {
+MemoryChart.prototype.draw = function() {
   var self = this;
   this.graph.configure({
     width: $('#' + self.placeholder).width(),
@@ -58,18 +58,18 @@ CPUChart.prototype.draw = function() {
   this.yAxis.render();
 };
 
-CPUChart.prototype.appendData = function(data, nulls) {
+MemoryChart.prototype.appendData = function(data, nulls) {
   this.formatData(data);
   this.draw();
 };
 
-CPUChart.prototype.formatData = function(data) {
+MemoryChart.prototype.formatData = function(data) {
   this.points[0].data = [];
   for (var i = 0; i < data.length; i++) {
     var reading = data[i];
     this.points[0].data.push({
       'x': parseInt(reading.time),
-      'y': parseInt(reading.cpu)
+      'y': parseInt(reading.memory)
     });
   }
 };

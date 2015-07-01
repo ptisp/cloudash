@@ -1,14 +1,18 @@
-var CPUChart = function(placeholder, opts) {
+var NetworkChart = function(placeholder, opts) {
   this.placeholder = placeholder;
 
   this.points = [{
     data: [],
     color: '#F77A52',
-    name: 'CPU (%)'
+    name: 'TX (Bytes)'
+  }, {
+    data: [],
+    color: '#BDF271',
+    name: 'RX (Bytes)'
   }];
 };
 
-CPUChart.prototype.init = function() {
+NetworkChart.prototype.init = function() {
   var self = this;
 
   this.graph = new Rickshaw.Graph({
@@ -47,7 +51,7 @@ CPUChart.prototype.init = function() {
   });
 };
 
-CPUChart.prototype.draw = function() {
+NetworkChart.prototype.draw = function() {
   var self = this;
   this.graph.configure({
     width: $('#' + self.placeholder).width(),
@@ -58,18 +62,22 @@ CPUChart.prototype.draw = function() {
   this.yAxis.render();
 };
 
-CPUChart.prototype.appendData = function(data, nulls) {
+NetworkChart.prototype.appendData = function(data, nulls) {
   this.formatData(data);
   this.draw();
 };
 
-CPUChart.prototype.formatData = function(data) {
+NetworkChart.prototype.formatData = function(data) {
   this.points[0].data = [];
   for (var i = 0; i < data.length; i++) {
     var reading = data[i];
     this.points[0].data.push({
       'x': parseInt(reading.time),
-      'y': parseInt(reading.cpu)
+      'y': parseInt(reading.nettx)
+    });
+    this.points[1].data.push({
+      'x': parseInt(reading.time),
+      'y': parseInt(reading.netrx)
     });
   }
 };
