@@ -1,4 +1,4 @@
-window.SupportView = Backbone.View.extend({
+window.TicketdetailsView = Backbone.View.extend({
   events: {
     'click .openticket': 'newticketmodal',
     'click .btn_send_ticket': 'sendticket',

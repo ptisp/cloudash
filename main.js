@@ -36,8 +36,8 @@ app.get('/api/vm', auth, api.vm.vmList);
 app.get('/api/image', auth, api.vm.imageList);
 
 
-app.get('/api/suport/#id', auth, api.support.ticketDetails);
-app.post('/api/suport/#id', auth, api.support.replyticket);
+app.get('/api/suport/:id', auth, api.support.ticketDetails);
+app.post('/api/suport/:id', auth, api.support.replyticket);
 app.get('/api/support', auth, api.support.ticketList);
 app.post('/api/support', auth, api.support.openTicket);
 

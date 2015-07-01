@@ -9,13 +9,11 @@ var Router = Backbone.Router.extend({
   showView: function(view, elem, sub) {
     elem.show();
 
+    if (this.currentView)
+      this.currentView.close();
+    this.currentView = view;
+    this.currentView.delegateEvents();
 
-      if (this.currentView)
-        this.currentView.close();
-
-      this.currentView = view;
-      this.currentView.delegateEvents();
-    
     var rendered = view.render();
     elem.removeClass('col-sm-12');
     elem.addClass('col-sm-9');
@@ -34,8 +32,25 @@ var Router = Backbone.Router.extend({
     'domain/dns': 'domaindns',
     'domain/dns/:domain': 'domaindnsdetails',
     'support': 'support',
+    'support/:id': 'ticket',
     'config': 'config',
     '*notFound': 'index'
+  },
+  ticket: function() {
+    var self = this;
+    templateLoader.load(["TicketDetailsView"], function() {
+      self.verifyLogin(function() {
+        self.loadProfile(function () {
+          self.loadTicket(function () {
+            var v = new TicketDetailsView({
+              model: window.profile,
+              ticket: window.ticket,
+            });
+            self.showView(v, $('#content'));
+          });
+        });
+      });
+    });
   },
   support: function() {
     var self = this;
@@ -227,6 +242,10 @@ var Router = Backbone.Router.extend({
       window.logged = true;
       loggedFunction();
     }
+  },
+  loadTicket: function (id, dof) {
+    window.ticket = new Ticket();
+    window.ticket.fetch(id, dof);
   },
   loadVM: function(id, dof) {
     window.vm = new VM();
