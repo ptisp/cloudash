@@ -185,6 +185,18 @@ window.VMDetailsView = Backbone.View.extend({
     }
     $('.infohostanme', this.el).html(this.model.get('hostname') +' - '+ips);
   },
+  loadCharts: function() {
+    modem('GET', 'vm/' + this.model.get('id') + '/metrics',
+      function(json) {
+        console.log(json);
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+        showError('ERRO - ' + title, json.error);
+      }
+    );
+  },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
     $('.vm-details', this.el).i18n();
@@ -192,6 +204,7 @@ window.VMDetailsView = Backbone.View.extend({
     this.extrainfo();
     this.togglebtn(this.model.get('status'));
     this.fillheader();
+    this.loadCharts();
     var self = this;
 
     this.loop = setInterval(function() {
