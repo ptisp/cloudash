@@ -1520,3 +1520,7 @@ ul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {
 .iconlist-fullscreen {
   background-position: -456px -144px;
 }
+
+.placeholder {
+  width: 100%;
+}
