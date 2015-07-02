@@ -1,6 +1,6 @@
 window.VMDetailsView = Backbone.View.extend({
   initialize: function(options) {
-    this.id = options.id;
+    this.vm = options.vm;
   },
   events: {
     'click .deletevm': 'deletevm',
@@ -148,8 +148,8 @@ window.VMDetailsView = Backbone.View.extend({
   refreshState: function() {
     //console.log('Get Status');
     var self = this;
-    window.vm.fetch(this.model.get('id'), function() {
-      self.model = window.vm;
+    this.vm.fetch(this.model.get('id'), function() {
+      self.model = self.vm;
       if (self.model.get('status') === 'running') {
         $('.state', self.el).removeClass('c-red');
         $('.state', self.el).removeClass('c-gold');

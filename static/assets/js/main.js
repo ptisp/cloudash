@@ -138,6 +138,7 @@ var Router = Backbone.Router.extend({
           var vm = new VM();
           vm.fetch(id, function() {
             var v = new VMDetailsView({
+              vm: vm,
               model: vm
             });
             self.showView(v, $('#content'));
