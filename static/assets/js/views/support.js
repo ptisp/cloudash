@@ -69,6 +69,7 @@ window.SupportView = Backbone.View.extend({
             open.push(json[i]);
           }
         }
+        $('.badge').html(open.length);
         handler('#opentickets',open);
         handler('#closedtickets',closed);
       },
