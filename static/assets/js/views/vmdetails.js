@@ -198,6 +198,7 @@ window.VMDetailsView = Backbone.View.extend({
         $('.state', self.el).html('<i class="icon-refresh m-r-10 c-gold"></i> Pending');
       }
       self.togglebtn(self.model.get('status'));
+      self.setslider();
     });
   },
   extrainfo: function() {
