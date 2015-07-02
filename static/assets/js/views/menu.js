@@ -1,23 +1,23 @@
 window.MenuView = Backbone.View.extend({
   events: {
-    'click .gotohome': 'gthome',
-    'click .gotodns': 'gtdns',
-    'click .gotosupport': 'gtsupport'
+    'click #gotohome': 'gthome',
+    'click #gotosupport': 'gtsupport'
   },
-  gtsupport: function() {
+  gtsupport: function(e) {
+    this.highlight(e);
     app.navigate('/support', {
       trigger: true
     });
   },
-  gthome: function() {
+  gthome: function(e) {
+    this.highlight(e);
     app.navigate('/home', {
       trigger: true
     });
   },
-  gtdns: function() {
-    app.navigate('/domain/dns', {
-      trigger: true
-    });
+  highlight: function(e) {
+    $('.likehref').removeClass('active');
+    $(e.target).parent().addClass('active');
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));

@@ -81,6 +81,8 @@ window.SupportView = Backbone.View.extend({
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
+    $('#gotohome').removeClass('active');
+    $('#gotosupport').addClass('active');
     $('.ticketcontent', this.el).wysihtml5({
       "font-styles": false,
       "image": false,

@@ -5,6 +5,9 @@ Backbone.View.prototype.close = function() {
 };
 
 var Router = Backbone.Router.extend({
+  header: undefined,
+  footer: undefined,
+  sidemenu: undefined,
   currentView: undefined,
   showView: function(view, elem, sub) {
     elem.show();
@@ -186,20 +189,27 @@ var Router = Backbone.Router.extend({
     });
   },
   initialize: function() {
+    var self = this;
     this.on('route', function(e) {
       var self = this;
-      this.verifyLogin(function() {
-        self.loadProfile(function () {
-          $('#header').html(new HeaderView({
-            model: window.profile
-          }).render().el);
-          window.scrollTo(0, 0);
-          $('#sidemenu').html(new MenuView({
-            model: window.profile
-          }).render().el);
-          $('#footer').html(new FooterView().render().el);
+        this.verifyLogin(function() {
+          self.loadProfile(function () {
+            if (!self.header) {
+              self.header = $('#header').html(new HeaderView({
+                model: window.profile
+              }).render().el);
+              window.scrollTo(0, 0);
+            }
+            if (!self.sidemenu) {
+              self.sidemenu = $('#sidemenu').html(new MenuView({
+                model: window.profile
+              }).render().el);
+            }
+            if (!self.footer) {
+              self.footer = $('#footer').html(new FooterView().render().el);
+            }
+          });
         });
-      });
     });
   },
   index: function() {
