@@ -42,13 +42,13 @@ window.SupportView = Backbone.View.extend({
       var oTable = $(tabela, self.el).dataTable({
         "data": json,
         "columns": [
-          {"data": "_id"},
+          {"data": "owner"},
           {"data": "subject"},
           {"data": null,
             "bSortable": true,
             "mRender": function(data, type, full) {
-              var date = new Date(full.created);
-              return formatdate(date);
+              var last = new Date(parseInt(full.messages[full.messages.length-1].date));
+              return formatdate(last);
             }},
           {"data": "status"},
         ],

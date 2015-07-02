@@ -1,7 +1,20 @@
 window.TicketDetailsView = Backbone.View.extend({
   events: {
     'click .replyticket': 'showreplymodal',
-    'click .btn_send_ticket': 'replyticket'
+    'click .btn_send_ticket': 'replyticket',
+    'click .closeticket': 'closeticket'
+  },
+  closeticket: function() {
+    modem('DELETE', 'support/'+this.model.get('id'),
+      function(json) {
+        console.log(json);
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+        showError('ERRO - Abertura de Ticket', json.error);
+      }
+    );
   },
   replyticket: function() {
     var reply = {
@@ -60,8 +73,10 @@ window.TicketDetailsView = Backbone.View.extend({
       "indent": false,
       "outdent": false
     });
-    //console.log(this.model);
     this.gettickets();
+    if (this.model.get('status') === 'Closed') {
+      $('.closeticket', this.el).hide();
+    }
     return this;
   }
 

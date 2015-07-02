@@ -38,6 +38,7 @@ app.get('/api/image', auth, api.vm.imageList);
 
 app.get('/api/support/:id', auth, api.support.ticketDetails);
 app.post('/api/support/:id', auth, api.support.replyticket);
+app.delete('/api/support/:id', auth, api.support.closeticket);
 app.get('/api/support', auth, api.support.ticketList);
 app.post('/api/support', auth, api.support.openTicket);
 
