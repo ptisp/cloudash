@@ -83,7 +83,8 @@
         "console": "Console",
         "stats": "Stats",
         "storage": "Storage",
-        "setting": "Settings"
+        "setting": "Recursos",
+        "edit": "Edit"
       },
       "power": {
         "title": "Power",
