@@ -1,70 +1,77 @@
 <div class="home">
-  <div class="row">
-    <div class="col-md-3 stat">
-      <div class="pallete-item">
-        <dl class="palette palette-default pal">
-          <div><i class="icon-cloud_servers f-22 m-r-10"></i>
-            <span class="f-16" data-i18n="home.header1"></span>
-          </div>
-        </dl>
-        <dl class="palette palette-default-hover pal">
-          <div>
-            <span class="f-18 vmtotal">12</span>
-          </div>
-        </dl>
-      </div>
-    </div>
-    <div class="col-md-3 stat">
-      <div class="pallete-item">
-        <dl class="palette palette-default pal">
-          <div><i class="icon-ram_memory f-22 m-r-10"></i>
-            <span class="f-16" data-i18n="home.header2"></span>
-          </div>
-        </dl>
-        <dl class="palette palette-default-hover pal">
-          <div>
-            <div class="f-18">
-              <span class="c-blue-cl ramusage">13</span> /
-              <span>34GB</span>
-            </div>
-          </div>
-        </dl>
-      </div>
-    </div>
-    <div class="col-md-3 stat">
-      <div class="pallete-item">
-        <dl class="palette palette-default pal">
-          <div><i class="icon-hardware f-22 m-r-10"></i>
-            <span class="f-16" data-i18n="home.header3"></span>
-          </div>
-        </dl>
-        <dl class="palette palette-default-hover pal">
-          <div>
-            <span class="f-18 ">
-              <span class="c-blue-cl diskusage">13</span> /
-              <span>1024GB</span>
-            </span>
-          </div>
-        </dl>
-      </div>
-    </div>
-    <div class="col-md-3 stat">
-      <div class="pallete-item">
-        <dl class="palette palette-default pal">
-          <div><i class="icon-cloud_activated f-22 m-r-10"></i>
-            <span class="f-16" data-i18n="home.header4"></span>
-          </div>
-        </dl>
-        <dl class="palette palette-default-hover pal">
-          <div>
-            <span class="f-18 activevm">46 active</span>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </div>
 
-  <div class="row">
+  <section class="row p-t-0 p-b-5">
+    <div class="row">
+      <div class="col-md-3 stat m-l-0">
+        <div class="pallete-item">
+          <dl class="palette palette-default pal">
+            <div><i class="icon-cloud_servers f-22 m-r-10"></i>
+              <span class="f-16" data-i18n="home.header1"></span>
+            </div>
+          </dl>
+          <dl class="palette palette-default-hover pal">
+            <div>
+              <span class="f-18 vmtotal">12</span>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="col-md-3 stat">
+        <div class="pallete-item">
+          <dl class="palette palette-default pal">
+            <div><i class="icon-ram_memory f-22 m-r-10"></i>
+              <span class="f-16" data-i18n="home.header2"></span>
+            </div>
+          </dl>
+          <dl class="palette palette-default-hover pal">
+            <div>
+              <div class="f-18">
+                <span class="c-blue-cl ramusage">13</span> /
+                <span>34GB</span>
+              </div>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="col-md-3 stat">
+        <div class="pallete-item">
+          <dl class="palette palette-default pal">
+            <div><i class="icon-hardware f-22 m-r-10"></i>
+              <span class="f-16" data-i18n="home.header3"></span>
+            </div>
+          </dl>
+          <dl class="palette palette-default-hover pal">
+            <div>
+              <span class="f-18 ">
+                <span class="c-blue-cl diskusage">13</span> /
+                <span>1024GB</span>
+              </span>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="col-md-3 stat">
+        <div class="pallete-item">
+          <dl class="palette palette-default pal">
+            <div><i class="icon-cloud_activated f-22 m-r-10"></i>
+              <span class="f-16" data-i18n="home.header4"></span>
+            </div>
+          </dl>
+          <dl class="palette palette-default-hover pal">
+            <div>
+              <span class="f-18 activevm">46 active</span>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="row bg-white">
     <div class="col-md-3">
       <div class="clip-body">
         <div class="input-group">
@@ -89,40 +96,33 @@
     </div>
 
     <div class="col-md-12">
-      <div class="clip-body">
-        <section class="bg-white">
-          <div class="table-responsive">
-            <table class="table table-striped clip" id="example">
-              <thead>
-                <tr>
-                  <th><i class="icon-cloud"></i>
-                    <span data-i18n="home.tblhead1"></span>
-                  </th>
-                  <th><i class="icon-ips"></i>
-                    <span data-i18n="home.tblhead2"></span>
-                  </th>
-                  <th><i class="icon-ram_memory"></i>
-                    <span data-i18n="home.tblhead3"></span>
-                  </th>
-                  <th><i class="icon-hardware"></i>
-                    <span data-i18n="home.tblhead4"></span>
-                  </th>
-                  <th><i class="icon-cloud_activated"></i>
-                    <span data-i18n="home.tblhead5"></span>
-                  </th>
-                </tr>
-              </thead>
+      <div class="table-responsive">
+        <table class="table table-striped clip" id="example">
+          <thead>
+            <tr>
+              <th><i class="icon-cloud"></i>
+                <span data-i18n="home.tblhead1"></span>
+              </th>
+              <th><i class="icon-ips"></i>
+                <span data-i18n="home.tblhead2"></span>
+              </th>
+              <th><i class="icon-ram_memory"></i>
+               <span data-i18n="home.tblhead3"></span>
+              </th>
+              <th><i class="icon-hardware"></i>
+                <span data-i18n="home.tblhead4"></span>
+              </th>
+              <th><i class="icon-cloud_activated"></i>
+                <span data-i18n="home.tblhead5"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="vmtable">
 
-              <tbody class="vmtable">
-
-              </tbody>
-
-            </table>
-
-          </div>
-        </section>
+          </tbody>
+        </table>
       </div>
     </div>
 
-  </div>
+  </section>
 </div>

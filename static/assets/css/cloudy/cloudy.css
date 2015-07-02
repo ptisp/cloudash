@@ -450,6 +450,147 @@ strong {
 .m-0 {
   margin: 0px !important;
 }
+/*  margin-bottom */
+.m-b-0 {
+  margin-bottom: 0px !important;
+}
+.m-b-5 {
+  margin-bottom: 5px !important;
+}
+.m-b-10 {
+  margin-bottom: 10px !important;
+}
+.m-b-15 {
+  margin-bottom: 15px !important;
+}
+.m-b-20{
+  margin-bottom: 20px !important;
+}
+/*  margin-top */
+.m-t-0{
+  margin-top: 0px !important;
+}
+.m-t-5{
+  margin-top: 5px !important;
+}
+.m-t-10{
+  margin-top: 10px !important;
+}
+.m-t-15{
+  margin-top: 15px !important;
+}
+.m-t-20{
+  margin-top: 20px !important;
+}
+
+/*  margin-left */
+.m-l-0{
+  margin-left: 0px !important;
+}
+.m-l-5{
+  margin-left: 5px !important;
+}
+.m-l-10{
+  margin-left: 10px !important;
+}
+.m-l-15{
+  margin-left: 15px !important;
+}
+.m-l-20{
+  margin-left: 20px !important;
+}
+
+/*  margin-right */
+.m-r-0{
+  margin-right: 0px !important;
+}
+.m-r-5{
+  margin-right: 5px !important;
+}
+.m-r-10{
+  margin-right: 10px !important;
+}
+.m-r-15{
+  margin-right: 15px !important;
+}
+.m-r-20{
+  margin-right: 20px !important;
+}
+
+/*  PADDING */
+.p-0 {
+  padding: 0px !important;
+}
+/*  padding-bottom */
+.p-b-0 {
+  padding-bottom: 0px !important;
+}
+.p-b-5 {
+  padding-bottom: 5px !important;
+}
+.p-b-10 {
+  padding-bottom: 10px !important;
+}
+.p-b-15 {
+  padding-bottom: 15px !important;
+}
+.p-b-20{
+  padding-bottom: 20px !important;
+}
+/*  padding-top */
+.p-t-0{
+  padding-top: 0px !important;
+}
+.p-t-5{
+  padding-top: 5px !important;
+}
+.p-t-10{
+  padding-top: 10px !important;
+}
+.p-t-15{
+  padding-top: 15px !important;
+}
+.p-t-20{
+  padding-top: 20px !important;
+}
+
+/*  padding-left */
+.p-l-0{
+  padding-left: 0px !important;
+}
+.p-l-5{
+  padding-left: 5px !important;
+}
+.p-l-10{
+  padding-left: 10px !important;
+}
+.p-l-15{
+  padding-left: 15px !important;
+}
+.p-l-20{
+  padding-left: 20px !important;
+}
+
+/* padding-right */
+.p-r-0{
+  padding-right: 0px !important;
+}
+.p-r-5{
+  padding-right: 5px !important;
+}
+.p-r-10{
+  padding-right: 10px !important;
+}
+.p-r-15{
+  padding-right: 15px !important;
+}
+.p-r-20{
+  padding-right: 20px !important;
+}
+
+
+
+
 
 /* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */
 /*  1199px */
