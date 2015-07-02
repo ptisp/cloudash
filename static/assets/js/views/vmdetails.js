@@ -5,7 +5,11 @@ window.VMDetailsView = Backbone.View.extend({
   events: {
     'click .deletevm': 'deletevm',
     'click .actionvm': 'vmaction',
-    'click #resizevm': 'vmresize'
+    'click #resizevm': 'vmresize',
+    'click #shutdown': 'shutdown'
+  },
+  shutdown: function() {
+    this.vmaction(null, 'stop');
   },
   togglebtn: function(state) {
     $('.actionvm', this.el).removeClass('disabled');
@@ -40,7 +44,7 @@ window.VMDetailsView = Backbone.View.extend({
   vmresize: function(evt) {
     var vmdetails = {
       'cpu': $('#sliderCPU').val(),
-      'ram': parseInt($('#sliderRAM').val() * 1024)
+      'ram': parseInt($('#sliderRAM').val()/2 * 1024)
     };
 
     modem('PUT', 'vm/' + this.model.get('id'),
@@ -55,14 +59,16 @@ window.VMDetailsView = Backbone.View.extend({
     );
   },
 
-  vmaction: function(evt) {
+  vmaction: function(evt, action) {
     var self = this;
     var uri = '';
     var title = '';
     var msg = '';
     //console.log($(evt.target).attr('data-action'));
-    if (!$(evt.target).attr('data-action')) return;
-    switch ($(evt.target).attr('data-action')) {
+    if (evt && !$(evt.target).attr('data-action')) return;
+    var option = action || $(evt.target).attr('data-action');
+    console.log(option);
+    switch (option) {
       case 'start':
         uri = 'vm/' + this.model.get('id') + '/start';
         title = 'Iniciar';
@@ -233,11 +239,30 @@ window.VMDetailsView = Backbone.View.extend({
       }
     );
   },
+  setslider: function() {
+    $('#sliderCPU', this.el).val(this.model.get('vcpu'));
+    $('#rangeDanger', this.el).html(this.model.get('vcpu'));
+    $('#sliderRAM', this.el).val((this.model.get('ram')/1024)*2);
+    $('#rangeInfo', this.el).html(this.model.get('ram')/1024);
+    if (this.model.get('status') !== 'stopped') {
+      $('#sliderCPU', this.el).prop('disabled', true);
+      $('#sliderRAM', this.el).prop('disabled', true);
+      $('#resizevm', this.el).addClass('disabled');
+      $('#showwarning', this.el).show();
+    } else {
+      $('#sliderCPU', this.el).prop('disabled', false);
+      $('#sliderRAM', this.el).prop('disabled', false);
+      $('#resizevm', this.el).removeClass('disabled');
+      $('#showwarning', this.el).hide();
+    }
+  },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
+    console.log(this.model.toJSON());
     $('.vm-details', this.el).i18n();
     $('.overme', this.el).tooltip();
     this.extrainfo();
+    this.setslider();
     this.togglebtn(this.model.get('status'));
     this.fillheader();
     this.loadCharts();

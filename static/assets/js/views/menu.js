@@ -3,6 +3,14 @@ window.MenuView = Backbone.View.extend({
     'click #gotohome': 'gthome',
     'click #gotosupport': 'gtsupport'
   },
+  remove: function() {
+    if (this.loop) {
+      clearInterval(this.loop);
+    }
+    this.$el.remove();
+    this.stopListening();
+    return this;
+  },
   gtsupport: function(e) {
     this.highlight(e);
     app.navigate('/support', {
@@ -40,11 +48,15 @@ window.MenuView = Backbone.View.extend({
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
+    var self = this;
     this.ticketnumbers();
     if (this.model.get('type') !== 'admin') {
       $('.adminonly', this.el).hide();
     }
     $('.menu', this.el).i18n();
+    this.loop = setInterval(function() {
+      self.ticketnumbers(self.el);
+    }, 30000);
     return this;
   }
 

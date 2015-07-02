@@ -219,6 +219,14 @@
 						</h2>
 						<p class="" data-i18n="vm.edit.setting.subtitle">...</p>
 						<hr>
+						<div id="showwarning" class="alert alert-warning alert-dismissable" style="display: none">
+							<button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
+							<strong>
+								<span>Atenção</span>
+							</strong></br>
+							<span>Tem de parar a sua VM antes de modificar os recursos.</span><br>
+							<span>Se deseja parar a VM <span id="shutdown" class="likehref"><u>carregue aqui</u></span></span>
+						</div>
 					</div>
 
 
@@ -233,8 +241,8 @@
 									<div class="clip-body">
 										<p class="text-left">CPU</p>
 										<div class="range range-cloudy">
-											<input id="sliderCPU" class="bg-cream" type="range" name="range" min="2" max="24" value="1" onchange="rangeDanger.value=value">
-											<output id="rangeDanger">2</output>
+											<input id="sliderCPU" class="bg-cream" type="range" name="range" min="1" max="16" value="1" onchange="rangeDanger.value=value">
+											<output id="rangeDanger">1</output>
 										</div>
 									</div>
 								</div>
@@ -243,8 +251,8 @@
 									<div class="clip-body">
 										<p class="text-left">RAM GB</p>
 										<div class="range range-cloudy">
-											<input id="sliderRAM" class="bg-cream" type="range" name="range" min="12" max="24" value="1" onchange="rangeInfo.value=value">
-											<output id="rangeInfo">12</output>
+											<input id="sliderRAM" class="bg-cream" type="range" name="range" min="1" max="32" value="1" onchange="rangeInfo.value=value/2">
+											<output id="rangeInfo">0.5</output>
 										</div>
 									</div>
 								</div>
