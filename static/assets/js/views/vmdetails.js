@@ -4,7 +4,8 @@ window.VMDetailsView = Backbone.View.extend({
   },
   events: {
     'click .deletevm': 'deletevm',
-    'click .actionvm': 'vmaction'
+    'click .actionvm': 'vmaction',
+    'click #resizevm': 'vmresize'
   },
   togglebtn: function(state) {
     $('.actionvm', this.el).removeClass('disabled');
@@ -35,6 +36,25 @@ window.VMDetailsView = Backbone.View.extend({
         break;
     }
   },
+
+  vmresize: function(evt) {
+    var vmdetails = {
+      'cpu': $('#sliderCPU').val(),
+      'ram': parseInt($('#sliderRAM').val() * 1024)
+    };
+
+    modem('PUT', 'vm/' + this.model.get('id'),
+      function(json) {
+        console.log('resized!!');
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+        showError('ERRO - Criação de VM', json.error);
+      }, vmdetails
+    );
+  },
+
   vmaction: function(evt) {
     var self = this;
     var uri = '';

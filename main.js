@@ -31,6 +31,7 @@ app.get('/api/vm/:id/metrics', auth, api.vm.statsVm);
 
 app.delete('/api/vm/:id', auth, api.vm.deleteVm);
 app.get('/api/vm/:id', auth, api.vm.vmDetails);
+app.put('/api/vm/:id', auth, api.vm.vmResize);
 app.get('/api/vm', auth, api.vm.vmList);
 
 app.get('/api/image', auth, api.vm.imageList);

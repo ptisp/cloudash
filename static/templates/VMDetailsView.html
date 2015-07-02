@@ -231,9 +231,9 @@
 
 								<div class="col-md-6">
 									<div class="clip-body">
-										<p class="text-left">CPU GB</p>
+										<p class="text-left">CPU</p>
 										<div class="range range-cloudy">
-											<input class="bg-cream" type="range" name="range" min="2" max="24" value="1" onchange="rangeDanger.value=value">
+											<input id="sliderCPU" class="bg-cream" type="range" name="range" min="2" max="24" value="1" onchange="rangeDanger.value=value">
 											<output id="rangeDanger">2</output>
 										</div>
 									</div>
@@ -243,14 +243,14 @@
 									<div class="clip-body">
 										<p class="text-left">RAM GB</p>
 										<div class="range range-cloudy">
-											<input class="bg-cream" type="range" name="range" min="12" max="24" value="1" onchange="rangeInfo.value=value">
+											<input id="sliderRAM" class="bg-cream" type="range" name="range" min="12" max="24" value="1" onchange="rangeInfo.value=value">
 											<output id="rangeInfo">12</output>
 										</div>
 									</div>
 								</div>
 
 								<div class="col-md-12">
-									<button class="btn btn-block btn-lg btn-success">
+									<button id="resizevm" class="btn btn-block btn-lg btn-success">
 										<span data-i18n="btns.update"></span> <i class="icon-refresh"></i></button>
 								</div>
 
