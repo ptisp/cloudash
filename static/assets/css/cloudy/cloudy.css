@@ -872,6 +872,23 @@ section {
   background-color: #111;
   text-decoration: none;
 }
+/* MODALs */
+.modal-header {
+  padding: 15px;
+  color: #fff;
+  background-color: #29b5c7;
+  border-bottom: 1px solid #E5E5E5;
+  min-height: 16.43px;
+}
+.modal-footer {
+  background-color: #e3e4e5;
+  padding: 19px 20px 20px;
+  margin-top: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+
+
 div.dataTables_length select {
   width: 75px;
   display: none;
