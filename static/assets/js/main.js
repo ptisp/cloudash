@@ -41,9 +41,10 @@ var Router = Backbone.Router.extend({
     templateLoader.load(["TicketDetailsView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
-          self.loadTicket(id, function () {
+          var t = new Ticket();
+          t.fetch(id, function() {
             var v = new TicketDetailsView({
-              model: window.ticket
+              model: t
             });
             self.showView(v, $('#content'));
           });
@@ -134,12 +135,13 @@ var Router = Backbone.Router.extend({
     var self = this;
     templateLoader.load(["VMDetailsView"], function() {
       self.verifyLogin(function() {
-        self.loadVM(id, function () {
-          var v = new VMDetailsView({
-            model: window.vm
+          var vm = new VM();
+          vm.fetch(id, function() {
+            var v = new VMDetailsView({
+              model: vm
+            });
+            self.showView(v, $('#content'));
           });
-          self.showView(v, $('#content'));
-        });
       });
     });
   },
@@ -241,14 +243,6 @@ var Router = Backbone.Router.extend({
       window.logged = true;
       loggedFunction();
     }
-  },
-  loadTicket: function (id, dof) {
-    window.ticket = new Ticket();
-    window.ticket.fetch(id, dof);
-  },
-  loadVM: function(id, dof) {
-    window.vm = new VM();
-    window.vm.fetch(id, dof);
   },
   loadProfile: function (dof) {
     if (!window.profile) {

@@ -1,3 +1,71 @@
 <div class="tdetails">
-ticketdetails
+  <div id="info">
+    <span>ID: </span><span id="infoid"></span></br>
+    <span>Estado: </span><span id="infostatus"></span></br>
+    <span>Replies: </span><span id="infocount"></span></br>
+    <span>Criado: </span><span id="infocreated"></span></br>
+  </div>
+  <div id="messages">
+    <div class="table-responsive">
+      <table class="table table-striped clip" id="example">
+        <thead>
+          <tr>
+            <th><i class="icon-calendar"></i>
+              <span data-i18n=""> Data</span>
+            </th>
+            <th><i class="icon-email_corporate"></i>
+              <span data-i18n=""> Email</span>
+            </th>
+            <th><i class="icon-align_center"></i>
+              <span data-i18n=""> Mensagens</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="messagestable">
+        </tbody>
+      </table>
+    </div>
+    <button type="button" class="btn btn-xl btn-cloudy btn-icon w-min-250 f-right replyticket">
+      <span data-i18n="">Responder</span><i class="icon-email_corporate"></i>
+    </button>
+  </div>
+</div>
+
+<!-- modal default -->
+<div id="modal_reply_ticket" class="modal default fade in fade" aria-hidden="false">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title c-white"><i class="icon-email_corporate"></i> <span class="fs-07" data-i18n="">Responder Ticket</span></h4>
+    </div>
+
+    <div class="modal-body">
+
+      <form class="form-horizontal">
+        <fieldset>
+          <input type="text" style="display:none" id="input_edit_id">
+
+          <div class="clip-body">
+            <div class="control-group align_modal">
+              <p class="text-left"><span data-i18n="">Mensagem</span></p>
+
+              <div class="controls">
+                <textarea id="input_content" class="ticketcontent" rows="9" cols="30" style="width:100%;"></textarea>
+              </div>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-lg btn-invert" data-dismiss="modal"><span data-i18n="">Cancelar</span></button>
+      <button type="button" class="btn btn-lg btn-success btn_contact_detail btn_send_ticket" data-dismiss="modal"><span data-i18n="">Enviar</span></button>
+    </div>
+  </div>
+</div>
 </div>

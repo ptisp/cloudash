@@ -12,8 +12,8 @@ window.SupportView = Backbone.View.extend({
   },
   sendticket: function() {
     var message = {
-      from: this.model.get('username'),
-      to: 'admin',
+      email: this.model.get('username'),
+      date: new Date().getTime(),
       message: $("#input_content").val()
     };
     var data = {

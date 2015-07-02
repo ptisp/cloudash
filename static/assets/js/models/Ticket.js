@@ -4,7 +4,7 @@
   fetch: function(id, after_fetch) {
     var self = this;
 
-    modem('GET', 'suport/'+id,
+    modem('GET', 'support/'+id,
       function(json) {
         self.set('id', json._id);
         self.set('created', json.created);
