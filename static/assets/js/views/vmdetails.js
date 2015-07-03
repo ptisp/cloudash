@@ -273,17 +273,16 @@ window.VMDetailsView = Backbone.View.extend({
       self.refreshState(self.el);
     }, 5000);
 
-    //TODO: refactor
-
-
+    //refactor these crappy tabs to multiple views and then move this to right place
     setTimeout(function() {
       UI.load();
-
       modem('GET', 'vm/' + self.model.get('id') + '/vnc',
         function(json) {
-          UI.updateSetting('host', '127.0.0.1');
+          UI.updateSetting('host', json.address);
           UI.updateSetting('port', '29876');
-          UI.updateSetting('path', '/?token=' + json.token);
+          UI.updateSetting('password', '');
+          UI.updateSetting('path', '?token=' + json.token);
+          UI.connect();
         },
         function(xhr, ajaxOptions, thrownError) {
           var json = JSON.parse(xhr.responseText);
@@ -291,7 +290,7 @@ window.VMDetailsView = Backbone.View.extend({
           showError('ERRO - ' + title, json.error);
         }
       );
-    }, 1500);
+    }, 500);
 
     return this;
   }

@@ -544,15 +544,15 @@ var UI;
 
       // Toggle Connection Panel
       if (UI.connSettingsOpen === true) {
-        $D('noVNC_controls').style.display = "none";
-        $D('connectButton').className = "noVNC_status_button";
+        //$D('noVNC_controls').style.display = "none";
+        //$D('connectButton').className = "noVNC_status_button";
         UI.connSettingsOpen = false;
         UI.saveSetting('host');
         UI.saveSetting('port');
         //UI.saveSetting('password');
       } else {
-        $D('noVNC_controls').style.display = "block";
-        $D('connectButton').className = "noVNC_status_button_selected";
+        //$D('noVNC_controls').style.display = "block";
+        //$D('connectButton').className = "noVNC_status_button_selected";
         UI.connSettingsOpen = true;
         $D('noVNC_host').focus();
       }
@@ -730,7 +730,7 @@ var UI;
 
       if (typeof(msg) !== 'undefined') {
         $D('noVNC-control-bar').setAttribute("class", klass);
-        $D('noVNC_status').innerHTML = msg;
+        //$D('noVNC_status').innerHTML = msg;
       }
 
       UI.updateVisualState();
@@ -781,18 +781,18 @@ var UI;
         case 'fatal':
         case 'failed':
         case 'disconnected':
-          $D('connectButton').style.display = "";
-          $D('disconnectButton').style.display = "none";
+          //$D('connectButton').style.display = "";
+          //$D('disconnectButton').style.display = "none";
           UI.connSettingsOpen = false;
           UI.toggleConnectPanel();
           break;
         case 'loaded':
-          $D('connectButton').style.display = "";
-          $D('disconnectButton').style.display = "none";
+          //$D('connectButton').style.display = "";
+          //$D('disconnectButton').style.display = "none";
           break;
         default:
-          $D('connectButton').style.display = "none";
-          $D('disconnectButton').style.display = "";
+          //$D('connectButton').style.display = "none";
+          //$D('disconnectButton').style.display = "";
           break;
       }
 
@@ -854,11 +854,10 @@ var UI;
       UI.rfb.set_view_only(UI.getSetting('view_only'));
       UI.rfb.set_repeaterID(UI.getSetting('repeaterID'));
 
-      UI.rfb.connect(host, port, password, path);
+      UI.rfb.connect(host, port, null, path);
 
       //Close dialog.
       setTimeout(UI.setBarPosition, 100);
-      $D('noVNC_logo').style.display = "none";
       $D('noVNC_container').style.display = "inline";
     },
 
