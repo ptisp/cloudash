@@ -23,7 +23,6 @@ var Router = Backbone.Router.extend({
       elem.addClass('col-sm-9');
     }
 
-
     var rendered = view.render();
     elem.html(rendered.el);
   },
@@ -249,6 +248,7 @@ var Router = Backbone.Router.extend({
     });
   },
   index: function() {
+    this.topmenu = undefined;
     this.verifyLogin(function() {
       app.navigate('/home', {
         trigger: true
@@ -257,6 +257,7 @@ var Router = Backbone.Router.extend({
   },
   home: function() {
     var self = this;
+    this.topmenu = undefined;
     this.verifyLogin(function() {
       self.loadProfile(function () {
         var homeView = new HomeView({
