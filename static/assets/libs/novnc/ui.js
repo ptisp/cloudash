@@ -221,11 +221,6 @@ var UI;
       $D("sendEscButton").onclick = UI.sendEsc;
 
       $D("sendCtrlAltDelButton").onclick = UI.sendCtrlAltDel;
-      $D("xvpShutdownButton").onclick = UI.xvpShutdown;
-      $D("xvpRebootButton").onclick = UI.xvpReboot;
-      $D("xvpResetButton").onclick = UI.xvpReset;
-      $D("noVNC_status").onclick = UI.togglePopupStatus;
-      $D("noVNC_popup_status").onclick = UI.togglePopupStatus;
       $D("fullscreenButton").onclick = UI.toggleFullscreen;
 
       $D("noVNC_apply").onclick = UI.settingsApply;
@@ -372,84 +367,6 @@ var UI;
     },
 
 
-    // Show the popup status
-    togglePopupStatus: function(text) {
-      var psp = $D('noVNC_popup_status');
-
-      var closePopup = function() {
-        psp.style.display = "none";
-      };
-
-      if (window.getComputedStyle(psp).display === 'none') {
-        if (typeof text === 'string') {
-          psp.innerHTML = text;
-        } else {
-          psp.innerHTML = $D('noVNC_status').innerHTML;
-        }
-        psp.style.display = "block";
-        psp.style.left = window.innerWidth / 2 -
-          parseInt(window.getComputedStyle(psp).width) / 2 - 30 + "px";
-
-        // Show the popup for a maximum of 1.5 seconds
-        UI.popupStatusTimeout = setTimeout(function() {
-          closePopup();
-        }, 1500);
-      } else {
-        clearTimeout(UI.popupStatusTimeout);
-        closePopup();
-      }
-    },
-
-    // Show the XVP panel
-    toggleXvpPanel: function() {
-      // Close the description panel
-      $D('noVNC_description').style.display = "none";
-      // Close settings if open
-      if (UI.settingsOpen === true) {
-        UI.settingsApply();
-        UI.closeSettingsMenu();
-      }
-      // Close clipboard panel if open
-      if (UI.clipboardOpen === true) {
-        UI.toggleClipboardPanel();
-      }
-      // Toggle XVP panel
-      if (UI.xvpOpen === true) {
-        $D('noVNC_xvp').style.display = "none";
-        $D('xvpButton').className = "noVNC_status_button";
-        UI.xvpOpen = false;
-      } else {
-        $D('noVNC_xvp').style.display = "block";
-        $D('xvpButton').className = "noVNC_status_button_selected";
-        UI.xvpOpen = true;
-      }
-    },
-
-    // Show the clipboard panel
-    toggleClipboardPanel: function() {
-      // Close the description panel
-      $D('noVNC_description').style.display = "none";
-      // Close settings if open
-      if (UI.settingsOpen === true) {
-        UI.settingsApply();
-        UI.closeSettingsMenu();
-      }
-      // Close XVP panel if open
-      if (UI.xvpOpen === true) {
-        UI.toggleXvpPanel();
-      }
-      // Toggle Clipboard Panel
-      if (UI.clipboardOpen === true) {
-        $D('noVNC_clipboard').style.display = "none";
-        $D('clipboardButton').className = "noVNC_status_button";
-        UI.clipboardOpen = false;
-      } else {
-        $D('noVNC_clipboard').style.display = "block";
-        $D('clipboardButton').className = "noVNC_status_button_selected";
-        UI.clipboardOpen = true;
-      }
-    },
-
     // Toggle fullscreen mode
     toggleFullscreen: function() {
       if (document.fullscreenElement || // alternative standard method
@@ -499,7 +416,6 @@ var UI;
       $D('noVNC_description').style.display = "none";
       if (UI.settingsOpen) {
         UI.settingsApply();
-        UI.closeSettingsMenu();
       } else {
         UI.updateSetting('encrypt');
         UI.updateSetting('true_color');
@@ -517,33 +433,7 @@ var UI;
         UI.updateSetting('repeaterID');
         UI.updateSetting('stylesheet');
         UI.updateSetting('logging');
-
-        UI.openSettingsMenu();
       }
-    },
-
-    // Open menu
-    openSettingsMenu: function() {
-      // Close the description panel
-      $D('noVNC_description').style.display = "none";
-      // Close clipboard panel if open
-      if (UI.clipboardOpen === true) {
-        UI.toggleClipboardPanel();
-      }
-      // Close XVP panel if open
-      if (UI.xvpOpen === true) {
-        UI.toggleXvpPanel();
-      }
-      $D('noVNC_settings').style.display = "block";
-      $D('settingsButton').className = "noVNC_status_button_selected";
-      UI.settingsOpen = true;
-    },
-
-    // Close menu (without applying settings)
-    closeSettingsMenu: function() {
-      //$D('noVNC_settings').style.display = "none";
-      //$D('settingsButton').className = "noVNC_status_button";
-      UI.settingsOpen = false;
     },
 
     // Save/apply settings when 'Apply' button is pressed
@@ -709,8 +599,6 @@ var UI;
     },
 
     connect: function() {
-      UI.closeSettingsMenu();
-
       var host = $D('noVNC_host').value;
       var port = $D('noVNC_port').value;
       var password = $D('noVNC_password').value;
@@ -736,7 +624,6 @@ var UI;
     },
 
     disconnect: function() {
-      UI.closeSettingsMenu();
       UI.rfb.disconnect();
 
       // Restore the callback used for initial resize
