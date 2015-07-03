@@ -6,9 +6,6 @@ window.VMDGraphsView = Backbone.View.extend({
 
   },
   remove: function() {
-    if (this.loop) {
-      clearInterval(this.loop);
-    }
     this.$el.remove();
     this.stopListening();
     return this;
@@ -27,7 +24,7 @@ window.VMDGraphsView = Backbone.View.extend({
         networkChart.appendData(json.stats);
 
         window.addEventListener('resize', function() {
-          this.loop = setTimeout(function() {
+          setTimeout(function() {
             cpuChart.draw();
             memoryChart.draw();
             networkChart.draw();
