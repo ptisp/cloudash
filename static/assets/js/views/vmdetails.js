@@ -44,7 +44,7 @@ window.VMDetailsView = Backbone.View.extend({
   vmresize: function(evt) {
     var vmdetails = {
       'cpu': $('#sliderCPU').val(),
-      'ram': parseInt($('#sliderRAM').val()/2 * 1024)
+      'ram': parseInt($('#sliderRAM').val() / 2 * 1024)
     };
 
     modem('PUT', 'vm/' + this.model.get('id'),
@@ -243,8 +243,8 @@ window.VMDetailsView = Backbone.View.extend({
   setslider: function() {
     $('#sliderCPU', this.el).val(this.model.get('vcpu'));
     $('#rangeDanger', this.el).html(this.model.get('vcpu'));
-    $('#sliderRAM', this.el).val((this.model.get('ram')/1024)*2);
-    $('#rangeInfo', this.el).html(this.model.get('ram')/1024);
+    $('#sliderRAM', this.el).val((this.model.get('ram') / 1024) * 2);
+    $('#rangeInfo', this.el).html(this.model.get('ram') / 1024);
     if (this.model.get('status') !== 'stopped') {
       $('#sliderCPU', this.el).prop('disabled', true);
       $('#sliderRAM', this.el).prop('disabled', true);
@@ -272,6 +272,26 @@ window.VMDetailsView = Backbone.View.extend({
     this.loop = setInterval(function() {
       self.refreshState(self.el);
     }, 5000);
+
+    //TODO: refactor
+
+
+    setTimeout(function() {
+      UI.load();
+
+      modem('GET', 'vm/' + self.model.get('id') + '/vnc',
+        function(json) {
+          UI.updateSetting('host', '127.0.0.1');
+          UI.updateSetting('port', '29876');
+          UI.updateSetting('path', '/?token=' + json.token);
+        },
+        function(xhr, ajaxOptions, thrownError) {
+          var json = JSON.parse(xhr.responseText);
+          console.log(json);
+          showError('ERRO - ' + title, json.error);
+        }
+      );
+    }, 1500);
 
     return this;
   }

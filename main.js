@@ -29,6 +29,7 @@ app.post('/api/vm/:id/restart', auth, api.vm.restartVm);
 app.post('/api/vm', auth, api.vm.createVm);
 app.get('/api/vm/:id/metrics', auth, api.vm.statsVm);
 
+app.get('/api/vm/:id/vnc', auth, api.vm.vmVNC);
 app.delete('/api/vm/:id', auth, api.vm.deleteVm);
 app.get('/api/vm/:id', auth, api.vm.vmDetails);
 app.put('/api/vm/:id', auth, api.vm.vmResize);
