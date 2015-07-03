@@ -3,14 +3,9 @@ window.VMDSummaryView = Backbone.View.extend({
     this.vm = options.vm;
   },
   events: {
-    'click .deletevm': 'deletevm',
-    'click .actionvm': 'vmaction',
-    'click #resizevm': 'vmresize',
-    'click #shutdown': 'shutdown'
+
   },
-  shutdown: function() {
-    this.vmaction(null, 'stop');
-  },
+
   togglebtn: function(state) {
     $('.actionvm', this.el).removeClass('disabled');
     switch (state) {
@@ -39,24 +34,6 @@ window.VMDSummaryView = Backbone.View.extend({
         $('#btnpause', this.el).addClass('disabled');
         break;
     }
-  },
-
-  vmresize: function(evt) {
-    var vmdetails = {
-      'cpu': $('#sliderCPU').val(),
-      'ram': parseInt($('#sliderRAM').val() / 2 * 1024)
-    };
-
-    modem('PUT', 'vm/' + this.model.get('id'),
-      function(json) {
-        console.log('resized!!');
-      },
-      function(xhr, ajaxOptions, thrownError) {
-        var json = JSON.parse(xhr.responseText);
-        console.log(json);
-        showError('ERRO - Criação de VM', json.error);
-      }, vmdetails
-    );
   },
 
   vmaction: function(evt, action) {
@@ -174,6 +151,7 @@ window.VMDSummaryView = Backbone.View.extend({
   refreshState: function() {
     //console.log('Get Status');
     var self = this;
+    this.vm = this.model;
     this.vm.fetch(this.model.get('id'), function() {
       self.model = self.vm;
       if (self.model.get('status') === 'running') {
@@ -198,7 +176,6 @@ window.VMDSummaryView = Backbone.View.extend({
         $('.state', self.el).html('<i class="icon-refresh m-r-10 c-gold"></i> Pending');
       }
       self.togglebtn(self.model.get('status'));
-      self.setslider();
     });
   },
   extrainfo: function() {
@@ -212,85 +189,20 @@ window.VMDSummaryView = Backbone.View.extend({
     }
     $('.infohostanme', this.el).html(this.model.get('hostname') + ' - ' + ips);
   },
-  loadCharts: function() {
-    modem('GET', 'vm/' + this.model.get('id') + '/metrics',
-      function(json) {
-        var cpuChart = new CPUChart('placeHolder1');
-        var memoryChart = new MemoryChart('placeHolder2');
-        var networkChart = new NetworkChart('placeHolder3');
-        cpuChart.init();
-        memoryChart.init();
-        networkChart.init();
-        cpuChart.appendData(json.stats);
-        memoryChart.appendData(json.stats);
-        networkChart.appendData(json.stats);
-
-        window.addEventListener('resize', function() {
-          setTimeout(function() {
-            cpuChart.draw();
-            memoryChart.draw();
-            networkChart.draw();
-          }, 250);
-        });
-      },
-      function(xhr, ajaxOptions, thrownError) {
-        var json = JSON.parse(xhr.responseText);
-        console.log(json);
-        showError('ERRO - ' + title, json.error);
-      }
-    );
-  },
-  setslider: function() {
-    $('#sliderCPU', this.el).val(this.model.get('vcpu'));
-    $('#rangeDanger', this.el).html(this.model.get('vcpu'));
-    $('#sliderRAM', this.el).val((this.model.get('ram') / 1024) * 2);
-    $('#rangeInfo', this.el).html(this.model.get('ram') / 1024);
-    if (this.model.get('status') !== 'stopped') {
-      $('#sliderCPU', this.el).prop('disabled', true);
-      $('#sliderRAM', this.el).prop('disabled', true);
-      $('#resizevm', this.el).addClass('disabled');
-      $('#showwarning', this.el).show();
-    } else {
-      $('#sliderCPU', this.el).prop('disabled', false);
-      $('#sliderRAM', this.el).prop('disabled', false);
-      $('#resizevm', this.el).removeClass('disabled');
-      $('#showwarning', this.el).hide();
-    }
-  },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
-    console.log(this.model.toJSON());
     $('.vm-details', this.el).i18n();
     $('.overme', this.el).tooltip();
     this.extrainfo();
-    this.setslider();
     this.togglebtn(this.model.get('status'));
     this.fillheader();
-    this.loadCharts();
     var self = this;
-
     this.loop = setInterval(function() {
       self.refreshState(self.el);
     }, 5000);
 
-    //refactor these crappy tabs to multiple views and then move this to right place
-    setTimeout(function() {
-      UI.load();
-      modem('GET', 'vm/' + self.model.get('id') + '/vnc',
-        function(json) {
-          UI.updateSetting('host', json.address);
-          UI.updateSetting('port', '29876');
-          UI.updateSetting('password', '');
-          UI.updateSetting('path', '?token=' + json.token);
-          UI.connect();
-        },
-        function(xhr, ajaxOptions, thrownError) {
-          var json = JSON.parse(xhr.responseText);
-          console.log(json);
-          showError('ERRO - ' + title, json.error);
-        }
-      );
-    }, 500);
+    $('.topmenudetails li').removeClass('active');
+    $('#gotosummary').parent().addClass('active');
 
     return this;
   }

@@ -12,14 +12,17 @@ var Router = Backbone.Router.extend({
   showView: function(view, elem, sub) {
     elem.show();
 
-    if (this.currentView)
-      this.currentView.close();
-    this.currentView = view;
-    this.currentView.delegateEvents();
+    if (sub === false) {
+      if (this.currentView)
+        this.currentView.close();
 
-    var rendered = view.render();
+      this.currentView = view;
+      this.currentView.delegateEvents();
+
+      elem.addClass('col-sm-9');
+    }
     elem.removeClass('col-sm-12');
-    elem.addClass('col-sm-9');
+    var rendered = view.render();
     elem.html(rendered.el);
   },
   routes: {
@@ -27,7 +30,6 @@ var Router = Backbone.Router.extend({
     'login': 'login',
     'home': 'home',
     'vm/add': 'vmadd',
-    'vm/info/:id': 'vmdetails',
     'vm/info/:id/summary': 'vmdsummary',
     'vm/info/:id/graphs': 'vmdgraphs',
     'vm/info/:id/console': 'vmdconsole',
@@ -41,6 +43,89 @@ var Router = Backbone.Router.extend({
     'support/:id': 'ticket',
     'config': 'config',
     '*notFound': 'index'
+  },
+  vmdetails: function(id) {
+    var self = this;
+    templateLoader.load(["VMDetailsView"], function() {
+      self.verifyLogin(function() {
+          var vm = new VM();
+          vm.fetch(id, function() {
+            var v = new VMDetailsView({
+              vm: vm,
+              model: vm
+            });
+            self.showView(v, $('#content'));
+          });
+      });
+    });
+  },
+  vmdsummary: function(id) {
+    var self = this;
+    templateLoader.load(["VMDetailsView", "VMDSummaryView"], function() {
+      self.verifyLogin(function() {
+          var vm = new VM();
+          vm.fetch(id, function() {
+            var v = new VMDetailsView({id: id});
+            self.showView(v, $('#content'));
+
+            var vs = new VMDSummaryView({
+              model: vm
+            });
+            self.showView(vs, $('#tab-content'), true);
+          });
+      });
+    });
+  },
+  vmdgraphs: function(id) {
+    var self = this;
+    templateLoader.load(["VMDetailsView", "VMDGraphsView"], function() {
+      self.verifyLogin(function() {
+          var vm = new VM();
+          vm.fetch(id, function() {
+            var v = new VMDetailsView({id: id});
+            self.showView(v, $('#content'));
+
+            var vs = new VMDGraphsView({
+              model: vm
+            });
+            self.showView(vs, $('#tab-content'), true);
+          });
+      });
+    });
+  },
+  vmdconsole: function(id) {
+    var self = this;
+    templateLoader.load(["VMDetailsView", "VMDConsoleView"], function() {
+      self.verifyLogin(function() {
+          var vm = new VM();
+          vm.fetch(id, function() {
+            var v = new VMDetailsView({id: id});
+            self.showView(v, $('#content'));
+
+            var vs = new VMDConsoleView({
+              model: vm
+            });
+            self.showView(vs, $('#tab-content'), true);
+          });
+      });
+    });
+  },
+  vmdresize: function(id) {
+    var self = this;
+    templateLoader.load(["VMDetailsView", "VMDResizeView"], function() {
+      self.verifyLogin(function() {
+          var vm = new VM();
+          vm.fetch(id, function() {
+            var v = new VMDetailsView({id: id});
+            self.showView(v, $('#content'));
+
+            var vs = new VMDResizeView({
+              model: vm
+            });
+            self.showView(vs, $('#tab-content'), true);
+          });
+      });
+    });
   },
   ticket: function(id) {
     var self = this;
@@ -121,21 +206,6 @@ var Router = Backbone.Router.extend({
           });
           self.showView(v, $('#content'));
         });
-      });
-    });
-  },
-  vmdetails: function(id) {
-    var self = this;
-    templateLoader.load(["VMDetailsView"], function() {
-      self.verifyLogin(function() {
-          var vm = new VM();
-          vm.fetch(id, function() {
-            var v = new VMDetailsView({
-              vm: vm,
-              model: vm
-            });
-            self.showView(v, $('#content'));
-          });
       });
     });
   },
@@ -221,6 +291,9 @@ var Router = Backbone.Router.extend({
     });
   },
   login: function() {
+    this.header = undefined;
+    this.footer = undefined;
+    this.sidemenu= undefined;
     window.profile = null;
     window.sessionStorage.clear();
 

@@ -35,11 +35,12 @@ window.VMDGraphsView = Backbone.View.extend({
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
-    console.log(this.model.toJSON());
     $('.vm-details', this.el).i18n();
     $('.overme', this.el).tooltip();
     this.loadCharts();
-    var self = this;
+    $('.topmenudetails li').removeClass('active');
+    $('#gotographs').parent().addClass('active');
+
     return this;
   }
 
