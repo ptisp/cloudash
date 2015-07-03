@@ -72,6 +72,7 @@ window.ConfigView = Backbone.View.extend({
 
   render: function() {
     $(this.el).html(this.template());
+    $('.config', this.el).i18n();
     this.getlogo();
     return this;
   }

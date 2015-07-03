@@ -123,5 +123,9 @@
     "machines": "Máquinas Virtuales",
     "dns": "Administrador de DNS",
     "images": "Imagen SO"
+  },
+  "config": {
+    "title": "Configuración General",
+    "subtitle": "Configuración general Logo y apoyo"
   }
 }

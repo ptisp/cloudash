@@ -124,5 +124,9 @@
     "machines": "Virtual Machines",
     "dns": "DNS Manager",
     "images": "OS Images"
+  },
+  "config": {
+    "title": "General Settings",
+    "subtitle": "General Settings logo and Support"
   }
 }

@@ -166,5 +166,9 @@
     "replyticket": "Responder",
     "openticket": "Abrir Ticket",
     "closeticket": "Fechar Ticket"
+  },
+  "config": {
+    "title": "Configurações Gerais",
+    "subtitle": "Configurações gerais de logotipo e suporte"
   }
 }
