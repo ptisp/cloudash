@@ -7,7 +7,7 @@ window.ConfigView = Backbone.View.extend({
 
   clearlogo: function() {
     var self = this;
-    modem('GET', 'config/clearlogo',
+    modem('DELETE', 'config/logo',
       function(json) {
         //console.log(json);
         self.render();
@@ -34,7 +34,7 @@ window.ConfigView = Backbone.View.extend({
           var data = {
             rawfile: file
           };
-          modem('POST', 'config/savelogo',
+          modem('POST', 'config/logo',
             function(json) {
               self.render();
             },
@@ -57,7 +57,7 @@ window.ConfigView = Backbone.View.extend({
 
   getlogo: function(){
     var self = this;
-    modem('GET', 'config/getlogo',
+    modem('GET', 'config/logo',
       function(json) {
         if (json.file) {
           $('.img-responsive', self.el).attr('src',json.file);

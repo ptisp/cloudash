@@ -19,7 +19,6 @@ app.get('/api/listusers', auth, api.user.listUsers);
 app.get('/api/user/:user', auth, api.user.getUser);
 app.delete('/api/remove/:user', auth, api.user.removeUser);
 
-
 app.post('/api/vm/:id/start', auth, api.vm.startVm);
 app.post('/api/vm/:id/pause', auth, api.vm.pauseVm);
 app.post('/api/vm/:id/stop/:forced', auth, api.vm.stopVm);
@@ -43,9 +42,10 @@ app.delete('/api/support/:id', auth, api.support.closeticket);
 app.get('/api/support', auth, api.support.ticketList);
 app.post('/api/support', auth, api.support.openTicket);
 
-app.get('/api/config/getlogo', api.conf.getLogo);
-app.get('/api/config/clearlogo', api.conf.clearLogo);
-app.post('/api/config/savelogo', api.conf.updateLogo);
+app.get('/api/config/logo', api.conf.getLogo);
+app.delete('/api/config/logo', api.conf.clearLogo);
+app.post('/api/config/logo', api.conf.updateLogo);
+app.get('/api/config/resources', auth, api.conf.getResources);
 
 var port = process.env.PORT || 8080;
 

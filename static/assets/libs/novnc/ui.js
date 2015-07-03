@@ -264,22 +264,24 @@ var UI;
     getCanvasLimit: function() {
       var container = $D('noVNC_container');
 
-      // Hide the scrollbars until the size is calculated
-      container.style.overflow = "hidden";
+      if (container) {
+        // Hide the scrollbars until the size is calculated
+        container.style.overflow = "hidden";
 
-      var pos = Util.getPosition(container);
-      var w = pos.width;
-      var h = pos.height;
+        var pos = Util.getPosition(container);
+        var w = pos.width;
+        var h = pos.height;
 
-      container.style.overflow = "visible";
+        container.style.overflow = "visible";
 
-      if (isNaN(w) || isNaN(h)) {
-        return false;
-      } else {
-        return {
-          w: w,
-          h: h
-        };
+        if (isNaN(w) || isNaN(h)) {
+          return false;
+        } else {
+          return {
+            w: w,
+            h: h
+          };
+        }
       }
     },
 
@@ -525,8 +527,8 @@ var UI;
       }
 
       //if (typeof(msg) !== 'undefined') {
-        //$D('noVNC-control-bar').setAttribute("class", klass);
-        //$D('noVNC_status').innerHTML = msg;
+      //$D('noVNC-control-bar').setAttribute("class", klass);
+      //$D('noVNC_status').innerHTML = msg;
       //}
 
       UI.updateVisualState();

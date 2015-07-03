@@ -40,7 +40,7 @@ window.LoginView = Backbone.View.extend({
 
   getlogo: function(){
     var self = this;
-    modem('GET', 'config/getlogo',
+    modem('GET', 'config/logo',
       function(json) {
         if (json.file) {
           $('.img-responsive', self.el).attr('src',json.file);
