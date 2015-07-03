@@ -13,7 +13,8 @@
     "body-parser": "1.2.x",
     "errorhandler": "1.0.x",
     "basic-auth": "0.0.x",
-    "opennebula": "*"
+    "opennebula": "*",
+    "request": "2.58.x"
   },
   "scripts": {
     "start": "node main.js"
