@@ -134,7 +134,6 @@ var UI;
       Util.addEvent(window, 'resize', function() {
         UI.onresize();
         UI.setViewClip();
-        UI.updateViewDrag();
         UI.setBarPosition();
       });
 
@@ -167,11 +166,6 @@ var UI;
       if (location.host === "kanaka.github.io") {
         // Open the description dialog
         $D('noVNC_description').style.display = "block";
-      } else {
-        // Show the connect panel on first load unless autoconnecting
-        if (autoconnect === UI.connSettingsOpen) {
-          UI.toggleConnectPanel();
-        }
       }
 
       // Add mouse event click/focus/blur event handlers to the UI
@@ -187,10 +181,8 @@ var UI;
         UI.rfb = new RFB({
           'target': $D('noVNC_canvas'),
           'onUpdateState': UI.updateState,
-          'onXvpInit': UI.updateXvpVisualState,
           'onClipboard': UI.clipReceive,
           'onFBUComplete': UI.FBUComplete,
-          'onFBResize': UI.updateViewDrag
         });
         return true;
       } catch (exc) {
@@ -234,24 +226,9 @@ var UI;
       $D("xvpResetButton").onclick = UI.xvpReset;
       $D("noVNC_status").onclick = UI.togglePopupStatus;
       $D("noVNC_popup_status").onclick = UI.togglePopupStatus;
-      $D("xvpButton").onclick = UI.toggleXvpPanel;
-      $D("clipboardButton").onclick = UI.toggleClipboardPanel;
       $D("fullscreenButton").onclick = UI.toggleFullscreen;
-      $D("settingsButton").onclick = UI.toggleSettingsPanel;
-      $D("connectButton").onclick = UI.toggleConnectPanel;
-      $D("disconnectButton").onclick = UI.disconnect;
-      $D("descriptionButton").onclick = UI.toggleConnectPanel;
 
-      $D("noVNC_clipboard_text").onfocus = UI.displayBlur;
-      $D("noVNC_clipboard_text").onblur = UI.displayFocus;
-      $D("noVNC_clipboard_text").onchange = UI.clipSend;
-      $D("noVNC_clipboard_clear_button").onclick = UI.clipClear;
-
-      $D("noVNC_settings_menu").onmouseover = UI.displayBlur;
-      $D("noVNC_settings_menu").onmouseover = UI.displayFocus;
       $D("noVNC_apply").onclick = UI.settingsApply;
-
-      $D("noVNC_connect_button").onclick = UI.connect;
 
       $D("noVNC_resize").onchange = UI.enableDisableViewClip;
     },
@@ -432,10 +409,6 @@ var UI;
         UI.settingsApply();
         UI.closeSettingsMenu();
       }
-      // Close connection settings if open
-      if (UI.connSettingsOpen === true) {
-        UI.toggleConnectPanel();
-      }
       // Close clipboard panel if open
       if (UI.clipboardOpen === true) {
         UI.toggleClipboardPanel();
@@ -460,10 +433,6 @@ var UI;
       if (UI.settingsOpen === true) {
         UI.settingsApply();
         UI.closeSettingsMenu();
-      }
-      // Close connection settings if open
-      if (UI.connSettingsOpen === true) {
-        UI.toggleConnectPanel();
       }
       // Close XVP panel if open
       if (UI.xvpOpen === true) {
@@ -522,41 +491,6 @@ var UI;
       }
     },
 
-    // Show the connection settings panel/menu
-    toggleConnectPanel: function() {
-      // Close the description panel
-      $D('noVNC_description').style.display = "none";
-      // Close connection settings if open
-      if (UI.settingsOpen === true) {
-        UI.settingsApply();
-        UI.closeSettingsMenu();
-        $D('connectButton').className = "noVNC_status_button";
-      }
-      // Close clipboard panel if open
-      if (UI.clipboardOpen === true) {
-        UI.toggleClipboardPanel();
-      }
-      // Close XVP panel if open
-      if (UI.xvpOpen === true) {
-        UI.toggleXvpPanel();
-      }
-
-      // Toggle Connection Panel
-      if (UI.connSettingsOpen === true) {
-        //$D('noVNC_controls').style.display = "none";
-        //$D('connectButton').className = "noVNC_status_button";
-        UI.connSettingsOpen = false;
-        UI.saveSetting('host');
-        UI.saveSetting('port');
-        //UI.saveSetting('password');
-      } else {
-        //$D('noVNC_controls').style.display = "block";
-        //$D('connectButton').className = "noVNC_status_button_selected";
-        UI.connSettingsOpen = true;
-        $D('noVNC_host').focus();
-      }
-    },
-
     // Toggle the settings menu:
     //   On open, settings are refreshed from saved cookies.
     //   On close, settings are applied
@@ -596,10 +530,6 @@ var UI;
       if (UI.clipboardOpen === true) {
         UI.toggleClipboardPanel();
       }
-      // Close connection settings if open
-      if (UI.connSettingsOpen === true) {
-        UI.toggleConnectPanel();
-      }
       // Close XVP panel if open
       if (UI.xvpOpen === true) {
         UI.toggleXvpPanel();
@@ -611,8 +541,8 @@ var UI;
 
     // Close menu (without applying settings)
     closeSettingsMenu: function() {
-      $D('noVNC_settings').style.display = "none";
-      $D('settingsButton').className = "noVNC_status_button";
+      //$D('noVNC_settings').style.display = "none";
+      //$D('settingsButton').className = "noVNC_status_button";
       UI.settingsOpen = false;
     },
 
@@ -643,7 +573,6 @@ var UI;
       WebUtil.selectStylesheet(UI.getSetting('stylesheet'));
       WebUtil.init_logging(UI.getSetting('logging'));
       UI.setViewClip();
-      UI.updateViewDrag();
       //Util.Debug("<< settingsApply");
     },
 
@@ -654,8 +583,6 @@ var UI;
       //Reset connect button.
       $D('noVNC_connect_button').value = "Connect";
       $D('noVNC_connect_button').onclick = UI.Connect;
-      //Hide connection panel.
-      UI.toggleConnectPanel();
       return false;
     },
 
@@ -676,23 +603,7 @@ var UI;
     },
 
     setMouseButton: function(num) {
-      if (typeof num === 'undefined') {
-        // Disable mouse buttons
-        num = -1;
-      }
-      if (UI.rfb) {
-        UI.rfb.get_mouse().set_touchButton(num);
-      }
 
-      var blist = [0, 1, 2, 4];
-      for (var b = 0; b < blist.length; b++) {
-        var button = $D('noVNC_mouse_button' + blist[b]);
-        if (blist[b] === num) {
-          button.style.display = "";
-        } else {
-          button.style.display = "none";
-        }
-      }
     },
 
     updateState: function(rfb, state, oldstate, msg) {
@@ -707,15 +618,11 @@ var UI;
           klass = "noVNC_status_normal";
           break;
         case 'disconnected':
-          $D('noVNC_logo').style.display = "block";
-          $D('noVNC_container').style.display = "none";
-          /* falls through */
+          //$D('noVNC_container').style.display = "none";
         case 'loaded':
           klass = "noVNC_status_normal";
           break;
         case 'password':
-          UI.toggleConnectPanel();
-
           $D('noVNC_connect_button').value = "Send Password";
           $D('noVNC_connect_button').onclick = UI.setPassword;
           $D('noVNC_password').focus();
@@ -727,10 +634,10 @@ var UI;
           break;
       }
 
-      if (typeof(msg) !== 'undefined') {
-        $D('noVNC-control-bar').setAttribute("class", klass);
+      //if (typeof(msg) !== 'undefined') {
+        //$D('noVNC-control-bar').setAttribute("class", klass);
         //$D('noVNC_status').innerHTML = msg;
-      }
+      //}
 
       UI.updateVisualState();
     },
@@ -740,41 +647,29 @@ var UI;
       var connected = UI.rfb && UI.rfb_state === 'normal';
 
       //Util.Debug(">> updateVisualState");
-      $D('noVNC_encrypt').disabled = connected;
-      $D('noVNC_true_color').disabled = connected;
-      if (Util.browserSupportsCursorURIs()) {
-        $D('noVNC_cursor').disabled = connected;
-      } else {
-        UI.updateSetting('cursor', !UI.isTouchDevice);
-        $D('noVNC_cursor').disabled = true;
-      }
+      //$D('noVNC_encrypt').disabled = connected;
+      //$D('noVNC_true_color').disabled = connected;
+      //if (Util.browserSupportsCursorURIs()) {
+      //  $D('noVNC_cursor').disabled = connected;
+      //} else {
+      //  UI.updateSetting('cursor', !UI.isTouchDevice);
+      //  $D('noVNC_cursor').disabled = true;
+      //}
 
       UI.enableDisableViewClip();
-      $D('noVNC_resize').disabled = connected;
-      $D('noVNC_shared').disabled = connected;
-      $D('noVNC_view_only').disabled = connected;
-      $D('noVNC_path').disabled = connected;
-      $D('noVNC_repeaterID').disabled = connected;
+      //$D('noVNC_resize').disabled = connected;
+      //$D('noVNC_shared').disabled = connected;
+      //$D('noVNC_view_only').disabled = connected;
+      //$D('noVNC_path').disabled = connected;
+      //$D('noVNC_repeaterID').disabled = connected;
 
       if (connected) {
         UI.setViewClip();
         UI.setMouseButton(1);
-        $D('clipboardButton').style.display = "inline";
-        $D('showKeyboard').style.display = "inline";
-        $D('noVNC_extra_keys').style.display = "";
         $D('sendCtrlAltDelButton').style.display = "inline";
       } else {
         UI.setMouseButton();
-        $D('clipboardButton').style.display = "none";
-        $D('showKeyboard').style.display = "none";
-        $D('noVNC_extra_keys').style.display = "none";
-        $D('sendCtrlAltDelButton').style.display = "none";
-        UI.updateXvpVisualState(0);
       }
-
-      // State change disables viewport dragging.
-      // It is enabled (toggled) by direct click on the button
-      UI.updateViewDrag(false);
 
       switch (UI.rfb_state) {
         case 'fatal':
@@ -783,7 +678,6 @@ var UI;
           //$D('connectButton').style.display = "";
           //$D('disconnectButton').style.display = "none";
           UI.connSettingsOpen = false;
-          UI.toggleConnectPanel();
           break;
         case 'loaded':
           //$D('connectButton').style.display = "";
@@ -796,19 +690,6 @@ var UI;
       }
 
       //Util.Debug("<< updateVisualState");
-    },
-
-    // Disable/enable XVP button
-    updateXvpVisualState: function(ver) {
-      if (ver >= 1) {
-        $D('xvpButton').style.display = 'inline';
-      } else {
-        $D('xvpButton').style.display = 'none';
-        // Close XVP panel if open
-        if (UI.xvpOpen === true) {
-          UI.toggleXvpPanel();
-        }
-      }
     },
 
     // This resize can not be done until we know from the first Frame Buffer Update
@@ -829,7 +710,6 @@ var UI;
 
     connect: function() {
       UI.closeSettingsMenu();
-      UI.toggleConnectPanel();
 
       var host = $D('noVNC_host').value;
       var port = $D('noVNC_port').value;
@@ -861,11 +741,6 @@ var UI;
 
       // Restore the callback used for initial resize
       UI.rfb.set_onFBUComplete(UI.FBUComplete);
-
-      $D('noVNC_logo').style.display = "block";
-      $D('noVNC_container').style.display = "none";
-
-      // Don't display the connection settings until we're actually disconnected
     },
 
     displayBlur: function() {
@@ -948,80 +823,10 @@ var UI;
 
     // Handle special cases where clipping is forced on/off or locked
     enableDisableViewClip: function() {
-      var resizeElem = $D('noVNC_resize');
-      var connected = UI.rfb && UI.rfb_state === 'normal';
 
-      if (resizeElem.value === 'downscale' || resizeElem.value === 'scale') {
-        // Disable clipping if we are scaling
-        UI.setViewClip(false);
-        $D('noVNC_clip').disabled = true;
-      } else if (document.msFullscreenElement) {
-        // The browser is IE and we are in fullscreen mode.
-        // - We need to force clipping while in fullscreen since
-        //   scrollbars doesn't work.
-        UI.togglePopupStatus("Forcing clipping mode since scrollbars aren't supported by IE in fullscreen");
-        UI.rememberedClipSetting = UI.getSetting('clip');
-        UI.setViewClip(true);
-        $D('noVNC_clip').disabled = true;
-      } else if (document.body.msRequestFullscreen && UI.rememberedClip !== null) {
-        // Restore view clip to what it was before fullscreen on IE
-        UI.setViewClip(UI.rememberedClipSetting);
-        $D('noVNC_clip').disabled = connected || UI.isTouchDevice;
-      } else {
-        $D('noVNC_clip').disabled = connected || UI.isTouchDevice;
-        if (UI.isTouchDevice) {
-          UI.setViewClip(true);
-        }
-      }
     },
 
-    // Update the viewport drag/move button
-    updateViewDrag: function(drag) {
-      if (!UI.rfb) return;
 
-      var vmb = $D('noVNC_view_drag_button');
-
-      // Check if viewport drag is possible
-      if (UI.rfb_state === 'normal' &&
-        UI.rfb.get_display().get_viewport() &&
-        UI.rfb.get_display().clippingDisplay()) {
-
-        // Show and enable the drag button
-        vmb.style.display = "inline";
-        vmb.disabled = false;
-
-      } else {
-        // The VNC content is the same size as
-        // or smaller than the display
-
-        if (UI.rfb.get_viewportDrag) {
-          // Turn off viewport drag when it's
-          // active since it can't be used here
-          vmb.className = "noVNC_status_button";
-          UI.rfb.set_viewportDrag(false);
-        }
-
-        // Disable or hide the drag button
-        if (UI.rfb_state === 'normal' && UI.isTouchDevice) {
-          vmb.style.display = "inline";
-          vmb.disabled = true;
-        } else {
-          vmb.style.display = "none";
-        }
-        return;
-      }
-
-      if (typeof(drag) !== "undefined" &&
-        typeof(drag) !== "object") {
-        if (drag) {
-          vmb.className = "noVNC_status_button_selected";
-          UI.rfb.set_viewportDrag(true);
-        } else {
-          vmb.className = "noVNC_status_button";
-          UI.rfb.set_viewportDrag(false);
-        }
-      }
-    },
 
     toggleViewDrag: function() {
       if (!UI.rfb) return;

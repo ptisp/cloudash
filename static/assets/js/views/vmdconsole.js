@@ -6,11 +6,15 @@ window.VMDConsoleView = Backbone.View.extend({
 
   },
   remove: function() {
+    UI.rfb.get_keyboard().set_focused(false);
+    UI.disconnect();
+
     if (this.loop) {
       clearInterval(this.loop);
     }
     this.$el.remove();
     this.stopListening();
+
     return this;
   },
   getconsole: function() {
