@@ -5,10 +5,18 @@ window.VMDConsoleView = Backbone.View.extend({
   events: {
 
   },
+  remove: function() {
+    if (this.loop) {
+      clearInterval(this.loop);
+    }
+    this.$el.remove();
+    this.stopListening();
+    return this;
+  },
   getconsole: function() {
     //refactor these crappy tabs to multiple views and then move this to right place
     var self = this;
-    setTimeout(function() {
+    this.loop = setTimeout(function() {
       UI.load();
       modem('GET', 'vm/' + self.model.get('id') + '/vnc',
         function(json) {

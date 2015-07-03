@@ -5,6 +5,14 @@ window.VMDGraphsView = Backbone.View.extend({
   events: {
 
   },
+  remove: function() {
+    if (this.loop) {
+      clearInterval(this.loop);
+    }
+    this.$el.remove();
+    this.stopListening();
+    return this;
+  },
   loadCharts: function() {
     modem('GET', 'vm/' + this.model.get('id') + '/metrics',
       function(json) {
@@ -19,7 +27,7 @@ window.VMDGraphsView = Backbone.View.extend({
         networkChart.appendData(json.stats);
 
         window.addEventListener('resize', function() {
-          setTimeout(function() {
+          this.loop = setTimeout(function() {
             cpuChart.draw();
             memoryChart.draw();
             networkChart.draw();

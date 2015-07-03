@@ -149,7 +149,7 @@ window.VMDSummaryView = Backbone.View.extend({
     }
   },
   refreshState: function() {
-    //console.log('Get Status');
+    console.log('Get Status');
     var self = this;
     this.vm = this.model;
     this.vm.fetch(this.model.get('id'), function() {

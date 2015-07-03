@@ -8,20 +8,22 @@ var Router = Backbone.Router.extend({
   header: undefined,
   footer: undefined,
   sidemenu: undefined,
+  topmenu: undefined,
   currentView: undefined,
   showView: function(view, elem, sub) {
     elem.show();
 
-    if (sub === false) {
-      if (this.currentView)
-        this.currentView.close();
-
-      this.currentView = view;
-      this.currentView.delegateEvents();
-
+    if (this.currentView) {
+      this.currentView.close();
+    }
+    this.currentView = view;
+    this.currentView.delegateEvents();
+    if (!sub) {
+      elem.removeClass('col-sm-12');
       elem.addClass('col-sm-9');
     }
-    elem.removeClass('col-sm-12');
+
+
     var rendered = view.render();
     elem.html(rendered.el);
   },
@@ -37,27 +39,10 @@ var Router = Backbone.Router.extend({
     'manage/profile': 'manprofile',
     'manage/user/:id': 'manuserdetails',
     'manage/account': 'manaccount',
-    'domain/dns': 'domaindns',
-    'domain/dns/:domain': 'domaindnsdetails',
     'support': 'support',
     'support/:id': 'ticket',
     'config': 'config',
     '*notFound': 'index'
-  },
-  vmdetails: function(id) {
-    var self = this;
-    templateLoader.load(["VMDetailsView"], function() {
-      self.verifyLogin(function() {
-          var vm = new VM();
-          vm.fetch(id, function() {
-            var v = new VMDetailsView({
-              vm: vm,
-              model: vm
-            });
-            self.showView(v, $('#content'));
-          });
-      });
-    });
   },
   vmdsummary: function(id) {
     var self = this;
@@ -65,9 +50,11 @@ var Router = Backbone.Router.extend({
       self.verifyLogin(function() {
           var vm = new VM();
           vm.fetch(id, function() {
-            var v = new VMDetailsView({id: id});
-            self.showView(v, $('#content'));
-
+            if (!self.topmenu) {
+              self.topmenu = $('#content').html(new VMDetailsView({
+                id:id
+              }).render().el);
+            }
             var vs = new VMDSummaryView({
               model: vm
             });
@@ -82,8 +69,11 @@ var Router = Backbone.Router.extend({
       self.verifyLogin(function() {
           var vm = new VM();
           vm.fetch(id, function() {
-            var v = new VMDetailsView({id: id});
-            self.showView(v, $('#content'));
+            if (!self.topmenu) {
+              self.topmenu = $('#content').html(new VMDetailsView({
+                id:id
+              }).render().el);
+            }
 
             var vs = new VMDGraphsView({
               model: vm
@@ -99,8 +89,11 @@ var Router = Backbone.Router.extend({
       self.verifyLogin(function() {
           var vm = new VM();
           vm.fetch(id, function() {
-            var v = new VMDetailsView({id: id});
-            self.showView(v, $('#content'));
+            if (!self.topmenu) {
+              self.topmenu = $('#content').html(new VMDetailsView({
+                id:id
+              }).render().el);
+            }
 
             var vs = new VMDConsoleView({
               model: vm
@@ -116,8 +109,11 @@ var Router = Backbone.Router.extend({
       self.verifyLogin(function() {
           var vm = new VM();
           vm.fetch(id, function() {
-            var v = new VMDetailsView({id: id});
-            self.showView(v, $('#content'));
+            if (!self.topmenu) {
+              self.topmenu = $('#content').html(new VMDetailsView({
+                id:id
+              }).render().el);
+            }
 
             var vs = new VMDResizeView({
               model: vm
@@ -129,6 +125,7 @@ var Router = Backbone.Router.extend({
   },
   ticket: function(id) {
     var self = this;
+    this.topmenu = undefined;
     templateLoader.load(["TicketDetailsView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -145,6 +142,7 @@ var Router = Backbone.Router.extend({
   },
   support: function() {
     var self = this;
+    this.topmenu = undefined;
     templateLoader.load(["SupportView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -158,6 +156,7 @@ var Router = Backbone.Router.extend({
   },
   config: function() {
     var self = this;
+    this.topmenu = undefined;
     templateLoader.load(["ConfigView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -169,35 +168,9 @@ var Router = Backbone.Router.extend({
       });
     });
   },
-  domaindns: function() {
-    var self = this;
-    templateLoader.load(["DomDnsView"], function() {
-      self.verifyLogin(function() {
-        self.loadProfile(function () {
-          var v = new DomDnsView({
-            model: window.profile
-          });
-          self.showView(v, $('#content'));
-        });
-      });
-    });
-  },
-  domaindnsdetails: function(domain) {
-    var self = this;
-    templateLoader.load(["DomDnsDetailsView"], function() {
-      self.verifyLogin(function() {
-        self.loadProfile(function () {
-          var v = new DomDnsDetailsView({
-            model: window.profile,
-            domain: domain
-          });
-          self.showView(v, $('#content'));
-        });
-      });
-    });
-  },
   vmadd: function() {
     var self = this;
+    this.topmenu = undefined;
     templateLoader.load(["VMAddView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -211,6 +184,7 @@ var Router = Backbone.Router.extend({
   },
   manuserdetails: function(id) {
     var self = this;
+    this.topmenu = undefined;
     templateLoader.load(["UserDetailsView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -224,6 +198,7 @@ var Router = Backbone.Router.extend({
   },
   manprofile: function() {
     var self = this;
+    this.topmenu = undefined;
     templateLoader.load(["UserProfileView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -237,6 +212,7 @@ var Router = Backbone.Router.extend({
   },
   manaccount: function() {
     var self = this;
+    this.topmenu = undefined;
     templateLoader.load(["UserAccView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -293,7 +269,8 @@ var Router = Backbone.Router.extend({
   login: function() {
     this.header = undefined;
     this.footer = undefined;
-    this.sidemenu= undefined;
+    this.sidemenu = undefined;
+    this.topmenu = undefined;
     window.profile = null;
     window.sessionStorage.clear();
 
