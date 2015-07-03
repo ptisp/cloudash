@@ -59,8 +59,10 @@ window.TicketDetailsView = Backbone.View.extend({
         ]
       });
     };
+    console.log(this.model.toJSON());
     $('#infoid', this.el).html(this.model.get('id'));
     $('#infostatus', this.el).html(this.model.get('status'));
+    $('#infosubject', this.el).html(this.model.get('subject'));
     $('#infocount', this.el).html(this.model.get('messages').length);
     $('#infocreated', this.el).html(formatdate(new Date(this.model.get('created'))));
     handler(this.model.get('messages'));
@@ -79,6 +81,7 @@ window.TicketDetailsView = Backbone.View.extend({
     if (this.model.get('status') === 'Closed') {
       $('.closeticket', this.el).hide();
     }
+    $('.tdetails', this.el).i18n();
     return this;
   }
 

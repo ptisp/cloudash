@@ -41,16 +41,18 @@ window.SupportView = Backbone.View.extend({
     var handler = function(tabela, json) {
       var oTable = $(tabela, self.el).dataTable({
         "data": json,
+        "bAutoWidth": false ,
         "columns": [
-          {"data": "owner"},
-          {"data": "subject"},
+          {"data": "owner", "sWidth": "25%",},
+          {"data": "subject", "sWidth": "30%",},
           {"data": null,
+            "sWidth": "30%",
             "bSortable": true,
             "mRender": function(data, type, full) {
               var last = new Date(parseInt(full.messages[full.messages.length-1].date));
               return formatdate(last);
             }},
-          {"data": "status"},
+          {"data": "status", "sWidth": "15%",},
         ],
         "fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
             $(nRow).attr('data-id',aData._id);
@@ -90,6 +92,7 @@ window.SupportView = Backbone.View.extend({
       "indent": false,
       "outdent": false
     });
+    $('.support', this.el).i18n();
     this.gettickets();
     return this;
   }

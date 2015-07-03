@@ -113,6 +113,40 @@
     "dns": "Gestor DNS",
     "images": "Imagens SO"
   },
+  "support": {
+    "tickets": {
+      "title": "Suporte",
+      "subtitle": "O nosso helpdesk ao seu dispor. Abra novos pedidos de suporte.",
+      "openticket": "Tickets Abertos",
+      "openth1": "Email",
+      "openth2": "Assunto",
+      "openth3": "Última Actualização",
+      "openth4": "Estado",
+      "closedticket": "Tickets Fechado",
+      "closeth1": "Email",
+      "closeth2": "Assunto",
+      "closeth3": "Última Actualização",
+      "closeth4": "Estado"
+    },
+    "ticket": {
+      "header": {
+        "title": "Detalhes do Ticket: ",
+        "status": "Estado: ",
+        "replies": "Respostas: ",
+        "created": "Criado: ",
+        "subject": "Assunto: ",
+        "ticketth1": " Data",
+        "ticketth2": " Email",
+        "ticketth3": " Mensagem"
+      },
+      "modal": {
+        "title": "Novo Ticket",
+        "rtitle": "Responder",
+        "subject": "Assunto",
+        "message": "Mensagem"
+      }
+    }
+  },
   "btns": {
     "start": "Iniciar",
     "pause": "Pause",
@@ -125,6 +159,12 @@
     "update": "Actualizar",
     "add": "Adicionar",
     "create": "Criar",
-    "save": "Guardar"
+    "save": "Guardar",
+
+    "cancel": "Cancelar",
+    "send": "Enviar",
+    "replyticket": "Responder",
+    "openticket": "Abrir Ticket",
+    "closeticket": "Fechar Ticket"
   }
 }

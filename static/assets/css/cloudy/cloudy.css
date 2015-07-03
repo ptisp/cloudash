@@ -1682,3 +1682,6 @@ ul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {
 .placeholder {
   width: 100%;
 }
+.dataTables_info{
+  display: none;
+}
