@@ -5,15 +5,14 @@
   "description": "Cloudy Panel",
   "dependencies": {
     "express": "4.1.x",
-    "opennebula": "*",
     "emailjs": "0.3.x",
     "colors": "0.6.x",
     "async": "0.7.x",
-    "mongodb": "*",
+    "mongodb": "2.0.x",
     "body-parser": "1.2.x",
     "errorhandler": "1.0.x",
     "basic-auth": "0.0.x",
-    "opennebula": "*",
+    "opennebula": "1.0.x",
     "request": "2.58.x"
   },
   "scripts": {
