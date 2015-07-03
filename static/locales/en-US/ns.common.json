@@ -6,10 +6,10 @@
     "logout": "Logout"
   },
   "home": {
-    "header1": "Number of VMs",
+    "header1": "VMs",
     "header2": "Memory",
     "header3": "Storage",
-    "header4": "Active VMs",
+    "header4": "Cores",
     "tblhead1": "Name",
     "tblhead2": "IP(s)",
     "tblhead3": "Memory",

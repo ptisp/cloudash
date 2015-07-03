@@ -6,10 +6,10 @@
     "logout": "Sair"
   },
   "home": {
-    "header1": "Total VMs",
+    "header1": "VMs",
     "header2": "Memória",
     "header3": "Disco",
-    "header4": "VMs Activas",
+    "header4": "Cores",
     "tblhead1": "Hostname",
     "tblhead2": "IP(s)",
     "tblhead3": "Memória",
