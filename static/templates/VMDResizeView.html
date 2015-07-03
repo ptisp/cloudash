@@ -1,0 +1,443 @@
+<div class="vm-details">
+	<!-- tab light -->
+	<div class="row">
+		<ul class="nav nav-tabs cloudy bordered">
+			<li class="active">
+				<a href="#power" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-on f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-on m-r-5"></i>
+						<span data-i18n="vm.edit.tab.power"></span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="#console" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-vnc_console f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-vnc_console m-r-5"></i>
+						<span data-i18n="vm.edit.tab.console"></span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="#stats" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-graph f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-graph m-r-5"></i>
+						<span data-i18n="vm.edit.tab.stats"></span>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="#settings" data-toggle="tab">
+					<span class="visible-xs"><i class="icon-managed f-18"></i></span>
+					<span class="hidden-xs f-16"><i class="icon-managed m-r-5"></i>
+						<span data-i18n="vm.edit.tab.setting"></span>
+					</span>
+				</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div class="tab-pane fade active in" id="power">
+
+				<div class="row">
+
+					<div class="col-md-12">
+						<h2 class="m-b-0">
+							<span data-i18n="vm.edit.power.title"></span>
+						</h2>
+						<p class="infohostanme"></p>
+						<hr>
+					</div>
+					<div class="col-md-3 stat">
+						<div class="pallete-item m-b-0">
+							<dl class="palette palette-default pal">
+								<i class="icon-ram_memory f-22 m-r-10"></i>
+								<span class="f-16" data-i18n="vm.edit.power.memory"></span>
+							</dl>
+							<dl class="palette palette-default-hover pal">
+								<span class="f-22 c-blue-cl ramusage"></span>
+							</dl>
+							<div class="progress animation-sm">
+								<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="20" style="width: 20%;">20</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3 stat">
+						<div class="pallete-ite mm-b-0">
+							<dl class="palette palette-default pal">
+								<i class="icon-cpu f-22 m-r-10"></i>
+								<span class="f-16" data-i18n="vm.edit.power.cpu"></span>
+							</dl>
+							<dl class="palette palette-default-hover pal">
+								<span class="f-22 c-blue-cl cpu"></span>
+							</dl>
+							<div class="progress animation-sm">
+								<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="45" style="width: 45%;">45</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3 stat">
+						<div class="pallete-item m-b-0">
+							<dl class="palette palette-default pal">
+								<i class="icon-hardware f-22 m-r-10"></i>
+								<span class="f-16" data-i18n="vm.edit.power.storage"></span>
+							</dl>
+							<dl class="palette palette-default-hover pal">
+								<span class="f-22 c-blue-cl diskusage"></span>
+							</dl>
+							<div class="progress animation-sm">
+								<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="10" style="width: 10%;">10</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3 stat">
+						<div class="pallete-item m-b-0">
+							<dl class="palette palette-default pal">
+								<i class="icon-cloud_activated f-22 m-r-10"></i>
+								<span class="f-16" data-i18n="vm.edit.power.state"></span>
+							</dl>
+							<dl class="palette palette-default-hover pal">
+								<span class="f-22 state"></span>
+							</dl>
+						</div>
+					</div>
+					<hr>
+				</div>
+
+				<hr>
+
+				<div class="row">
+
+					<div class="col-md-3 m-b-15">
+						<button type="button" data-action="start" id="btnstart" class="btn btn-block btn-lg btn-success actionvm"><i data-action="start" class="icon-play"></i>
+							<span data-action="start" data-i18n="btns.start"></span>
+						</button>
+					</div>
+
+					<div class="col-md-3 m-b-15">
+						<button type="button" data-action="pause" id="btnpause" class="btn btn-block btn-lg btn-warning actionvm"><i data-action="pause" class="icon-less"></i>
+							<span data-action="pause" data-i18n="btns.pause"></span>
+						</button>
+					</div>
+
+					<!-- Stop button -->
+					<div class="col-md-3 m-b-15">
+						<div class="btn-group">
+							<button type="button" data-action="stop" id="btnstop" class="btn btn-lg btn-danger actionvm"><i data-action="stop" class="icon-stop"></i>
+								<span data-action="stop" data-i18n="btns.stop"></span>
+							</button>
+							<button type="button" class="btn btn-lg btn-danger dropdown-toggle actionvm" data-toggle="dropdown" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li data-action="hstop" id="btnhstop" class="actionvm"><a data-action="hstop" class="likehref"><i data-action="hstop" class="icon-on"></i> <span data-action="hstop" data-i18n="btns.hstop"></span></a></li>
+								<li class="deletevm"><a class="likehref"><i class="icon-on"></i> <span data-i18n=""> Delete</span></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Restart button -->
+					<div class="col-md-3">
+						<div class="btn-group">
+							<button type="button" data-action="reboot" id="btnreboot" class="btn btn-lg btn-cloudy actionvm"><i data-action="reboot" class="icon-next_step"></i>
+								<span data-action="reboot" data-i18n="btns.restart"></span>
+							</button>
+							<button type="button" id="btnhreboot" class="btn btn-lg btn-cloudy dropdown-toggle actionvm" data-toggle="dropdown" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li data-action="hreboot" class="actionvm"><a data-action="hreboot" class="likehref"><i data-action="hreboot" class="icon-on"></i> <span data-action="hreboot" data-i18n="btns.hrestart"></span></a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="tab-pane fade in" id="console">
+
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="m-b-0">
+							<span data-i18n="vm.edit.console.title"></span>
+						</h2>
+						<p class="" data-i18n="vm.edit.console.subtitle"></p>
+						<hr>
+					</div>
+					<div class="col-md-12">
+						<div id="noVNC-control-bar" class="noVNC_status_normal">
+							<!--noVNC Mobile Device only Buttons-->
+							<div class="noVNC-buttons-left">
+								<input type="image" alt="viewport drag" src="assets/libs/novnc/images/drag.png" id="noVNC_view_drag_button" class="noVNC_status_button" title="Move/Drag Viewport">
+								<div id="noVNC_mobile_buttons">
+									<input type="image" alt="No mousebutton" src="assets/libs/novnc/images/mouse_none.png" id="noVNC_mouse_button0" class="noVNC_status_button">
+									<input type="image" alt="Left mousebutton" src="assets/libs/novnc/images/mouse_left.png" id="noVNC_mouse_button1" class="noVNC_status_button">
+									<input type="image" alt="Middle mousebutton" src="assets/libs/novnc/images/mouse_middle.png" id="noVNC_mouse_button2" class="noVNC_status_button">
+									<input type="image" alt="Right mousebutton" src="assets/libs/novnc/images/mouse_right.png" id="noVNC_mouse_button4" class="noVNC_status_button">
+									<input type="image" alt="Keyboard" src="assets/libs/novnc/images/keyboard.png" id="showKeyboard" class="noVNC_status_button" value="Keyboard" title="Show Keyboard" />
+									<!-- Note that Google Chrome on Android doesn't respect any of these,
+                     html attributes which attempt to disable text suggestions on the
+                     on-screen keyboard. Let's hope Chrome implements the ime-mode
+                     style for example -->
+									<textarea id="keyboardinput" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" mozactionhint="Enter"></textarea>
+									<div id="noVNC_extra_keys">
+										<input type="image" alt="Extra keys" src="assets/libs/novnc/images/showextrakeys.png" id="showExtraKeysButton" class="noVNC_status_button">
+										<input type="image" alt="Ctrl" src="assets/libs/novnc/images/ctrl.png" id="toggleCtrlButton" class="noVNC_status_button">
+										<input type="image" alt="Alt" src="assets/libs/novnc/images/alt.png" id="toggleAltButton" class="noVNC_status_button">
+										<input type="image" alt="Tab" src="assets/libs/novnc/images/tab.png" id="sendTabButton" class="noVNC_status_button">
+										<input type="image" alt="Esc" src="assets/libs/novnc/images/esc.png" id="sendEscButton" class="noVNC_status_button">
+									</div>
+								</div>
+							</div>
+
+							<div id="noVNC_status"></div>
+
+							<!--noVNC Buttons-->
+							<div class="noVNC-buttons-right">
+								<input type="image" alt="Ctrl+Alt+Del" src="assets/libs/novnc/images/ctrlaltdel.png" id="sendCtrlAltDelButton" class="noVNC_status_button" title="Send Ctrl-Alt-Del" />
+								<input type="image" alt="Shutdown/Reboot" src="assets/libs/novnc/images/power.png" id="xvpButton" class="noVNC_status_button" title="Shutdown/Reboot..." style="display:none"/>
+								<input type="image" alt="Clipboard" src="assets/libs/novnc/images/clipboard.png" id="clipboardButton" class="noVNC_status_button" title="Clipboard" />
+								<input type="image" alt="Fullscreen" src="assets/libs/novnc/images/fullscreen.png" id="fullscreenButton" class="noVNC_status_button" title="Fullscreen" />
+								<input type="image" alt="Settings" src="assets/libs/novnc/images/settings.png" id="settingsButton" class="noVNC_status_button" title="Settings" style="display:none"/>
+								<input type="image" alt="Connect" src="assets/libs/novnc/images/connect.png" id="connectButton" class="noVNC_status_button" title="Connect" style="display:none"/>
+								<input type="image" alt="Disconnect" src="assets/libs/novnc/images/disconnect.png" id="disconnectButton" class="noVNC_status_button" title="Disconnect" style="display:none"/>
+							</div>
+
+							<!-- Description Panel -->
+							<!-- Shown by default when hosted at for kanaka.github.com -->
+							<div id="noVNC_description" class="">
+								noVNC is a browser based VNC client implemented using HTML5 Canvas and WebSockets. You will either need a VNC server with WebSockets support (such as <a href="http://libvncserver.sourceforge.net/">libvncserver</a>) or you will need to use
+								<a href="https://github.com/kanaka/websockify">websockify</a> to bridge between your browser and VNC server. See the noVNC
+								<a href="https://github.com/kanaka/noVNC">README</a> and <a href="http://kanaka.github.com/noVNC">website</a> for more information.
+								<br />
+								<input id="descriptionButton" type="button" value="Close">
+							</div>
+
+							<!-- Popup Status -->
+							<div id="noVNC_popup_status" class="">
+							</div>
+
+							<!-- Clipboard Panel -->
+							<div id="noVNC_clipboard" class="triangle-right top">
+								<textarea id="noVNC_clipboard_text" rows=5>
+								</textarea>
+								<br />
+								<input id="noVNC_clipboard_clear_button" type="button" value="Clear">
+							</div>
+
+							<!-- XVP Shutdown/Reboot Panel -->
+							<div id="noVNC_xvp" class="triangle-right top">
+								<span id="noVNC_xvp_menu">
+									<input type="button" id="xvpShutdownButton" value="Shutdown" />
+									<input type="button" id="xvpRebootButton" value="Reboot" />
+									<input type="button" id="xvpResetButton" value="Reset" />
+								</span>
+							</div>
+
+							<!-- Settings Panel -->
+							<div id="noVNC_settings" class="triangle-right top" style="display:none">
+								<span id="noVNC_settings_menu">
+									<ul>
+										<li>
+											<input id="noVNC_encrypt" type="checkbox"> Encrypt</li>
+										<li>
+											<input id="noVNC_true_color" type="checkbox" checked> True Color</li>
+										<li>
+											<input id="noVNC_cursor" type="checkbox"> Local Cursor</li>
+										<li>
+											<input id="noVNC_clip" type="checkbox"> Clip to Window</li>
+										<li>
+											<input id="noVNC_shared" type="checkbox"> Shared Mode</li>
+										<li>
+											<input id="noVNC_view_only" type="checkbox"> View Only</li>
+										<hr>
+										<li>
+											<input id="noVNC_path" type="input" value="websockify"> Path</li>
+										<li>
+											<label>
+												<select id="noVNC_resize" name="vncResize">
+													<option value="off">None</option>
+													<option value="scale">Local Scaling</option>
+													<option value="downscale">Local Downscaling</option>
+													<option value="remote">Remote Resizing</option>
+												</select> Scaling Mode</label>
+										</li>
+										<li>
+											<input id="noVNC_repeaterID" type="input" value=""> Repeater ID</li>
+										<hr>
+										<!-- Stylesheet selection dropdown -->
+										<li>
+											<label>
+												<strong>Style: </strong>
+												<select id="noVNC_stylesheet" name="vncStyle">
+													<option value="default">default</option>
+												</select>
+											</label>
+										</li>
+
+										<!-- Logging selection dropdown -->
+										<li>
+											<label>
+												<strong>Logging: </strong>
+												<select id="noVNC_logging" name="vncLogging">
+												</select>
+											</label>
+										</li>
+										<hr>
+										<li>
+											<input type="button" id="noVNC_apply" value="Apply">
+										</li>
+									</ul>
+								</span>
+							</div>
+
+							<!-- Connection Panel -->
+							<div id="noVNC_controls" class="triangle-right top"  style="display:none">
+								<ul>
+									<li>
+										<label>
+											<strong>Host: </strong>
+											<input id="noVNC_host" />
+										</label>
+									</li>
+									<li>
+										<label>
+											<strong>Port: </strong>
+											<input id="noVNC_port" />
+										</label>
+									</li>
+									<li>
+										<label>
+											<strong>Password: </strong>
+											<input id="noVNC_password" type="password" />
+										</label>
+									</li>
+									<li>
+										<input id="noVNC_connect_button" type="button" value="Connect">
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<!-- End of noVNC-control-bar -->
+
+
+						<div id="noVNC_screen" style="background-color: #00">
+							<h1 id="noVNC_logo">Connecting...</h1>
+							<!-- HTML5 Canvas -->
+							<div id="noVNC_container">
+								<canvas id="noVNC_canvas" width="0" height="0">
+									Canvas not supported.
+								</canvas>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-md-4 m-b-15">
+						<button type="button" class="btn btn-block btn-lg btn-success"><i class="icon-reboot"></i>
+							<span data-i18n="btns.restart"></span>
+						</button>
+					</div>
+
+					<div class="col-md-4">
+						<button type="button" class="btn btn-block btn-lg btn-danger"><i class="icon-stop"></i>
+							<span data-i18n="btns.hstop"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-pane fade in" id="stats">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>
+							<span data-i18n="vm.edit.stats.title"></span>
+						</h2>
+						<p class="" data-i18n="vm.edit.stats.subtitle"></p>
+						<hr>
+					</div>
+					<div class="col-md-12 m-b-30">
+						<p class="text-left">CPU Usage</p>
+						<div id="placeHolder1" class="placeholder"></div>
+					</div>
+					<div class="col-md-12 m-b-30">
+						<p class="text-left">Memory</p>
+						<div id="placeHolder2" class="placeholder"></div>
+					</div>
+					<div class="col-md-12 m-b-30">
+						<p class="text-left">Network traffic</p>
+						<div id="placeHolder3" class="placeholder"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab-pane fade in" id="settings">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="m-b-0">
+							<span data-i18n="vm.edit.tab.setting"></span>
+						</h2>
+						<p class="" data-i18n="vm.edit.setting.subtitle">...</p>
+						<hr>
+						<div id="showwarning" class="alert alert-warning alert-dismissable" style="display: none">
+							<button type="button" class="close" data-dismiss="alert"><i class="icon-wrong"></i></button>
+							<strong>
+								<span>Atenção</span>
+							</strong>
+							</br>
+							<span>Tem de parar a sua VM antes de modificar os recursos.</span>
+							<br>
+							<span>Se deseja parar a VM
+								<span id="shutdown" class="likehref"><u>carregue aqui</u></span>
+							</span>
+						</div>
+					</div>
+
+
+					<div class="col-md-12">
+						<p class="text-left">
+							<span>Recursos</span>
+						</p>
+						<div class="row">
+							<div class="clip-body">
+
+								<div class="col-md-6">
+									<div class="clip-body">
+										<p class="text-left">CPU</p>
+										<div class="range range-cloudy">
+											<input id="sliderCPU" class="bg-cream" type="range" name="range" min="1" max="16" value="1" onchange="rangeDanger.value=value">
+											<output id="rangeDanger">1</output>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6">
+									<div class="clip-body">
+										<p class="text-left">RAM GB</p>
+										<div class="range range-cloudy">
+											<input id="sliderRAM" class="bg-cream" type="range" name="range" min="1" max="32" value="1" onchange="rangeInfo.value=value/2">
+											<output id="rangeInfo">0.5</output>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<button id="resizevm" class="btn btn-block btn-lg btn-success">
+										<span data-i18n="btns.update"></span> <i class="icon-refresh"></i></button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>

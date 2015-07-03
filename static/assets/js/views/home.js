@@ -17,13 +17,13 @@ window.HomeView = Backbone.View.extend({
   },
   gotovm: function(evt) {
     if ($(evt.target).hasClass('f-18')) {
-      app.navigate('/vm/edit/'+$(evt.target).parent().parent().attr('data-id'), {
+      app.navigate('/vm/info/'+$(evt.target).parent().parent().attr('data-id'), {
         trigger: true
       });
     } else {
       var vmid = $(evt.target).parent().attr('data-id');
       if (vmid) {
-        app.navigate('/vm/edit/'+vmid, {
+        app.navigate('/vm/info/'+vmid, {
           trigger: true
         });
       }
