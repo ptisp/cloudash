@@ -190,8 +190,7 @@ var UI;
           'onXvpInit': UI.updateXvpVisualState,
           'onClipboard': UI.clipReceive,
           'onFBUComplete': UI.FBUComplete,
-          'onFBResize': UI.updateViewDrag,
-          'onDesktopName': UI.updateDocumentTitle
+          'onFBResize': UI.updateViewDrag
         });
         return true;
       } catch (exc) {
@@ -820,11 +819,6 @@ var UI;
     FBUComplete: function(rfb, fbu) {
       UI.onresize();
       UI.rfb.set_onFBUComplete(function() {});
-    },
-
-    // Display the desktop name in the document title
-    updateDocumentTitle: function(rfb, name) {
-      document.title = name + " - noVNC";
     },
 
     clipReceive: function(rfb, text) {
