@@ -1,6 +1,6 @@
 window.LoginView = Backbone.View.extend({
   events: {
-    'click .btnlogin': 'logina'
+    'submit .form-login': 'logina'
   },
   createhash: function(input) {
     return CryptoJS.MD5(input).toString();
