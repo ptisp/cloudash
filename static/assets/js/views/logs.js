@@ -1,5 +1,11 @@
 window.LogsView = Backbone.View.extend({
-  events: {},
+  events: {
+    'keyup #pesquisa': 'filtro',
+  },
+  filtro: function() {
+    var oTable = $('#example').dataTable();
+    oTable.fnFilter($('#pesquisa').val());
+  },
   getLogs: function() {
     var self = this;
     var handler = function(json) {
