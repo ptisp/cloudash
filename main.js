@@ -21,6 +21,8 @@ app.get('/api/listusers', auth, admin, api.user.listUsers);
 app.get('/api/user/:user', auth, api.user.getUser);
 app.delete('/api/remove/:user', auth, admin, logger, api.user.removeUser);
 
+app.get('/api/logs', auth, api.user.getLogs);
+
 app.post('/api/vm/:id/start', auth, logger, api.vm.startVm);
 app.post('/api/vm/:id/pause', auth, logger, api.vm.pauseVm);
 app.post('/api/vm/:id/stop/:forced', auth, logger, api.vm.stopVm);
