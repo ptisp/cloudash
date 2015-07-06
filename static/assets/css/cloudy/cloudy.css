@@ -1028,7 +1028,14 @@ section {
   text-align: right;
   border-top: 1px solid #e5e5e5;
 }
-
+/* TICKETS */
+pre {
+  font-weight: 400;
+  font-family: lato, arial;
+  white-space: pre-wrap;
+  background: 0 0;
+  border: none;
+}
 
 div.dataTables_length select {
   width: 75px;

@@ -1,40 +1,70 @@
 <div class="tdetails">
-  <div id="header">
-    <span data-i18n="support.ticket.header.title"></span><span id="infoid"></span>
-  </div>
-  <div id="info">
-    <span data-i18n="support.ticket.header.subject"></span><span id="infosubject"></span></br>
-    <span data-i18n="support.ticket.header.status"></span><span id="infostatus"></span></br>
-    <span data-i18n="support.ticket.header.replies"></span><span id="infocount"></span></br>
-    <span data-i18n="support.ticket.header.created"></span><span id="infocreated"></span></br>
-  </div>
-  <div id="messages">
-    <div class="table-responsive">
-      <table class="table table-striped clip" id="example">
-        <thead>
-          <tr>
-            <th><i class="icon-calendar"></i>
-              <span data-i18n="support.ticket.header.ticketth1"></span>
-            </th>
-            <th><i class="icon-email_corporate"></i>
-              <span data-i18n="support.ticket.header.ticketth2"></span>
-            </th>
-            <th><i class="icon-align_center"></i>
-              <span data-i18n="support.ticket.header.ticketth3"></span>
-            </th>
-          </tr>
-        </thead>
-        <tbody class="messagestable">
-        </tbody>
-      </table>
+
+  <section class="row bg-white">
+
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="col-md-6">
+          <h2 class="m-b-5 m-t-0"><span data-i18n="support.ticket.header.status"></span> <span class="c-green" id="infostatus"></span></h2>
+          <p> <span class="c-gray-dark" data-i18n="support.ticket.header.subject"></span> <span class="c-black" id="infosubject"></span></p>
+        </div>
+
+        <div class="col-md-3">
+          <button type="button" class="btn btn-block btn-xl btn-success m-b-10 replyticket">
+            <span data-i18n="btns.replyticket"></span>
+          </button>
+        </div>
+
+        <div class="col-md-3">
+          <button type="button" class="btn btn-block btn-xl btn-danger closeticket">
+              <span data-i18n="btns.closeticket"></span>
+          </button>
+        </div>
+
+      </div>
     </div>
-    <button type="button" class="btn btn-xl btn-cloudy btn-icon w-min-250 f-right replyticket">
-      <span data-i18n="btns.replyticket"></span><i class="icon-email_corporate"></i>
-    </button>
-    <button type="button" class="btn btn-xl btn-cloudy btn-icon w-min-250 f-left closeticket">
-      <span data-i18n="btns.closeticket"></span><i class="icon-email_corporate"></i>
-    </button>
-  </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="col-md-12" style="display:none">
+          <div id="info">
+            <span data-i18n="support.ticket.header.title"></span><span id="infoid"></span>
+            <span data-i18n="support.ticket.header.subject"></span><span id="infosubject"></span></br>
+            <span data-i18n="support.ticket.header.status"></span><span id="infostatus"></span></br>
+            <span data-i18n="support.ticket.header.replies"></span><span id="infocount"></span></br>
+            <span data-i18n="support.ticket.header.created"></span><span id="infocreated"></span></br>
+          </div>
+        </div>
+        
+        <div class="table-responsive col-md-12 ">
+          <div id="messages">
+            <table class="table table-striped clip" id="example">
+              <thead>
+                <tr>
+                  <th><i class="icon-calendar"></i>
+                    <span data-i18n="support.ticket.header.ticketth1"></span>
+                  </th>
+                  <th><i class="icon-email_corporate"></i>
+                    <span data-i18n="support.ticket.header.ticketth2"></span>
+                  </th>
+                  <th><i class="icon-align_center"></i>
+                    <span data-i18n="support.ticket.header.ticketth3"></span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="messagestable">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- MODAL DEFAULT -->
   <div id="modal_reply_ticket" class="modal default fade in fade" aria-hidden="false">
