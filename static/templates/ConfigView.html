@@ -15,15 +15,15 @@
 				</p>
 				<div class="row">
 					<div class="col-md-6">
-						<div class="avatar m-b-20">
+						<div class="avatar m-b-20 m-t-20">
 							<img src="assets/img/cloudy-logo.png" class="img-responsive current">
 						</div>
-						<button class="btn btn-lg btn-danger btn-block clearlogo">Reset Logo</button>
+						<button class="btn btn-lg btn-danger btn-block m-b-15 clearlogo">Reset Logo</button>
 					</div>
 
 					<div class="col-md-6">
 						<input type="file" id="fileElem" accept="image/*" style="display:none">
-						<div class="avatar m-b-20 likehref">
+						<div class="avatar m-b-20  m-t-20 likehref">
 							<img src="assets/img/openimg.png" class="img-responsive preview">
 						</div>
 						<button class="btn btn-lg btn-success btn-block savelogo">Save</button>
@@ -37,14 +37,19 @@
 	<section class="row bg-cristal">
 		<div class="col-md-12">
 
-			<p class="text-left">
-				<span>Active ou desactive o suporte ticket?</span>
-			</p>
-			<div class="bootstrap-switch">
-				<input type="checkbox" name="my-checkbox" checked checked data-on-color="success" data-off-color="danger">
-			</div>
+			<p class="text-left"><span>Active ou desactive o suporte ticket?</span></p>
 
-			<button class="btn btn-lg btn-success btn-block savesupport">Save</button>
+			<div class="row">
+				<div class="col-md-6 m-b-20">
+					<div class="bootstrap-switch bootstrap-switch-large">
+						<input type="checkbox" name="my-checkbox" checked checked data-on-color="success" data-off-color="danger">
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<button class="btn btn-lg btn-success btn-block savesupport">Save</button>
+				</div>
+			</div>
 
 		</div>
 	</section>
