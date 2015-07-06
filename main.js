@@ -4,7 +4,8 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   errorhandler = require('errorhandler'),
   api = require('./lib/routes/index'),
-  auth = require('./lib/http/auth.js');
+  auth = require('./lib/http/auth.js'),
+  admin = require('./lib/http/admin.js');
 
 var app = express();
 
@@ -13,11 +14,11 @@ app.use(bodyParser());
 app.use(errorhandler());
 
 app.post('/api/user/login', auth, api.user.validateLogin);
-app.post('/api/user', auth, api.user.createUser);
+app.post('/api/user', auth, admin, api.user.createUser);
 app.put('/api/user', auth, api.user.updateUser);
-app.get('/api/listusers', auth, api.user.listUsers);
+app.get('/api/listusers', auth, admin, api.user.listUsers);
 app.get('/api/user/:user', auth, api.user.getUser);
-app.delete('/api/remove/:user', auth, api.user.removeUser);
+app.delete('/api/remove/:user', auth, admin, api.user.removeUser);
 
 app.post('/api/vm/:id/start', auth, api.vm.startVm);
 app.post('/api/vm/:id/pause', auth, api.vm.pauseVm);
@@ -43,9 +44,9 @@ app.get('/api/support', auth, api.support.ticketList);
 app.post('/api/support', auth, api.support.openTicket);
 
 app.get('/api/config/logo', api.conf.getLogo);
-app.delete('/api/config/logo', api.conf.clearLogo);
-app.post('/api/config/logo', api.conf.updateLogo);
-app.get('/api/config/resources', auth, api.conf.getResources);
+app.delete('/api/config/logo', auth, admin, api.conf.clearLogo);
+app.post('/api/config/logo', auth, admin, api.conf.updateLogo);
+app.get('/api/config/resources', auth, admin, api.conf.getResources);
 
 var port = process.env.PORT || 8080;
 
