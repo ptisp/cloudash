@@ -1,7 +1,8 @@
 window.MenuView = Backbone.View.extend({
   events: {
-    'click #gotohome': 'gthome',
-    'click #gotosupport': 'gtsupport'
+    'click .gotohome': 'gthome',
+    'click .gotologs': 'gtlogs',
+    'click .gotosupport': 'gtsupport'
   },
   remove: function() {
     if (this.loop) {
@@ -10,6 +11,12 @@ window.MenuView = Backbone.View.extend({
     this.$el.remove();
     this.stopListening();
     return this;
+  },
+  gtlogs: function(e) {
+    this.highlight(e);
+    app.navigate('/logs', {
+      trigger: true
+    });
   },
   gtsupport: function(e) {
     this.highlight(e);
