@@ -11,6 +11,7 @@ var Router = Backbone.Router.extend({
   vmdetailsmenu: undefined,
   supportmenu: undefined,
   currentView: undefined,
+  managemenu: undefined,
   showView: function(view, elem, sub) {
     elem.show();
 
@@ -37,36 +38,85 @@ var Router = Backbone.Router.extend({
     'vm/info/:id/console': 'vmdconsole',
     'vm/info/:id/resize': 'vmdresize',
     'manage/profile': 'manprofile',
-    'manage/user/:id': 'manuserdetails',
     'manage/account': 'manaccount',
+    'config/users': 'manusers',
+    'config/newuser': 'mannewuser',
+    'config/user/:id': 'manuserdetails',
     'support': 'support',
     'support/open': 'supportopen',
     'support/closed': 'supportclosed',
     'support/:id': 'ticket',
+    'logs': 'logs',
     'config': 'config',
     '*notFound': 'index'
   },
+  logs: function() {
+    var self = this;
+    this.managemenu = undefined;
+    this.vmdetailsmenu = undefined;
+    this.supportmenu = undefined;
+    templateLoader.load(["LogsView"], function() {
+      self.verifyLogin(function() {
+        self.loadProfile(function () {
+          var v = new LogsView({
+            model: window.profile
+          });
+          self.showView(v, $('#content'));
+        });
+      });
+    });
+  },
+  manusers: function() {
+    var self = this;
+    this.vmdetailsmenu = undefined;
+    templateLoader.load(["ManageMenuView", "ManageUsersView"], function() {
+      self.verifyLogin(function() {
+        if (!self.managemenu) {
+          self.managemenu = $('#content').html(new ManageMenuView({}).render().el);
+        }
+        var vs = new ManageUsersView({
+          model: window.profile
+        });
+        self.showView(vs, $('#tab-content'), true);
+      });
+    });
+  },
+  mannewuser: function() {
+    var self = this;
+    this.vmdetailsmenu = undefined;
+    templateLoader.load(["ManageMenuView", "ManageNewUserView"], function() {
+      self.verifyLogin(function() {
+        if (!self.managemenu) {
+          self.managemenu = $('#content').html(new ManageMenuView({}).render().el);
+        }
+        var vs = new ManageNewUserView({
+          model: window.profile
+        });
+        self.showView(vs, $('#tab-content'), true);
+      });
+    });
+  },
   supportopen: function(id) {
     var self = this;
+    this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     templateLoader.load(["SupportView", "SupportOpenView"], function() {
       self.verifyLogin(function() {
+        if (!self.supportmenu) {
+          self.supportmenu = $('#content').html(new SupportView({
 
-          if (!self.supportmenu) {
-            self.supportmenu = $('#content').html(new SupportView({
-
-            }).render().el);
-          }
-          var vs = new SupportOpenView({
-            model: window.profile
-          });
-          self.showView(vs, $('#tab-content'), true);
-
+          }).render().el);
+        }
+        var vs = new SupportOpenView({
+          model: window.profile
+        });
+        self.showView(vs, $('#tab-content'), true);
       });
     });
   },
   supportclosed: function(id) {
     var self = this;
+    this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     templateLoader.load(["SupportView", "SupportClosedView"], function() {
       self.verifyLogin(function() {
@@ -86,6 +136,7 @@ var Router = Backbone.Router.extend({
   },
   vmdsummary: function(id) {
     var self = this;
+    this.managemenu = undefined;
     this.supportmenu = undefined;
     templateLoader.load(["VMDetailsView", "VMDSummaryView"], function() {
       self.verifyLogin(function() {
@@ -106,6 +157,7 @@ var Router = Backbone.Router.extend({
   },
   vmdgraphs: function(id) {
     var self = this;
+    this.managemenu = undefined;
     this.supportmenu = undefined;
     templateLoader.load(["VMDetailsView", "VMDGraphsView"], function() {
       self.verifyLogin(function() {
@@ -127,6 +179,7 @@ var Router = Backbone.Router.extend({
   },
   vmdconsole: function(id) {
     var self = this;
+    this.managemenu = undefined;
     this.supportmenu = undefined;
     templateLoader.load(["VMDetailsView", "VMDConsoleView"], function() {
       self.verifyLogin(function() {
@@ -148,6 +201,7 @@ var Router = Backbone.Router.extend({
   },
   vmdresize: function(id) {
     var self = this;
+    this.managemenu = undefined;
     this.supportmenu = undefined;
     templateLoader.load(["VMDetailsView", "VMDResizeView"], function() {
       self.verifyLogin(function() {
@@ -169,6 +223,7 @@ var Router = Backbone.Router.extend({
   },
   ticket: function(id) {
     var self = this;
+    this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
     templateLoader.load(["TicketDetailsView"], function() {
@@ -187,6 +242,7 @@ var Router = Backbone.Router.extend({
   },
   support: function() {
     var self = this;
+    this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     templateLoader.load(["SupportView"], function() {
       self.verifyLogin(function() {
@@ -201,6 +257,7 @@ var Router = Backbone.Router.extend({
   },
   config: function() {
     var self = this;
+    this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
     templateLoader.load(["ConfigView"], function() {
@@ -216,6 +273,7 @@ var Router = Backbone.Router.extend({
   },
   vmadd: function() {
     var self = this;
+    this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
     templateLoader.load(["VMAddView"], function() {
@@ -252,21 +310,6 @@ var Router = Backbone.Router.extend({
       self.verifyLogin(function() {
         self.loadProfile(function () {
           var v = new UserProfileView({
-            model: window.profile
-          });
-          self.showView(v, $('#content'));
-        });
-      });
-    });
-  },
-  manaccount: function() {
-    var self = this;
-    this.vmdetailsmenu = undefined;
-    this.supportmenu = undefined;
-    templateLoader.load(["UserAccView"], function() {
-      self.verifyLogin(function() {
-        self.loadProfile(function () {
-          var v = new UserAccView({
             model: window.profile
           });
           self.showView(v, $('#content'));

@@ -1,4 +1,4 @@
-window.UserAccView = Backbone.View.extend({
+window.ManageUsersView = Backbone.View.extend({
   events: {
     'keyup .ipemail': 'availablemail',
     'keyup .iprepass': 'matchpass',
@@ -131,7 +131,7 @@ window.UserAccView = Backbone.View.extend({
     this.timeout = null;
     this.valemail = false;
     this.getusers();
-    $('.user-account', this.el).i18n();
+    $('.manageusers', this.el).i18n();
     return this;
   }
 

@@ -27,7 +27,7 @@ window.HeaderView = Backbone.View.extend({
     });
   },
   gtmusers: function() {
-    app.navigate('/manage/account', {
+    app.navigate('/manage/users', {
       trigger: true
     });
   },

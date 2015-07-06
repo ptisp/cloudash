@@ -1,32 +1,18 @@
-<div class="user-account">
-  <!-- tab light -->
-  <div class="row">
-    <ul class="nav nav-tabs cloudy bordered">
-      <li>
-        <a href="#createaccount" data-toggle="tab">
-          <span class="visible-xs"><i class="icon-user f-18"></i></span>
-          <span class="hidden-xs f-16"><i class="icon-user m-r-5"></i> <span data-i18n="useracc.tabs.new"></span> </span>
-        </a>
-      </li>
-      <li class="active">
-        <a href="#useraccounts" data-toggle="tab">
-          <span class="visible-xs"><i class="icon-customers f-16"></i></span>
-          <span class="hidden-xs f-16"><i class="icon-customers f-20 m-r-5"></i> <span data-i18n="useracc.tabs.list"></span> </span>
-        </a>
-      </li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane fade in" id="createaccount">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="m-b-0"><span data-i18n="useracc.new.title"></span></h2>
-            <p class="">...</p>
-          </div>
-        </div>
-
+<div class="managenewuser">
+  <div class="tab-pane fade active in">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="m-b-0">
+          <span data-i18n="useracc.new.title"></span>
+        </h2>
+        <p class="">...</p>
         <hr>
+      </div>
+
+      <div class="col-md-12">
         <h4>Dados de acesso utilizador</h4>
-        <div class="row"> <!-- EMAIL USERNAME -->
+        <div class="row">
+          <!-- EMAIL USERNAME -->
           <div class="col-md-6">
             <div class="clip-body">
               <p class="text-left">
@@ -41,7 +27,7 @@
           <div class="col-md-6">
             <div class="clip-body">
               <p class="text-left" style="margin-top:42px">
-                <span >
+                <span>
                   <i class="icon-user"></i>
                   <span class="notification"> Email already in use</span>
                 </span>
@@ -50,7 +36,8 @@
           </div>
         </div>
 
-        <div class="row"> <!-- Password -->
+        <div class="row">
+          <!-- Password -->
           <div class="col-md-6">
             <div class="clip-body">
               <p class="text-left">
@@ -77,7 +64,8 @@
 
         <hr>
         <h4>Dados de utilizador</h4>
-        <div class="row"> <!-- User Deatils -->
+        <div class="row">
+          <!-- User Deatils -->
           <div class="col-md-6">
             <div class="clip-body">
               <p class="text-left">
@@ -414,76 +402,42 @@
           <div class="col-md-6">
             <div class="clip-body">
               <p class="text-left">RAM GB</p>
-                <div class="range range-cloudy">
-                <input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value">
+              <div class="range range-cloudy">
+                <input id="newram" class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value">
                 <output id="rangeInfo">1</output>
-                </div>
+              </div>
             </div>
           </div>
 
           <div class="col-md-6">
-              <div class="clip-body">
-                <p class="text-left">DISK SSD</p>
-                <div class="range range-cloudy">
-                  <input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
-                  <output id="rangeGold">1</output>
-                </div>
+            <div class="clip-body">
+              <p class="text-left">DISK SSD</p>
+              <div class="range range-cloudy">
+                <input id="newdisk" class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
+                <output id="rangeGold">1</output>
               </div>
+            </div>
           </div>
 
           <div class="col-md-6">
-              <div class="clip-body">
-                <p class="text-left">CPU GB</p>
-                <div class="range range-cloudy">
-                <input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
+            <div class="clip-body">
+              <p class="text-left">CPU GB</p>
+              <div class="range range-cloudy">
+                <input id="newvcpu" class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
                 <output id="rangeDanger">1</output>
-                </div>
               </div>
+            </div>
           </div>
         </div>
 
 
-        <button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5 btnadduser"><span data-i18n="btns.add"></span>
+        <button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5 btnadduser">
+          <span data-i18n="btns.add"></span>
         </button>
       </div>
 
-      <div class="tab-pane fade active in" id="useraccounts">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="m-b-0"><span data-i18n="useracc.list.title"></span></h2>
-            <p class="">...</p>
-          </div>
-        </div>
-
-        <hr>
-        <div class="table-responsive">
-          <table class="table table-striped table-hover  clip">
-            <thead>
-              <tr>
-                <th><i class="icon-user"></i>
-                  <span data-i18n="useracc.list.tblhead1"></span>
-                </th>
-                <th><i class="icon-telephone"></i>
-                  <span data-i18n="useracc.list.tblhead2"></span>
-                </th>
-                <th><i class="icon-email_corporate"></i>
-                  <span data-i18n="useracc.list.tblhead3"></span>
-                </th>
-                <th><i class="icon-user_accept"></i>
-                  <span data-i18n="useracc.list.tblhead4"></span>
-                </th>
-                <th><i class="icon-managed"></i>
-                  <span data-i18n="useracc.list.tblhead5"></span>
-                </th>
-              </tr>
-            </thead>
-            <tbody class="userstable">
-
-            </tbody>
-          </table>
-        </div>
-      </div>
 
     </div>
   </div>
-  <div>
+
+</div>
