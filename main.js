@@ -46,6 +46,7 @@ app.post('/api/support', auth, api.support.openTicket);
 app.get('/api/config/logo', api.conf.getLogo);
 app.delete('/api/config/logo', auth, admin, api.conf.clearLogo);
 app.post('/api/config/logo', auth, admin, api.conf.updateLogo);
+app.post('/api/config/support', auth, admin, api.conf.updateSupport);
 app.get('/api/config/resources', auth, admin, api.conf.getResources);
 
 var port = process.env.PORT || 8080;

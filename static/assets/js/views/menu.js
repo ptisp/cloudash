@@ -46,10 +46,27 @@ window.MenuView = Backbone.View.extend({
       }
     );
   },
+  getsupport: function(){
+    var self = this;
+    modem('GET', 'config/logo',
+      function(json) {
+        if (json.support == 'false') {
+          $('#gotosupport', self.el).hide();
+        } else {
+          $('#gotosupport', self.el).show();
+        }
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+      }
+    );
+  },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
     var self = this;
     this.ticketnumbers();
+    this.getsupport();
     if (this.model.get('type') !== 'admin') {
       $('.adminonly', this.el).hide();
     }
