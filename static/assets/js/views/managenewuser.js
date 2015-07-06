@@ -88,11 +88,12 @@ window.ManageNewUserView = Backbone.View.extend({
     }
   },
   setslider: function() {
+    var self = this;
     modem('GET', 'config/resources',
       function(json) {
-        $('.ramtotal', this.el).html(json.memory);
-        $('.disktotal', this.el).html(json.storage);
-        $('.cputotal', this.el).html(json.cpu);
+        $('#newram', self.el).attr('max',parseInt(json.memory)/1024*2);
+        $('#newdisk', self.el).attr('max',parseInt(json.storage));
+        $('#newvcpu', self.el).attr('max',parseInt(json.cpu));
       },
       function(xhr, ajaxOptions, thrownError) {}
     );
@@ -104,6 +105,10 @@ window.ManageNewUserView = Backbone.View.extend({
     this.valemail = false;
     $('.managenewuser', this.el).i18n();
     this.setslider();
+
+    $('.managemenu li').removeClass('active');
+    $('#createaccount').parent().addClass('active');
+
     return this;
   }
 

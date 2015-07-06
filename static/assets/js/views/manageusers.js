@@ -8,7 +8,7 @@ window.ManageUsersView = Backbone.View.extend({
   },
   edituser: function(e) {
     console.log($(e.target).attr('data-id'));
-    app.navigate('manage/user/'+$(e.target).attr('data-id'), {
+    app.navigate('config/user/'+$(e.target).attr('data-id'), {
       trigger: true
     });
   },
@@ -132,6 +132,10 @@ window.ManageUsersView = Backbone.View.extend({
     this.valemail = false;
     this.getusers();
     $('.manageusers', this.el).i18n();
+
+    $('.managemenu li').removeClass('active');
+    $('#useraccounts').parent().addClass('active');
+
     return this;
   }
 

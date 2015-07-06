@@ -1,4 +1,4 @@
-window.UserDetailsView = Backbone.View.extend({
+window.ManageUserDetailsView = Backbone.View.extend({
   initialize: function (options) {
     this.id = options.id;
   },
@@ -21,6 +21,7 @@ window.UserDetailsView = Backbone.View.extend({
     $(this.el).html(this.template());
     $('.user-details', this.el).i18n();
     this.getdetails();
+    $('.managemenu li').removeClass('active');
     return this;
   }
 

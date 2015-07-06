@@ -3,9 +3,9 @@ window.VMDSummaryView = Backbone.View.extend({
     this.vm = options.vm;
   },
   events: {
-
+    'click .deletevm': 'deletevm',
+    'click .actionvm': 'vmaction'
   },
-
   togglebtn: function(state) {
     $('.actionvm', this.el).removeClass('disabled');
     switch (state) {

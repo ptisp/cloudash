@@ -66,9 +66,26 @@ var Router = Backbone.Router.extend({
       });
     });
   },
+  manuserdetails: function(id) {
+    var self = this;
+    this.vmdetailsmenu = undefined;
+    this.supportmenu = undefined;
+    templateLoader.load(["ManageMenuView", "ManageUserDetailsView"], function() {
+      self.verifyLogin(function() {
+        if (!self.managemenu) {
+          self.managemenu = $('#content').html(new ManageMenuView({}).render().el);
+        }
+        var vs = new ManageUserDetailsView({
+          id: id
+        });
+        self.showView(vs, $('#tab-content'), true);
+      });
+    });
+  },
   manusers: function() {
     var self = this;
     this.vmdetailsmenu = undefined;
+    this.supportmenu = undefined;
     templateLoader.load(["ManageMenuView", "ManageUsersView"], function() {
       self.verifyLogin(function() {
         if (!self.managemenu) {
@@ -84,6 +101,7 @@ var Router = Backbone.Router.extend({
   mannewuser: function() {
     var self = this;
     this.vmdetailsmenu = undefined;
+    this.supportmenu = undefined;
     templateLoader.load(["ManageMenuView", "ManageNewUserView"], function() {
       self.verifyLogin(function() {
         if (!self.managemenu) {
@@ -287,21 +305,7 @@ var Router = Backbone.Router.extend({
       });
     });
   },
-  manuserdetails: function(id) {
-    var self = this;
-    this.vmdetailsmenu = undefined;
-    this.supportmenu = undefined;
-    templateLoader.load(["UserDetailsView"], function() {
-      self.verifyLogin(function() {
-        self.loadProfile(function () {
-          var v = new UserDetailsView({
-            id: id
-          });
-          self.showView(v, $('#content'));
-        });
-      });
-    });
-  },
+
   manprofile: function() {
     var self = this;
     this.vmdetailsmenu = undefined;
