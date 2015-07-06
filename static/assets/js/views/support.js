@@ -13,11 +13,28 @@ window.SupportView = Backbone.View.extend({
       trigger: true
     });
   },
+  getconfig: function() {
+    var self = this;
+    modem('GET', 'config/logo',
+      function(json) {
+        if (json.support == 'false') {
+          app.navigate('/home', {
+            trigger: true
+          });
+        } 
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+      }
+    );
+  },
   render: function() {
     $(this.el).html(this.template());
     $('#gotohome').removeClass('active');
     $('#gotosupport').addClass('active');
     $('.support', this.el).i18n();
+    this.getconfig();
     return this;
   }
 
