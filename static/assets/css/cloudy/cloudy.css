@@ -609,10 +609,15 @@ strong {
   .stat {float: left; width: 50%;}
   .plans .cloudy-plans-specs { padding: 10px 0px !important; font-size: 14px !important;}
   .plans.soft p {font-size: 11px;}
+  .config-drop-resize { display: none !important}
 }
 @media(min-width: 992px) {
   .sidebar-nav.responsive {display: none;}
   .sidebar-nav.vertical {display: block}
+
+
+
+  .config-drop-resize { display: none !important}
 }
 /*  768px */
 @media (max-width: 768px) {
@@ -628,7 +633,12 @@ strong {
   .plans .cloudy-plans {width: 25% !important;}
   .plans.soft p {font-size: 13px;}
   .profile-usercloudy img {width: 10% !important;}
-  .btn-config {display: none !important;}
+
+
+
+  .config-drop { display: none;}
+  .config-drop-resize { display: block !important}
+  .dropdown-menu.dropdown-config { width: 100% !important; top: 50px !important; left: 0px !important; border-radius: 1px !important; border: none !important;}
 }
 @media (min-width: 768px) {
   .sidebar-nav.responsive {display: none;}
