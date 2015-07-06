@@ -81,31 +81,40 @@
 					<ul class="dropdown-menu dropdown-standard user-menu">
 						<li>
 							<a class="manprofile">
+								<i class="icon-user m-r-5"></i>
 								<span class="likehref" data-i18n="header.manprofile"></span>
 							</a>
 						</li>
 						<li>
-							<a class="manusers adminonly">
-								<span class="likehref" data-i18n="header.manusers"></span>
-							</a>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<a class="logout">
+							<a class="logout c-red">
+								<i class="icon-on m-r-5"></i>
 								<span class="likehref" data-i18n="header.logout"></span>
 							</a>
 						</li>
 					</ul>
 				</div>
 
-				<button class="adminonly btn btn-cloudy-light btn-lg cloudy f-right m-l-5 overme btn-config"
-				data-trigger="hover" data-placement="top" data-original-title="Configuar perfil">
-						<i class="icon-unmanaged f-18 "></i>
-				</button>
+				<div class="btn-group f-right user-drop m-l-5">
+					<button class="adminonly btn btn-cloudy-light btn-lg cloudy dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">
+						<i class="icon-unmanaged f-18"></i>
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-standard user-menu">
+						<li>
+							<a class="btn-config">
+								<i class="icon-managed m-r-5"></i>
+								<span class="likehref">Configurar</span>
+							</a>
+						</li>
 
-				<button type="button" class="btn btn-xl btn-block btn-cloudy btn-icon m-b-10 btn-config-drop">
-					<span>Configurar perfil</span> <i class="icon-unmanaged"></i>
-				</button>
+						<li>
+							<a class="manusers adminonly">
+								<i class="icon-customers m-r-5"></i>
+								<span class="likehref" data-i18n="header.manusers"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
 
 				<button type="button" class="btn btn-xl btn-cloudy btn-icon w-min-250 f-right add-machine newvm">
 					<span data-i18n="header.newvm"></span><i class="icon-cloud_servers"></i>

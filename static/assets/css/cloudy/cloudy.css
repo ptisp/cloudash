@@ -628,7 +628,6 @@ strong {
   .plans .cloudy-plans {width: 25% !important;}
   .plans.soft p {font-size: 13px;}
   .profile-usercloudy img {width: 10% !important;}
-  .btn-config-drop {display: block !important;}
   .btn-config {display: none !important;}
 }
 @media (min-width: 768px) {
@@ -636,7 +635,6 @@ strong {
   .sidebar-nav .navbar ul {float: none;}
   .sidebar-nav .navbar ul:not {display: block;}
   .sidebar-nav .navbar li {float: none; display: block;}
-  .btn-config-drop {display: none !important;}
 }
 /*  580px */
 @media (max-width: 580px) {
