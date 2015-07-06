@@ -5,24 +5,35 @@
 			<p data-i18n="config.subtitle"></p>
 			<hr>
 		</div>
+
 		<div class="col-md-12">
 		    <div class="clip-body">
-				<p class="text-left"><span data-i18n="vm.add.name"></span></p>
-				<div class="input-group">
-					<span class="input-group-addon cloudy"><i class="icon-cloud_servers"></i></span>
-					<input type="text" class="form-control cloudy hostname" placeholder="Hostname">
+				<p class="text-left"><span>Imagem Logotipo Dimensões: 190x80px</span></p>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="avatar m-b-20"><img src="assets/img/cloudy-logo.png" class="img-responsive"></div>
+						<button class="btn btn-lg btn-danger btn-block clearlogo">Reset Logo</button>
+					</div>
+
+					<div class="col-md-6">
+						<input type="file" id="fileElem" accept="image/*" style="display:none">
+						<div class="avatar m-b-20 likehref"><img src="assets/img/openimg.png" class="img-responsive changepic"></div>
+						<button class="btn btn-lg btn-success btn-block">Save</button>
+					</div>
+
 				</div>
-		    </div>
-	    </div>
-	    <div class="col-md-12">
-		    <div class="clip-body">
-		    </div>
+	    	</div>
 	    </div>
 	</section>
 
+	<section class="row bg-cristal">
+	    <div class="col-md-12">
 
+	    	<p class="text-left"><span>Active ou desactive o suporte ticket?</span></p>
+			<div class="bootstrap-switch">
+			    <input type="checkbox" name="my-checkbox" checked checked data-on-color="success" data-off-color="danger">
+			</div>
 
-  <input type="file" id="fileElem" accept="image/*" style="display:none">
-  <div class="avatar m-b-20 likehref"><img src="assets/img/cloudy-logo.png" class="img-responsive changepic"></div>
-  <button class="btn btn-lg btn-cloudy btn-block clearlogo">Reset Logo</button>
+	    </div>
+	</section>
 <div>

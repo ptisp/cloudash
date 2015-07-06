@@ -72,9 +72,11 @@ window.ConfigView = Backbone.View.extend({
 
   render: function() {
     $(this.el).html(this.template());
+    $("[name='my-checkbox']").bootstrapSwitch();
     $('.config', this.el).i18n();
     this.getlogo();
     return this;
+    
   }
 
 });
