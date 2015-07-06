@@ -7,13 +7,21 @@ window.ManageUsersView = Backbone.View.extend({
     'click .btndelete': 'deleteuser'
   },
   edituser: function(e) {
-    console.log($(e.target).attr('data-id'));
-    app.navigate('config/user/'+$(e.target).attr('data-id'), {
+    var id = $(e.target).attr('data-id');
+    if ($(e.target).hasClass('icon-managed')) {
+      id = $(e.target).parent().attr('data-id');
+    }
+    console.log(id);
+    app.navigate('config/user/'+id, {
       trigger: true
     });
   },
   deleteuser: function(e) {
-    console.log($(e.target).attr('data-id'));
+    var id = $(e.target).attr('data-id');
+    if ($(e.target).hasClass('icon-managed')) {
+      id = $(e.target).parent().attr('data-id');
+    }
+    console.log(id);
   },
   adduser: function() {
     if (this.valemail && this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {

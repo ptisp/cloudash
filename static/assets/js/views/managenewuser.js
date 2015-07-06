@@ -22,6 +22,11 @@ window.ManageNewUserView = Backbone.View.extend({
           'country': $('.ipcountry option:selected').text(),
           'zip': $('.ipzipcode').val()
         },
+        'stats': {
+          'disk': parseInt($('#newram').val()/2*1024),
+          'ram': parseInt($('#newdisk').val()),
+          'vcpu': parseInt($('#newvcpu').val())
+        },
         'type': $('.iptype').val(),
         'status': 'active'
       };
@@ -42,6 +47,7 @@ window.ManageNewUserView = Backbone.View.extend({
     var self = this;
     if(this.timeout) {
         clearTimeout(this.timeout);
+        $('#invalidemail').hide();
         this.timeout = null;
     }
     this.timeout = setTimeout(function (){
@@ -50,10 +56,12 @@ window.ManageNewUserView = Backbone.View.extend({
           function(json) {
             if (json.auth) {
               self.valemail = false;
-              $('.notification').html('Email already in use');
+              $('.notificat').html('Email already in use');
+              $('#invalidemail').show();
             } else {
               self.valemail = true;
               $('.notification').html('Valid Email');
+              $('#invalidemail').show();
             }
           },
           function(xhr, ajaxOptions, thrownError) {
