@@ -13,7 +13,7 @@ window.MenuView = Backbone.View.extend({
   },
   gtsupport: function(e) {
     this.highlight(e);
-    app.navigate('/support', {
+    app.navigate('/support/open', {
       trigger: true
     });
   },

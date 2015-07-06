@@ -1,4 +1,4 @@
-window.SupportView = Backbone.View.extend({
+window.SupportClosedView = Backbone.View.extend({
   events: {
     'click .openticket': 'newticketmodal',
     'click .btn_send_ticket': 'sendticket',
@@ -67,12 +67,9 @@ window.SupportView = Backbone.View.extend({
         for (var i = 0; i < json.length; i++) {
           if (json[i].status === 'Closed') {
             closed.push(json[i]);
-          } else {
-            open.push(json[i]);
           }
         }
         $('.badge').html(open.length);
-        handler('#opentickets',open);
         handler('#closedtickets',closed);
       },
       function(xhr, ajaxOptions, thrownError) {
@@ -92,7 +89,12 @@ window.SupportView = Backbone.View.extend({
       "indent": false,
       "outdent": false
     });
-    $('.support', this.el).i18n();
+    $('.support-closed', this.el).i18n();
+
+    $('.supportmenu li').removeClass('active');
+    $('#gotoclosed').parent().addClass('active');
+
+
     this.gettickets();
     return this;
   }

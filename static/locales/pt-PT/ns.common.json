@@ -114,6 +114,8 @@
     "images": "Imagens SO"
   },
   "support": {
+    "tab01": "Abertos",
+    "tab02": "Fechados",
     "tickets": {
       "title": "Suporte",
       "subtitle": "O nosso helpdesk ao seu dispor. Abra novos pedidos de suporte.",

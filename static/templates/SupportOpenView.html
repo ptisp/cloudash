@@ -1,0 +1,136 @@
+<div class="support-open">
+	<div class="tab-pane active fade in" >
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="m-b-0">
+					<span data-i18n="support.tickets.openticket"></span>
+				</h2>
+				<p class="" data-i18n="vm.edit.console.subtitle"></p>
+				<hr>
+			</div>
+			<div class="col-md-12">
+
+				<button type="button" class="btn btn-block btn-xl btn-cloudy btn-icon f-right openticket">
+					<span data-i18n="btns.openticket"></span><i class="icon-email_corporate"></i>
+				</button>
+			</div>
+		</div>
+		<hr>
+	</div>
+
+	<h2 class="col-md-12 m-b-20 c-green">
+		<span data-i18n="support.tickets.openticket"></span>
+	</h2>
+
+	<div class="col-md-3">
+		<div class="clip-body">
+			<div class="input-group">
+				<select id="input_country" class="form-control cloudy iptype">
+					<option value="10">show 10</option>
+					<option value="25">show 25</option>
+					<option value="50">show 50</option>
+					<option value="100">show 100</option>
+				</select>
+				<span class="input-group-addon cloudy"><i class="icon-align_center"></i></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-9">
+		<div class="clip-body">
+			<div class="input-group">
+				<span class="input-group-addon cloudy"><i class="icon-search"></i></span>
+				<input type="search" class="form-control cloudy" placeholder="Search">
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-12">
+		<div class="clip-body">
+			<table cellpadding="0" cellspacing="0" border="0" class="table table-striped clip likehref" id="opentickets">
+				<thead>
+					<tr>
+						<th>
+							<span class="icon-star icon16b"></span>
+							<span data-i18n="support.tickets.openth1"></span>
+						</th>
+						<th>
+							<span class="icon-align_center icon16b"></span>
+							<span data-i18n="support.tickets.openth2"></span>
+						</th>
+						<th>
+							<span class="icon-graph icon16b"></span>
+							<span data-i18n="support.tickets.openth3"></span>
+						</th>
+						<th>
+							<span class="icon-sign icon16b"></span>
+							<span data-i18n="support.tickets.openth4"></span>
+						</th>
+					</tr>
+				</thead>
+
+				<tbody>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+	</section>
+
+	<!-- MODAL DEFAULT -->
+	<div id="modal_new_ticket" class="modal default fade in fade" aria-hidden="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title c-white"><i class="icon-email_corporate"></i>
+						<span class="fs-07" data-i18n="support.ticket.modal.title"></span>
+					</h4>
+				</div>
+
+				<div class="modal-body">
+
+					<form class="form-horizontal">
+						<fieldset>
+							<input type="text" style="display:none" id="input_edit_id">
+
+							<div class="clip-body">
+								<p class="text-left">
+									<span data-i18n="support.ticket.modal.subject"></span>
+								</p>
+								<div class="input-group">
+									<span class="input-group-addon"><i class="icon-user icon16b"></i></span>
+									<input type="text" class="form-control-invert" id="input_subject" placeholder="Ticket subject">
+								</div>
+							</div>
+
+							<div class="clip-body">
+								<div class="control-group align_modal">
+									<p class="text-left">
+										<span data-i18n="support.ticket.modal.message"></span>
+									</p>
+
+									<div class="controls">
+										<textarea id="input_content" class="ticketcontent" rows="9" cols="30" style="width:100%;"></textarea>
+									</div>
+								</div>
+							</div>
+
+						</fieldset>
+					</form>
+
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-lg btn-invert" data-dismiss="modal">
+						<span data-i18n="btns.cancel"></span>
+					</button>
+					<button type="button" class="btn btn-lg btn-success btn_contact_detail btn_send_ticket" data-dismiss="modal">
+						<span data-i18n="btns.send"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
