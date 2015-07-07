@@ -17,9 +17,9 @@ app.use(errorhandler());
 app.post('/api/user/login', auth, api.user.validateLogin);
 app.post('/api/user', auth, admin, logger, api.user.createUser);
 app.put('/api/user/:id', auth, logger, api.user.updateUser);
-app.get('/api/listusers', auth, admin, api.user.listUsers);
+app.get('/api/user/listusers', auth, admin, api.user.listUsers);
 app.get('/api/user/:user', auth, api.user.getUser);
-app.delete('/api/remove/:user', auth, admin, logger, api.user.removeUser);
+app.delete('/api/user/remove/:user', auth, admin, logger, api.user.removeUser);
 
 app.get('/api/logs', auth, api.user.getLogs);
 
