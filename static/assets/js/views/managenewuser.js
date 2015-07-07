@@ -22,7 +22,7 @@ window.ManageNewUserView = Backbone.View.extend({
           'country': $('.ipcountry option:selected').text(),
           'zip': $('.ipzipcode').val()
         },
-        'stats': {
+        'maxresources': {
           'disk': parseInt($('#newram').val()/2*1024),
           'ram': parseInt($('#newdisk').val()),
           'vcpu': parseInt($('#newvcpu').val())
