@@ -11,7 +11,6 @@ window.ManageUsersView = Backbone.View.extend({
     if ($(e.target).hasClass('icon-managed')) {
       id = $(e.target).parent().attr('data-id');
     }
-    console.log(id);
     app.navigate('config/user/'+id, {
       trigger: true
     });
