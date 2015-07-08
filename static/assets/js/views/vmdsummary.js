@@ -115,7 +115,7 @@ window.VMDSummaryView = Backbone.View.extend({
       function(json) {
         console.log(json);
         showSuccess('SUCESSO', 'VM Apagada');
-        $('#modal_confirm_delete').hide();
+        $('#modal_confirm_delete').modal('hide');
         app.navigate('home', {
           trigger: true
         });
