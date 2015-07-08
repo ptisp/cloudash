@@ -37,6 +37,7 @@ var Router = Backbone.Router.extend({
     'vm/info/:id/graphs': 'vmdgraphs',
     'vm/info/:id/console': 'vmdconsole',
     'vm/info/:id/resize': 'vmdresize',
+    'vm/info/:id/options': 'vmdoptions',
     'manage/profile': 'manprofile',
     'manage/account': 'manaccount',
     'config/users': 'manusers',
@@ -162,7 +163,8 @@ var Router = Backbone.Router.extend({
           vm.fetch(id, function() {
             if (!self.vmdetailsmenu) {
               self.vmdetailsmenu = $('#content').html(new VMDetailsView({
-                id:id
+                id:id,
+                model: window.profile
               }).render().el);
             }
             var vs = new VMDSummaryView({
@@ -183,7 +185,8 @@ var Router = Backbone.Router.extend({
           vm.fetch(id, function() {
             if (!self.vmdetailsmenu) {
               self.vmdetailsmenu = $('#content').html(new VMDetailsView({
-                id:id
+                id:id,
+                model: window.profile
               }).render().el);
             }
 
@@ -205,7 +208,8 @@ var Router = Backbone.Router.extend({
           vm.fetch(id, function() {
             if (!self.vmdetailsmenu) {
               self.vmdetailsmenu = $('#content').html(new VMDetailsView({
-                id:id
+                id:id,
+                model: window.profile
               }).render().el);
             }
 
@@ -227,11 +231,35 @@ var Router = Backbone.Router.extend({
           vm.fetch(id, function() {
             if (!self.vmdetailsmenu) {
               self.vmdetailsmenu = $('#content').html(new VMDetailsView({
-                id:id
+                id:id,
+                model: window.profile
               }).render().el);
             }
 
             var vs = new VMDResizeView({
+              model: vm
+            });
+            self.showView(vs, $('#tab-content'), true);
+          });
+      });
+    });
+  },
+  vmdoptions: function(id) {
+    var self = this;
+    this.managemenu = undefined;
+    this.supportmenu = undefined;
+    templateLoader.load(["VMDetailsView", "VMDOptionsView"], function() {
+      self.verifyLogin(function() {
+          var vm = new VM();
+          vm.fetch(id, function() {
+            if (!self.vmdetailsmenu) {
+              self.vmdetailsmenu = $('#content').html(new VMDetailsView({
+                id:id,
+                model: window.profile
+              }).render().el);
+            }
+            var vs = new VMDOptionsView({
+              user: window.profile,
               model: vm
             });
             self.showView(vs, $('#tab-content'), true);

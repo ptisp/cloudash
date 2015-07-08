@@ -23,6 +23,11 @@ var insertUser = function(db, callback) {
       'lastlogin': '',
       'lastip': ''
     },
+    'maxresources': {
+      'memory': '',
+      'storage': '',
+      'cpu': ''
+    },
     'type': 'admin',
     'status': 'active'
   }, function(err, result) {
@@ -32,7 +37,6 @@ var insertUser = function(db, callback) {
 };
 
 MongoClient.connect(process.env.CLOUDY_MONGODB, function(err, db) {
-  assert.equal(null, err);
   insertUser(db, function() {
     db.close();
   });

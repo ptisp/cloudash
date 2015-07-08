@@ -6,7 +6,13 @@ window.VMDetailsView = Backbone.View.extend({
     'click #gotosummary': 'gtsummary',
     'click #gotographs': 'gtgraphs',
     'click #gotoconsole': 'gtconsole',
-    'click #gotoresize': 'gtresize'
+    'click #gotoresize': 'gtresize',
+    'click #gotooptions': 'gtoptions'
+  },
+  gtoptions: function() {
+    app.navigate('/vm/info/'+this.id+'/options', {
+      trigger: true
+    });
   },
   gtsummary: function() {
     app.navigate('/vm/info/'+this.id+'/summary', {
@@ -29,7 +35,10 @@ window.VMDetailsView = Backbone.View.extend({
     });
   },
   render: function() {
-    $(this.el).html(this.template());
+    $(this.el).html(this.template(this.model.toJSON()));
+    if (this.model.get('type') !== 'admin') {
+      $('.menuadmin', this.el).hide();
+    }
     $('.vm-details', this.el).i18n();
 
     return this;
