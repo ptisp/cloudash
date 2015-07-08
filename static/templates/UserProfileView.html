@@ -15,27 +15,19 @@
 				</a>
 			</li>
 		</ul>
+
 		<div class="tab-content">
 			<div class="tab-pane fade active in" id="profile">
+
 				<div class="row">
-					<div class="col-md-6">
-						<div class="profile-usercloudy clip-body">
-							<span class="p-relative">
-								<img src="http://www.gravatar.com/avatar/" class="dropdown-toggle img-responsive m-r-15 profilegravatar" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
-							</span>
-							<div class="profile-usertitle">
-								<div class="profile-usertitle-name">
-									<%= name %>
-								</div>
-								<div class="profile-usertitle-job">
-									<%= username %>
-								</div>
-							</div>
-						</div>
+					<div class="col-md-12">
+						<h2 class="m-b-5">Detalhes de Cliente</h2>
+						<p>Para editar os detalhes de cliente por favor utilize as opções abaixo.</p>
+						<hr>
 					</div>
 				</div>
+				
 
-				<hr>
 				<div class="row">
 					<div class="col-md-6">
 					    <div class="clip-body">
@@ -87,63 +79,55 @@
 					    </div>
 					</div>
 				</div>
-				<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success"><span data-i18n="btns.update"></span>
-				</button>
+				<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success"><span data-i18n="btns.update"></span></button>
 			</div>
 
 			<div class="tab-pane fade in" id="security">
 				<div class="row">
-					<div class="col-md-6">
-						<div class="profile-usercloudy clip-body">
-							<span class="p-relative">
-								<img src="http://www.gravatar.com/avatar/" class="dropdown-toggle img-responsive m-r-15 profilegravatar" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false" />
-							</span>
-							<div class="profile-usertitle">
-								<div class="profile-usertitle-name">
-									<%= name %>
-								</div>
-								<div class="profile-usertitle-job">
-									<%= username %>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<p class="" data-i18n="userprofile.security.msg"></p>
-						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success btn-icon m-b-5"><span data-i18n="btns.editpassword"></span><i class="icon-lock"></i>
-						</button>
+					<div class="col-md-12">
+						<h2 class="m-b-5">Alterar password</h2>
+						<p>Clique em guardar para alterar a sua password.</p>
+						<hr>
 					</div>
 				</div>
 
-				<div id="collapseTwo" class="panel-collapse collapse" style="height: auto;">
-					<hr>
-					<div class="row">
-						<div class="col-md-6">
-						    <div class="clip-body">
-								<p class="text-left"><span data-i18n="userprofile.security.newpass"></span></p>
-								<div class="input-group">
-									<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
-									<input type="password" class="form-control cloudy" placeholder="New Password">
-								</div>
-						    </div>
+				<div class="row">
+					<div class="col-md-6">
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.security.newpass"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
+								<input type="password" class="form-control cloudy" placeholder="New Password">
+							</div>
 					    </div>
+				    </div>
 
-						<div class="col-md-6">
-						    <div class="clip-body">
-								<p class="text-left"><span data-i18n="userprofile.security.reppass"></span></p>
-								<div class="input-group">
-									<span class="input-group-addon cloudy"><i class="icon-unlock"></i></span>
-									<input type="password" class="form-control cloudy" placeholder="Repeat Password">
-								</div>
-						    </div>
-						</div>
+					<div class="col-md-6">
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.security.reppass"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-unlock"></i></span>
+								<input type="password" class="form-control cloudy" placeholder="Repeat Password">
+							</div>
+					    </div>
 					</div>
-					<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success">
-						<span data-i18n="btns.save"></span>
-					</button>
+				</div>
+				<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success m-b-30">
+					<span data-i18n="btns.save"></span>
+				</button>
+
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="m-b-5">Adicionar Chave SSH</h2>
+						<p>...</p>
+					</div>
+					<div class="col-md-12">
+						<textarea name="TextMessage" rows="5" class="form-control cloudy" required>SSH Key</textarea>
+					</div>
 				</div>
 			</div>
+
+
 		</div>
 	</div>
 <div>
