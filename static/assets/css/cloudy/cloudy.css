@@ -1044,7 +1044,11 @@ pre {
   background: 0 0;
   border: none;
 }
-
+/* LOADING */
+.miniloading {
+  display: block;
+  margin: 0 auto;
+}
 div.dataTables_length select {
   width: 75px;
   display: none;
