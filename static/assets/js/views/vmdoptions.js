@@ -57,8 +57,6 @@ window.VMDOptionsView = Backbone.View.extend({
     $('.vm-details', this.el).i18n();
     $('.overme', this.el).tooltip();
 
-    console.log(this.model);
-
     if (this.user.get('type') !== 'admin') {
       app.navigate('/vm/info/'+this.model.get('id')+'/summary', {
         trigger: true
