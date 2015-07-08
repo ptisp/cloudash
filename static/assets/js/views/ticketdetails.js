@@ -62,6 +62,10 @@ window.TicketDetailsView = Backbone.View.extend({
     console.log(this.model.toJSON());
     $('#infoid', this.el).html(this.model.get('id'));
     $('#infostatus', this.el).html(this.model.get('status'));
+    if (this.model.get('status').toLowerCase() === 'closed') {
+      $('#infostatus', this.el).removeClass('c-green');
+      $('#infostatus', this.el).addClass('c-red');
+    }
     $('#infosubject', this.el).html(this.model.get('subject'));
     $('#infocount', this.el).html(this.model.get('messages').length);
     $('#infocreated', this.el).html(formatdate(new Date(this.model.get('created'))));
