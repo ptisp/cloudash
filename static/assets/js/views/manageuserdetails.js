@@ -20,9 +20,9 @@ window.ManageUserDetailsView = Backbone.View.extend({
         'zip': $('.ipzipcode').val()
       },
       'maxresources': {
-        'ram': parseInt($('#editram').val()/2*1024),
-        'disk': parseInt($('#editdisk').val()),
-        'vcpu': parseInt($('#editvcpu').val())
+        'memory': parseInt($('#editram').val()/2*1024),
+        'storage': parseInt($('#editdisk').val()),
+        'cpu': parseInt($('#editvcpu').val())
       },
       'type': $('.iptype').val(),
       'status': $('.ipstatus').val()
@@ -50,12 +50,12 @@ window.ManageUserDetailsView = Backbone.View.extend({
     $('.ipphone', this.el).val(info.about.phone);
     $('.ipvat', this.el).val(info.about.nif);
     $('.ipzipcode', this.el).val(info.address.zip);
-    $('#editram', this.el).val(parseInt(info.maxresources.ram)/1024*2);
-    $('#editdisk', this.el).val(parseInt(info.maxresources.disk));
-    $('#editvcpu', this.el).val(parseInt(info.maxresources.vcpu));
-    $('#rangeInfo', this.el).val(parseInt(info.maxresources.ram)/1024);
-    $('#rangeGold', this.el).val(parseInt(info.maxresources.disk));
-    $('#rangeDanger', this.el).val(parseInt(info.maxresources.vcpu));
+    $('#editram', this.el).val(parseInt(info.maxresources.memory)/1024*2);
+    $('#editdisk', this.el).val(parseInt(info.maxresources.storage));
+    $('#editvcpu', this.el).val(parseInt(info.maxresources.cpu));
+    $('#rangeInfo', this.el).val(parseInt(info.maxresources.memory)/1024);
+    $('#rangeGold', this.el).val(parseInt(info.maxresources.storage));
+    $('#rangeDanger', this.el).val(parseInt(info.maxresources.cpu));
     $('.ipcountry option').filter(function() {
       return $(this).text().toLowerCase() == info.address.country.toLowerCase();
     }).prop('selected', true);

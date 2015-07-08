@@ -1,0 +1,156 @@
+<div class="vm-details">
+	<div class="tab-pane fade active in">
+
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="col-md-10">
+					<h2 class="m-b-5"><span data-i18n="vm.edit.power.title"></span></h2>
+					<p class="infohostanme"></p>
+				</div>
+				<div class="col-md-2 m-t-20">
+					<button type="button" class="btn btn-block btn-danger deletevm">
+						<i class="icon-delete"></i> <span data-i18n="">  Apagar</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-3 stat">
+				<div class="pallete-item m-b-0">
+					<dl class="palette palette-default pal">
+						<i class="icon-ram_memory f-22 m-r-10"></i>
+						<span class="f-16" data-i18n="vm.edit.power.memory"></span>
+					</dl>
+					<dl class="palette palette-default-hover pal">
+						<span class="f-22 c-blue-cl ramusage"></span>
+					</dl>
+					<div class="progress animation-sm">
+						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="20" style="width: 20%;">20</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 stat">
+				<div class="pallete-ite mm-b-0">
+					<dl class="palette palette-default pal">
+						<i class="icon-cpu f-22 m-r-10"></i>
+						<span class="f-16" data-i18n="vm.edit.power.cpu"></span>
+					</dl>
+					<dl class="palette palette-default-hover pal">
+						<span class="f-22 c-blue-cl cpu"></span>
+					</dl>
+					<div class="progress animation-sm">
+						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="45" style="width: 45%;">45</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 stat">
+				<div class="pallete-item m-b-0">
+					<dl class="palette palette-default pal">
+						<i class="icon-hardware f-22 m-r-10"></i>
+						<span class="f-16" data-i18n="vm.edit.power.storage"></span>
+					</dl>
+					<dl class="palette palette-default-hover pal">
+						<span class="f-22 c-blue-cl diskusage"></span>
+					</dl>
+					<div class="progress animation-sm">
+						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="10" style="width: 10%;">10</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-3 stat">
+				<div class="pallete-item m-b-0">
+					<dl class="palette palette-default pal">
+						<i class="icon-cloud_activated f-22 m-r-10"></i>
+						<span class="f-16" data-i18n="vm.edit.power.state"></span>
+					</dl>
+					<dl class="palette palette-default-hover pal">
+						<span class="f-22 state"></span>
+					</dl>
+				</div>
+			</div>
+			<hr>
+		</div>
+
+		<hr>
+
+		<div class="row">
+
+			<div class="col-md-3 m-b-15">
+				<button type="button" data-action="start" id="btnstart" class="btn btn-block btn-lg btn-success actionvm"><i data-action="start" class="icon-play"></i>
+					<span data-action="start" data-i18n="btns.start"></span>
+				</button>
+			</div>
+
+			<div class="col-md-3 m-b-15">
+				<button type="button" data-action="pause" id="btnpause" class="btn btn-block btn-lg btn-warning actionvm"><i data-action="pause" class="icon-less"></i>
+					<span data-action="pause" data-i18n="btns.pause"></span>
+				</button>
+			</div>
+
+			<!-- Stop button -->
+			<div class="col-md-3 m-b-15">
+				<div class="btn-group">
+					<button type="button" data-action="stop" id="btnstop" class="btn btn-lg btn-danger actionvm"><i data-action="stop" class="icon-stop"></i>
+						<span data-action="stop" data-i18n="btns.stop"></span>
+					</button>
+					<button type="button" class="btn btn-lg btn-danger dropdown-toggle actionvm" data-toggle="dropdown" aria-expanded="false">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li data-action="hstop" id="btnhstop" class="actionvm"><a data-action="hstop" class="likehref"><i data-action="hstop" class="icon-on"></i> <span data-action="hstop" data-i18n="btns.hstop"></span></a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Restart button -->
+			<div class="col-md-3">
+				<div class="btn-group">
+					<button type="button" data-action="reboot" id="btnreboot" class="btn btn-lg btn-cloudy actionvm"><i data-action="reboot" class="icon-next_step"></i>
+						<span data-action="reboot" data-i18n="btns.restart"></span>
+					</button>
+					<button type="button" id="btnhreboot" class="btn btn-lg btn-cloudy dropdown-toggle actionvm" data-toggle="dropdown" aria-expanded="false">
+						<span class="caret"></span>
+						<span class="sr-only">Toggle Dropdown</span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li data-action="hreboot" class="actionvm"><a data-action="hreboot" class="likehref"><i data-action="hreboot" class="icon-on"></i> <span data-action="hreboot" data-i18n="btns.hrestart"></span></a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="modal_confirm_delete" class="modal default fade in fade" aria-hidden="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title c-white"><i class="icon-email_corporate"></i>
+						<span class="fs-07" data-i18n="">Apagar VM</span>
+					</h4>
+				</div>
+
+				<div class="modal-body">
+          <div><span>Hostname: <span id="delhostname"></span></span></div>
+          <div><span>IP: <span id="delip"></span></span></div><br>
+					<div><span>Aviso:<span><br>Irá perder toda a informação contida na VM</span></span></div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-lg btn-invert" data-dismiss="modal">
+						<span data-i18n="btns.cancel"></span>
+					</button>
+					<button type="button" class="btn btn-lg btn-success btn_contact_detail btn_delete" data-dismiss="modal">
+						<span data-i18n="">Continuar</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

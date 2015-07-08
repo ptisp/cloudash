@@ -23,9 +23,9 @@ window.ManageNewUserView = Backbone.View.extend({
           'zip': $('.ipzipcode').val()
         },
         'maxresources': {
-          'disk': parseInt($('#newram').val()/2*1024),
-          'ram': parseInt($('#newdisk').val()),
-          'vcpu': parseInt($('#newvcpu').val())
+          'memory': parseInt($('#newram').val()/2*1024),
+          'storage': parseInt($('#newdisk').val()),
+          'cpu': parseInt($('#newvcpu').val())
         },
         'type': $('.iptype').val(),
         'status': 'active'
