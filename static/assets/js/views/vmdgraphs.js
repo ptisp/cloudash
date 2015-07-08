@@ -16,6 +16,7 @@ window.VMDGraphsView = Backbone.View.extend({
         var cpuChart = new CPUChart('placeHolder1');
         var memoryChart = new MemoryChart('placeHolder2');
         var networkChart = new NetworkChart('placeHolder3');
+        $('.miniloading').hide();
         cpuChart.init();
         memoryChart.init();
         networkChart.init();
