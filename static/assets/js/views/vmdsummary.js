@@ -1,6 +1,6 @@
 window.VMDSummaryView = Backbone.View.extend({
   initialize: function(options) {
-    this.vm = options.vm;
+    this.user = options.user;
   },
   events: {
     'click .deletevm': 'showmodal',
@@ -196,6 +196,11 @@ window.VMDSummaryView = Backbone.View.extend({
       ips += ip[i];
     }
     $('.infohostanme', this.el).html(this.model.get('hostname') + ' - ' + ips);
+    if (this.user.get('type') === 'admin') {
+      $('.infoowner', this.el).html(this.model.get('owner'));
+      $('.infoowner', this.el).show();
+    }
+
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));

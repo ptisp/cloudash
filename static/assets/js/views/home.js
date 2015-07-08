@@ -75,7 +75,11 @@ window.HomeView = Backbone.View.extend({
             } else if (full.details.status === 'running') {
               icon = '<i class="icon-play f-18 m-r-5 c-green"></i>';
             }
-            return icon + full.details.hostname;
+            var owner = '';
+            if (self.model.get('username') !== full.owner) {
+              owner = '<i class="icon-user f-18 m-r-5 f-right" title="'+full.owner+'"></i>';
+            }
+            return icon + full.details.hostname + owner;
           }
         }, {
           "data": "details.ip"

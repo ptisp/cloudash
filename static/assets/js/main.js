@@ -168,6 +168,7 @@ var Router = Backbone.Router.extend({
               }).render().el);
             }
             var vs = new VMDSummaryView({
+              user: window.profile,
               model: vm
             });
             self.showView(vs, $('#tab-content'), true);
