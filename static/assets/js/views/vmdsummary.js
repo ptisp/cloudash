@@ -3,8 +3,16 @@ window.VMDSummaryView = Backbone.View.extend({
     this.vm = options.vm;
   },
   events: {
-    'click .deletevm': 'deletevm',
+    'click .deletevm': 'showmodal',
+    'click .btn_delete': 'deletevm',
     'click .actionvm': 'vmaction'
+  },
+  showmodal: function() {
+    $('#delhostname').html(this.model.get('hostname'));
+    $('#delip').html(this.model.get('ip'));
+
+    $('#modal_confirm_delete').on('shown', function() {});
+    $('#modal_confirm_delete').modal({});
   },
   togglebtn: function(state) {
     $('.actionvm', this.el).removeClass('disabled');
@@ -69,12 +77,12 @@ window.VMDSummaryView = Backbone.View.extend({
       case 'reboot':
         uri = 'vm/' + this.model.get('id') + '/restart';
         title = 'Reboot';
-        msg = 'VM ' + this.model.get('hostname') + ' Rebotada';
+        msg = 'VM ' + this.model.get('hostname') + ' Reboot';
         break;
       case 'hreboot':
         uri = 'vm/' + this.model.get('id') + '/restart/true';
         title = 'Reboot Forçado';
-        msg = 'VM ' + this.model.get('hostname') + ' Rebotada';
+        msg = 'VM ' + this.model.get('hostname') + ' Reboot';
         break;
     }
     //console.log(uri);

@@ -4,12 +4,19 @@
 		<div class="row">
 
 			<div class="col-md-12">
-				<h2 class="m-b-0">
-					<span data-i18n="vm.edit.power.title"></span>
-				</h2>
-				<p class="infohostanme"></p>
-				<hr>
+				<div class="col-md-10">
+					<h2 class="m-b-5"><span data-i18n="vm.edit.power.title"></span></h2>
+					<p class="infohostanme"></p>
+				</div>
+				<div class="col-md-2 m-t-20">
+					<button type="button" class="btn btn-block btn-danger deletevm">
+						<i class="icon-delete"></i> <span data-i18n="">  Apagar</span>
+					</button>
+				</div>
 			</div>
+		</div>
+		<hr>
+		<div class="row">
 			<div class="col-md-3 stat">
 				<div class="pallete-item m-b-0">
 					<dl class="palette palette-default pal">
@@ -97,7 +104,6 @@
 					</button>
 					<ul class="dropdown-menu" role="menu">
 						<li data-action="hstop" id="btnhstop" class="actionvm"><a data-action="hstop" class="likehref"><i data-action="hstop" class="icon-on"></i> <span data-action="hstop" data-i18n="btns.hstop"></span></a></li>
-						<li class="deletevm"><a class="likehref"><i class="icon-on"></i> <span data-i18n=""> Delete</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -118,6 +124,33 @@
 				</div>
 			</div>
 
+		</div>
+	</div>
+	<div id="modal_confirm_delete" class="modal default fade in fade" aria-hidden="false">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title c-white"><i class="icon-email_corporate"></i>
+						<span class="fs-07" data-i18n="">Apagar VM</span>
+					</h4>
+				</div>
+
+				<div class="modal-body">
+          <div><span>Hostname: <span id="delhostname"></span></span></div>
+          <div><span>IP: <span id="delip"></span></span></div><br>
+					<div><span>Aviso:<span><br>Irá perder toda a informação contida na VM</span></span></div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-lg btn-invert" data-dismiss="modal">
+						<span data-i18n="btns.cancel"></span>
+					</button>
+					<button type="button" class="btn btn-lg btn-success btn_contact_detail btn_delete" data-dismiss="modal">
+						<span data-i18n="">Continuar</span>
+					</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
