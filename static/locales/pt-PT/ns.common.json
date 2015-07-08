@@ -8,12 +8,12 @@
   "home": {
     "header1": "VMs",
     "header2": "Memória",
-    "header3": "Disco",
+    "header3": "HDD",
     "header4": "Cores",
     "tblhead1": "Hostname",
-    "tblhead2": "IP(s)",
-    "tblhead3": "Memória",
-    "tblhead4": "Disco",
+    "tblhead2": "IP",
+    "tblhead3": "Mem",
+    "tblhead4": "HDD",
     "tblhead5": "Estado"
   },
   "userprofile": {

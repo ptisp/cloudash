@@ -65,8 +65,10 @@ window.HomeView = Backbone.View.extend({
     var handler = function(json) {
       var oTable = $('#example', self.el).dataTable({
         "data": json,
+        "bAutoWidth": false,
         "columns": [{
           "data": null,
+          "sWidth": "20%",
           "bSortable": true,
           "mRender": function(data, type, full) {
             var icon = '<i class="icon-refresh f-18 m-r-5 c-gold"></i>';
@@ -75,16 +77,15 @@ window.HomeView = Backbone.View.extend({
             } else if (full.details.status === 'running') {
               icon = '<i class="icon-play f-18 m-r-5 c-green"></i>';
             }
-            var owner = '';
-            if (self.model.get('username') !== full.owner) {
-              owner = '<i class="icon-user f-18 m-r-5 f-right" title="'+full.owner+'"></i>';
-            }
-            return icon + full.details.hostname + owner;
+            return icon + full.details.hostname;
           }
         }, {
-          "data": "details.ip"
+          "data": "owner", "sWidth": "25%"
+        }, {
+          "data": "details.ip", "sWidth": "17%"
         }, {
           "data": null,
+          "sWidth": "12%",
           "bSortable": true,
           "mRender": function(data, type, full) {
             if (full.details.ram >= 1024)
@@ -94,12 +95,13 @@ window.HomeView = Backbone.View.extend({
           }
         }, {
           "data": null,
+          "sWidth": "12%",
           "bSortable": true,
           "mRender": function(data, type, full) {
             return parseInt(full.details.disk) + 'GB';
           }
         }, {
-          "data": "details.status"
+          "data": "details.status", "sWidth": "13%"
         }, ],
         "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
           var classe;
