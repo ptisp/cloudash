@@ -2,21 +2,18 @@
 	<div class="tab-pane fade active in">
 
 		<div class="row">
-
-			<div class="col-md-12">
-				<div class="col-md-10">
-					<h2 class="m-b-5"><span data-i18n="vm.edit.power.title"></span></h2>
-					<p class="infohostanme"></p>
-					<p class="infoowner" style="display:none"></p>
-				</div>
-				<div class="col-md-2 m-t-20">
-					<button type="button" class="btn btn-block btn-danger deletevm">
-						<i class="icon-delete"></i> <span data-i18n="">  Apagar</span>
-					</button>
-				</div>
+			<div class="col-md-9">
+				<h2 class="m-b-5"><span data-i18n="vm.edit.power.title"></span></h2>
+				<span class="infohostanme"></span> | <strong class="infoowner" style="display:none"></strong>
+			</div>
+			<div class="col-md-3 m-t-20">
+				<button type="button" class="btn btn-lg btn-block btn-danger deletevm">
+					<i class="icon-delete"></i> <span data-i18n="">  Apagar</span>
+				</button>
 			</div>
 		</div>
 		<hr>
+
 		<div class="row">
 			<div class="col-md-3 stat">
 				<div class="pallete-item m-b-0">
@@ -76,11 +73,9 @@
 			</div>
 			<hr>
 		</div>
-
 		<hr>
 
 		<div class="row">
-
 			<div class="col-md-3 m-b-15">
 				<button type="button" data-action="start" id="btnstart" class="btn btn-block btn-lg btn-success actionvm"><i data-action="start" class="icon-play"></i>
 					<span data-action="start" data-i18n="btns.start"></span>
@@ -124,9 +119,9 @@
 					</ul>
 				</div>
 			</div>
-
 		</div>
 	</div>
+	
 	<div id="modal_confirm_delete" class="modal default in" aria-hidden="false">
 		<div class="modal-dialog">
 			<div class="modal-content">
