@@ -44,7 +44,7 @@ window.MenuView = Backbone.View.extend({
             count ++;
           }
         }
-        $('.badge', self.el).html(count);
+        $('.badge').html(count);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);

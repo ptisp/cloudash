@@ -25,7 +25,8 @@ window.LogsView = Backbone.View.extend({
         }, {
           "data": "action",
           "sWidth": "60%"
-        }]
+        }],
+        "aaSorting": [[0, "desc"]]
       });
     };
     modem('GET', 'logs',

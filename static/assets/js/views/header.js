@@ -4,7 +4,10 @@ window.HeaderView = Backbone.View.extend({
     'click .manprofile': 'gtmprofile',
     'click .manusers': 'gtmusers',
     'click .btn-config': 'gtconfig',
-    'click .logout': 'gtlogout'
+    'click .logout': 'gtlogout',
+    'click .gotohome': 'gthome',
+    'click .gotologs': 'gtlogs',
+    'click .gotosupport': 'gtsupport'
   },
   gtconfig: function() {
     app.navigate('/config', {
@@ -30,6 +33,28 @@ window.HeaderView = Backbone.View.extend({
     app.navigate('/config/users', {
       trigger: true
     });
+  },
+  gtlogs: function(e) {
+    this.highlight(e);
+    app.navigate('/logs', {
+      trigger: true
+    });
+  },
+  gtsupport: function(e) {
+    this.highlight(e);
+    app.navigate('/support/open', {
+      trigger: true
+    });
+  },
+  gthome: function(e) {
+    this.highlight(e);
+    app.navigate('/home', {
+      trigger: true
+    });
+  },
+  highlight: function(e) {
+    $('.likehref').removeClass('active');
+    $(e.target).parent().addClass('active');
   },
   getgravatar: function() {
     var pic = this.model.get('gravatar');
