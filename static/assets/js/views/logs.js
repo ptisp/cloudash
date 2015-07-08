@@ -11,16 +11,20 @@ window.LogsView = Backbone.View.extend({
     var handler = function(json) {
       var oTable = $('#example', self.el).dataTable({
         "data": json,
+        "bAutoWidth": false ,
         "columns": [{
           "data": null,
+          "sWidth": "15%",
           "bSortable": true,
           "mRender": function(data, type, full) {
-            return new Date(data.time).toString();
+            return formatdate(new Date(data.time));
           }
         }, {
-          "data": "user"
+          "data": "user",
+          "sWidth": "25%"
         }, {
           "data": "action",
+          "sWidth": "60%"
         }]
       });
     };
@@ -30,6 +34,7 @@ window.LogsView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
+        showError('ERRO! ', json.error);
         console.log(json);
       }
     );
@@ -41,6 +46,8 @@ window.LogsView = Backbone.View.extend({
 
     this.getLogs();
 
+    $('.menulateral li').removeClass('active');
+    $('.gotologs').addClass('active');
     return this;
   }
 

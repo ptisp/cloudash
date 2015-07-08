@@ -123,6 +123,7 @@ window.HomeView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
+        showError('ERRO! ', json.error);
         console.log(json);
       }
     );
@@ -131,8 +132,8 @@ window.HomeView = Backbone.View.extend({
     $(this.el).html(this.template(this.model.toJSON()));
     $('.vmtable', this.el).html('');
     $('.home', this.el).i18n();
-    $('#gotosupport').removeClass('active');
-    $('#gotohome').addClass('active');
+    $('.menulateral li').removeClass('active');
+    $('.gotohome').addClass('active');
     this.getvms();
     return this;
   }

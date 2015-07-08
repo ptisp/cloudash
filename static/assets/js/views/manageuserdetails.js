@@ -29,10 +29,12 @@ window.ManageUserDetailsView = Backbone.View.extend({
     };
     modem('PUT', 'user/'+this.id,
       function(json) {
-        console.log(json);
+        showInfo('Sucesso!', 'Utilizador modificado');
+        //console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
+        showError('ERRO! ', json.error);
         console.log(json);
       }, user
     );
@@ -73,6 +75,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
+        showError('ERRO! ', json.error);
         console.log(json);
       }
     );

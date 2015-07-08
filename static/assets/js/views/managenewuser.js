@@ -32,10 +32,12 @@ window.ManageNewUserView = Backbone.View.extend({
       };
       modem('POST', 'user',
         function(json) {
+          showInfo('Sucesso!', 'Utilizador Adicionado');
           console.log(json);
         },
         function(xhr, ajaxOptions, thrownError) {
           var json = JSON.parse(xhr.responseText);
+          showError('ERRO! ', json.error);
           console.log(json);
         }, user
       );

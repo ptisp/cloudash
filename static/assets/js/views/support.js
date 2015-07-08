@@ -21,7 +21,7 @@ window.SupportView = Backbone.View.extend({
           app.navigate('/home', {
             trigger: true
           });
-        } 
+        }
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
@@ -31,8 +31,8 @@ window.SupportView = Backbone.View.extend({
   },
   render: function() {
     $(this.el).html(this.template());
-    $('#gotohome').removeClass('active');
-    $('#gotosupport').addClass('active');
+    $('.menulateral li').removeClass('active');
+    $('.gotosupport').addClass('active');
     $('.support', this.el).i18n();
     this.getconfig();
     return this;
