@@ -30,6 +30,7 @@ app.post('/api/vm/:id/stop', auth, logger, api.vm.stopVm);
 app.post('/api/vm/:id/restart/:forced', auth, logger, api.vm.restartVm);
 app.post('/api/vm/:id/restart', auth, logger, api.vm.restartVm);
 app.post('/api/vm', auth, logger, api.vm.createVm);
+app.put('/api/vm/:id', auth, admin, logger, api.vm.updateVm);
 app.get('/api/vm/:id/metrics', auth, api.vm.statsVm);
 
 app.get('/api/vm/:id/vnc', auth, api.vm.vmVNC);
