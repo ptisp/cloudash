@@ -23,6 +23,10 @@ window.SupportClosedView = Backbone.View.extend({
     console.log(data);
     modem('POST', 'support',
       function(json) {
+        showSuccess('SUCESSO', 'Ticket Enviado');
+        app.navigate('/support/'+json.id, {
+          trigger: true
+        });
         console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {

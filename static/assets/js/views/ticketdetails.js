@@ -7,6 +7,10 @@ window.TicketDetailsView = Backbone.View.extend({
   closeticket: function() {
     modem('DELETE', 'support/'+this.model.get('id'),
       function(json) {
+        showSuccess('SUCESSO', 'Ticket Fechado');
+        app.navigate('/support/closed', {
+          trigger: true
+        });
         console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
@@ -17,12 +21,18 @@ window.TicketDetailsView = Backbone.View.extend({
     );
   },
   replyticket: function() {
+    var self = this;
     var reply = {
       date: new Date().getTime(),
       message: $("#input_content").val()
     };
     modem('POST', 'support/'+this.model.get('id'),
       function(json) {
+        showSuccess('SUCESSO', 'Resposta Enviada');
+        self.t = self.model;
+        self.t.fetch(self.model.get('id'), function() {
+          self.render();
+        });
         console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
@@ -39,6 +49,7 @@ window.TicketDetailsView = Backbone.View.extend({
   gettickets: function() {
     var self = this;
     var handler = function(json) {
+      $('#example', self.el).dataTable().fnDestroy();
       var oTable = $('#example', self.el).dataTable({
         "bAutoWidth": false ,
         "data": json,
@@ -59,7 +70,7 @@ window.TicketDetailsView = Backbone.View.extend({
         ]
       });
     };
-    console.log(this.model.toJSON());
+
     $('#infoid', this.el).html(this.model.get('id'));
     $('#infostatus', this.el).html(this.model.get('status'));
     if (this.model.get('status').toLowerCase() === 'closed') {
