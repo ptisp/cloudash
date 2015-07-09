@@ -1048,6 +1048,15 @@ pre {
   display: block;
   margin: 0 auto;
 }
+.nav-tabs {
+  border-bottom: 1px solid #E0E8EC !important;
+}
+.border-section {
+  border-right: 1px solid #E0E8EC !important;
+  border-bottom: 1px solid #E0E8EC !important;
+  border-left: 1px solid #E0E8EC !important;
+}
+
 div.dataTables_length select {
   width: 75px;
   display: none;

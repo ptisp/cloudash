@@ -1,145 +1,135 @@
 <div class="user-profile">
-    <!-- tab light -->
-	<div class="row">
-		<ul class="nav nav-tabs cloudy bordered">
-			<li class="active">
-				<a href="#profile" data-toggle="tab">
-					<span class="visible-xs"><i class="icon-user f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-user m-r-5"></i><span data-i18n="userprofile.tabs.profile"></span></span>
-				</a>
-			</li>
-			<li>
-				<a href="#security" data-toggle="tab">
-					<span class="visible-xs"><i class="icon-lock f-18"></i></span>
-					<span class="hidden-xs f-16"><i class="icon-lock m-r-5"></i><span data-i18n="userprofile.tabs.security"></span></span>
-				</a>
-			</li>
-		</ul>
+    
+	<ul class="nav nav-tabs cloudy bordered">
+		<li class="active">
+			<a href="#profile" data-toggle="tab">
+				<span class="visible-xs"><i class="icon-user f-18"></i></span>
+				<span class="hidden-xs f-16"><i class="icon-user m-r-5"></i><span data-i18n="userprofile.tabs.profile"></span></span>
+			</a>
+		</li>
+		<li>
+			<a href="#security" data-toggle="tab">
+				<span class="visible-xs"><i class="icon-lock f-18"></i></span>
+				<span class="hidden-xs f-16"><i class="icon-lock m-r-5"></i><span data-i18n="userprofile.tabs.security"></span></span>
+			</a>
+		</li>
+	</ul>
 
-		
-			<div class="tab-content p-0">
-				<div class="tab-pane fade active in" id="profile">
+	<div class="tab-content p-0">
+		<div class="tab-pane fade active in" id="profile">
 
-					<section class="bg-white">
-						<div class="row">
-							<div class="col-md-12">
-								<h2 class="m-t-0 m-b-5">Detalhes de Cliente</h2>
-								<p>Para editar os detalhes de cliente por favor utilize as opções abaixo.</p>
-								<hr>
-							</div>
-						</div>
-					
-
-						<div class="row">
-							<div class="col-md-6">
-							    <div class="clip-body">
-									<p class="text-left"><span data-i18n="userprofile.profile.name"></span></p>
-									<div class="input-group">
-										<span class="input-group-addon cloudy"><i class="icon-user"></i></span>
-										<input type="text" class="form-control cloudy pname" placeholder="Name">
-									</div>
-							    </div>
-
-							    <div class="clip-body">
-									<p class="text-left"><span data-i18n="userprofile.profile.country"></span></p>
-									<div class="input-group">
-										<span class="input-group-addon cloudy"><i class="icon-flag"></i></span>
-										<input type="text" class="form-control cloudy pcountry" placeholder="County">
-									</div>
-							    </div>
-							    <div class="clip-body">
-									<p class="text-left"><span data-i18n="userprofile.profile.address"></span></p>
-									<div class="input-group">
-										<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
-										<input type="text" class="form-control cloudy paddress" placeholder="Address">
-									</div>
-							    </div>
-						    </div>
-
-							<div class="col-md-6">
-							    <div class="clip-body">
-									<p class="text-left"><span data-i18n="userprofile.profile.email"></span></p>
-									<div class="input-group">
-										<span class="input-group-addon cloudy"><i class="icon-email_corporate"></i></span>
-										<input type="text" class="form-control cloudy pemail" placeholder="Email">
-									</div>
-							    </div>
-
-							    <div class="clip-body">
-									<p class="text-left"><span data-i18n="userprofile.profile.nif"></span></p>
-									<div class="input-group">
-										<span class="input-group-addon cloudy"><i class="icon-reference"></i></span>
-										<input type="text" class="form-control cloudy pnif" placeholder="NIF">
-									</div>
-							    </div>
-							    <div class="clip-body">
-									<p class="text-left"><span data-i18n="userprofile.profile.zip"></span></p>
-									<div class="input-group">
-										<span class="input-group-addon cloudy"><i class="icon-location_more"></i></span>
-										<input type="text" class="form-control cloudy pzip" placeholder="Zip Code">
-									</div>
-							    </div>
-							</div>
-						</div>
-						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success"><span data-i18n="btns.update"></span></button>
-					</section>
-				</div>
-				
-			
-				<div class="tab-pane fade in" id="security">
-					<section class="bg-white">	
-						<div class="row">
-							<div class="col-md-12">
-								<h2 class="m-t-0 m-b-5">Alterar password</h2>
-								<p>Clique em guardar para alterar a sua password.</p>
-								<hr>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-6">
-							    <div class="clip-body">
-									<p class="text-left"><span data-i18n="userprofile.security.newpass"></span></p>
-									<div class="input-group">
-										<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
-										<input type="password" class="form-control cloudy" placeholder="New Password">
-									</div>
-							    </div>
-						    </div>
-
-							<div class="col-md-6">
-							    <div class="clip-body">
-									<p class="text-left"><span data-i18n="userprofile.security.reppass"></span></p>
-									<div class="input-group">
-										<span class="input-group-addon cloudy"><i class="icon-unlock"></i></span>
-										<input type="password" class="form-control cloudy" placeholder="Repeat Password">
-									</div>
-							    </div>
-							</div>
-						</div>
-						<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="btn btn-block btn-lg btn-success m-b-30">
-							<span data-i18n="btns.save"></span>
-						</button>
-					</section>
-
-					<section class="bg-cristal">
-						<div class="row">
-							<div class="col-md-12">
-								<h2 class="m-t-0 m-b-5">Adicionar Chave SSH</h2>
-								<p>...</p>
-								<hr>
-							</div>
-							<div class="col-md-12 m-b-15">
-								<textarea name="TextMessage" rows="5" class="form-control" required>SSH Key</textarea>
-							</div>
-						</div>
-						<button type="button" class="btn btn-block btn-lg btn-success">
-							<span data-i18n="btns.save"></span>
-						</button>
+			<section class="bg-white">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="m-t-0 m-b-5">Detalhes de Cliente</h2>
+						<p>Para editar os detalhes de cliente por favor utilize as opções abaixo.</p>
+						<hr>
 					</div>
-					</section>
+				</div>
+			
+				<div class="row">
+					<div class="col-md-6">
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.profile.name"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-user"></i></span>
+								<input type="text" class="form-control cloudy pname" placeholder="Name">
+							</div>
+					    </div>
 
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.profile.country"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-flag"></i></span>
+								<input type="text" class="form-control cloudy pcountry" placeholder="County">
+							</div>
+					    </div>
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.profile.address"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
+								<input type="text" class="form-control cloudy paddress" placeholder="Address">
+							</div>
+					    </div>
+				    </div>
 
-			</div>
+					<div class="col-md-6">
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.profile.email"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-email_corporate"></i></span>
+								<input type="text" class="form-control cloudy pemail" placeholder="Email">
+							</div>
+					    </div>
+
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.profile.nif"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-reference"></i></span>
+								<input type="text" class="form-control cloudy pnif" placeholder="NIF">
+							</div>
+					    </div>
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.profile.zip"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-location_more"></i></span>
+								<input type="text" class="form-control cloudy pzip" placeholder="Zip Code">
+							</div>
+					    </div>
+					</div>
+				</div>
+				<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success"><span data-i18n="btns.update"></span></button>
+			</section>
+		</div>
+		
+		<div class="tab-pane fade in" id="security">
+			<section class="bg-white">	
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="m-t-0 m-b-5">Alterar password</h2>
+						<p>Clique em guardar para alterar a sua password.</p>
+						<hr>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.security.newpass"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
+								<input type="password" class="form-control cloudy" placeholder="New Password">
+							</div>
+					    </div>
+				    </div>
+
+					<div class="col-md-6">
+					    <div class="clip-body">
+							<p class="text-left"><span data-i18n="userprofile.security.reppass"></span></p>
+							<div class="input-group">
+								<span class="input-group-addon cloudy"><i class="icon-unlock"></i></span>
+								<input type="password" class="form-control cloudy" placeholder="Repeat Password">
+							</div>
+					    </div>
+					</div>
+				</div>
+				<button class="btn btn-block btn-lg btn-success"><span data-i18n="btns.save"></span></button>
+			</section>
+
+			<section class="bg-cristal">
+				<div class="row">
+					<div class="col-md-12">
+						<h2 class="m-t-0 m-b-5">Adicionar Chave SSH</h2>
+						<p>...</p>
+						<hr>
+					</div>
+					<div class="col-md-12 m-b-15">
+						<textarea name="TextMessage" rows="5" class="form-control" required>SSH Key</textarea>
+					</div>
+				</div>
+				<button type="button" class="btn btn-block btn-lg btn-success"><span data-i18n="btns.save"></span></button>
+			</section>
+		</div>
+
 	</div>
 <div>
