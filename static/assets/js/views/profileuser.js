@@ -12,7 +12,7 @@ window.ProfileUserView = Backbone.View.extend({
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
     console.log(this.model);
-    $('.profile-user', this.el).i18n();
+    $('.user-profile', this.el).i18n();
     this.getuserinfo();
     return this;
   }

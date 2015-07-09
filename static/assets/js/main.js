@@ -77,9 +77,25 @@ var Router = Backbone.Router.extend({
     templateLoader.load(["ProfileMenuView", "ProfileUserView"], function() {
       self.verifyLogin(function() {
         if (!self.managemenu) {
-          self.managemenu = $('#content').html(new ManageMenuView({}).render().el);
+          self.managemenu = $('#content').html(new ProfileMenuView({}).render().el);
         }
         var vs = new ProfileUserView({
+          model: window.profile
+        });
+        self.showView(vs, $('#tab-content'), true);
+      });
+    });
+  },
+  profilesecurity: function(id) {
+    var self = this;
+    this.vmdetailsmenu = undefined;
+    this.supportmenu = undefined;
+    templateLoader.load(["ProfileMenuView", "ProfileSecurityView"], function() {
+      self.verifyLogin(function() {
+        if (!self.managemenu) {
+          self.managemenu = $('#content').html(new ProfileMenuView({}).render().el);
+        }
+        var vs = new ProfileSecurityView({
           model: window.profile
         });
         self.showView(vs, $('#tab-content'), true);
