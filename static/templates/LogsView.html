@@ -1,49 +1,62 @@
 <div class="logs">
 
-  <section class="row bg-white">
-    <div class="col-md-3">
-      <div class="clip-body">
-        <div class="input-group">
-          <select id="ddshow" class="form-control cloudy iptype">
-            <option value="10">show 10</option>
-            <option value="25">show 25</option>
-            <option value="50">show 50</option>
-            <option value="100">show 100</option>
-          </select>
-          <span class="input-group-addon cloudy"><i class="icon-align_center"></i></span>
+  <section class="bg-white">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="m-t-0 m-b-5"><span>Logs</span></h2>
+        <p>Registo de todas as acções realizadas.</p>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="clip-body">
+          <div class="input-group">
+            <select id="ddshow" class="form-control cloudy iptype">
+              <option value="10">show 10</option>
+              <option value="25">show 25</option>
+              <option value="50">show 50</option>
+              <option value="100">show 100</option>
+            </select>
+            <span class="input-group-addon cloudy"><i class="icon-align_center"></i></span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-9">
+        <div class="clip-body">
+          <div class="input-group">
+            <span class="input-group-addon cloudy"><i class="icon-search"></i></span>
+            <input type="search" id="pesquisa" class="form-control cloudy" placeholder="Search">
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-9">
-      <div class="clip-body">
-        <div class="input-group">
-          <span class="input-group-addon cloudy"><i class="icon-search"></i></span>
-          <input type="search" id="pesquisa" class="form-control cloudy" placeholder="Search">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-striped clip" id="example">
+            <thead>
+              <tr>
+                <th><i class="icon-cloud"></i>
+                  <span>Date</span>
+                </th>
+                <th><i class="icon-ips"></i>
+                  <span>User</span>
+                </th>
+                <th><i class="icon-ram_memory"></i>
+                 <span>Action</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="logstable">
+
+            </tbody>
+          </table>
         </div>
-      </div>
-    </div>
-
-    <div class="col-md-12">
-      <div class="table-responsive">
-        <table class="table table-striped clip" id="example">
-          <thead>
-            <tr>
-              <th><i class="icon-cloud"></i>
-                <span>Date</span>
-              </th>
-              <th><i class="icon-ips"></i>
-                <span>User</span>
-              </th>
-              <th><i class="icon-ram_memory"></i>
-               <span>Action</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="logstable">
-
-          </tbody>
-        </table>
       </div>
     </div>
 
