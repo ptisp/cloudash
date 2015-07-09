@@ -135,6 +135,18 @@ window.VMDSummaryView = Backbone.View.extend({
     }
     $('.cpu', this.el).html(this.model.get('vcpu') + ' vcpu');
     $('.diskusage', this.el).html(this.model.get('disk') + ' GB');
+    var self = this;
+    modem('GET', 'config/resources',
+      function(json) {
+        $('.pbram', self.el).width(parseInt(parseInt(self.model.get('ram'))/parseInt(json.memory)*100)+'%');
+        $('.pbhdd', self.el).width(parseInt(parseInt(self.model.get('disk'))/parseInt(json.storage)*100)+'%');
+        $('.pbcpu', self.el).width(parseInt(parseInt(self.model.get('vcpu'))/parseInt(json.cpu)*100)+'%');
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+      }
+    );
     if (this.model.get('status') === 'running') {
       $('.state', this.el).removeClass('c-red');
       $('.state', this.el).removeClass('c-gold');
