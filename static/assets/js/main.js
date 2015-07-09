@@ -12,6 +12,7 @@ var Router = Backbone.Router.extend({
   supportmenu: undefined,
   currentView: undefined,
   managemenu: undefined,
+  profilemenu: undefined,
   showView: function(view, elem, sub) {
     elem.show();
 
@@ -43,6 +44,8 @@ var Router = Backbone.Router.extend({
     'config/users': 'manusers',
     'config/newuser': 'mannewuser',
     'config/user/:id': 'manuserdetails',
+    'profile/user': 'profileuser', //tb done
+    'profile/security': 'profilesecurity', //tb done
     'support': 'support',
     'support/open': 'supportopen',
     'support/closed': 'supportclosed',
@@ -64,6 +67,22 @@ var Router = Backbone.Router.extend({
           });
           self.showView(v, $('#content'));
         });
+      });
+    });
+  },
+  profileuser: function(id) {
+    var self = this;
+    this.vmdetailsmenu = undefined;
+    this.supportmenu = undefined;
+    templateLoader.load(["ProfileMenuView", "ProfileUserView"], function() {
+      self.verifyLogin(function() {
+        if (!self.managemenu) {
+          self.managemenu = $('#content').html(new ManageMenuView({}).render().el);
+        }
+        var vs = new ProfileUserView({
+          model: window.profile
+        });
+        self.showView(vs, $('#tab-content'), true);
       });
     });
   },
