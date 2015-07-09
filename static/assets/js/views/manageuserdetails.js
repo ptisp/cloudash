@@ -29,7 +29,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
     };
     modem('PUT', 'user/'+this.id,
       function(json) {
-        showInfo('Sucesso!', 'Utilizador modificado');
+        showSuccess('Sucesso!', 'Utilizador Modificado');
         //console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {

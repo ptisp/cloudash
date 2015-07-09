@@ -19,6 +19,7 @@ window.VMAddView = Backbone.View.extend({
     //console.log(vmdetails);
     modem('POST', 'vm',
       function(json) {
+        showSuccess('Sucesso!', 'VM Adicionada');
         app.navigate('/vm/info/'+json.id, {
           trigger: true
         });

@@ -32,7 +32,7 @@ window.ManageUsersView = Backbone.View.extend({
     modem('DELETE', 'user/remove/'+id,
       function(json) {
         //console.log(json);
-        showInfo('Sucesso!', 'Utilizador removido');
+        showSuccess('Sucesso!', 'Utilizador removido');
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
