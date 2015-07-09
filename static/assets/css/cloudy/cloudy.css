@@ -40,6 +40,9 @@ body {
   font-size: 42px;
 }
 /* BACKGROUND COLOR */
+.bg-background {
+  background-color: #f1f1f5 !important;
+}
 .bg-white {
   background-color: #fff !important;
   color: #111111 !important;
@@ -130,7 +133,7 @@ body {
 }
 .c-white {
   color: #fff !important;
-}
+} 
 .c-gray {
   color: #bccbd3 !important;
 }

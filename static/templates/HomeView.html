@@ -1,143 +1,145 @@
 <div class="home">
 
-  <section class="row p-t-0 p-b-5">
+  <div class="row">
+    <div class="col-md-3 stat m-l-0">
+      <div class="pallete-item m-b-0">
+        <dl class="palette palette-default pal">
+          <div><i class="icon-cloud_servers f-22 m-r-10"></i>
+            <span class="f-16" data-i18n="home.header1"></span>
+          </div>
+        </dl>
+        <dl class="palette palette-default-hover pal">
+          <div>
+            <span class="f-18 activevm"></span> /
+            <span class="f-18 vmtotal"></span>
+          </div>
+        </dl>
+        <div class="progress animation-sm bg-background">
+					<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbvms" style="width: 0%;"></div>
+				</div>
+      </div>
+    </div>
+
+    <div class="col-md-3 stat">
+      <div class="pallete-item m-b-0">
+        <dl class="palette palette-default pal">
+          <div><i class="icon-ram_memory f-22 m-r-10"></i>
+            <span class="f-16" data-i18n="home.header2"></span>
+          </div>
+        </dl>
+        <dl class="palette palette-default-hover pal">
+          <div>
+            <div class="f-18">
+              <span class="c-blue-cl ramusage"></span> /
+              <span class="c-blue-cl ramtotal"></span> MB
+            </div>
+          </div>
+        </dl>
+        <div class="progress animation-sm bg-background">
+					<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbram" style="width: 0%;"></div>
+				</div>
+      </div>
+    </div>
+
+    <div class="col-md-3 stat">
+      <div class="pallete-item m-b-0">
+        <dl class="palette palette-default pal">
+          <div><i class="icon-hardware f-22 m-r-10"></i>
+            <span class="f-16" data-i18n="home.header3"></span>
+          </div>
+        </dl>
+        <dl class="palette palette-default-hover pal">
+          <div>
+            <span class="f-18 ">
+              <span class="c-blue-cl diskusage"></span> /
+              <span class="c-blue-cl disktotal"></span> GB
+            </span>
+          </div>
+        </dl>
+        <div class="progress animation-sm bg-background">
+					<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbhdd" style="width: 0%;"></div>
+				</div>
+      </div>
+    </div>
+
+    <div class="col-md-3 stat">
+      <div class="pallete-item m-b-0">
+        <dl class="palette palette-default pal">
+          <div><i class="icon-cloud_activated f-22 m-r-10"></i>
+            <span class="f-16" data-i18n="home.header4"></span>
+          </div>
+        </dl>
+        <dl class="palette palette-default-hover pal">
+          <div>
+            <span class="f-18 cpuusage"></span> /
+            <span class="f-18 cputotal"></span>
+          </div>
+        </dl>
+        <div class="progress animation-sm bg-background">
+					<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbcpu" style="width: 0%;"></div>
+				</div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="bg-white">
     <div class="row">
-      <div class="col-md-3 stat m-l-0">
-        <div class="pallete-item">
-          <dl class="palette palette-default pal">
-            <div><i class="icon-cloud_servers f-22 m-r-10"></i>
-              <span class="f-16" data-i18n="home.header1"></span>
-            </div>
-          </dl>
-          <dl class="palette palette-default-hover pal">
-            <div>
-              <span class="f-18 activevm"></span> /
-              <span class="f-18 vmtotal"></span>
-            </div>
-          </dl>
-          <div class="progress animation-sm">
-						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbvms" style="width: 0%;"></div>
-					</div>
+      <div class="col-md-3">
+        <div class="clip-body">
+          <div class="input-group">
+            <select id="ddshow" class="form-control cloudy iptype">
+              <option value="10">show 10</option>
+              <option value="25">show 25</option>
+              <option value="50">show 50</option>
+              <option value="100">show 100</option>
+            </select>
+            <span class="input-group-addon cloudy"><i class="icon-align_center"></i></span>
+          </div>
         </div>
       </div>
 
-      <div class="col-md-3 stat">
-        <div class="pallete-item">
-          <dl class="palette palette-default pal">
-            <div><i class="icon-ram_memory f-22 m-r-10"></i>
-              <span class="f-16" data-i18n="home.header2"></span>
-            </div>
-          </dl>
-          <dl class="palette palette-default-hover pal">
-            <div>
-              <div class="f-18">
-                <span class="c-blue-cl ramusage"></span> /
-                <span class="c-blue-cl ramtotal"></span> MB
-              </div>
-            </div>
-          </dl>
-          <div class="progress animation-sm">
-						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbram" style="width: 0%;"></div>
-					</div>
-        </div>
-      </div>
-
-      <div class="col-md-3 stat">
-        <div class="pallete-item">
-          <dl class="palette palette-default pal">
-            <div><i class="icon-hardware f-22 m-r-10"></i>
-              <span class="f-16" data-i18n="home.header3"></span>
-            </div>
-          </dl>
-          <dl class="palette palette-default-hover pal">
-            <div>
-              <span class="f-18 ">
-                <span class="c-blue-cl diskusage"></span> /
-                <span class="c-blue-cl disktotal"></span> GB
-              </span>
-            </div>
-          </dl>
-          <div class="progress animation-sm">
-						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbhdd" style="width: 0%;"></div>
-					</div>
-        </div>
-      </div>
-
-      <div class="col-md-3 stat">
-        <div class="pallete-item">
-          <dl class="palette palette-default pal">
-            <div><i class="icon-cloud_activated f-22 m-r-10"></i>
-              <span class="f-16" data-i18n="home.header4"></span>
-            </div>
-          </dl>
-          <dl class="palette palette-default-hover pal">
-            <div>
-              <span class="f-18 cpuusage"></span> /
-              <span class="f-18 cputotal"></span>
-            </div>
-          </dl>
-          <div class="progress animation-sm">
-						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbcpu" style="width: 0%;"></div>
-					</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="row bg-white">
-    <div class="col-md-3">
-      <div class="clip-body">
-        <div class="input-group">
-          <select id="ddshow" class="form-control cloudy iptype">
-            <option value="10">show 10</option>
-            <option value="25">show 25</option>
-            <option value="50">show 50</option>
-            <option value="100">show 100</option>
-          </select>
-          <span class="input-group-addon cloudy"><i class="icon-align_center"></i></span>
+      <div class="col-md-9">
+        <div class="clip-body">
+          <div class="input-group">
+            <span class="input-group-addon cloudy"><i class="icon-search"></i></span>
+            <input type="search" id="pesquisa" class="form-control cloudy" placeholder="Search">
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-9">
-      <div class="clip-body">
-        <div class="input-group">
-          <span class="input-group-addon cloudy"><i class="icon-search"></i></span>
-          <input type="search" id="pesquisa" class="form-control cloudy" placeholder="Search">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-striped clip" id="example">
+            <thead>
+              <tr>
+                <th><i class="icon-cloud"></i>
+                  <span data-i18n="home.tblhead1"></span>
+                </th>
+                <th><i class="icon-user"></i>
+                  <span data-i18n="">Owner</span>
+                </th>
+                <th><i class="icon-ips"></i>
+                  <span data-i18n="home.tblhead2"></span>
+                </th>
+                <th><i class="icon-ram_memory"></i>
+                 <span data-i18n="home.tblhead3"></span>
+                </th>
+                <th><i class="icon-hardware"></i>
+                  <span data-i18n="home.tblhead4"></span>
+                </th>
+                <th><i class="icon-cloud_activated"></i>
+                  <span data-i18n="home.tblhead5"></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="vmtable">
+
+            </tbody>
+          </table>
         </div>
-      </div>
-    </div>
-
-    <div class="col-md-12">
-      <div class="table-responsive">
-        <table class="table table-striped clip" id="example">
-          <thead>
-            <tr>
-              <th><i class="icon-cloud"></i>
-                <span data-i18n="home.tblhead1"></span>
-              </th>
-              <th><i class="icon-user"></i>
-                <span data-i18n="">Owner</span>
-              </th>
-              <th><i class="icon-ips"></i>
-                <span data-i18n="home.tblhead2"></span>
-              </th>
-              <th><i class="icon-ram_memory"></i>
-               <span data-i18n="home.tblhead3"></span>
-              </th>
-              <th><i class="icon-hardware"></i>
-                <span data-i18n="home.tblhead4"></span>
-              </th>
-              <th><i class="icon-cloud_activated"></i>
-                <span data-i18n="home.tblhead5"></span>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="vmtable">
-
-          </tbody>
-        </table>
       </div>
     </div>
 
