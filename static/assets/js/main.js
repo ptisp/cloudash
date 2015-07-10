@@ -436,6 +436,7 @@ var Router = Backbone.Router.extend({
     this.sidemenu = undefined;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu = undefined;
     window.profile = null;
     window.sessionStorage.clear();
 
