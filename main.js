@@ -48,11 +48,11 @@ app.delete('/api/support/:id', auth, logger, api.support.closeticket);
 app.get('/api/support', auth, api.support.ticketList);
 app.post('/api/support', auth, logger, api.support.openTicket);
 
-app.get('/api/config/logo', api.conf.getLogo);
+app.get('/api/config/resources', auth, api.conf.getResources);
+app.get('/api/config', api.conf.getConfigs);
 app.delete('/api/config/logo', auth, admin, api.conf.clearLogo);
 app.post('/api/config/logo', auth, admin, api.conf.updateLogo);
 app.post('/api/config/support', auth, admin, api.conf.updateSupport);
-app.get('/api/config/resources', auth, api.conf.getResources);
 
 var port = process.env.PORT || 8080;
 
