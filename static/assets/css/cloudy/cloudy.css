@@ -537,8 +537,10 @@ strong {
 .p-r-20{
   padding-right: 20px !important;
 }
-
-
+/*  VERTICAL ALIGN */
+.va{
+  vertical-align: middle;
+}
 
 
 
