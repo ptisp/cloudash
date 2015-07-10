@@ -56,11 +56,11 @@ app.get('/api/config/resources', auth, api.conf.getResources);
 
 var port = process.env.PORT || 8080;
 
-console.log('(SYSTEM) Cloudy Panel'.green);
+console.log('(SYSTEM) Cloudy Dashboard - github.com/ptisp/cloudy'.green);
 
 console.log('(SYSTEM) Starting...'.green);
 setTimeout(function() {
   app.listen(port, function() {
-    console.log('(PLAIN) Server listening on port %d.'.green, port);
+    console.log('(SYSTEM) Server listening on port %d.'.green, port);
   });
-}, 3000);
+}, 2000);
