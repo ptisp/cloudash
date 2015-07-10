@@ -161,7 +161,7 @@ window.VMDSummaryView = Backbone.View.extend({
       $('.state', this.el).removeClass('c-green');
       $('.state', this.el).removeClass('c-red');
       $('.state', this.el).addClass('c-gold');
-      $('.state', this.el).html('<i class="icon-refresh m-r-10 c-gold"></i> Suspended');
+      $('.state', this.el).html('<i class="m-r-10 c-gold">&#9612&#9612</i> Suspended');
     } else {
       $('.state', this.el).removeClass('c-green');
       $('.state', this.el).removeClass('c-red');
@@ -188,7 +188,7 @@ window.VMDSummaryView = Backbone.View.extend({
         $('.state', self.el).removeClass('c-green');
         $('.state', self.el).removeClass('c-red');
         $('.state', self.el).addClass('c-gold');
-        $('.state', self.el).html('<i class="icon-refresh m-r-10 c-gold"></i> Suspended');
+        $('.state', self.el).html('<i class="m-r-10 c-gold">&#9612&#9612</i> Suspended');
       } else {
         $('.state', self.el).removeClass('c-green');
         $('.state', self.el).removeClass('c-red');
