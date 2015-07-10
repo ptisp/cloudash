@@ -15,7 +15,7 @@ window.SupportView = Backbone.View.extend({
   },
   getconfig: function() {
     var self = this;
-    modem('GET', 'config/logo',
+    modem('GET', 'config',
       function(json) {
         if (json.support == 'false') {
           app.navigate('/home', {

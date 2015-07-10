@@ -84,18 +84,23 @@ window.ConfigView = Backbone.View.extend({
 
   getlogo: function(){
     var self = this;
-    modem('GET', 'config/logo',
+    modem('GET', 'config',
       function(json) {
-        if (json.file) {
-          $('.current', self.el).attr('src',json.file);
+        for (var i = 0; i < json.length; i++){
+          if (json[i].name === 'logo'){
+            $('.currentlogo', self.el).attr('src',json[i].value);
+          }
+          if (json[i].name === 'support'){
+            if (json[i].value == 'false') {
+              $("[name='my-checkbox']", self.el).bootstrapSwitch('state', false, true);
+              $('#gotosupport').hide();
+            } else {
+              $("[name='my-checkbox']", self.el).bootstrapSwitch('state', true, true);
+              $('#gotosupport').show();
+            }
+          }
         }
-        if (json.support == 'false') {
-          $("[name='my-checkbox']", self.el).bootstrapSwitch('state', false, true);
-          $('#gotosupport').hide();
-        } else {
-          $("[name='my-checkbox']", self.el).bootstrapSwitch('state', true, true);
-          $('#gotosupport').show();
-        }
+
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);

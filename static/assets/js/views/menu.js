@@ -55,12 +55,16 @@ window.MenuView = Backbone.View.extend({
   },
   getsupport: function(){
     var self = this;
-    modem('GET', 'config/logo',
+    modem('GET', 'config',
       function(json) {
-        if (json.support == 'false') {
-          $('#gotosupport', self.el).hide();
-        } else {
-          $('#gotosupport', self.el).show();
+        for (var i = 0; i < json.length; i++){
+          if (json[i].name === 'support'){
+            if (json[i].value == 'false') {
+              $('.gotosupport', self.el).hide();
+            } else {
+              $('.gotosupport', self.el).show();
+            }
+          }
         }
       },
       function(xhr, ajaxOptions, thrownError) {
