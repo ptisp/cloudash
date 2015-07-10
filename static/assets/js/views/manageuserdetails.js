@@ -40,9 +40,11 @@ window.ManageUserDetailsView = Backbone.View.extend({
     );
   },
   enableedit: function() {
+    $('.btnedituser', this.el).show();
     $('.editable', this.el).prop('disabled', false);
   },
   showdetails: function(info) {
+    console.log(info);
     $('.ipemail', this.el).val(info.auth.username);
     $('.ipname', this.el).val(info.about.name);
     $('.ipcity', this.el).val(info.address.city);
@@ -65,6 +67,9 @@ window.ManageUserDetailsView = Backbone.View.extend({
     $('.iptype option').filter(function() {
       return $(this).val().toLowerCase() == info.type.toLowerCase();
     }).prop('selected', true);
+    if (info.type === 'admin') {
+      $('.useronly', this.el).hide();
+    }
   },
   getdetails: function() {
     var self = this;
