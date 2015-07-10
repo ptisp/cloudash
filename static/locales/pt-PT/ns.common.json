@@ -58,8 +58,8 @@
     "list": {
       "title": "Lista de Utilizadores",
       "tblhead1": "Nome",
-      "tblhead2": "Telefone",
-      "tblhead3": "Email",
+      "tblhead2": "Email",
+      "tblhead3": "Tipo",
       "tblhead4": "Status",
       "tblhead5": "Opções"
     }
