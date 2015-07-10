@@ -59,7 +59,7 @@ window.HomeView = Backbone.View.extend({
         $('.pbram', self.el).width(parseInt(parseInt(ram)/parseInt(json.memory)*100)+'%');
         $('.pbhdd', self.el).width(parseInt(parseInt(hdd)/parseInt(json.storage)*100)+'%');
         $('.pbcpu', self.el).width(parseInt(parseInt(cpu)/parseInt(json.cpu)*100)+'%');
-        $('.pbvms', self.el).width(parseInt(parseInt(vm)/parseInt(active)*100)+'%');
+        $('.pbvms', self.el).width(parseInt(parseInt(active)/parseInt(vm)*100)+'%');
       },
       function(xhr, ajaxOptions, thrownError) {}
     );

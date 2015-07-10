@@ -39,8 +39,6 @@ var Router = Backbone.Router.extend({
     'vm/info/:id/console': 'vmdconsole',
     'vm/info/:id/resize': 'vmdresize',
     'vm/info/:id/options': 'vmdoptions',
-    'manage/profile': 'manprofile',
-    'manage/account': 'manaccount',
     'config/users': 'manusers',
     'config/newuser': 'mannewuser',
     'config/user/:id': 'manuserdetails',
@@ -362,22 +360,6 @@ var Router = Backbone.Router.extend({
       self.verifyLogin(function() {
         self.loadProfile(function () {
           var v = new VMAddView({
-            model: window.profile
-          });
-          self.showView(v, $('#content'));
-        });
-      });
-    });
-  },
-
-  manprofile: function() {
-    var self = this;
-    this.vmdetailsmenu = undefined;
-    this.supportmenu = undefined;
-    templateLoader.load(["UserProfileView"], function() {
-      self.verifyLogin(function() {
-        self.loadProfile(function () {
-          var v = new UserProfileView({
             model: window.profile
           });
           self.showView(v, $('#content'));

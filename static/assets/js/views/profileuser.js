@@ -14,6 +14,10 @@ window.ProfileUserView = Backbone.View.extend({
     console.log(this.model);
     $('.user-profile', this.el).i18n();
     this.getuserinfo();
+
+    $('.profilemenu li').removeClass('active');
+    $('#profileuser').parent().addClass('active');
+
     return this;
   }
 

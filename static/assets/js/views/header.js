@@ -25,7 +25,7 @@ window.HeaderView = Backbone.View.extend({
     });
   },
   gtmprofile: function() {
-    app.navigate('/manage/profile', {
+    app.navigate('/profile/user', {
       trigger: true
     });
   },
