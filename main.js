@@ -1,6 +1,7 @@
 require('colors');
 
-var express = require('express'),
+var vendors = require('./vendors'),
+  express = require('express'),
   bodyParser = require('body-parser'),
   errorhandler = require('errorhandler'),
   api = require('./lib/routes/index'),
@@ -57,6 +58,9 @@ var port = process.env.PORT || 8080;
 
 console.log('(SYSTEM) Cloudy Panel'.green);
 
-app.listen(port, function () {
-  console.log('(PLAIN) Server listening on port %d.'.green, port);
-});
+console.log('(SYSTEM) Starting...'.green);
+setTimeout(function() {
+  app.listen(port, function() {
+    console.log('(PLAIN) Server listening on port %d.'.green, port);
+  });
+}, 3000);
