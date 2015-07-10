@@ -541,8 +541,10 @@ strong {
 .va{
   vertical-align: middle;
 }
-
-
+/*  BORDER */
+.bb-m{
+  border-bottom: solid 1px #e3e4e5;
+}
 
 /* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */
 /*  1199px */
@@ -725,6 +727,7 @@ table.table.clip th {
   color: #212122;
   background: #FFF;
   padding: 20px 15px 20px 15px;
+  border-top: solid 1px #e3e4e5;
 }
 .footer {
   position: relative;
@@ -1110,12 +1113,6 @@ ul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {
   background-image: url("../../img/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
-}
-/* MENU NAV */
-.nav > li {
-  border-bottom: solid 1px #e3e4e5;
-  position: relative;
-  display: block;
 }
 /* GLYPHICONS */
 /* sprite */
