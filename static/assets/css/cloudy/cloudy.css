@@ -1114,8 +1114,8 @@ ul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {
 .pause-icon {
   width: 3px;
   height: 9px;
-  background-image: url("../../img/glyphicons-halflings-white.png");
-  background: url('../../img/glyphicons-halflings-white.png') no-repeat -291px -75px;
+  background: url('../../img/glyphicons-halflings-white.png');
+  background-position: -291px -75px;
 }
 
 .iconlist-white,
