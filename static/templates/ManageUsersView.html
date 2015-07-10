@@ -55,17 +55,20 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title c-white"><i class="icon-email_corporate"></i>
+          <h4 class="modal-title c-white"><i class="icon-delete"></i>
             <span class="fs-07" data-i18n="">Delete User</span>
           </h4>
         </div>
 
         <div class="modal-body">
-          <div><span>Apagar Utilizador</span></div>
-          <div><span>Nome: <span id="delname"></span></span></div>
-          <div><span>Email: <span id="delemail"></span></span></div>
-          <div><span>Tipo: <span id="deltype"></span></span></div>
-          <div><span>Estado: <span id="delstatus"></span></span></div>
+          <div class="f-16 m-b-15"><span>Pretende apagar utilizador?</span> <strong id="delname"></strong></div>
+
+          <div class="di-b m-r-15"> <i class="icon-email_corporate"></i> <span>Email:</span> <span id="delemail"></span></div>
+
+          <div class="di-b m-r-15"><i class="icon-star"></i>  <span>Tipo:</span> <span id="deltype"></span></div>
+
+          <div class="di-b m-r-15"><span class="on-status"></span> <span>Estado:</span> <span id="delstatus"></span></div>
+
         </div>
 
         <div class="modal-footer">
