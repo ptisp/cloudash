@@ -409,8 +409,6 @@ var Router = Backbone.Router.extend({
     });
   },
   index: function() {
-    this.vmdetailsmenu = undefined;
-    this.supportmenu = undefined;
     this.verifyLogin(function() {
       app.navigate('/home', {
         trigger: true
@@ -419,8 +417,10 @@ var Router = Backbone.Router.extend({
   },
   home: function() {
     var self = this;
+    this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     this.verifyLogin(function() {
       self.loadProfile(function () {
         var homeView = new HomeView({
