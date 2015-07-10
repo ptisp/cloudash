@@ -57,6 +57,7 @@ var Router = Backbone.Router.extend({
     this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["LogsView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -72,10 +73,11 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.managemenu = undefined;
     templateLoader.load(["ProfileMenuView", "ProfileUserView"], function() {
       self.verifyLogin(function() {
-        if (!self.managemenu) {
-          self.managemenu = $('#content').html(new ProfileMenuView({}).render().el);
+        if (!self.profilemenu) {
+          self.profilemenu = $('#content').html(new ProfileMenuView({}).render().el);
         }
         var vs = new ProfileUserView({
           model: window.profile
@@ -88,10 +90,11 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.managemenu = undefined;
     templateLoader.load(["ProfileMenuView", "ProfileSecurityView"], function() {
       self.verifyLogin(function() {
-        if (!self.managemenu) {
-          self.managemenu = $('#content').html(new ProfileMenuView({}).render().el);
+        if (!self.profilemenu) {
+          self.profilemenu = $('#content').html(new ProfileMenuView({}).render().el);
         }
         var vs = new ProfileSecurityView({
           model: window.profile
@@ -104,6 +107,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["ManageMenuView", "ManageUserDetailsView"], function() {
       self.verifyLogin(function() {
         if (!self.managemenu) {
@@ -120,6 +124,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu = undefined;
     templateLoader.load(["ManageMenuView", "ManageUsersView"], function() {
       self.verifyLogin(function() {
         if (!self.managemenu) {
@@ -136,6 +141,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["ManageMenuView", "ManageNewUserView"], function() {
       self.verifyLogin(function() {
         if (!self.managemenu) {
@@ -152,6 +158,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["SupportView", "SupportOpenView"], function() {
       self.verifyLogin(function() {
         if (!self.supportmenu) {
@@ -170,6 +177,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["SupportView", "SupportClosedView"], function() {
       self.verifyLogin(function() {
 
@@ -190,6 +198,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.managemenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["VMDetailsView", "VMDSummaryView"], function() {
       self.verifyLogin(function() {
           var vm = new VM();
@@ -213,6 +222,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.managemenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["VMDetailsView", "VMDGraphsView"], function() {
       self.verifyLogin(function() {
           var vm = new VM();
@@ -236,6 +246,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.managemenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["VMDetailsView", "VMDConsoleView"], function() {
       self.verifyLogin(function() {
           var vm = new VM();
@@ -259,6 +270,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.managemenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["VMDetailsView", "VMDResizeView"], function() {
       self.verifyLogin(function() {
           var vm = new VM();
@@ -282,6 +294,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.managemenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["VMDetailsView", "VMDOptionsView"], function() {
       self.verifyLogin(function() {
           var vm = new VM();
@@ -306,6 +319,7 @@ var Router = Backbone.Router.extend({
     this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["TicketDetailsView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -324,6 +338,7 @@ var Router = Backbone.Router.extend({
     var self = this;
     this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["SupportView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -340,6 +355,7 @@ var Router = Backbone.Router.extend({
     this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["ConfigView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {
@@ -356,6 +372,7 @@ var Router = Backbone.Router.extend({
     this.managemenu = undefined;
     this.vmdetailsmenu = undefined;
     this.supportmenu = undefined;
+    this.profilemenu= undefined;
     templateLoader.load(["VMAddView"], function() {
       self.verifyLogin(function() {
         self.loadProfile(function () {

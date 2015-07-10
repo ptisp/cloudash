@@ -3,6 +3,7 @@
   },
   setuser: function(user, after_fetch) {
     var self = this;
+    self.set('id', user._id);
     self.set('username', user.auth.username);
     self.set('gravatar', CryptoJS.MD5(user.auth.username).toString());
     self.set('name', user.about.name);
@@ -13,6 +14,10 @@
     self.set('country', user.address.country);
     self.set('zip', user.address.zip);
     self.set('type', user.type);
+    self.set('status', user.status);
+    self.set('memory', user.maxresources.memory);
+    self.set('storage', user.maxresources.storage);
+    self.set('cpu', user.maxresources.cpu);
     self.set('created', user.details.created);
     self.set('lastlogin', user.details.lastlogin);
     self.set('flastip', user.details.lastip);
