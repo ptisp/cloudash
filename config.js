@@ -1,6 +1,6 @@
 module.exports = {
   'resources': {
-    'memory': 4112,
+    'memory': 6500,
     'cpu': 24,
     'storage': 250
   }
