@@ -1109,6 +1109,12 @@ ul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
+/* MENU NAV */
+.nav > li {
+  border-bottom: solid 1px #e3e4e5;
+  position: relative;
+  display: block;
+}
 /* GLYPHICONS */
 /* sprite */
 .pause-icon {
