@@ -44,7 +44,6 @@ window.LogsView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
-        console.log(json);
       }
     );
   },

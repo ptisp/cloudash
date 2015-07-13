@@ -5,7 +5,6 @@ window.SupportClosedView = Backbone.View.extend({
     'click tbody tr': 'getticket'
   },
   getticket: function(evt) {
-    console.log($(evt.target).parent().attr('data-id'));
     app.navigate('/support/'+$(evt.target).parent().attr('data-id'), {
       trigger: true
     });
@@ -20,18 +19,15 @@ window.SupportClosedView = Backbone.View.extend({
       message: [message],
       subject: $("#input_subject").val()
     };
-    console.log(data);
     modem('POST', 'support',
       function(json) {
         showSuccess('SUCESSO', 'Ticket Enviado');
         app.navigate('/support/'+json.id, {
           trigger: true
         });
-        console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - Abertura de Ticket', json.error);
       }, data
     );
@@ -78,7 +74,6 @@ window.SupportClosedView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - Lista Tickets', json.error);
       }
     );

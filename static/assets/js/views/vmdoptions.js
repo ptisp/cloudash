@@ -20,7 +20,6 @@ window.VMDOptionsView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
-        console.log(json);
       }, data
     );
   },
@@ -47,7 +46,6 @@ window.VMDOptionsView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
-        console.log(json);
       }
     );
   },

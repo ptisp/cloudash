@@ -33,16 +33,14 @@ window.ManageNewUserView = Backbone.View.extend({
       modem('POST', 'user',
         function(json) {
           showInfo('Sucesso!', 'Utilizador Adicionado');
-          console.log(json);
         },
         function(xhr, ajaxOptions, thrownError) {
           var json = JSON.parse(xhr.responseText);
           showError('ERRO! ', json.error);
-          console.log(json);
         }, user
       );
     } else {
-      console.log('Pls check email and/or password');
+      showWarning('Aviso!', 'Pls check email and/or password');
     }
   },
   availablemail: function() {
@@ -68,7 +66,6 @@ window.ManageNewUserView = Backbone.View.extend({
           },
           function(xhr, ajaxOptions, thrownError) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json);
             self.valemail = false;
           }
         );

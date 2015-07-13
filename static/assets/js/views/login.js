@@ -38,7 +38,7 @@ window.LoginView = Backbone.View.extend({
         window.location.reload();
       }
     }, function () {
-      console.log('Login failed');
+      alert('Login failed');
     });
 
   },
@@ -51,9 +51,6 @@ window.LoginView = Backbone.View.extend({
           if (json[i].name === 'logo'){
             $('.img-responsive', self.el).attr('src',json[i].value);
           }
-        }
-        if (json.file) {
-
         }
       },
       function(xhr, ajaxOptions, thrownError) {

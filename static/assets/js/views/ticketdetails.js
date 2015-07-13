@@ -11,11 +11,9 @@ window.TicketDetailsView = Backbone.View.extend({
         app.navigate('/support/closed', {
           trigger: true
         });
-        console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - Abertura de Ticket', json.error);
       }
     );
@@ -33,11 +31,9 @@ window.TicketDetailsView = Backbone.View.extend({
         self.t.fetch(self.model.get('id'), function() {
           self.render();
         });
-        console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - Abertura de Ticket', json.error);
       }, reply
     );

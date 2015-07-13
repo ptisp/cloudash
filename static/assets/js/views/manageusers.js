@@ -31,13 +31,11 @@ window.ManageUsersView = Backbone.View.extend({
     var id = $(e.target).parent().attr('data-id');
     modem('DELETE', 'user/remove/'+id,
       function(json) {
-        //console.log(json);
         showSuccess('Sucesso!', 'Utilizador removido');
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
-        console.log(json);
       }
     );
   },
@@ -65,7 +63,6 @@ window.ManageUsersView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
-        console.log(json);
       }
     );
   },

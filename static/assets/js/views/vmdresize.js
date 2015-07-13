@@ -22,8 +22,7 @@ window.VMDResizeView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
-        showError('ERRO - Criação de VM', json.error);
+        showError('ERRO - Alteração de VM', json.error);
       }, vmdetails
     );
   },
@@ -33,10 +32,8 @@ window.VMDResizeView = Backbone.View.extend({
     var uri = '';
     var title = '';
     var msg = '';
-    //console.log($(evt.target).attr('data-action'));
     if (evt && !$(evt.target).attr('data-action')) return;
     var option = action || $(evt.target).attr('data-action');
-    console.log(option);
     switch (option) {
       case 'start':
         uri = 'vm/' + this.model.get('id') + '/start';
@@ -69,17 +66,14 @@ window.VMDResizeView = Backbone.View.extend({
         msg = 'VM ' + this.model.get('hostname') + ' Rebotada';
         break;
     }
-    //console.log(uri);
 
     modem('POST', uri,
       function(json) {
-        //console.log(json);
         showInfo(title, msg);
         self.refreshState();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - ' + title, json.error);
       }
     );

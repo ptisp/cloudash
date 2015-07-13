@@ -49,10 +49,8 @@ window.VMDSummaryView = Backbone.View.extend({
     var uri = '';
     var title = '';
     var msg = '';
-    //console.log($(evt.target).attr('data-action'));
     if (evt && !$(evt.target).attr('data-action')) return;
     var option = action || $(evt.target).attr('data-action');
-    console.log(option);
     switch (option) {
       case 'start':
         uri = 'vm/' + this.model.get('id') + '/start';
@@ -85,17 +83,14 @@ window.VMDSummaryView = Backbone.View.extend({
         msg = 'VM ' + this.model.get('hostname') + ' Reboot';
         break;
     }
-    //console.log(uri);
 
     modem('POST', uri,
       function(json) {
-        //console.log(json);
         showInfo(title, msg);
         self.refreshState();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - ' + title, json.error);
       }
     );
@@ -110,10 +105,8 @@ window.VMDSummaryView = Backbone.View.extend({
     return this;
   },
   deletevm: function() {
-    console.log(this.model.get('id'));
     modem('DELETE', 'vm/' + this.model.get('id'),
       function(json) {
-        console.log(json);
         showSuccess('SUCESSO', 'VM Apagada');
         $('#modal_confirm_delete').modal('hide');
         app.navigate('home', {
@@ -122,7 +115,6 @@ window.VMDSummaryView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - Criação de VM', json.error);
       }
     );

@@ -73,7 +73,6 @@ window.HomeView = Backbone.View.extend({
             users.push(vms[i].owner);
           }
       }
-      console.log(users);
       for (i = 0; i < users.length; i++){
         modem('GET', 'user/'+users[i],
           function(json) {
@@ -164,7 +163,6 @@ window.HomeView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
-        console.log(json);
       }
     );
   },

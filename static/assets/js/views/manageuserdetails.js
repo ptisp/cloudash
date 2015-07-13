@@ -30,12 +30,10 @@ window.ManageUserDetailsView = Backbone.View.extend({
     modem('PUT', 'user/'+this.id,
       function(json) {
         showSuccess('Sucesso!', 'Utilizador Modificado');
-        //console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
-        console.log(json);
       }, user
     );
   },
@@ -44,7 +42,6 @@ window.ManageUserDetailsView = Backbone.View.extend({
     $('.editable', this.el).prop('disabled', false);
   },
   showdetails: function(info) {
-    console.log(info);
     $('.ipemail', this.el).val(info.auth.username);
     $('.ipname', this.el).val(info.about.name);
     $('.ipcity', this.el).val(info.address.city);
@@ -75,13 +72,11 @@ window.ManageUserDetailsView = Backbone.View.extend({
     var self = this;
     modem('GET', 'user/'+self.id,
       function(json) {
-        //console.log(json);
         self.showdetails(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
-        console.log(json);
       }
     );
   },

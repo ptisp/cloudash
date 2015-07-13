@@ -35,16 +35,13 @@ window.ProfileSecurityView = Backbone.View.extend({
     } else {
       user.auth.ssh = $('.sshkey').val();
     }
-    console.log(user);
     modem('PUT', 'user/'+this.model.get('id'),
       function(json) {
         showSuccess('Sucesso!', 'Utilizador Modificado');
-        //console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
-        console.log(json);
       }, user
     );
   },

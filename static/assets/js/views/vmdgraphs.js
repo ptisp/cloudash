@@ -34,7 +34,6 @@ window.VMDGraphsView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - ' + title, json.error);
       }
     );

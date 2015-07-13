@@ -15,7 +15,6 @@ window.VMAddView = Backbone.View.extend({
         'ip': ['']
       }
     };
-    console.log(vmdetails);
     modem('POST', 'vm',
       function(json) {
         showSuccess('Sucesso!', 'VM Adicionada');
@@ -25,7 +24,6 @@ window.VMAddView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - Criação de VM', json.error);
       }, vmdetails
     );
@@ -33,10 +31,8 @@ window.VMAddView = Backbone.View.extend({
   getimages: function() {
     modem('GET', 'template',
       function(json) {
-        console.log(json);
         for( var i = 0; i < json.templates.length; i++) {
           var img = '';
-          console.log(json.templates[i]);
           if (json.templates[i].name.toLowerCase().indexOf('centos') > -1) {
             img = 'assets/img/soft/centos.png';
           } else if (json.templates[i].name.toLowerCase().indexOf('debian') > -1) {
@@ -70,7 +66,6 @@ window.VMAddView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        console.log(json);
         showError('ERRO - Carregar Imagens', json.error);
       }
     );
