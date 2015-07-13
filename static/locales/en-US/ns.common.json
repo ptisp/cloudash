@@ -7,214 +7,205 @@
   },
   "home": {
     "header1": "VMs",
-    "header2": "Memória",
+    "header2": "Memory",
     "header3": "HDD",
     "header4": "Cores",
     "tblhead1": "Hostname",
     "tblhead2": "IP",
     "tblhead3": "Mem",
     "tblhead4": "HDD",
-    "tblhead5": "Estado",
-    "tblhead6": "Utilizador"
+    "tblhead5": "Status",
+    "tblhead6": "Owner"
   },
   "userprofile": {
     "menu": {
-      "profile": "Perfil",
-      "security": "Segurança"
+      "profile": "Profile",
+      "security": "Security"
     },
     "profile": {
-      "title": "Detalhes de Cliente",
-      "subtitle": "Vizualize ou edite a sua informação pessoal"
+      "title": "User Details",
+      "subtitle": "View or edit personal information"
     },
     "security": {
-      "title": "Alterar password",
-      "subtitle": "Clique em \"Guardar\" para alterar a sua password.",
-      "msg": "Pode alterar a sua password no botão abaixo.",
-      "newpass": "Nova Password",
-      "reppass": "Repetir Password",
-      "sshtitle": "Adicionar Chave SSH"
+      "title": "Change Password",
+      "subtitle": "Click \"Save\" to change your password.",
+      "newpass": "New Password",
+      "reppass": "Retype Password",
+      "sshtitle": "Add SSH Key"
     }
   },
   "manage": {
     "menu": {
-      "new": "Novo Utilizador",
-      "list": "Gerir Utilizadores"
+      "new": "New User",
+      "list": "Manage Users"
     },
     "new": {
-      "title": "Criar Novo Utilizador",
-      "name": "Nome",
-      "country": "País",
-      "address": "Morada",
+      "title": "Add new user",
+      "name": "Name",
+      "country": "Country",
+      "address": "Address",
       "email": "Email",
-      "vat": "NIF",
-      "zipcode": "Código Postal",
+      "vat": "VAT",
+      "zipcode": "Zip Code",
       "pass": "Password",
-      "rpass": "Repita a Password",
-      "phone": "Telefone",
-      "city": "Cidade",
-      "type": "Tipo de Conta",
-      "row1": "Dados de acesso utilizador",
-      "row2": "Dados de utilizador",
-      "row3": "Configurações de utilizador",
-      "option1": "Utilizador",
-      "option2": "Administrador",
-      "emailerr": "Email invalido ou já utilizado"
+      "rpass": "Retype Password",
+      "phone": "Phone",
+      "city": "City",
+      "type": "Account Type",
+      "row1": "Login Info",
+      "row2": "User Info",
+      "row3": "Account Configuration",
+      "option1": "User",
+      "option2": "Admin",
+      "emailerr": "Invalid email or already in use"
     },
     "list": {
-      "title": "Lista de Utilizadores",
-      "tblhead1": "Nome",
+      "title": "Users List",
+      "tblhead1": "Name",
       "tblhead2": "Email",
-      "tblhead3": "Tipo",
+      "tblhead3": "Type",
       "tblhead4": "Status",
-      "tblhead5": "Opções",
+      "tblhead5": "Options",
       "modal": {
-        "title": "Apagar Utilizador",
-        "wrnname": "Pertende apagar o utilizador?",
+        "title": "Delete User",
+        "wrnname": "Want to delete user?",
         "wrnemail": "Email:",
-        "wrntype": "Tipo de conta:",
-        "wrnstatus": "Estado da conta:"
+        "wrntype": "Account Type:",
+        "wrnstatus": "Account Status:"
       }
     },
     "edit": {
-      "title": "Detalhes de Cliente",
-      "subtitle": "Carregue em \"Editar\" para modificar utilizador",
-      "row1": "Dados de acesso utilizador",
-      "accstatus": "Estado da Conta",
-      "option1": "Activa",
-      "option2": "Suspender"
+      "title": "User Info",
+      "subtitle": "Click \"Edit\" to change user information",
+      "row1": "Account Information",
+      "accstatus": "Account Status",
+      "option1": "Active",
+      "option2": "Suspended"
     }
   },
   "vm": {
     "add": {
-      "title": "Criar nova Máquina Virtual",
+      "title": "Create new Virtual Machine",
       "name": "Hostname",
-      "config": "Configuração",
-      "image": "Imagem"
+      "config": "Setup",
+      "image": "Image"
     },
     "edit": {
       "tab": {
-        "titlevms": "Suas VMs",
-        "titledit": "Editar VM(s)",
-        "power": "Resumo",
-        "console": "Consola",
-        "stats": "Estatísticas",
-        "storage": "Armazenamento",
-        "resources": "Recursos",
-        "settings": "Opções",
-        "edit": "Editar"
+        "power": "Summary",
+        "console": "Console",
+        "stats": "Statistics",
+        "storage": "Storage",
+        "resources": "Resources",
+        "settings": "Options",
+        "edit": "Edit"
       },
       "power": {
-        "title": "Resumo",
+        "title": "Summary",
         "subtitle": "...",
-        "memory": "Memória",
+        "memory": "Memory",
         "cpu": "vCPU",
-        "storage": "Disco",
-        "state": "Estado"
+        "storage": "Disk",
+        "state": "State"
       },
       "console": {
-        "title": "Consola",
+        "title": "Console",
         "subtitle": "..."
       },
       "stats": {
-        "title": "Estatisticas",
-        "subtitle": "Visualização gráfica do uso de cpu, memória e rede.",
-        "cpu": "Utilização de CPU",
-        "ram": "Memória",
-        "net": "Tráfego de rede"
+        "title": "Statistics",
+        "subtitle": "CPU, Memory, Network usage graphs",
+        "cpu": "CPU Usage",
+        "ram": "Memory Usage",
+        "net": "Network Traffic"
       },
       "storage": {
-        "title": "Armazenamento",
+        "title": "Storage",
         "subtitle": "..."
       },
       "resources": {
-        "title": "Configurações",
+        "title": "Setup",
         "subtitle": "..."
       }
     }
   },
   "smenu": {
-    "machines": "Máquinas Virtuais",
-    "dns": "Gestor DNS",
-    "images": "Imagens SO",
+    "machines": "Virtual Machines",
+    "dns": "DNS Manager",
+    "images": "OS Images",
     "logs": "Logs",
-    "support": "Suporte"
+    "support": "Support"
   },
   "support": {
-    "tab01": "Abertos",
-    "tab02": "Fechados",
+    "tab01": "Open",
+    "tab02": "Closed",
     "tickets": {
-      "title": "Suporte",
-      "open_subtitle": "O nosso helpdesk ao seu dispor. Abra novos pedidos de suporte.",
-      "closed_subtitle": "Actualize pedidos existentes ou consulte tickets já fechados.",
-      "openticket": "Tickets Abertos",
+      "title": "Support",
+      "open_subtitle": "Open new support ticket.",
+      "closed_subtitle": "Closed tickets.",
+      "openticket": "Open Tickets",
       "openth1": "Email",
-      "openth2": "Assunto",
-      "openth3": "Última Actualização",
-      "openth4": "Estado",
-      "closedticket": "Tickets Fechados",
-      "closeth1": "Email",
-      "closeth2": "Assunto",
-      "closeth3": "Última Actualização",
-      "closeth4": "Estado"
+      "openth2": "Subject",
+      "openth3": "Last Update",
+      "openth4": "Status",
+      "closedticket": "Closed Tickets"
     },
     "ticket": {
       "header": {
-        "title": "Detalhes do Ticket: ",
-        "status": "Estado: ",
-        "replies": "Respostas: ",
-        "created": "Criado: ",
-        "subject": "Assunto: ",
-        "ticketth1": " Data",
+        "title": "Ticket Details: ",
+        "status": "State: ",
+        "replies": "Replys: ",
+        "created": "Created: ",
+        "subject": "Subject: ",
+        "ticketth1": " Date",
         "ticketth2": " Email",
-        "ticketth3": " Mensagem"
+        "ticketth3": " Message"
       },
       "modal": {
-        "title": "Novo Ticket",
-        "rtitle": "Responder",
-        "subject": "Assunto",
-        "message": "Mensagem"
+        "title": "New Ticket",
+        "rtitle": "Reply",
+        "subject": "Subject",
+        "message": "Message"
       }
     }
   },
   "btns": {
-    "start": "Iniciar",
+    "start": "Start",
     "pause": "Pause",
-    "stop": "Parar",
-    "hstop": "Forçar Parar",
-    "restart": "Reiniciar",
-    "hrestart": "Forçar Reiniciar",
-    "editprofile": "Editar Perfil",
-    "editpassword": "Editar Password",
-    "update": "Actualizar",
-    "add": "Adicionar",
-    "create": "Criar",
-    "save": "Guardar",
-    "cancel": "Cancelar",
-    "send": "Enviar",
-    "replyticket": "Responder",
-    "openticket": "Abrir Ticket",
-    "closeticket": "Fechar Ticket",
+    "stop": "Stop",
+    "hstop": "Hard Stop",
+    "restart": "Reboot",
+    "hrestart": "Hard Reboot",
+    "update": "Update",
+    "add": "Add",
+    "create": "Create",
+    "save": "Save",
+    "cancel": "Cancel",
+    "send": "Send",
+    "replyticket": "Reply",
+    "openticket": "Open Ticket",
+    "closeticket": "Close Ticket",
     "reset": "Reset",
-    "continue": "Continuar",
-    "edit": "Editar"
+    "continue": "Continue",
+    "edit": "Edit"
   },
   "config": {
-    "title": "Configurações Gerais",
-    "subtitle": "Configurações gerais de logotipo e suporte",
-    "infologo": "Imagem Logotipo Dimensões: 190x80px",
-    "infosupport": "Active ou desactive o suporte ticket?"
+    "title": "General Setup",
+    "subtitle": "Manage support and logo",
+    "infologo": "Logo size: 190x80px",
+    "infosupport": "Support enable or disable?"
   },
   "dropdown": {
-    "ten": "Mostrar 10",
-    "tfive": "Mostrar 25",
-    "fifty": "Mostrar 50",
-    "hundred": "Mostrar 100"
+    "ten": "Show 10",
+    "tfive": "Show 25",
+    "fifty": "Show 50",
+    "hundred": "Show 100"
   },
   "logs": {
     "title": "Logs",
-    "subtitle": "Registo de todas as acções realizadas",
-    "tblhead1": "Data",
-    "tblhead2": "Utilizador",
-    "tblhead3": "Acção"
+    "subtitle": "View all actions made",
+    "tblhead1": "Date",
+    "tblhead2": "User",
+    "tblhead3": "Action"
   }
 }
