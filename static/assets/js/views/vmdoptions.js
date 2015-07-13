@@ -33,10 +33,9 @@ window.VMDOptionsView = Backbone.View.extend({
       }
       $('#users', self.el)
         .append($("<option></option>")
-          .attr("value", users[i].auth.username)
-          .prop('disabled', disabled)
-          .text(users[i].auth.username));
-
+        .attr("value",users[i].auth.username)
+        .prop('disabled', disabled)
+        .text(users[i].auth.username));
     }
   },
   getusers: function() {

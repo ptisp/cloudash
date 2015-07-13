@@ -5,7 +5,6 @@ window.VMAddView = Backbone.View.extend({
   createvm: function() {
 
     var vmdetails = {
-      'owner': this.model.get('username'),
       'details': {
         'status': 'pending',
         'image': $('.img.active').attr('data-img'),
