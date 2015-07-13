@@ -31,9 +31,8 @@ app.post('/api/vm/:id/stop', auth, logger, api.vm.stopVm);
 app.post('/api/vm/:id/restart/:forced', auth, logger, api.vm.restartVm);
 app.post('/api/vm/:id/restart', auth, logger, api.vm.restartVm);
 app.post('/api/vm', auth, logger, api.vm.createVm);
-app.put('/api/vm/:id', auth, admin, logger, api.vm.updateVm);
+app.put('/api/vm/:id/owner', auth, admin, logger, api.vm.updateVm);
 app.get('/api/vm/:id/metrics', auth, api.vm.statsVm);
-
 app.get('/api/vm/:id/vnc', auth, api.vm.vmVNC);
 app.delete('/api/vm/:id', auth, logger, api.vm.deleteVm);
 app.get('/api/vm/:id', auth, api.vm.vmDetails);

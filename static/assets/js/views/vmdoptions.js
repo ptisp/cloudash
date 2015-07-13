@@ -10,10 +10,10 @@ window.VMDOptionsView = Backbone.View.extend({
     var data = {
       owner: $('#users option:selected').text()
     };
-    modem('PUT', 'vm/'+this.model.get('id'),
+    modem('PUT', 'vm/' + this.model.get('id') + '/owner',
       function(json) {
         showSuccess('SUCESSO', 'Informação alterada');
-        app.navigate('/vm/info/'+self.model.get('id')+'/summary', {
+        app.navigate('/vm/info/' + self.model.get('id') + '/summary', {
           trigger: true
         });
       },
@@ -24,18 +24,18 @@ window.VMDOptionsView = Backbone.View.extend({
       }, data
     );
   },
-  fillselect: function(users){
+  fillselect: function(users) {
     var self = this;
-    for (var i = 0; i < users.length; i++){
+    for (var i = 0; i < users.length; i++) {
       var disabled = false;
-      if (users[i].auth.username === this.model.get('owner')){
+      if (users[i].auth.username === this.model.get('owner')) {
         disabled = true;
       }
       $('#users', self.el)
-           .append($("<option></option>")
-           .attr("value",users[i].auth.username)
-           .prop('disabled', disabled)
-           .text(users[i].auth.username));
+        .append($("<option></option>")
+          .attr("value", users[i].auth.username)
+          .prop('disabled', disabled)
+          .text(users[i].auth.username));
 
     }
   },
@@ -58,7 +58,7 @@ window.VMDOptionsView = Backbone.View.extend({
     $('.overme', this.el).tooltip();
 
     if (this.user.get('type') !== 'admin') {
-      app.navigate('/vm/info/'+this.model.get('id')+'/summary', {
+      app.navigate('/vm/info/' + this.model.get('id') + '/summary', {
         trigger: true
       });
     } else {
