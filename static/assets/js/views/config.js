@@ -15,7 +15,7 @@ window.ConfigView = Backbone.View.extend({
     };
     modem('DELETE', 'config/logo',
       function(json) {
-        //console.log(json);
+        showSuccess('Sucesso!', 'Logotipo original reposto');
         self.render();
       },
       function(xhr, ajaxOptions, thrownError) {
@@ -34,6 +34,7 @@ window.ConfigView = Backbone.View.extend({
     };
     modem('POST', 'config/logo',
       function(json) {
+        showSuccess('Sucesso!', 'Logotipo Modificado');
         self.render();
       },
       function(xhr, ajaxOptions, thrownError) {
@@ -49,7 +50,9 @@ window.ConfigView = Backbone.View.extend({
     };
     modem('POST', 'config/support',
       function(json) {
-        self.render();
+        showSuccess('Sucesso!', 'Configurações de suporte alteradas');
+        location.reload();
+        //self.render();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);

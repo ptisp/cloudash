@@ -1,10 +1,18 @@
 window.LogsView = Backbone.View.extend({
   events: {
     'keyup #pesquisa': 'filtro',
+    'change #ddshow': 'show'
   },
   filtro: function() {
     var oTable = $('#example').dataTable();
     oTable.fnFilter($('#pesquisa').val());
+  },
+  show: function() {
+    var index = document.getElementById('ddshow').selectedIndex;
+    var oTable = $('#example').dataTable();
+    var oSettings = oTable.fnSettings();
+    oSettings._iDisplayLength = parseInt(document.getElementsByTagName('option')[index].value);
+    oTable.fnDraw();
   },
   getLogs: function() {
     var self = this;

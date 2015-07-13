@@ -3,45 +3,45 @@
 	<section class="bg-white">
 		<div class="row">
 			<div class="col-md-8">
-				<h2 class="m-t-0 m-b-5"><span data-i18n="">Detalhes de Cliente</span></h2>
-				<p class="c-dark" >...</p>
+				<h2 class="m-t-0 m-b-5"><span data-i18n="manage.edit.title"></span></h2>
+				<p class="c-dark" data-i18n="manage.edit.subtitle"></p>
 			</div>
 			<div class="col-md-4">
 				<button type="button" class="btn btn-block btn-xl btn-cloudy btn-icon f-right edit">
-					<span data-i18n="">Editar</span><i class="icon-email_corporate"></i>
+					<span data-i18n="btns.edit"></span><i class="icon-email_corporate"></i>
 				</button>
 			</div>
 		</div>
 		<hr>
 
-		<h4>Dados de acesso utilizador</h4>
+		<h4 data-i18n="manage.edit.row1"></h4>
 		<div class="row m-b-50">
 			<div class="col-md-6">
-				<p class="text-left"><span data-i18n="useracc.new.email"></span></p>
+				<p class="text-left"><span data-i18n="manage.new.email"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-user"></i></span>
 					<input type="text" class="form-control cloudy ipemail" placeholder="Email" disabled>
 				</div>
 			</div>
 			<div class="col-md-6">
-				<p class="text-left"><span data-i18n="">Estado da Conta</span></p>
+				<p class="text-left"><span data-i18n="manage.new.accstatus"></span></p>
 				<div class="input-group">
 					<span class="input-group-addon cloudy"><i class="icon-star"></i></span>
 					<select id="input_country" class="form-control cloudy ipstatus editable">
-						<option value="active">Activa</option>
-						<option value="suspended">Suspender</option>
+						<option value="active" data-i18n="manage.new.option1"></option>
+						<option value="suspended" data-i18n="manage.new.option2"></option>
 					</select>
 				</div>
       		</div>
       		<hr>
 		</div>
 
-		<h4>Dados de utilizador</h4>
+		<h4 data-i18n="manage.new.row2"></h4>
 		<div class="row m-b-50">
 			<!-- User Deatils -->
 			<div class="col-md-6">
 				<div class="clip-body">
-					<p class="text-left"><span data-i18n="useracc.new.name"></span></p>
+					<p class="text-left"><span data-i18n="manage.new.name"></span></p>
 					<div class="input-group">
 						<span class="input-group-addon cloudy"><i class="icon-user"></i></span>
 						<input type="text" class="form-control cloudy ipname editable" placeholder="Name">
@@ -49,7 +49,7 @@
 				</div>
 
 				<div class="clip-body">
-					<p class="text-left"><span data-i18n="useracc.new.country"></span></p>
+					<p class="text-left"><span data-i18n="manage.new.country"></span></p>
 					<div class="input-group">
 						<span class="input-group-addon cloudy"><i class="icon-flag"></i></span>
 						<select id="input_country" class="form-control cloudy ipcountry editable">
@@ -298,7 +298,7 @@
 				</div>
 				<div class="clip-body">
 					<p class="text-left">
-						<span data-i18n="useracc.new.city"></span>
+						<span data-i18n="manage.new.city"></span>
 					</p>
 					<div class="input-group">
 						<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
@@ -307,7 +307,7 @@
 				</div>
 				<div class="clip-body">
 					<p class="text-left">
-						<span data-i18n="useracc.new.address"></span>
+						<span data-i18n="manage.new.address"></span>
 					</p>
 					<div class="input-group">
 						<span class="input-group-addon cloudy"><i class="icon-location_center"></i></span>
@@ -319,7 +319,7 @@
 			<div class="col-md-6">
 				<div class="clip-body">
 					<p class="text-left">
-						<span data-i18n="useracc.new.phone"></span>
+						<span data-i18n="manage.new.phone"></span>
 					</p>
 					<div class="input-group">
 						<span class="input-group-addon cloudy"><i class="icon-phone"></i></span>
@@ -329,7 +329,7 @@
 
 				<div class="clip-body">
 					<p class="text-left">
-						<span data-i18n="useracc.new.vat"></span>
+						<span data-i18n="manage.new.vat"></span>
 					</p>
 					<div class="input-group">
 						<span class="input-group-addon cloudy"><i class="icon-reference"></i></span>
@@ -338,7 +338,7 @@
 				</div>
 				<div class="clip-body">
 					<p class="text-left">
-						<span data-i18n="useracc.new.zipcode">e</span>
+						<span data-i18n="manage.new.zipcode">e</span>
 					</p>
 					<div class="input-group">
 						<span class="input-group-addon cloudy"><i class="icon-location_more"></i></span>
@@ -348,20 +348,20 @@
 			</div>
 		</div>
 
-		<h4>Dados e configurações de utilizador</h4>
+		<h4 data-i18n="manage.new.row3"></h4>
 		<div class="row">
 			<div class="clip-body">
 
 				<div class="col-md-6">
 					<div class="clip-body">
 						<p class="text-left">
-							<span data-i18n="useracc.new.type"></span>
+							<span data-i18n="manage.new.type"></span>
 						</p>
 						<div class="input-group">
-							<span class="input-group-addon cloudy"><i class="icon-star"></i></span>
+							<span class="input-group-addon cloudy"><i class="icon-user_accept"></i></span>
 							<select id="input_country" class="form-control cloudy iptype editable">
-								<option value="user">Utilizador</option>
-								<option value="admin">Administrador</option>
+								<option value="user" data-i18n="manage.new.option1"></option>
+								<option value="admin" data-i18n="manage.new.option2"></option>
 							</select>
 						</div>
 					</div>
@@ -402,7 +402,7 @@
 		</div>
 
 		<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5 btnedituser" style="display:none">
-			<span data-i18n="">Actualizar</span>
+			<span data-i18n="btns.update"></span>
 		</button>
 
 	</section>

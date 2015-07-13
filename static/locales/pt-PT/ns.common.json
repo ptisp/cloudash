@@ -14,7 +14,8 @@
     "tblhead2": "IP",
     "tblhead3": "Mem",
     "tblhead4": "HDD",
-    "tblhead5": "Estado"
+    "tblhead5": "Estado",
+    "tblhead6": "Utilizador"
   },
   "userprofile": {
     "tabs": {
@@ -36,8 +37,8 @@
       "reppass": "Repetir Password"
     }
   },
-  "useracc": {
-    "tabs": {
+  "manage": {
+    "menu": {
       "new": "Novo Utilizador",
       "list": "Gerir Utilizadores"
     },
@@ -53,7 +54,13 @@
       "rpass": "Repita a Password",
       "phone": "Telefone",
       "city": "Cidade",
-      "type": "Tipo de Conta"
+      "type": "Tipo de Conta",
+      "row1": "Dados de acesso utilizador",
+      "row2": "Dados de utilizador",
+      "row3": "Configurações de utilizador",
+      "option1": "Utilizador",
+      "option2": "Administrador",
+      "emailerr": "Email invalido ou já utilizado"
     },
     "list": {
       "title": "Lista de Utilizadores",
@@ -61,7 +68,22 @@
       "tblhead2": "Email",
       "tblhead3": "Tipo",
       "tblhead4": "Status",
-      "tblhead5": "Opções"
+      "tblhead5": "Opções",
+      "modal": {
+        "title": "Apagar Utilizador",
+        "wrnname": "Pertende apagar o utilizador?",
+        "wrnemail": "Email:",
+        "wrntype": "Tipo de conta:",
+        "wrnstatus": "Estado da conta:"
+      }
+    },
+    "edit": {
+      "title": "Detalhes de Cliente",
+      "subtitle": "Carregue em \"Editar\" para modificar utilizador",
+      "row1": "Dados de acesso utilizador",
+      "accstatus": "Estado da Conta",
+      "option1": "Activa",
+      "option2": "Suspender"
     }
   },
   "vm": {
@@ -163,15 +185,32 @@
     "add": "Adicionar",
     "create": "Criar",
     "save": "Guardar",
-
     "cancel": "Cancelar",
     "send": "Enviar",
     "replyticket": "Responder",
     "openticket": "Abrir Ticket",
-    "closeticket": "Fechar Ticket"
+    "closeticket": "Fechar Ticket",
+    "reset": "Reset",
+    "continue": "Continuar",
+    "edit": "Editar"
   },
   "config": {
     "title": "Configurações Gerais",
-    "subtitle": "Configurações gerais de logotipo e suporte"
+    "subtitle": "Configurações gerais de logotipo e suporte",
+    "infologo": "Imagem Logotipo Dimensões: 190x80px",
+    "infosupport": "Active ou desactive o suporte ticket?"
+  },
+  "dropdown": {
+    "ten": "Mostrar 10",
+    "tfive": "Mostrar 25",
+    "fifty": "Mostrar 50",
+    "hundred": "Mostrar 100"
+  },
+  "logs": {
+    "title": "Logs",
+    "subtitle": "Registo de todas as acções realizadas",
+    "tblhead1": "Data",
+    "tblhead2": "Utilizador",
+    "tblhead3": "Acção"
   }
 }
