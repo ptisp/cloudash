@@ -133,7 +133,9 @@
   "smenu": {
     "machines": "Máquinas Virtuais",
     "dns": "Gestor DNS",
-    "images": "Imagens SO"
+    "images": "Imagens SO",
+    "logs": "Logs",
+    "support": "Suporte"
   },
   "support": {
     "tab01": "Abertos",
