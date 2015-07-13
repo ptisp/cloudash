@@ -2,6 +2,7 @@
   "header": {
     "manprofile": "Perfil",
     "manusers": "Utilizadores",
+    "setup": "Configurar",
     "newvm": "Nova Máquina Virtual",
     "logout": "Sair"
   },
@@ -29,7 +30,6 @@
     "security": {
       "title": "Alterar password",
       "subtitle": "Clique em \"Guardar\" para alterar a sua password.",
-      "msg": "Pode alterar a sua password no botão abaixo.",
       "newpass": "Nova Password",
       "reppass": "Repetir Password",
       "sshtitle": "Adicionar Chave SSH"
@@ -93,8 +93,6 @@
     },
     "edit": {
       "tab": {
-        "titlevms": "Suas VMs",
-        "titledit": "Editar VM(s)",
         "power": "Resumo",
         "console": "Consola",
         "stats": "Estatísticas",
@@ -152,10 +150,6 @@
       "openth3": "Última Actualização",
       "openth4": "Estado",
       "closedticket": "Tickets Fechados",
-      "closeth1": "Email",
-      "closeth2": "Assunto",
-      "closeth3": "Última Actualização",
-      "closeth4": "Estado"
     },
     "ticket": {
       "header": {
@@ -183,8 +177,6 @@
     "hstop": "Forçar Parar",
     "restart": "Reiniciar",
     "hrestart": "Forçar Reiniciar",
-    "editprofile": "Editar Perfil",
-    "editpassword": "Editar Password",
     "update": "Actualizar",
     "add": "Adicionar",
     "create": "Criar",

@@ -2,119 +2,130 @@
   "header": {
     "manprofile": "Perfil",
     "manusers": "Usuarios",
+    "setup": "Configurar",
     "newvm": "Nueva Máquina Virtual",
     "logout": "Cerrar Sesión"
   },
   "home": {
-    "header1": "Número de VMs",
+    "header1": "VMs",
     "header2": "Memoria",
-    "header3": "Disco",
-    "header4": "VMs Activo",
-    "tblhead1": "Nombre",
-    "tblhead2": "IP(s)",
-    "tblhead3": "Memoria",
-    "tblhead4": "Disco",
-    "tblhead5": "Estado"
+    "header3": "HDD",
+    "header4": "Cores",
+    "tblhead1": "Hostname",
+    "tblhead2": "IP",
+    "tblhead3": "Mem",
+    "tblhead4": "HDD",
+    "tblhead5": "Estado",
+    "tblhead6": "Usuario"
   },
   "userprofile": {
-    "tabs": {
+    "menu": {
       "profile": "Perfil",
       "security": "Seguridad"
     },
     "profile": {
-      "msg": "Clic en el botón de abajo para editar su perfil.",
-      "btnedit": "Editar Perfil",
-      "name": "Nombre",
-      "country": "País",
-      "address": "Dirección",
-      "email": "Email",
-      "nif": "NIF",
-      "zip": "Código Postal",
-      "btnsave": "Actualizar"
+      "title": "Detalle del usuario",
+      "subtitle": "Ver o editar la información personal"
     },
     "security": {
-      "msg": "Clic en el botón de abajo para cambiar tu contraseña.",
-      "btnedit": "Editar Contraseña",
+      "title": "Cambiar La Contraseña",
+      "subtitle": "Haga clic en \"Guardar \" para cambiar tu contraseña.",
       "newpass": "Nueva Contraseña",
       "reppass": "Vuelva A Escribir La Contraseña",
-      "btnsave": "Actualizar"
+      "sshtitle": "Añadir claves SSH"
     }
   },
-  "useracc": {
-    "tabs": {
+  "manage": {
+    "menu": {
       "new": "Nuevo Usuario",
       "list": "Administrar Usuarios"
     },
     "new": {
-      "title": "Crear Nuevo Usuario",
+      "title": "Añadir Nuevo Usuario",
       "name": "Nombre",
       "country": "País",
       "address": "Dirección",
       "email": "Email",
-      "vat": "NIF",
+      "vat": "VAT",
       "zipcode": "Código Postal",
-      "btnsave": "Crear",
       "pass": "Contraseña",
       "rpass": "Vuelva A Escribir La Contraseña",
       "phone": "Teléfono",
-      "city" : "Ciudad",
-      "type": "Tipo de Usuario"
+      "city": "Ciudad",
+      "type": "Tipo De Cuenta",
+      "row1": "Login Info",
+      "row2": "Informacion Del Usuario",
+      "row3": "Configuración de la cuenta",
+      "option1": "Usuario",
+      "option2": "Administración",
+      "emailerr": "Email no es válida o ya en uso"
     },
     "list": {
       "title": "Lista de Usuarios",
       "tblhead1": "Nombre",
-      "tblhead2": "Teléfono",
-      "tblhead3": "Email",
+      "tblhead2": "Email",
+      "tblhead3": "Tipo",
       "tblhead4": "Estado",
-      "tblhead5": "Opciones"
+      "tblhead5": "Opciones",
+      "modal": {
+        "title": "Eliminar Usuario",
+        "wrnname": "¿Quieres eliminar el usuario?",
+        "wrnemail": "Email:",
+        "wrntype": "Tipo De Cuenta:",
+        "wrnstatus": "Estado De Cuenta:"
+      }
+    },
+    "edit": {
+      "title": "Informacion De Usuario",
+      "subtitle": "Haga clic en \"Editar \" para cambiar la información del usuario",
+      "row1": "Información De La Cuenta",
+      "accstatus": "Estado De Cuenta",
+      "option1": "Activo",
+      "option2": "Suspendido"
     }
   },
   "vm": {
     "add": {
-      "title": "Crear Nueva Máquina Virtual",
+      "title": "Crear nueva máquina virtual",
       "name": "Hostname",
       "config": "Configurar",
-      "image": "Imagen",
-      "btncreate": "Crear"
+      "image": "Imagen"
     },
     "edit": {
       "tab": {
-        "power": "Energía",
+        "power": "Resumen",
         "console": "Consola",
-        "stats": "Estadísticas",
+        "stats": "Estadística",
         "storage": "Almacenamiento",
-        "setting": "Ajustes"
+        "resources": "Recursos",
+        "settings": "Opciones",
+        "edit": "Editar"
       },
       "power": {
-        "title": "Energía",
+        "title": "Resumen",
         "subtitle": "...",
         "memory": "Memoria",
         "cpu": "vCPU",
         "storage": "Disco",
-        "state": "Estado",
-        "btnstart": "Inicia",
-        "btnpause": "Pausar",
-        "btnstop": "Cerrar",
-        "btnhstop": "Cerrar Duro",
-        "btnrestart": "Reinicio",
-        "btnhrestart": "Reinicio Duro"
+        "state": "Estado"
       },
       "console": {
         "title": "Consola",
-        "subtitle": "...",
-        "btnhreset": "",
-        "btnreset": ""
+        "subtitle": "..."
       },
       "stats": {
-        "title": "Estadísticas",
-        "subtitle": ""
+        "title": "Estadística",
+        "subtitle": "Gráficos de uso de CPU, memoria e red",
+        "cpu": "Uso de CPU",
+        "ram": "Uso de Memoria",
+        "net": "Tráfico de Red"
       },
       "storage": {
         "title": "Almacenamiento",
         "subtitle": "..."
       },
-      "setting": {
-        "title": "Ajustes",
+      "resources": {
+        "title": "Recursos",
         "subtitle": "..."
       }
     }
@@ -122,10 +133,80 @@
   "smenu": {
     "machines": "Máquinas Virtuales",
     "dns": "Administrador de DNS",
-    "images": "Imagen SO"
+    "images": "OS Imágenes",
+    "logs": "Logs",
+    "support": "Soporte"
+  },
+  "support": {
+    "tab01": "Abierto",
+    "tab02": "Cerrado",
+    "tickets": {
+      "title": "Soporte",
+      "open_subtitle": "Abrir Nuevo Ticket.",
+      "closed_subtitle": "Tickets Cerrados.",
+      "openticket": "Abrir Ticket",
+      "openth1": "Email",
+      "openth2": "Sujeto",
+      "openth3": "Última Actualización",
+      "openth4": "Estado",
+      "closedticket": "Tickets Cerrados"
+    },
+    "ticket": {
+      "header": {
+        "title": "Detalles del Ticket: ",
+        "status": "Estado: ",
+        "replies": "Respuestas: ",
+        "created": "Creado: ",
+        "subject": "Sujeto: ",
+        "ticketth1": " Data",
+        "ticketth2": " Email",
+        "ticketth3": " Mensaje"
+      },
+      "modal": {
+        "title": "Nuevo Ticket",
+        "rtitle": "Respuesta",
+        "subject": "Sujeto",
+        "message": "Mensaje"
+      }
+    }
+  },
+  "btns": {
+    "start": "Start",
+    "pause": "Pause",
+    "stop": "Stop",
+    "hstop": "Stop Forzosa",
+    "restart": "Reboot",
+    "hrestart": "Reboot Forzosa",
+    "update": "Actualización",
+    "add": "Añadir",
+    "create": "Crear",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "send": "Enviar",
+    "replyticket": "Responder",
+    "openticket": "Abrir Ticket",
+    "closeticket": "Cerrar Ticket",
+    "reset": "Reset",
+    "continue": "Continuar",
+    "edit": "Editar"
   },
   "config": {
     "title": "Configuración General",
-    "subtitle": "Configuración general Logo y apoyo"
+    "subtitle": "Administrar el soporte y el logotipo",
+    "infologo": "Tamaño del logotipo: 190x80px",
+    "infosupport": "Soporte activar o desactivar?"
+  },
+  "dropdown": {
+    "ten": "Mostrar 10",
+    "tfive": "Mostrar 25",
+    "fifty": "Mostrar 50",
+    "hundred": "Mostrar 100"
+  },
+  "logs": {
+    "title": "Logs",
+    "subtitle": "Ver todas las acciones realizadas",
+    "tblhead1": "Data",
+    "tblhead2": "Usuario",
+    "tblhead3": "Acción"
   }
 }
