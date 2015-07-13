@@ -485,10 +485,10 @@ var Router = Backbone.Router.extend({
 
 templateLoader.load(['FooterView', 'LoginView', 'HomeView', 'HeaderView', 'MenuView'],
   function() {
-    //var language = localStorage.getItem('lang');
-    //if (language === null) {
-    var  language = 'pt-PT';
-    //}
+    var language = localStorage.getItem('cloudylang');
+    if (language === null) {
+      language = 'pt-PT';
+    }
 
     window.language = language;
 

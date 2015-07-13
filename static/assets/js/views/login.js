@@ -8,6 +8,8 @@ window.LoginView = Backbone.View.extend({
   logina: function() {
     var self = this;
 
+    localStorage.setItem('cloudylang', $("#txt_language").val());
+
     var user = $('.usernameinput').val();
     var hash = this.createhash($('.passwordinput').val());
 
@@ -32,6 +34,9 @@ window.LoginView = Backbone.View.extend({
       app.navigate('/home', {
         trigger: true
       });
+      if (localStorage.getItem('cloudylang') != window.language) {
+        window.location.reload();
+      }
     }, function () {
       console.log('Login failed');
     });
