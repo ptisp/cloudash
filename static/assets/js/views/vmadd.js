@@ -7,7 +7,7 @@ window.VMAddView = Backbone.View.extend({
     var vmdetails = {
       'details': {
         'status': 'pending',
-        'image': $('.img.active').attr('data-img'),
+        'template': $('.img.active').attr('data-img'),
         'ram': parseInt($('.config.active').attr('data-ram')*1024),
         'disk': parseInt($('.config.active').attr('data-hdd')),
         'vcpu': parseInt($('.config.active').attr('data-cpu')),
@@ -15,7 +15,7 @@ window.VMAddView = Backbone.View.extend({
         'ip': ['']
       }
     };
-    //console.log(vmdetails);
+    console.log(vmdetails);
     modem('POST', 'vm',
       function(json) {
         showSuccess('Sucesso!', 'VM Adicionada');
@@ -31,22 +31,23 @@ window.VMAddView = Backbone.View.extend({
     );
   },
   getimages: function() {
-    modem('GET', 'image',
+    modem('GET', 'template',
       function(json) {
-        //console.log(json);
-        for( var i = 0; i < json.images.length; i++) {
+        console.log(json);
+        for( var i = 0; i < json.templates.length; i++) {
           var img = '';
-          if (json.images[i].toLowerCase().indexOf('centos') > -1) {
+          console.log(json.templates[i]);
+          if (json.templates[i].name.toLowerCase().indexOf('centos') > -1) {
             img = 'assets/img/soft/centos.png';
-          } else if (json.images[i].toLowerCase().indexOf('debian') > -1) {
+          } else if (json.templates[i].name.toLowerCase().indexOf('debian') > -1) {
             img = 'assets/img/soft/debian.png';
-          } else if (json.images[i].toLowerCase().indexOf('ubuntu') > -1) {
+          } else if (json.templates[i].name.toLowerCase().indexOf('ubuntu') > -1) {
             img = 'assets/img/soft/ubuntu.png';
-          } else if (json.images[i].toLowerCase().indexOf('coreos') > -1) {
+          } else if (json.templates[i].name.toLowerCase().indexOf('coreos') > -1) {
             img = 'assets/img/soft/coreos.png';
-          } else if (json.images[i].toLowerCase().indexOf('suse') > -1) {
+          } else if (json.templates[i].name.toLowerCase().indexOf('suse') > -1) {
             img = 'assets/img/soft/opensuse.png';
-          } else if (json.images[i].toLowerCase().indexOf('fedora') > -1) {
+          } else if (json.templates[i].name.toLowerCase().indexOf('fedora') > -1) {
             img = 'assets/img/soft/fedora.png';
           } else {
             img = 'assets/img/soft/linux.png';
@@ -55,11 +56,11 @@ window.VMAddView = Backbone.View.extend({
           if (i === 0) {
             active = 'active';
           }
-          var html = '<label class="btn btn-default col-sm-2 cloudy-plans img '+active+'" data-img="'+json.images[i]+'">'+
+          var html = '<label class="btn btn-default col-sm-2 cloudy-plans img '+active+'" data-img="'+json.templates[i].id+'">'+
           '<input type="radio">'+
           '<div class="cloudy-plans-specs">'+
             '<img src="'+ img +'" class="soft-img m-b-10 img-responsive">'+
-            '<p class="b03"><span>'+json.images[i]+'</span></p>'+
+            '<p class="b03"><span>'+json.templates[i].name+'</span></p>'+
           '</div>'+
           '</label>';
 
