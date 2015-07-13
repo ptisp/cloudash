@@ -99,13 +99,14 @@
         "console": "Consola",
         "stats": "Estatísticas",
         "storage": "Armazenamento",
-        "setting": "Recursos",
+        "resources": "Recursos",
+        "settings": "Opções",
         "edit": "Editar"
       },
       "power": {
         "title": "Resumo",
         "subtitle": "...",
-        "memory": "Memoria",
+        "memory": "Memória",
         "cpu": "vCPU",
         "storage": "Disco",
         "state": "Estado"
@@ -116,13 +117,16 @@
       },
       "stats": {
         "title": "Estatisticas",
-        "subtitle": "Visão gráfica mais estatisticas de cpu, memória e network."
+        "subtitle": "Visualização gráfica do uso de cpu, memória e rede.",
+        "cpu": "Utilização de CPU",
+        "ram": "Memória",
+        "net": "Tráfego de rede"
       },
       "storage": {
         "title": "Armazenamento",
         "subtitle": "..."
       },
-      "setting": {
+      "resources": {
         "title": "Configurações",
         "subtitle": "..."
       }

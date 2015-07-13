@@ -105,7 +105,7 @@ window.VMDResizeView = Backbone.View.extend({
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
-    $('.vm-details', this.el).i18n();
+    $('.vm-resize', this.el).i18n();
     $('.overme', this.el).tooltip();
     this.setslider();
 
