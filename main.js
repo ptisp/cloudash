@@ -40,6 +40,7 @@ app.put('/api/vm/:id', auth, logger, api.vm.vmResize);
 app.get('/api/vm', auth, api.vm.vmList);
 
 app.get('/api/image', auth, api.vm.imageList);
+app.get('/api/template', auth, api.vm.templateList);
 
 app.get('/api/support/:id', auth, api.support.ticketDetails);
 app.post('/api/support/:id', auth, logger, api.support.replyticket);
