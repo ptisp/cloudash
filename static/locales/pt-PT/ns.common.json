@@ -18,23 +18,21 @@
     "tblhead6": "Utilizador"
   },
   "userprofile": {
-    "tabs": {
+    "menu": {
       "profile": "Perfil",
       "security": "Segurança"
     },
     "profile": {
-      "msg": "Pode editar o seu perfil no botão abaixo.",
-      "name": "Nome",
-      "country": "País",
-      "address": "Endereço",
-      "email": "Email",
-      "nif": "NIF",
-      "zip": "Código Postal"
+      "title": "Detalhes de Cliente",
+      "subtitle": "Vizualize ou edite a sua informação pessoal"
     },
     "security": {
+      "title": "Alterar password",
+      "subtitle": "Clique em \"Guardar\" para alterar a sua password.",
       "msg": "Pode alterar a sua password no botão abaixo.",
       "newpass": "Nova Password",
-      "reppass": "Repetir Password"
+      "reppass": "Repetir Password",
+      "sshtitle": "Adicionar Chave SSH"
     }
   },
   "manage": {
