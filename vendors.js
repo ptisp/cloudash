@@ -10,4 +10,4 @@ MongoClient.connect(process.env.CLOUDY_MONGODB, function(err, db) {
 });
 
 
-exports.one = new OpenNebula(process.env.ONE_CREDENTIALS_DEV, process.env.ONE_HOST_DEV);
+exports.one = new OpenNebula(process.env.ONE_CREDENTIALS_DEV || process.env.ONE_CREDENTIALS, process.env.ONE_HOST_DEV || process.env.ONE_HOST);
