@@ -66,6 +66,26 @@ window.HomeView = Backbone.View.extend({
   },
   getvms: function() {
     var self = this;
+    var getowner = function(vms){
+      var users = [];
+      for (var i = 0; i < vms.length; i++){
+        if ($.inArray(vms[i].owner, users) < 0) {
+            users.push(vms[i].owner);
+          }
+      }
+      console.log(users);
+      for (i = 0; i < users.length; i++){
+        modem('GET', 'user/'+users[i],
+          function(json) {
+            $('span[data-owner="'+json._id+'"]').html(json.auth.username);
+          },
+          function(xhr, ajaxOptions, thrownError) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(json);
+          }
+        );
+      }
+    };
     var handler = function(json) {
       var oTable = $('#example', self.el).dataTable({
         "data": json,
@@ -87,7 +107,13 @@ window.HomeView = Backbone.View.extend({
 
           }
         }, {
-          "data": "owner", "sWidth": "25%"
+          "data": null,
+          "sWidth": "25%",
+          "bSortable": true,
+          "mRender": function(data, type, full) {
+            var html = '<span data-owner="'+full.owner+'">'+full.owner+'</span>';
+            return html;
+          }
         }, {
           "data": "details.ip", "sWidth": "17%"
         }, {
@@ -128,6 +154,7 @@ window.HomeView = Backbone.View.extend({
           return nRow;
         }
       });
+      getowner(json);
     };
     modem('GET', 'vm',
       function(json) {

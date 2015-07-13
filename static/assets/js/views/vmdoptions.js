@@ -8,7 +8,7 @@ window.VMDOptionsView = Backbone.View.extend({
   changeowner: function() {
     var self = this;
     var data = {
-      owner: $('#users option:selected').text()
+      owner: $('#users option:selected').val()
     };
     modem('PUT', 'vm/' + this.model.get('id') + '/owner',
       function(json) {
@@ -28,12 +28,12 @@ window.VMDOptionsView = Backbone.View.extend({
     var self = this;
     for (var i = 0; i < users.length; i++) {
       var disabled = false;
-      if (users[i].auth.username === this.model.get('owner')) {
+      if (users[i]._id === this.model.get('owner')) {
         disabled = true;
       }
       $('#users', self.el)
         .append($("<option></option>")
-        .attr("value",users[i].auth.username)
+        .attr("value",users[i]._id)
         .prop('disabled', disabled)
         .text(users[i].auth.username));
     }

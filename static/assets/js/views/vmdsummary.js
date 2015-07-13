@@ -200,6 +200,7 @@ window.VMDSummaryView = Backbone.View.extend({
   },
   extrainfo: function() {
     var ips = '';
+    var self = this;
     var ip = this.model.get('ip');
     for (var i = 0; i < ip.length; i++) {
       if (i !== 0) {
@@ -209,8 +210,16 @@ window.VMDSummaryView = Backbone.View.extend({
     }
     $('.infohostanme', this.el).html(this.model.get('hostname') + ' - ' + ips);
     if (this.user.get('type') === 'admin') {
-      $('.infoowner', this.el).html(this.model.get('owner'));
-      $('.infoowner', this.el).show();
+      modem('GET', 'user/'+this.model.get('owner'),
+        function(json) {
+          $('.infoowner', self.el).html(json.auth.username);
+          $('.infoowner', self.el).show();
+        },
+        function(xhr, ajaxOptions, thrownError) {
+          var json = JSON.parse(xhr.responseText);
+          console.log(json);
+        }
+      );
     }
 
   },
