@@ -1,5 +1,6 @@
-var MongoClient = require('mongodb').MongoClient;
-var ObjectId = require('mongodb').ObjectID;
+var MongoClient = require('mongodb').MongoClient,
+  ObjectId = require('mongodb').ObjectID,
+  config = require('./config');
 
 var insertUser = function(db, callback) {
   db.collection('users').insertOne({
@@ -36,7 +37,7 @@ var insertUser = function(db, callback) {
   });
 };
 
-MongoClient.connect(process.env.CLOUDY_MONGODB, function(err, db) {
+MongoClient.connect(config.mongodb || process.env.CLOUDY_MONGODB, function(err, db) {
   insertUser(db, function() {
     db.close();
   });
