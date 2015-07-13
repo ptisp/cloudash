@@ -2,6 +2,7 @@
   "header": {
     "manprofile": "Profile",
     "manusers": "Users",
+    "setup": "Setup",
     "newvm": "New Virtual Machine",
     "logout": "Logout"
   },
