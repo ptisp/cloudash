@@ -66,19 +66,17 @@ window.VMDResizeView = Backbone.View.extend({
     $('#interfaces', this.el).html('');
     console.log(intf);
     for (var i = 0; i < intf.length; i++) {
-      var html = '';
-      if (i%2 === 0) {
-        html = '<section class="bg-white border-section">';
-      } else {
-        html = '<section class="bg-cristal border-section">'  ;
-      }
-      html += '<div><span>ID: '+intf[i].id+'</span></div>';
-      html += '<div><span>IP: '+intf[i].ip+'</span></div>';
-      html += '<div><span>MAC: '+intf[i].mac+'</span></div>';
-      if (intf[i].id !== '0'){
-        html += '<button type="button" data-nicid="'+intf[i].id+'" class="btn btn-lg btn-block btn-danger delinterface"> <i class="icon-delete"></i> <span data-i18n="">  Apagar</span> </button>';
-      }
-      html += '</setion>';
+      var disabled = '';
+      if (intf[0].id === '0') disabled = 'disabled';
+      var html = '<div class="col-sm-6 col-md-3 m-b-10">'+
+				'<div class="bg-black p-10">'+
+					'<p class="f-12"><span class="c-gray"><i class="icon-star"></i> ID:</span> <strong>'+intf[i].id+'</strong></p>'+
+					'<p class="f-12"><span class="c-gray"><i class="icon-ips"></i> IP:</span> <strong>'+intf[i].ip+'</strong></p>'+
+					'<p class="f-12"><span class="c-gray"><i class="icon-ram_memory"></i> MAC:</span> <strong>'+intf[i].mac+'</strong></p>'+
+				'</div>'+
+				'<button class="btn btn-block btn-sm btn-danger delinterface" data-nicid="'+intf[i].id+'" '+disabled+'><i class="icon-delete"></i> <span>Delete</span></button>'+
+			'</div>';
+
       $('#interfaces', this.el).append(html);
     }
   },
