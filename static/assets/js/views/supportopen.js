@@ -5,7 +5,6 @@ window.SupportOpenView = Backbone.View.extend({
     'click tbody tr': 'getticket'
   },
   getticket: function(evt) {
-    console.log($(evt.target).parent().attr('data-id'));
     app.navigate('/support/'+$(evt.target).parent().attr('data-id'), {
       trigger: true
     });

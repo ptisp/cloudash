@@ -12,7 +12,7 @@ window.VMAddView = Backbone.View.extend({
         'disk': parseInt($('.config.active').attr('data-hdd')),
         'vcpu': parseInt($('.config.active').attr('data-cpu')),
         'hostname': $('.hostname').val(),
-        'ip': ['']
+        'interfaces': ['']
       }
     };
     modem('POST', 'vm',
