@@ -16,18 +16,19 @@ window.HomeView = Backbone.View.extend({
     oTable.fnFilter($('#pesquisa').val());
   },
   gotovm: function(evt) {
+    var vmid = $(evt.target).parent().attr('data-id');
     if ($(evt.target).hasClass('f-18')) {
-      app.navigate('/vm/info/' + $(evt.target).parent().parent().attr('data-id') + '/summary', {
+      vmid = $(evt.target).parent().parent().attr('data-id');
+    }
+    if ($(evt.target).attr('data-owner')) {
+      vmid = $(evt.target).attr('data-id');
+    }
+    if (vmid) {
+      app.navigate('/vm/info/' + vmid + '/summary', {
         trigger: true
       });
-    } else {
-      var vmid = $(evt.target).parent().attr('data-id');
-      if (vmid) {
-        app.navigate('/vm/info/' + vmid + '/summary', {
-          trigger: true
-        });
-      }
     }
+
 
   },
   fillheaders: function(vms) {
@@ -110,7 +111,7 @@ window.HomeView = Backbone.View.extend({
           "sWidth": "25%",
           "bSortable": true,
           "mRender": function(data, type, full) {
-            var html = '<span data-owner="'+full.owner+'">'+full.owner+'</span>';
+            var html = '<span data-id="'+full._id+'"data-owner="'+full.owner+'">'+full.owner+'</span>';
             return html;
           }
         }, {

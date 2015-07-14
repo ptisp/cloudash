@@ -8,13 +8,16 @@ window.ManageUsersView = Backbone.View.extend({
     var self = this;
     var handler = function(vms) {
       var ownvm = [];
+      var host = '';
       for (var i = 0; i < vms.length; i++){
         if (vms[i].owner === id) {
           ownvm.push(vms[i]);
+          host += '<br><span>'+vms[i].details.hostname+'</span>';
         }
       }
       self.vms = ownvm;
-      $('.vmnumber').html(ownvm.length);
+      var html = ownvm.length + host;
+      $('.vmnumber').html(html);
     };
     modem('GET', 'vm',
       function(json) {
