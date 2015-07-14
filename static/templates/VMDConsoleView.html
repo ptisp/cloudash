@@ -15,35 +15,12 @@
 			<div class="col-md-12 p-0 m-t-15">
 				<div id="noVNC-control-bar" class="noVNC_status_normal">
 					<!--noVNC Mobile Device only Buttons-->
-					<div class="noVNC-buttons-left">
-						<input type="image" alt="viewport drag" src="assets/libs/novnc/images/drag.png" id="noVNC_view_drag_button" class="noVNC_status_button" title="Move/Drag Viewport">
-						<div id="noVNC_mobile_buttons">
-							<input type="image" alt="No mousebutton" src="assets/libs/novnc/images/mouse_none.png" id="noVNC_mouse_button0" class="noVNC_status_button">
-							<input type="image" alt="Left mousebutton" src="assets/libs/novnc/images/mouse_left.png" id="noVNC_mouse_button1" class="noVNC_status_button">
-							<input type="image" alt="Middle mousebutton" src="assets/libs/novnc/images/mouse_middle.png" id="noVNC_mouse_button2" class="noVNC_status_button">
-							<input type="image" alt="Right mousebutton" src="assets/libs/novnc/images/mouse_right.png" id="noVNC_mouse_button4" class="noVNC_status_button">
-							<input type="image" alt="Keyboard" src="assets/libs/novnc/images/keyboard.png" id="showKeyboard" class="noVNC_status_button" value="Keyboard" title="Show Keyboard" />
-							<!-- Note that Google Chrome on Android doesn't respect any of these,
-                     html attributes which attempt to disable text suggestions on the
-                     on-screen keyboard. Let's hope Chrome implements the ime-mode
-                     style for example -->
-							<textarea id="keyboardinput" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" mozactionhint="Enter"></textarea>
-							<div id="noVNC_extra_keys">
-								<input type="image" alt="Extra keys" src="assets/libs/novnc/images/showextrakeys.png" id="showExtraKeysButton" class="noVNC_status_button">
-								<input type="image" alt="Ctrl" src="assets/libs/novnc/images/ctrl.png" id="toggleCtrlButton" class="noVNC_status_button">
-								<input type="image" alt="Alt" src="assets/libs/novnc/images/alt.png" id="toggleAltButton" class="noVNC_status_button">
-								<input type="image" alt="Tab" src="assets/libs/novnc/images/tab.png" id="sendTabButton" class="noVNC_status_button">
-								<input type="image" alt="Esc" src="assets/libs/novnc/images/esc.png" id="sendEscButton" class="noVNC_status_button">
-							</div>
-						</div>
-					</div>
 
 					<div id="noVNC_status"></div>
 
 					<!--noVNC Buttons-->
 					<div class="noVNC-buttons-right">
 						<input type="image" alt="Ctrl+Alt+Del" src="assets/libs/novnc/images/ctrlaltdel.png" id="sendCtrlAltDelButton" class="noVNC_status_button" title="Send Ctrl-Alt-Del" />
-						<input type="image" alt="Fullscreen" src="assets/libs/novnc/images/fullscreen.png" id="fullscreenButton" class="noVNC_status_button" title="Fullscreen" />
 					</div>
 
 
@@ -51,96 +28,12 @@
 					<div id="noVNC_popup_status" class="">
 					</div>
 
-					<!-- Settings Panel -->
-					<div id="noVNC_settings" class="triangle-right top" style="display:none">
-						<span id="noVNC_settings_menu">
-							<ul>
-								<li>
-									<input id="noVNC_encrypt" type="checkbox"> Encrypt</li>
-								<li>
-									<input id="noVNC_true_color" type="checkbox" checked> True Color</li>
-								<li>
-									<input id="noVNC_cursor" type="checkbox"> Local Cursor</li>
-								<li>
-									<input id="noVNC_clip" type="checkbox"> Clip to Window</li>
-								<li>
-									<input id="noVNC_shared" type="checkbox"> Shared Mode</li>
-								<li>
-									<input id="noVNC_view_only" type="checkbox"> View Only</li>
-								<hr>
-								<li>
-									<input id="noVNC_path" type="input" value="websockify"> Path</li>
-								<li>
-									<label>
-										<select id="noVNC_resize" name="vncResize">
-											<option value="off">None</option>
-											<option value="scale">Local Scaling</option>
-											<option value="downscale">Local Downscaling</option>
-											<option value="remote">Remote Resizing</option>
-										</select> Scaling Mode</label>
-								</li>
-								<li>
-									<input id="noVNC_repeaterID" type="input" value=""> Repeater ID</li>
-								<hr>
-								<!-- Stylesheet selection dropdown -->
-								<li>
-									<label>
-										<strong>Style: </strong>
-										<select id="noVNC_stylesheet" name="vncStyle">
-											<option value="default">default</option>
-										</select>
-									</label>
-								</li>
-
-								<!-- Logging selection dropdown -->
-								<li>
-									<label>
-										<strong>Logging: </strong>
-										<select id="noVNC_logging" name="vncLogging">
-										</select>
-									</label>
-								</li>
-								<hr>
-								<li>
-									<input type="button" id="noVNC_apply" value="Apply">
-								</li>
-							</ul>
-						</span>
-					</div>
-
-					<!-- Connection Panel -->
-					<div id="noVNC_controls" class="triangle-right top" style="display:none">
-						<ul>
-							<li>
-								<label>
-									<strong>Host: </strong>
-									<input id="noVNC_host" />
-								</label>
-							</li>
-							<li>
-								<label>
-									<strong>Port: </strong>
-									<input id="noVNC_port" />
-								</label>
-							</li>
-							<li>
-								<label>
-									<strong>Password: </strong>
-									<input id="noVNC_password" type="password" />
-								</label>
-							</li>
-							<li>
-								<input id="noVNC_connect_button" type="button" value="Connect">
-							</li>
-						</ul>
-					</div>
-
 				</div>
 				<!-- End of noVNC-control-bar -->
 
 
 				<div id="noVNC_screen" style="background-color: #00">
-					<h1 id="noVNC_logo">Connecting...</h1>
+					<h1 id="noVNC_logo">Trying to connect...</h1>
 					<!-- HTML5 Canvas -->
 					<div id="noVNC_container">
 						<canvas id="noVNC_canvas" width="0" height="0">

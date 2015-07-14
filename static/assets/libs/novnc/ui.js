@@ -70,13 +70,9 @@ var UI;
       }
 
       // Settings with immediate effects
-      UI.initSetting('logging', 'warn');
-      WebUtil.init_logging(UI.getSetting('logging'));
 
-      UI.initSetting('stylesheet', 'default');
       WebUtil.selectStylesheet(null);
       // call twice to get around webkit bug
-      WebUtil.selectStylesheet(UI.getSetting('stylesheet'));
 
       // if port == 80 (or 443) then it won't be present and should be
       // set manually
@@ -123,17 +119,12 @@ var UI;
         setTimeout(function() {
           window.scrollTo(0, 1);
         }, 100);
-        UI.forceSetting('clip', true);
-      } else {
-        UI.initSetting('clip', false);
       }
 
-      UI.setViewClip();
       UI.setBarPosition();
 
       Util.addEvent(window, 'resize', function() {
         UI.onresize();
-        UI.setViewClip();
         UI.setBarPosition();
       });
 
@@ -235,29 +226,6 @@ var UI;
 
       if (size && UI.rfb_state === 'normal' && UI.rfb.get_display()) {
         var display = UI.rfb.get_display();
-        var scaleType = UI.getSetting('resize');
-        if (scaleType === 'remote') {
-          // use remote resizing
-
-          // When the local window has been resized, wait until the size remains
-          // the same for 0.5 seconds before sending the request for changing
-          // the resolution of the session
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(function() {
-            display.set_maxWidth(size.w);
-            display.set_maxHeight(size.h);
-            Util.Debug('Attempting setDesktopSize(' +
-              size.w + ', ' + size.h + ')');
-            UI.rfb.setDesktopSize(size.w, size.h);
-          }, 500);
-        } else if (scaleType === 'scale' || scaleType === 'downscale') {
-          // use local scaling
-
-          var downscaleOnly = scaleType === 'downscale';
-          var scaleRatio = display.autoscale(size.w, size.h, downscaleOnly);
-          UI.rfb.get_mouse().set_scale(scaleRatio);
-          Util.Debug('Scaling by ' + UI.rfb.get_mouse().get_scale());
-        }
       }
     },
 
@@ -362,9 +330,6 @@ var UI;
       return val;
     },
 
-    // Force a setting to be a certain value
-    forceSetting: function(name, val) {
-      UI.updateSetting(name, val);
       return val;
     },
 
@@ -408,64 +373,6 @@ var UI;
       } else {
         $D('fullscreenButton').className = "noVNC_status_button";
       }
-    },
-
-    // Toggle the settings menu:
-    //   On open, settings are refreshed from saved cookies.
-    //   On close, settings are applied
-    toggleSettingsPanel: function() {
-      // Close the description panel
-      $D('noVNC_description').style.display = "none";
-      if (UI.settingsOpen) {
-        UI.settingsApply();
-      } else {
-        UI.updateSetting('encrypt');
-        UI.updateSetting('true_color');
-        if (Util.browserSupportsCursorURIs()) {
-          UI.updateSetting('cursor');
-        } else {
-          UI.updateSetting('cursor', !UI.isTouchDevice);
-          $D('noVNC_cursor').disabled = true;
-        }
-        UI.updateSetting('clip');
-        UI.updateSetting('resize');
-        UI.updateSetting('shared');
-        UI.updateSetting('view_only');
-        UI.updateSetting('path');
-        UI.updateSetting('repeaterID');
-        UI.updateSetting('stylesheet');
-        UI.updateSetting('logging');
-      }
-    },
-
-    // Save/apply settings when 'Apply' button is pressed
-    settingsApply: function() {
-      //Util.Debug(">> settingsApply");
-      UI.saveSetting('encrypt');
-      UI.saveSetting('true_color');
-      if (Util.browserSupportsCursorURIs()) {
-        UI.saveSetting('cursor');
-      }
-
-      UI.saveSetting('resize');
-
-      if (UI.getSetting('resize') === 'downscale' || UI.getSetting('resize') === 'scale') {
-        UI.forceSetting('clip', false);
-      }
-
-      UI.saveSetting('clip');
-      UI.saveSetting('shared');
-      UI.saveSetting('view_only');
-      UI.saveSetting('path');
-      UI.saveSetting('repeaterID');
-      UI.saveSetting('stylesheet');
-      UI.saveSetting('logging');
-
-      // Settings with immediate (non-connected related) effect
-      WebUtil.selectStylesheet(UI.getSetting('stylesheet'));
-      WebUtil.init_logging(UI.getSetting('logging'));
-      UI.setViewClip();
-      //Util.Debug("<< settingsApply");
     },
 
 
@@ -556,7 +463,6 @@ var UI;
       //$D('noVNC_repeaterID').disabled = connected;
 
       if (connected) {
-        UI.setViewClip();
         UI.setMouseButton(1);
         $D('sendCtrlAltDelButton').style.display = "inline";
       } else {
@@ -611,12 +517,6 @@ var UI;
 
       if (!UI.initRFB()) return;
 
-      UI.rfb.set_encrypt(UI.getSetting('encrypt'));
-      UI.rfb.set_true_color(UI.getSetting('true_color'));
-      UI.rfb.set_local_cursor(UI.getSetting('cursor'));
-      UI.rfb.set_shared(UI.getSetting('shared'));
-      UI.rfb.set_view_only(UI.getSetting('view_only'));
-      UI.rfb.set_repeaterID(UI.getSetting('repeaterID'));
 
       UI.rfb.connect(host, port, null, path);
 
@@ -658,57 +558,7 @@ var UI;
       Util.Debug("<< UI.clipSend");
     },
 
-    // Set and configure viewport clipping
-    setViewClip: function(clip) {
-      var display;
-      if (UI.rfb) {
-        display = UI.rfb.get_display();
-      } else {
-        UI.forceSetting('clip', clip);
-        return;
-      }
 
-      var cur_clip = display.get_viewport();
-
-      if (typeof(clip) !== 'boolean') {
-        // Use current setting
-        clip = UI.getSetting('clip');
-      }
-
-      if (clip && !cur_clip) {
-        // Turn clipping on
-        UI.updateSetting('clip', true);
-      } else if (!clip && cur_clip) {
-        // Turn clipping off
-        UI.updateSetting('clip', false);
-        display.set_viewport(false);
-        // Disable max dimensions
-        display.set_maxWidth(0);
-        display.set_maxHeight(0);
-        display.viewportChangeSize();
-      }
-      if (UI.getSetting('clip')) {
-        // If clipping, update clipping settings
-        display.set_viewport(true);
-
-        var size = UI.getCanvasLimit();
-        if (size) {
-          display.set_maxWidth(size.w);
-          display.set_maxHeight(size.h);
-
-          // Hide potential scrollbars that can skew the position
-          $D('noVNC_container').style.overflow = "hidden";
-
-          // The x position marks the left margin of the canvas,
-          // remove the margin from both sides to keep it centered
-          var new_w = size.w - (2 * Util.getPosition($D('noVNC_canvas')).x);
-
-          $D('noVNC_container').style.overflow = "visible";
-
-          display.viewportChangeSize(new_w, size.h);
-        }
-      }
-    },
 
     // Handle special cases where clipping is forced on/off or locked
     enableDisableViewClip: function() {
@@ -918,7 +768,6 @@ var UI;
     },
 
     setBarPosition: function() {
-      $D('noVNC-control-bar').style.top = (window.pageYOffset) + 'px';
       $D('noVNC_mobile_buttons').style.left = (window.pageXOffset) + 'px';
 
       var vncwidth = $D('noVNC_screen').style.offsetWidth;
