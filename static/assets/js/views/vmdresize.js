@@ -17,7 +17,7 @@ window.VMDResizeView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO - Eliminação de Interface', json.error);
-      }, vmdetails
+      }
     );
   },
 
@@ -29,7 +29,7 @@ window.VMDResizeView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO - Adicção de Interface', json.error);
-      }, vmdetails
+      }
     );
   },
 
