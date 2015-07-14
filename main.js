@@ -7,7 +7,8 @@ var vendors = require('./vendors'),
   api = require('./lib/routes/index'),
   auth = require('./lib/http/auth.js'),
   logger = require('./lib/http/logger.js'),
-  admin = require('./lib/http/admin.js');
+  admin = require('./lib/http/admin.js'),
+  config = require('./config');
 
 var app = express();
 
@@ -59,7 +60,7 @@ app.delete('/api/config/logo', auth, admin, api.conf.clearLogo);
 app.post('/api/config/logo', auth, admin, api.conf.updateLogo);
 app.post('/api/config/support', auth, admin, api.conf.updateSupport);
 
-var port = process.env.PORT || 8080;
+var port = config.port || process.env.CLOUD_PORT || 8080;
 
 console.log('(SYSTEM) Cloudy Dashboard - github.com/ptisp/cloudy'.green);
 

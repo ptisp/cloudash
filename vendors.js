@@ -2,14 +2,32 @@ require('colors');
 
 var MongoClient = require('mongodb').MongoClient,
   OpenNebula = require('opennebula'),
-  config = require('./config');
-
+  config = require('./config'),
+  emailjs = require('emailjs');
 
 MongoClient.connect(config.mongodb || process.env.CLOUDY_MONGODB, function(err, db) {
   if (err) throw err;
   exports.mongo = db;
   console.log('(SYSTEM) Connected to MongoDB.'.green);
 });
+
+exports.email = function(message, destination, subject, from, callback) {
+  var email = emailjs.server.connect({
+    user: process.env.MAIL_USER,
+    password: process.env.MAIL_PASSWORD,
+    host: process.env.MAIL_HOST
+  });
+
+  email.send({
+    text: message,
+    'reply-to': from || process.env.MAIL_USER,
+    from: from || process.env.MAIL_USER,
+    to: destination || 'pedrodias@ptisp.pt',
+    subject: subject || 'API Notification!'
+  }, function(err, message) {
+    if (callback) callback(err, message);
+  });
+};
 
 
 var onehost = process.env.ONE_HOST_DEV || process.env.ONE_HOST;
