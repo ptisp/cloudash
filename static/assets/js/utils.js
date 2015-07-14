@@ -11,6 +11,12 @@ var showError = function (title, msg) {
   }, errTimer);
 };
 
+var getKeyo = function() {
+  var ls = localStorage.getItem('keyo');
+  var ss = sessionStorage.getItem('keyo');
+  return ls || ss;
+};
+
 var formatdate = function(date) {
   var mes = '' + (date.getMonth() + 1);
   if (mes.length == 1) {
@@ -75,7 +81,7 @@ var modem = function(type, url, sucess, error, data) {
     url: '/api/' + url,
     dataType: 'json',
     beforeSend: function(xhr) {
-      xhr.setRequestHeader('Authorization', 'Basic ' + sessionStorage.keyo);
+      xhr.setRequestHeader('Authorization', 'Basic ' + getKeyo());
     },
     data: data,
     success: sucess,

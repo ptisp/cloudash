@@ -20,6 +20,7 @@ window.HeaderView = Backbone.View.extend({
     });
   },
   gtlogout: function() {
+    localStorage.removeItem('keyo');
     app.navigate('/login', {
       trigger: true
     });

@@ -14,7 +14,13 @@ window.LoginView = Backbone.View.extend({
     var hash = this.createhash($('.passwordinput').val());
 
     var credential = user + ':' + hash;
-    window.sessionStorage.setItem('keyo', btoa(credential));
+
+    if ($("#rememberme").is(':checked')) {
+      localStorage.setItem('keyo', btoa(credential));
+    } else {
+      sessionStorage.setItem('keyo', btoa(credential));
+    }
+
 
     modem('POST', 'user/login',
       function(json) {
