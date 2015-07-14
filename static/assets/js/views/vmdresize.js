@@ -67,7 +67,7 @@ window.VMDResizeView = Backbone.View.extend({
     console.log(intf);
     for (var i = 0; i < intf.length; i++) {
       var disabled = '';
-      if (intf[0].id === '0') disabled = 'disabled';
+      if (intf[i].id === '0') disabled = 'disabled';
       var html = '<div class="col-sm-6 col-md-3 m-b-10">'+
 				'<div class="bg-black p-10">'+
 					'<p class="f-12"><span class="c-gray"><i class="icon-star"></i> ID:</span> <strong>'+intf[i].id+'</strong></p>'+
