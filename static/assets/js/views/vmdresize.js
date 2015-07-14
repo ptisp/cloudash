@@ -9,10 +9,12 @@ window.VMDResizeView = Backbone.View.extend({
   },
 
   delinterface: function(evt) {
+    var self = this;
     var nicid = $(evt.target).attr('data-nicid');
     modem('DELETE', 'vm/' + this.model.get('id')+'/network/'+nicid,
       function(json) {
-        console.log(json);
+        showSuccess('Sucesso!', 'Interface Adicionada');
+        self.afterinterface();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
@@ -21,10 +23,19 @@ window.VMDResizeView = Backbone.View.extend({
     );
   },
 
+  afterinterface: function() {
+    var self = this;
+    this.model.fecth(this.model.get('id'), function() {
+      self.render();
+    });
+  },
+
   addinterface: function() {
+    var self = this;
     modem('POST', 'vm/' + this.model.get('id')+'/network',
       function(json) {
-        console.log(json);
+        showSuccess('Sucesso!', 'Interface Eliminada');
+        self.afterinterface();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
@@ -41,7 +52,7 @@ window.VMDResizeView = Backbone.View.extend({
 
     modem('PUT', 'vm/' + this.model.get('id'),
       function(json) {
-        console.log('resized!!');
+        showSuccess('Sucesso!', 'Alteraçoes efectuadas');
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
