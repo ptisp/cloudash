@@ -72,7 +72,9 @@
         "wrnname": "Want to delete user?",
         "wrnemail": "Email:",
         "wrntype": "Account Type:",
-        "wrnstatus": "Account Status:"
+        "wrnstatus": "Account Status:",
+        "vmwarning": "Deleting this user will also delete his VMs",
+        "vmnumber": "VMs Number: "
       }
     },
     "edit": {

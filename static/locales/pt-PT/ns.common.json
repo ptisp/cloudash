@@ -72,7 +72,9 @@
         "wrnname": "Pertende apagar o utilizador?",
         "wrnemail": "Email:",
         "wrntype": "Tipo de conta:",
-        "wrnstatus": "Estado da conta:"
+        "wrnstatus": "Estado da conta:",
+        "vmwarning": "Apagar este utilizador irá apagar todas as suas vms",
+        "vmnumber": "Número de VMs: "
       }
     },
     "edit": {

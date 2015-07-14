@@ -72,7 +72,9 @@
         "wrnname": "¿Quieres eliminar el usuario?",
         "wrnemail": "Email:",
         "wrntype": "Tipo De Cuenta:",
-        "wrnstatus": "Estado De Cuenta:"
+        "wrnstatus": "Estado De Cuenta:",
+        "vmwarning": "Eliminar este usuario se borrarán todos sus VM",
+        "vmnumber": "Número de VMs: "
       }
     },
     "edit": {
