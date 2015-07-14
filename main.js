@@ -16,6 +16,8 @@ app.use(bodyParser());
 app.use(errorhandler());
 
 app.post('/api/user/login', auth, api.user.validateLogin);
+app.get('/api/user/:user/recover/:token', api.user.recoverUserToken);
+app.post('/api/user/:user/recover', api.user.recoverUser);
 app.post('/api/user', auth, admin, logger, api.user.createUser);
 app.put('/api/user/:user', auth, logger, api.user.updateUser);
 app.get('/api/user/listusers', auth, admin, api.user.listUsers);
