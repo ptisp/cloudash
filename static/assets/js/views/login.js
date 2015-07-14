@@ -2,18 +2,15 @@ window.LoginView = Backbone.View.extend({
   events: {
     'submit .form-login': 'logina'
   },
-  createhash: function(input) {
-    return CryptoJS.MD5(input).toString();
-  },
   logina: function() {
     var self = this;
 
     localStorage.setItem('cloudylang', $("#txt_language").val());
 
     var user = $('.usernameinput').val();
-    var hash = this.createhash($('.passwordinput').val());
+    var password = $('.passwordinput').val();
 
-    var credential = user + ':' + hash;
+    var credential = user + ':' + password;
 
     if ($("#rememberme").is(':checked')) {
       localStorage.setItem('keyo', btoa(credential));

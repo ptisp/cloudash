@@ -9,7 +9,7 @@ window.ManageNewUserView = Backbone.View.extend({
       var user = {
         'auth': {
           'username': $('.ipemail').val(),
-          'password': CryptoJS.MD5($('.iprepass').val()).toString()
+          'password': $('.iprepass').val()
         },
         'about': {
           'name': $('.ipname').val(),

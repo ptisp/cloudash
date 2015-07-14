@@ -30,7 +30,7 @@ window.ProfileSecurityView = Backbone.View.extend({
         showError('ERRO! ', 'Verifique a password');
         return;
       } else {
-        user.auth.password = CryptoJS.MD5($('.iprepass').val()).toString();
+        user.auth.password = $('.iprepass').val();
       }
     } else {
       user.auth.ssh = $('.sshkey').val();
