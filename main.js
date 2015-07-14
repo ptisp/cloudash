@@ -39,6 +39,9 @@ app.get('/api/vm/:id', auth, api.vm.vmDetails);
 app.put('/api/vm/:id', auth, logger, api.vm.vmResize);
 app.get('/api/vm', auth, api.vm.vmList);
 
+app.post('/api/vm/:id/network', auth, api.vm.interfaceAdd);
+app.delete('/api/vm/:id/network/:nid', auth, api.vm.interfaceDel);
+
 app.get('/api/image', auth, api.vm.imageList);
 app.get('/api/template', auth, api.vm.templateList);
 
