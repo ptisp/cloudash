@@ -23,6 +23,28 @@ window.VMDResizeView = Backbone.View.extend({
     );
   },
 
+  setinterfaces: function() {
+    var intf = this.model.get('interfaces');
+    $('#interfaces', this.el).html('');
+    console.log(intf);
+    for (var i = 0; i < intf.length; i++) {
+      var html = '';
+      if (i%2 === 0) {
+        html = '<section class="bg-white border-section">';
+      } else {
+        html = '<section class="bg-cristal border-section">'  ;
+      }
+      html += '<div><span>ID: '+intf[i].id+'</span></div>';
+      html += '<div><span>IP: '+intf[i].ip+'</span></div>';
+      html += '<div><span>MAC: '+intf[i].mac+'</span></div>';
+      if (intf[i].id !== '0'){
+        html += '<button type="button" class="btn btn-lg btn-block btn-danger deletevm"> <i class="icon-delete"></i> <span data-i18n="">  Apagar</span> </button>';
+      }
+      html += '</setion>';
+      $('#interfaces', this.el).append(html);
+    }
+  },
+
   setslider: function() {
     $('#sliderCPU', this.el).val(this.model.get('vcpu'));
     $('#rangeDanger', this.el).html(this.model.get('vcpu'));
@@ -31,11 +53,13 @@ window.VMDResizeView = Backbone.View.extend({
     if (this.model.get('status') !== 'stopped') {
       $('#sliderCPU', this.el).prop('disabled', true);
       $('#sliderRAM', this.el).prop('disabled', true);
+      $('#addinterface', this.el).removeClass('disabled');
       $('#resizevm', this.el).addClass('disabled');
       $('#showwarning', this.el).show();
     } else {
       $('#sliderCPU', this.el).prop('disabled', false);
       $('#sliderRAM', this.el).prop('disabled', false);
+      $('#addinterface', this.el).addClass('disabled');
       $('#resizevm', this.el).removeClass('disabled');
       $('#showwarning', this.el).hide();
     }
@@ -45,6 +69,7 @@ window.VMDResizeView = Backbone.View.extend({
     $('.vm-resize', this.el).i18n();
     $('.overme', this.el).tooltip();
     this.setslider();
+    this.setinterfaces();
 
     $('.topmenudetails li').removeClass('active');
     $('#gotoresize').parent().addClass('active');
