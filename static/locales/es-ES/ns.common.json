@@ -16,7 +16,8 @@
     "tblhead3": "Mem",
     "tblhead4": "HDD",
     "tblhead5": "Estado",
-    "tblhead6": "Usuario"
+    "tblhead6": "Usuario",
+    "subtitle": "Ver o editar la información de la máquina virtual"
   },
   "userprofile": {
     "menu": {

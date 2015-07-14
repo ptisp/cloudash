@@ -16,7 +16,8 @@
     "tblhead3": "Mem",
     "tblhead4": "HDD",
     "tblhead5": "Status",
-    "tblhead6": "Owner"
+    "tblhead6": "Owner",
+    "subtitle": "View or edit virtual machine information"
   },
   "userprofile": {
     "menu": {
