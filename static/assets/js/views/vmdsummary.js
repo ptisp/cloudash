@@ -194,13 +194,7 @@ window.VMDSummaryView = Backbone.View.extend({
     var ips = '';
     var self = this;
     var ip = this.model.get('ip');
-    for (var i = 0; i < ip.length; i++) {
-      if (i !== 0) {
-        ips += ', ';
-      }
-      ips += ip[i];
-    }
-    $('.infohostanme', this.el).html(this.model.get('hostname') + ' - ' + ips);
+    $('.infohostanme', this.el).html(this.model.get('hostname') + ' - ' + ip);
     if (this.user.get('type') === 'admin') {
       modem('GET', 'user/'+this.model.get('owner'),
         function(json) {

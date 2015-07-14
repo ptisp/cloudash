@@ -115,7 +115,19 @@ window.HomeView = Backbone.View.extend({
             return html;
           }
         }, {
-          "data": "details.ip", "sWidth": "17%"
+          "data": null,
+          "sWidth": "17%",
+          "bSortable": true,
+          "mRender": function(data, type, full) {
+            var html = '';
+            for (var i = 0; i < full.details.interfaces.length; i++) {
+              if (i !== 0){
+                html += ' - ';
+              }
+              html += full.details.interfaces[i].ip;
+            }
+            return html;
+          }
         }, {
           "data": null,
           "sWidth": "12%",
