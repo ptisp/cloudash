@@ -2,7 +2,7 @@
   "name": "cloudy",
   "version": "0.0.1",
   "homepage": "http://ptisp.pt",
-  "description": "Cloudy Panel",
+  "description": "Cloudy Dashboard",
   "dependencies": {
     "express": "4.1.x",
     "emailjs": "0.3.x",
