@@ -147,9 +147,9 @@
     "tab02": "Closed",
     "tickets": {
       "title": "Support",
-      "open_subtitle": "Open new support ticket.",
-      "closed_subtitle": "Closed tickets.",
-      "openticket": "Open Tickets",
+      "open_subtitle": "Opened tickets list",
+      "closed_subtitle": "Closed tickets list",
+      "openticket": "Tickets",
       "openth1": "Email",
       "openth2": "Subject",
       "openth3": "Last Update",
@@ -189,7 +189,7 @@
     "cancel": "Cancel",
     "send": "Send",
     "replyticket": "Reply",
-    "openticket": "Open Ticket",
+    "openticket": "New Ticket",
     "closeticket": "Close Ticket",
     "reset": "Reset",
     "continue": "Continue",
@@ -209,7 +209,7 @@
   },
   "logs": {
     "title": "Logs",
-    "subtitle": "View all actions made",
+    "subtitle": "Actions list",
     "tblhead1": "Date",
     "tblhead2": "User",
     "tblhead3": "Action"
