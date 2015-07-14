@@ -12,4 +12,9 @@ MongoClient.connect(config.mongodb || process.env.CLOUDY_MONGODB, function(err, 
 });
 
 
-exports.one = new OpenNebula(config.oneauth || process.env.ONE_CREDENTIALS_DEV || process.env.ONE_CREDENTIALS, config.onehost || process.env.ONE_HOST_DEV || process.env.ONE_HOST);
+var onehost = config.onehost || process.env.ONE_HOST_DEV || process.env.ONE_HOST;
+var oneauth = config.oneauth || process.env.ONE_CREDENTIALS_DEV || process.env.ONE_CREDENTIALS;
+
+exports.one = new OpenNebula(oneauth, onehost);
+exports.onehost = onehost.replace(':2633/RPC2', '');
+exports.oneauth = oneauth;

@@ -4,5 +4,6 @@ module.exports = {
     'cpu': 24,
     'storage': 250
   },
-  'onenetwork': 'cloud'
+  'onenetwork': 'cloud',
+  'onesunstone': 'http://192.168.2.1'
 };
