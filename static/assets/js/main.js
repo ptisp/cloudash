@@ -452,7 +452,6 @@ var Router = Backbone.Router.extend({
   },
   verifyLogin: function(loggedFunction) {
     var self = this;
-    console.log(getKeyo());
     if (!getKeyo()) {
       app.navigate('/login', {
         trigger: true

@@ -20,7 +20,7 @@ window.HomeView = Backbone.View.extend({
     if ($(evt.target).hasClass('f-18')) {
       vmid = $(evt.target).parent().parent().attr('data-id');
     }
-    if ($(evt.target).attr('data-owner')) {
+    if ($(evt.target).attr('data-id')) {
       vmid = $(evt.target).attr('data-id');
     }
     if (vmid) {
@@ -126,7 +126,8 @@ window.HomeView = Backbone.View.extend({
               }
               html += full.details.interfaces[i].ip;
             }
-            return html;
+            var ip = full.details.interfaces[0].ip;
+            return '<span data-id="'+full._id+'" title="'+html+'">'+ip+'</span>';
           }
         }, {
           "data": null,
