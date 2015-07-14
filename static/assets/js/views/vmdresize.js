@@ -11,6 +11,9 @@ window.VMDResizeView = Backbone.View.extend({
   delinterface: function(evt) {
     var self = this;
     var nicid = $(evt.target).attr('data-nicid');
+    if (!nicid) {
+      nicid = $(evt.target).parent().attr('data-nicid');
+    }
     modem('DELETE', 'vm/' + this.model.get('id')+'/network/'+nicid,
       function(json) {
         showSuccess('Sucesso!', 'Interface Eliminada');
