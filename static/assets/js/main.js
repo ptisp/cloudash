@@ -487,7 +487,7 @@ templateLoader.load(['FooterView', 'LoginView', 'HomeView', 'HeaderView', 'MenuV
   function() {
     var language = localStorage.getItem('cloudylang');
     if (language === null) {
-      language = 'pt-PT';
+      language = 'en-US';
     }
 
     window.language = language;
