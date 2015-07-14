@@ -14,7 +14,8 @@ window.VMDResizeView = Backbone.View.extend({
     modem('DELETE', 'vm/' + this.model.get('id')+'/network/'+nicid,
       function(json) {
         showSuccess('Sucesso!', 'Interface Eliminada');
-        self.afterinterface();
+        //self.afterinterface();
+        $('#nicid'+nicid).hide();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
@@ -68,7 +69,7 @@ window.VMDResizeView = Backbone.View.extend({
     for (var i = 0; i < intf.length; i++) {
       var disabled = '';
       if (intf[i].id === '0') disabled = 'disabled';
-      var html = '<div class="col-sm-6 col-md-3 m-b-10">'+
+      var html = '<div class="col-sm-6 col-md-3 m-b-10" id="nicid'+intf[i].id+'">'+
 				'<div class="bg-black p-10">'+
 					'<p class="f-12"><span class="c-gray"><i class="icon-star"></i> ID:</span> <strong>'+intf[i].id+'</strong></p>'+
 					'<p class="f-12"><span class="c-gray"><i class="icon-ips"></i> IP:</span> <strong>'+intf[i].ip+'</strong></p>'+
