@@ -5,124 +5,142 @@
 			<div class="col-md-12">
 				<h2 class="m-t-0 m-b-5"><span data-i18n="vm.add.title"></span></h2>
 				<p class="">...</p>
-				<hr>
 			</div>
 		</div>
+		<hr>
 		<div class="row">
 			<div class="col-md-12">
-			    <div class="clip-body">
-					<p class="text-left"><span data-i18n="vm.add.name"></span></p>
-					<div class="input-group">
-						<span class="input-group-addon cloudy"><i class="icon-cloud_servers"></i></span>
-						<input type="text" class="form-control cloudy hostname" placeholder="Hostname">
-					</div>
-			    </div>
+				<p class="text-left"><i class="icon-cloud_servers"></i> <span data-i18n="vm.add.name"></span></p>
+				<div class="input-group">
+					<span class="input-group-addon cloudy"><i class="icon-cloud_servers"></i></span>
+					<input type="text" class="form-control cloudy hostname" placeholder="Hostname">
+				</div>
 		    </div>
 	    </div>
+	    <hr>
+
 	    <div class="row">
 		    <div class="col-md-12">
-			    <div class="clip-body">
-					<p class="text-left"><span data-i18n="vm.add.config"></span></p>
+				<p class="text-left"><i class="icon-managed"></i> <span data-i18n="vm.add.config"></span></p>
+				<div class="btn-group plans w-100" data-toggle="buttons">
 
-					<div class="btn-group plans w-100" data-toggle="buttons">
+				    <label class="btn btn-cloudy col-sm-3 cloudy-plans config active" data-ram="1" data-hdd="10" data-cpu="1">
+				    	<input type="radio" data-ram="5">
+				    	<div class="cloudy-plans-specs">
+				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
+				    		<p class="b03"><i class="icon-ram_memory"></i> <span>1GB RAM</span></p>
+				    		<p><i class="icon-ssd"></i> 10GB SSD</p>
+				    		<p><i class="icon-cpu"></i> 1 VCPU</p>
+				    	</div>
+				    </label>
 
-					    <label class="btn btn-cloudy col-sm-3 cloudy-plans config active" data-ram="1" data-hdd="10" data-cpu="1">
-					    	<input type="radio" data-ram="5">
-					    	<div class="cloudy-plans-specs">
-					    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
-					    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
-					    		<p class="b03"><i class="icon-ram_memory"></i> <span>1GB RAM</span></p>
-					    		<p><i class="icon-ssd"></i> 10GB SSD</p>
-					    		<p><i class="icon-cpu"></i> 1 VCPU</p>
-					    	</div>
-					    </label>
+				    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="2" data-hdd="10" data-cpu="2">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
+				    		<p class="b03"><i class="icon-ram_memory"></i> <span>2GB RAM</span></p>
+				    		<p><i class="icon-ssd"></i> 10GB SSD</p>
+				    		<p><i class="icon-cpu"></i> 2 VCPU</p>
+				    	</div>
+				    </label>
 
-					    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="2" data-hdd="10" data-cpu="2">
-					    	<input type="radio">
-					    	<div class="cloudy-plans-specs">
-					    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
-					    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
-					    		<p class="b03"><i class="icon-ram_memory"></i> <span>2GB RAM</span></p>
-					    		<p><i class="icon-ssd"></i> 10GB SSD</p>
-					    		<p><i class="icon-cpu"></i> 2 VCPU</p>
-					    	</div>
-					    </label>
+				    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="4" data-hdd="10" data-cpu="4">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
+				    		<p class="b03"><i class="icon-ram_memory"></i> <span>4GB RAM</span></p>
+				    		<p><i class="icon-ssd"></i> 10GB SSD</p>
+				    		<p><i class="icon-cpu"></i> 4 VCPU</p>
+				    	</div>
+				    </label>
 
-					    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="4" data-hdd="10" data-cpu="4">
-					    	<input type="radio">
-					    	<div class="cloudy-plans-specs">
-					    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
-					    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
-					    		<p class="b03"><i class="icon-ram_memory"></i> <span>4GB RAM</span></p>
-					    		<p><i class="icon-ssd"></i> 10GB SSD</p>
-					    		<p><i class="icon-cpu"></i> 4 VCPU</p>
-					    	</div>
-					    </label>
+				    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="8" data-hdd="10" data-cpu="8">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
+				    		<p class="b03"><i class="icon-ram_memory"></i> <span>8GB RAM</span></p>
+				    		<p><i class="icon-ssd"></i> 10GB SSD</p>
+				    		<p><i class="icon-cpu"></i> 8 VCPU</p>
+				    	</div>
+				    </label>
 
-					    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="8" data-hdd="10" data-cpu="8">
-					    	<input type="radio">
-					    	<div class="cloudy-plans-specs">
-					    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
-					    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
-					    		<p class="b03"><i class="icon-ram_memory"></i> <span>8GB RAM</span></p>
-					    		<p><i class="icon-ssd"></i> 10GB SSD</p>
-					    		<p><i class="icon-cpu"></i> 8 VCPU</p>
-					    	</div>
-					    </label>
-					</div>
-			    </div>
+				    <label class="btn btn-cloudy col-sm-3 cloudy-plans config" data-ram="16" data-hdd="10" data-cpu="16">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<span class="bi-round bg-blue-cl m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-blue-cl m-b-10"><i class="icon-cloud"></i></span>
+				    		<p class="b03"><i class="icon-ram_memory"></i> <span>16GB RAM</span></p>
+				    		<p><i class="icon-ssd"></i> 10GB SSD</p>
+				    		<p><i class="icon-cpu"></i> 16 VCPU</p>
+				    	</div>
+				    </label>
+
+				    <label class="btn btn-config-vm col-sm-3 cloudy-plans config" data-ram="8" data-hdd="10" data-cpu="8">
+				    	<input type="radio">
+				    	<div class="cloudy-plans-specs">
+				    		<span class="bi-round bg-config-vm m-b-10"><i class="icon-cloud_servers"></i></span>
+				    		<span class="si-round bg-config-vm m-b-10"><i class="icon-control_painel"></i></span>
+				    		<p class="b03"><i class="icon-ram_memory"></i> <span>Config</span></p>
+				    		<p><i class="icon-ssd"></i> Config</p>
+				    		<p><i class="icon-cpu"></i> Config</p>
+				    	</div>
+				    </label>
+				</div>
 		    </div>
 	    </div>
+	    <hr>
+
 	    <div class="row">
-		    <div class="col-md-12" style="display:none">
-		    	<p class="text-left"><span>Configuration</span></p>
+		    <div class="col-md-12">
+		    	<p><i class="icon-control_painel"></i> <span>Configuration</span></p>
 		    	<div class="row">
-				    <div class="clip-body">
-						<div class="col-md-4">
-					        <div class="clip-body">
-					        	<p class="text-left">RAM GB</p>
+					<div class="col-md-4">
+				        <div class="clip-body">
+				        	<p class="text-left">RAM GB</p>
+							<div class="range range-cloudy">
+								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value">
+								<output id="rangeInfo">1</output>
+							</div>
+				        </div>
+				    </div>
+				    <div class="col-md-4">
+				        <div class="clip-body">
+				        	<p class="text-left">DISK SSD</p>
 								<div class="range range-cloudy">
-									<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value">
-									<output id="rangeInfo">1</output>
+									<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
+									<output id="rangeGold">1</output>
 								</div>
-					        </div>
-					    </div>
-					    <div class="col-md-4">
-					        <div class="clip-body">
-					        	<p class="text-left">DISK SSD</p>
-									<div class="range range-cloudy">
-										<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
-										<output id="rangeGold">1</output>
-									</div>
-					        </div>
-					    </div>
-					    <div class="col-md-4">
-					        <div class="clip-body">
-					        	<p class="text-left">CPU GB</p>
-								<div class="range range-cloudy">
-									<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
-									<output id="rangeDanger">1</output>
-								</div>
-					        </div>
-					    </div>
-					</div>
+				        </div>
+				    </div>
+				    <div class="col-md-4">
+				        <div class="clip-body">
+				        	<p class="text-left">CPU GB</p>
+							<div class="range range-cloudy">
+								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
+								<output id="rangeDanger">1</output>
+							</div>
+				        </div>
+				    </div>
 			    </div>
 		    </div>
 	    </div>
+	    <hr>
+
 	    <div class="row">
 		    <div class="col-md-12">
 			    <div class="clip-body">
-					<p class="text-left"><span data-i18n="vm.add.image"></span></p>
-
-					<div class="btn-group plans plansimg soft w-100" data-toggle="buttons">
-
-					</div>
+					<p class="text-left"><i class="icon-operating_systems"></i> <span data-i18n="vm.add.image"></span></p>
+					<div class="btn-group plans plansimg soft w-100" data-toggle="buttons"></div>
 			    </div>
 		    </div>
 	    </div>
 	    <div class="row">
 			<div class="col-md-12">
-				<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5 btncreatevm">
+				<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-xl btn-success btn-icon m-b-5 btncreatevm">
 					<span data-i18n="btns.create"></span>
 				</button>
 			</div>

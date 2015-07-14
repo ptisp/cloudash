@@ -545,11 +545,15 @@ strong {
 .bb-m{
   border-bottom: solid 1px #e3e4e5;
 }
+/*  WHITE-SPACE */
+.ws {
+  white-space: normal;
+}
 
 /* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */
 /*  1199px */
 @media(max-width: 1199px) {
-  .plans.soft p {font-size: 13px;}
+  .plans.soft p {font-size: 11px;}
 
 }
 @media(min-width: 1199px) {
@@ -562,7 +566,7 @@ strong {
   .f-18 {font-size: 16px;}
   .stat {float: left; width: 50%;}
   .plans .cloudy-plans-specs { padding: 10px 0px !important; font-size: 14px !important;}
-  .plans.soft p {font-size: 11px;}
+  .plans.soft p {font-size: 10px;}
   .config-drop-resize { display: none !important}
 }
 @media(min-width: 992px) {
@@ -582,7 +586,7 @@ strong {
   .user-drop {display: none;}
   .add-machine { min-width: 100% !important;}
   .plans .cloudy-plans {width: 25% !important;}
-  .plans.soft p {font-size: 13px;}
+  .plans.soft p {font-size: 10px;}
   .profile-usercloudy img {width: 10% !important;}
 
 
@@ -688,6 +692,7 @@ table.table.clip > tbody> tr > td {
   padding: 15px;
   font-family: 'lato';
   border-bottom: 2px solid #fff;
+  border-top: none;
 }
 table.table.clip > tbody> tr > td:last-child {
   padding: 15px;
@@ -906,6 +911,29 @@ section {
   background-color: #008798;
   border-color: #008798;
 }
+/* CLOUDY PLANS CONFIG VM */
+.bg-config-vm {
+  background-color: #88a8be!important;
+  color: #fff !important;
+}
+.btn-config-vm {
+  color: #fff;
+  border: none;
+  border-radius: 1px;
+  background-color: #88a8be;
+}
+.btn-config-vm ::hover {
+  color: #fff;
+  border: none;
+  border-radius: 1px;
+  background-color: #008798;
+}
+.btn-config-vm:hover, .btn-config-vm:focus, .btn-config.focus, .btn-config-vm:active, .btn-config-vm.active, .open > .dropdown-toggle.btn-config-vm {
+  color: #fff;
+  background-color: #008798;
+  border-color: #008798;
+}
+
 .bi-round {
   border: 3px solid #fff;
   border-radius: 50%;
@@ -935,6 +963,11 @@ section {
 .b03 {
   font-family: 'Lato', Arial, serif;
   font-weight: 700;
+}
+.p-elastix {
+  font-family: 'Lato', Arial, serif;
+  font-weight: 700;
+  font-size: 14px;
 }
 /* CLOUDY SLIDERS */
 .range.range-cloudy input[type="range"]::-webkit-slider-thumb {
