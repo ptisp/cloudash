@@ -126,7 +126,9 @@
       },
       "resources": {
         "title": "Recursos",
-        "subtitle": "..."
+        "subtitle": "...",
+        "wrntitle": "Aviso",
+        "wrnsubtitle": "Debe apagar su máquina virtual antes de modificar los recursos."
       }
     }
   },

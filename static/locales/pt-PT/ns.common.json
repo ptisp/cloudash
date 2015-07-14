@@ -126,7 +126,9 @@
       },
       "resources": {
         "title": "Configurações",
-        "subtitle": "..."
+        "subtitle": "...",
+        "wrntitle": "Atenção",
+        "wrnsubtitle": "Tem de parar a sua VM antes de modificar os recursos."
       }
     }
   },

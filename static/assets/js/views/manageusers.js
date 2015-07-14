@@ -4,13 +4,36 @@ window.ManageUsersView = Backbone.View.extend({
     'click .btn_delete': 'deleteuser',
     'click .btndelete': 'showmodal'
   },
+  getuservm: function(id) {
+    var self = this;
+    var handler = function(vms) {
+      var ownvm = [];
+      for (var i = 0; i < vms.length; i++){
+        if (vms[i].owner === id) {
+          ownvm.push(vms[i]);
+        }
+      }
+      self.vms = ownvm;
+      $('.vmnumber').html(ownvm.length);
+    };
+    modem('GET', 'vm',
+      function(json) {
+        handler(json);
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        showError('ERRO! ', json.error);
+      }
+    );
+  },
   showmodal: function(e) {
     var obj = $(e.target);
     if ($(e.target).hasClass('icon-delete')) {
       obj = $(e.target).parent();
     }
     var id = obj.attr('data-id');
-    $('.btn_delete').attr('data-id',id);
+    this.getuservm(id);
+    $('.btn_delete', this.el).attr('data-id',id);
     $('#delname', this.el).html(obj.attr('data-name'));
     $('#delemail', this.el).html(obj.attr('data-email'));
     $('#deltype', this.el).html(obj.attr('data-type'));
@@ -28,16 +51,33 @@ window.ManageUsersView = Backbone.View.extend({
     });
   },
   deleteuser: function(e) {
-    var id = $(e.target).parent().attr('data-id');
+    var self = this;
+    var id = $(e.target).attr('data-id');
+    if (!$(e.target).hasClass('btn')) {
+      id = $(e.target).parent().attr('data-id');
+    }
+
+    for (var i = 0; i < this.vms.length; i++) {
+      modem('DELETE', 'vm/'+this.vms[i]._id,
+        function(json) {
+        },
+        function(xhr, ajaxOptions, thrownError) {
+          var json = JSON.parse(xhr.responseText);
+          showError('ERRO! ', json.error);
+        }
+      );
+    }
     modem('DELETE', 'user/remove/'+id,
       function(json) {
         showSuccess('Sucesso!', 'Utilizador removido');
+        self.getusers();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         showError('ERRO! ', json.error);
       }
     );
+
   },
   fillusertable: function(users) {
     var html = '';
@@ -58,6 +98,7 @@ window.ManageUsersView = Backbone.View.extend({
     var self = this;
     modem('GET', 'user/listusers',
       function(json) {
+        $('.userstable', self.el).html('');
         self.fillusertable(json);
       },
       function(xhr, ajaxOptions, thrownError) {

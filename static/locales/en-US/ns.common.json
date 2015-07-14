@@ -126,7 +126,9 @@
       },
       "resources": {
         "title": "Setup",
-        "subtitle": "..."
+        "subtitle": "...",
+        "wrntitle": "Warning",
+        "wrnsubtitle": "VM must be stopped before modifying resources."
       }
     }
   },
