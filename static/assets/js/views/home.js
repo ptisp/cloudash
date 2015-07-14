@@ -123,6 +123,8 @@ window.HomeView = Backbone.View.extend({
             for (var i = 0; i < full.details.interfaces.length; i++) {
               if (i !== 0){
                 html += '&#013 ';
+              } else {
+                html += ' ';
               }
               html += full.details.interfaces[i].ip;
             }
