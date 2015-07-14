@@ -687,7 +687,7 @@ table.table.clip > thead > tr > th {
 table.table.clip > tbody> tr > td {
   padding: 15px;
   font-family: 'lato';
-  border-top: 1px solid #e3e4e5;
+  border-bottom: 2px solid #fff;
 }
 table.table.clip > tbody> tr > td:last-child {
   padding: 15px;
