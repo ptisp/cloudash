@@ -16,6 +16,7 @@ window.ProfileMenuView = Backbone.View.extend({
   render: function() {
     $(this.el).html(this.template());
     $('.profile-menu', this.el).i18n();
+    $('.menulateral li').removeClass('active');
     return this;
   }
 

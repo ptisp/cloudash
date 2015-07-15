@@ -74,6 +74,7 @@ window.VMAddView = Backbone.View.extend({
     $(this.el).html(this.template(this.model.toJSON()));
     $('.vm-add', this.el).i18n();
     this.getimages();
+    $('.menulateral li').removeClass('active');
     return this;
   }
 

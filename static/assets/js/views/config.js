@@ -116,6 +116,7 @@ window.ConfigView = Backbone.View.extend({
     $(this.el).html(this.template());
     $("[name='my-checkbox']", this.el).bootstrapSwitch();
     $('.config', this.el).i18n();
+    $('.menulateral li').removeClass('active');
     this.getlogo();
     return this;
 

@@ -16,6 +16,7 @@ window.ManageMenuView = Backbone.View.extend({
   render: function() {
     $(this.el).html(this.template());
     $('.managemenu', this.el).i18n();
+    $('.menulateral li').removeClass('active');
     return this;
   }
 
