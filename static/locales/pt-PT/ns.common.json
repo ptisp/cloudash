@@ -33,7 +33,8 @@
       "subtitle": "Clique em \"Guardar\" para alterar a sua password.",
       "newpass": "Nova Password",
       "reppass": "Repetir Password",
-      "sshtitle": "Adicionar Chave SSH"
+      "sshtitle": "Adicionar Chave SSH",
+      "sshsubtitle": ""
     }
   },
   "manage": {
@@ -43,6 +44,7 @@
     },
     "new": {
       "title": "Criar Novo Utilizador",
+      "subtitle": "...",
       "name": "Nome",
       "country": "País",
       "address": "Morada",
@@ -63,6 +65,7 @@
     },
     "list": {
       "title": "Lista de Utilizadores",
+      "subtitle": "...",
       "tblhead1": "Nome",
       "tblhead2": "Email",
       "tblhead3": "Tipo",
@@ -84,12 +87,17 @@
       "row1": "Dados de acesso utilizador",
       "accstatus": "Estado da Conta",
       "option1": "Activa",
-      "option2": "Suspender"
+      "option2": "Suspender",
+      "ssh": {
+        "title": "",
+        "subtitle": ""
+      }
     }
   },
   "vm": {
     "add": {
       "title": "Criar nova Máquina Virtual",
+      "subtitle": "...",
       "name": "Hostname",
       "config": "Configuração",
       "image": "Imagem"
@@ -131,7 +139,14 @@
         "title": "Configurações",
         "subtitle": "...",
         "wrntitle": "Atenção",
-        "wrnsubtitle": "Tem de parar a sua VM antes de modificar os recursos."
+        "wrnsubtitle": "Tem de parar a sua VM antes de modificar os recursos.",
+        "inttitle": "",
+        "intsubtitle": "..."
+      },
+      "options": {
+        "title": "",
+        "subtitle": "...",
+        "newowner": ""
       }
     }
   },

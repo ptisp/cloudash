@@ -33,7 +33,8 @@
       "subtitle": "Haga clic en \"Guardar \" para cambiar tu contraseña.",
       "newpass": "Nueva Contraseña",
       "reppass": "Vuelva A Escribir La Contraseña",
-      "sshtitle": "Añadir claves SSH"
+      "sshtitle": "Añadir claves SSH",
+      "sshsubtitle": ""
     }
   },
   "manage": {
@@ -43,6 +44,7 @@
     },
     "new": {
       "title": "Añadir Nuevo Usuario",
+      "subtitle": "...",
       "name": "Nombre",
       "country": "País",
       "address": "Dirección",
@@ -63,6 +65,7 @@
     },
     "list": {
       "title": "Lista de Usuarios",
+      "subtitle": "...",
       "tblhead1": "Nombre",
       "tblhead2": "Email",
       "tblhead3": "Tipo",
@@ -84,12 +87,17 @@
       "row1": "Información De La Cuenta",
       "accstatus": "Estado De Cuenta",
       "option1": "Activo",
-      "option2": "Suspendido"
+      "option2": "Suspendido",
+      "ssh": {
+        "title": "",
+        "subtitle": ""
+      }
     }
   },
   "vm": {
     "add": {
       "title": "Crear nueva máquina virtual",
+      "subtitle": "...",
       "name": "Hostname",
       "config": "Configurar",
       "image": "Imagen"
@@ -131,7 +139,14 @@
         "title": "Recursos",
         "subtitle": "...",
         "wrntitle": "Aviso",
-        "wrnsubtitle": "Debe apagar su máquina virtual antes de modificar los recursos."
+        "wrnsubtitle": "Debe apagar su máquina virtual antes de modificar los recursos.",
+        "inttitle": "",
+        "intsubtitle": "..."
+      },
+      "options": {
+        "title": "",
+        "subtitle": "...",
+        "newowner": ""
       }
     }
   },
