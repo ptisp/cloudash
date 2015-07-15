@@ -1106,6 +1106,15 @@ table.table thead .sorting_desc_disabled { background: url('../../img/cloudy/sor
   filter: alpha(opacity=40);
   opacity: .4;
 }
+.paging_simple_numbers .cont {
+  color: white;
+  background-color: #8a959b;
+  height: 30px;
+  margin: 1px;
+  padding: 2px 8px;
+  float: left;
+}
+
 ul.wysihtml5-toolbar {
   margin: 0;
   padding: 0;
