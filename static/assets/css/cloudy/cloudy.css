@@ -5,6 +5,10 @@ body {
   background-color: #f1f1f5;
   font-family: 'Lato', sans-serif, Helvetica, Arial;
 }
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 /* FONT SIZE */
 .f-22 {
   font-size: 22px;
@@ -133,7 +137,7 @@ body {
 }
 .c-white {
   color: #fff !important;
-} 
+}
 .c-gray {
   color: #bccbd3 !important;
 }
@@ -1045,21 +1049,21 @@ pre {
   display: inline-block;
   border-radius: 50%;
   width: 12px;
-  height: 12px; 
+  height: 12px;
   background-color: #66b32e;
 }
 .off-status {
   display: inline-block;
   border-radius: 50%;
   width: 12px;
-  height: 12px; 
+  height: 12px;
   background-color: #e1231d;
 }
 .pend-status {
   display: inline-block;
   border-radius: 50%;
   width: 12px;
-  height: 12px; 
+  height: 12px;
   background-color: #e2ca00;
 }
 div.dataTables_length select {
