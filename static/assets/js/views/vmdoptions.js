@@ -57,7 +57,7 @@ window.VMDOptionsView = Backbone.View.extend({
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
-    $('.vm-details', this.el).i18n();
+    $('.vm-options', this.el).i18n();
     $('.overme', this.el).tooltip();
 
     if (this.user.get('type') !== 'admin') {

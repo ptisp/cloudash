@@ -43,8 +43,8 @@
       "list": "Manage Users"
     },
     "new": {
-      "title": "Add new user",
-      "subtitle": "...",
+      "title": "New user",
+      "subtitle": "Add new user",
       "name": "Name",
       "country": "Country",
       "address": "Address",
@@ -64,8 +64,8 @@
       "emailerr": "Invalid email or already in use"
     },
     "list": {
-      "title": "Users List",
-      "subtitle": "...",
+      "title": "Users",
+      "subtitle": "User list",
       "tblhead1": "Name",
       "tblhead2": "Email",
       "tblhead3": "Type",
@@ -96,8 +96,8 @@
   },
   "vm": {
     "add": {
-      "title": "Create new Virtual Machine",
-      "subtitle": "...",
+      "title": "New Virtual Machine",
+      "subtitle": "Virtual Machine details",
       "name": "Hostname",
       "config": "Setup",
       "image": "Image"
@@ -122,7 +122,7 @@
       },
       "console": {
         "title": "Console",
-        "subtitle": "..."
+        "subtitle": "KVM/VNC console access"
       },
       "stats": {
         "title": "Statistics",
@@ -136,17 +136,17 @@
         "subtitle": "..."
       },
       "resources": {
-        "title": "Setup",
-        "subtitle": "...",
+        "title": "Resources",
+        "subtitle": "Add of remove resources",
         "wrntitle": "Warning",
         "wrnsubtitle": "VM must be stopped before modifying resources.",
-        "inttitle": "",
-        "intsubtitle": "..."
+        "inttitle": "Network interfaces",
+        "intsubtitle": "Add or remove network interfaces"
       },
       "options": {
-        "title": "",
-        "subtitle": "...",
-        "newowner": ""
+        "title": "Owner",
+        "subtitle": "Alter VM ownership",
+        "newowner": "New owner"
       }
     }
   },
@@ -211,10 +211,10 @@
     "edit": "Edit"
   },
   "config": {
-    "title": "General Setup",
-    "subtitle": "Manage support and logo",
+    "title": "Setup",
+    "subtitle": "Global options",
     "infologo": "Logo size: 190x80px",
-    "infosupport": "Support enable or disable?"
+    "infosupport": "Support system"
   },
   "dropdown": {
     "ten": "Show 10",
