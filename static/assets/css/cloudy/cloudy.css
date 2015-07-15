@@ -5,10 +5,7 @@ body {
   background-color: #f1f1f5;
   font-family: 'Lato', sans-serif, Helvetica, Arial;
 }
-hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
 /* FONT SIZE */
 .f-22 {
   font-size: 22px;
