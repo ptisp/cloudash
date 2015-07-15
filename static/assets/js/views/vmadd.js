@@ -1,9 +1,16 @@
 window.VMAddView = Backbone.View.extend({
   events: {
-    'click .btncreatevm': 'createvm'
+    'click .btncreatevm': 'createvm',
+    'click .config': 'hideslider',
+    'click .manual': 'displayslider'
+  },
+  hideslider: function() {
+    $('.rsliders').hide();
+  },
+  displayslider: function() {
+    $('.rsliders').show();
   },
   createvm: function() {
-
     var vmdetails = {
       'details': {
         'status': 'pending',
@@ -26,6 +33,17 @@ window.VMAddView = Backbone.View.extend({
         var json = JSON.parse(xhr.responseText);
         showError('ERRO - Criação de VM', json.error);
       }, vmdetails
+    );
+  },
+  setslider: function() {
+    var self = this;
+    modem('GET', 'config/resources',
+      function(json) {
+        $('#newram', self.el).attr('max',parseInt(json.memory)/1024*2);
+        $('#newdisk', self.el).attr('max',parseInt(json.storage));
+        $('#newvcpu', self.el).attr('max',parseInt(json.cpu));
+      },
+      function(xhr, ajaxOptions, thrownError) {}
     );
   },
   getimages: function() {
@@ -74,6 +92,7 @@ window.VMAddView = Backbone.View.extend({
     $(this.el).html(this.template(this.model.toJSON()));
     $('.vm-add', this.el).i18n();
     this.getimages();
+    this.setslider();
     $('.menulateral li').removeClass('active');
     return this;
   }

@@ -79,7 +79,7 @@
 				    	</div>
 				    </label>
 
-				    <label class="btn btn-config-vm col-sm-3 cloudy-plans config" data-ram="8" data-hdd="10" data-cpu="8">
+				    <label class="btn btn-config-vm col-sm-3 cloudy-plans manual" data-ram="8" data-hdd="10" data-cpu="8">
 				    	<input type="radio">
 				    	<div class="cloudy-plans-specs">
 				    		<span class="bi-round bg-config-vm m-b-10"><i class="icon-cloud_servers"></i></span>
@@ -92,9 +92,9 @@
 				</div>
 		    </div>
 	    </div>
-	    <hr>
+			<hr class="rsliders" style="display:none">
 
-	    <div class="row">
+	    <div class="row rsliders" style="display:none">
 		    <div class="col-md-12">
 		    	<p><i class="icon-control_painel"></i> <span>Configuration</span></p>
 		    	<div class="row">
@@ -102,11 +102,11 @@
 				        <div class="clip-body">
 				        	<p>
 				        		<span class="m-r-10">RAM GB</span>
-				        		<span class="btn btn-xs btn-cloudy"><i class="icon-marker_less"></i></span>
-				        		<span class="btn btn-sm btn-cloudy"><i class="icon-marker_add"></i></span>
+				        		<span class="btn btn-xs btn-cloudy" onclick="newram.stepDown();rangeInfo.value=newram.value/2"><i class="icon-less"></i></span>
+				        		<span class="btn btn-sm btn-cloudy" onclick="newram.stepUp();rangeInfo.value=newram.value/2"><i class="icon-add"></i></span>
 				        	</p>
 							<div class="range range-cloudy">
-								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value">
+								<input id="newram" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeInfo.value=value/2">
 								<output id="rangeInfo">1</output>
 							</div>
 				        </div>
@@ -119,7 +119,7 @@
 				        		<span class="btn btn-sm btn-cloudy"><i class="icon-marker_add"></i></span>
 				        	</p>
 							<div class="range range-cloudy">
-								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
+								<input id="newdisk" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeGold.value=value">
 								<output id="rangeGold">1</output>
 							</div>
 				        </div>
@@ -127,12 +127,12 @@
 				    <div class="col-md-4">
 				        <div class="clip-body">
 				        	<p>
-				        		<span class="m-r-10">CPU GB</span>
+				        		<span class="m-r-10">vCPU</span>
 				        		<span class="btn btn-xs btn-cloudy"><i class="icon-marker_less"></i></span>
 				        		<span class="btn btn-sm btn-cloudy"><i class="icon-marker_add"></i></span>
 				        	</p>
 							<div class="range range-cloudy">
-								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
+								<input id="newvcpu" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeDanger.value=value">
 								<output id="rangeDanger">1</output>
 							</div>
 				        </div>
