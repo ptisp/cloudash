@@ -4,6 +4,9 @@
   setuser: function(user, after_fetch) {
     var self = this;
     self.set('id', user._id);
+    if (user.auth.ssh){
+      self.set('ssh', user.auth.ssh);
+    }
     self.set('username', user.auth.username);
     self.set('gravatar', CryptoJS.MD5(user.auth.username).toString());
     self.set('name', user.about.name);

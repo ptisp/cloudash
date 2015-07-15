@@ -46,6 +46,10 @@ window.ProfileSecurityView = Backbone.View.extend({
     $(this.el).html(this.template(this.model.toJSON()));
     $('.profile-security', this.el).i18n();
 
+    if (this.model.get('ssh')) {
+      $('.sshkey', this.el).val(this.model.get('ssh'));
+    }
+
     $('.profilemenu li').removeClass('active');
     $('#profilesecurity').parent().addClass('active');
 
