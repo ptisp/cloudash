@@ -128,7 +128,11 @@ window.HomeView = Backbone.View.extend({
               }
               html += full.details.interfaces[i].ip;
             }
-            var ip = full.details.interfaces[0].ip;
+            
+            var ip = '';
+            if(full.details.interfaces.length > 0) {
+              ip = full.details.interfaces[0].ip;
+            }
             return '<span data-id="'+full._id+'" title="'+html+'">'+ip+'</span>';
           }
         }, {
