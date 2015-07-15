@@ -52,7 +52,7 @@ window.VMAddView = Backbone.View.extend({
           if (i === 0) {
             active = 'active';
           }
-          var html = '<label class="btn btn-default col-sm-3 cloudy-plans img '+active+'" data-img="'+json.templates[i].id+'">'+
+          var html = '<label class="btn btn-default col-sm-2 cloudy-plans img '+active+'" data-img="'+json.templates[i].id+'">'+
           '<input type="radio">'+
           '<div class="cloudy-plans-specs">'+
             '<img src="'+ img +'" class="soft-img m-b-10 img-responsive">'+
