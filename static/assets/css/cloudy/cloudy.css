@@ -886,7 +886,7 @@ table.table.clip th {
   border-radius: 1px;
 }
 .btn-xs, .btn-group-xs > .btn {
-  padding: 0px 10px;
+  padding: 5px 7px;
   font-size: 13px !important;
   line-height: 1.5;
   border-radius: 1px;

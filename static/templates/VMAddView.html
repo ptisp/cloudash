@@ -100,7 +100,11 @@
 		    	<div class="row">
 					<div class="col-md-4">
 				        <div class="clip-body">
-				        	<p class="text-left">RAM GB</p>
+				        	<p>
+				        		<span class="m-r-10">RAM GB</span>
+				        		<span class="btn btn-xs btn-cloudy"><i class="icon-marker_less"></i></span>
+				        		<span class="btn btn-sm btn-cloudy"><i class="icon-marker_add"></i></span>
+				        	</p>
 							<div class="range range-cloudy">
 								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value">
 								<output id="rangeInfo">1</output>
@@ -109,16 +113,24 @@
 				    </div>
 				    <div class="col-md-4">
 				        <div class="clip-body">
-				        	<p class="text-left">DISK SSD</p>
-								<div class="range range-cloudy">
-									<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
-									<output id="rangeGold">1</output>
-								</div>
+				        	<p>
+				        		<span class="m-r-10">DISK SSD</span>
+				        		<span class="btn btn-xs btn-cloudy"><i class="icon-marker_less"></i></span>
+				        		<span class="btn btn-sm btn-cloudy"><i class="icon-marker_add"></i></span>
+				        	</p>
+							<div class="range range-cloudy">
+								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
+								<output id="rangeGold">1</output>
+							</div>
 				        </div>
 				    </div>
 				    <div class="col-md-4">
 				        <div class="clip-body">
-				        	<p class="text-left">CPU GB</p>
+				        	<p>
+				        		<span class="m-r-10">CPU GB</span>
+				        		<span class="btn btn-xs btn-cloudy"><i class="icon-marker_less"></i></span>
+				        		<span class="btn btn-sm btn-cloudy"><i class="icon-marker_add"></i></span>
+				        	</p>
 							<div class="range range-cloudy">
 								<input class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
 								<output id="rangeDanger">1</output>
