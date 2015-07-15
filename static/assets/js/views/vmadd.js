@@ -11,17 +11,37 @@ window.VMAddView = Backbone.View.extend({
     $('.rsliders').show();
   },
   createvm: function() {
-    var vmdetails = {
-      'details': {
-        'status': 'pending',
-        'template': $('.img.active').attr('data-img'),
-        'ram': parseInt($('.config.active').attr('data-ram')*1024),
-        'disk': parseInt($('.config.active').attr('data-hdd')),
-        'vcpu': parseInt($('.config.active').attr('data-cpu')),
-        'hostname': $('.hostname').val(),
-        'interfaces': ['']
-      }
-    };
+    if ($('.hostname').val().trim() === '') {
+      showError('ERRO!', 'Hostname Inválido');
+      return;
+    }
+    var vmdetails = {};
+    if ($('.manual').hasClass('active')) {
+      vmdetails = {
+        'details': {
+          'status': 'pending',
+          'template': $('.img.active').attr('data-img'),
+          'ram': parseInt($('#newram').val()/2*1024),
+          'disk': parseInt($('#newdisk').val()),
+          'vcpu': parseInt($('#newvcpu').val()),
+          'hostname': $('.hostname').val(),
+          'interfaces': ['']
+        }
+      };
+    } else {
+      vmdetails = {
+        'details': {
+          'status': 'pending',
+          'template': $('.img.active').attr('data-img'),
+          'ram': parseInt($('.config.active').attr('data-ram')*1024),
+          'disk': parseInt($('.config.active').attr('data-hdd')),
+          'vcpu': parseInt($('.config.active').attr('data-cpu')),
+          'hostname': $('.hostname').val(),
+          'interfaces': ['']
+        }
+      };
+    }
+    console.log(vmdetails);
     modem('POST', 'vm',
       function(json) {
         showSuccess('Sucesso!', 'VM Adicionada');
@@ -40,6 +60,7 @@ window.VMAddView = Backbone.View.extend({
     modem('GET', 'config/resources',
       function(json) {
         $('#newram', self.el).attr('max',parseInt(json.memory)/1024*2);
+        $('#rangeInfo').val('0.5');
         $('#newdisk', self.el).attr('max',parseInt(json.storage));
         $('#newvcpu', self.el).attr('max',parseInt(json.cpu));
       },
