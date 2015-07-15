@@ -17,12 +17,16 @@ window.VMDResizeView = Backbone.View.extend({
     modem('DELETE', 'vm/' + this.model.get('id')+'/network/'+nicid,
       function(json) {
         showSuccess('Sucesso!', 'Interface Eliminada');
-        //self.afterinterface();
+        var sttl = ['Success!','Sucesso!','Éxito!'];
+        var smsg = ['Interface removed', 'Interface removida', 'Interface se eliminó'];
+        showSuccess(sttl[getlang()], smsg[getlang()]);
         $('#nicid'+nicid).hide();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - Eliminação de Interface', json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to remove interface', 'Falha ao remover interface', 'Error al eliminar la interface'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }
     );
   },
@@ -38,12 +42,16 @@ window.VMDResizeView = Backbone.View.extend({
     var self = this;
     modem('POST', 'vm/' + this.model.get('id')+'/network',
       function(json) {
-        showSuccess('Sucesso!', 'Interface Adicionada');
+        var sttl = ['Success!','Sucesso!','Éxito!'];
+        var smsg = ['Interface added', 'Interface adicionada', 'Interface se ha añadido'];
+        showSuccess(sttl[getlang()], smsg[getlang()]);
         self.afterinterface();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - Adicção de Interface', json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to add interface', 'Falha ao adicionar interface', 'Error al agregar interface'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }
     );
   },
@@ -53,14 +61,17 @@ window.VMDResizeView = Backbone.View.extend({
       'cpu': $('#sliderCPU').val(),
       'ram': parseInt($('#sliderRAM').val() / 2 * 1024)
     };
-
     modem('PUT', 'vm/' + this.model.get('id'),
       function(json) {
-        showSuccess('Sucesso!', 'Alteraçoes efectuadas');
+        var sttl = ['Success!','Sucesso!','Éxito!'];
+        var smsg = ['VM resized', 'VM modificada', 'VM modificada'];
+        showSuccess(sttl[getlang()], smsg[getlang()]);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - Alteração de VM', json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to resize VM', 'Falha ao modificar VM', 'No se ha podido modificar VM'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }, vmdetails
     );
   },

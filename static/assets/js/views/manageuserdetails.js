@@ -29,11 +29,15 @@ window.ManageUserDetailsView = Backbone.View.extend({
     };
     modem('PUT', 'user/'+this.id,
       function(json) {
-        showSuccess('Sucesso!', 'Utilizador Modificado');
+        var sttl = ['Success!','Sucesso!','Éxito!'];
+        var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
+        showSuccess(sttl[getlang()], smsg[getlang()]);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO! ', json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to update user', 'Falha ao atualizar utilizador', 'Error al actualizar el usuario'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }, user
     );
   },

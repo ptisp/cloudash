@@ -18,7 +18,6 @@ window.VMDConsoleView = Backbone.View.extend({
     return this;
   },
   getconsole: function() {
-    //refactor these crappy tabs to multiple views and then move this to right place
     var self = this;
     this.loop = setTimeout(function() {
       UI.load();
@@ -32,7 +31,9 @@ window.VMDConsoleView = Backbone.View.extend({
         },
         function(xhr, ajaxOptions, thrownError) {
           var json = JSON.parse(xhr.responseText);
-          showError('ERRO - ' + title, json.error);
+          var ettl = ['Error!','Erro!','Error!'];
+          var emsg = ['Failed to get console settings', 'Falha ao carregar definições da consola', 'Error al cargar configuración de la consola'];
+          showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
         }
       );
     }, 500);

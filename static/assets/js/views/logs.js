@@ -43,7 +43,9 @@ window.LogsView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO! ', json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to get logs', 'Falha ao obter registos', 'No se pudo obtener registros'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }
     );
   },
@@ -51,9 +53,7 @@ window.LogsView = Backbone.View.extend({
     $(this.el).html(this.template());
     $('.logs', this.el).i18n();
     $('.logstable', this.el).html('');
-
     this.getLogs();
-
     $('.menulateral li').removeClass('active');
     $('.gotologs').addClass('active');
     return this;

@@ -12,7 +12,9 @@ window.VMAddView = Backbone.View.extend({
   },
   createvm: function() {
     if ($('.hostname').val().trim() === '') {
-      showError('ERRO!', 'Hostname Inválido');
+      var ettl = ['Error!','Erro!','Error!'];
+      var emsg = ['Invalid/Blank Hostname', 'Hostname inválido/vazio', 'Hostname no válido/vacío'];
+      showError(ettl[getlang()], emsg[getlang()]);
       return;
     }
     var vmdetails = {};
@@ -44,14 +46,18 @@ window.VMAddView = Backbone.View.extend({
     console.log(vmdetails);
     modem('POST', 'vm',
       function(json) {
-        showSuccess('Sucesso!', 'VM Adicionada');
+        var sttl = ['Success!','Sucesso!','Éxito!'];
+        var smsg = ['VM crated', 'VM criada', 'VM creada'];
+        showSuccess(sttl[getlang()], smsg[getlang()]);
         app.navigate('/vm/info/'+json.id, {
           trigger: true
         });
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - Criação de VM', json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to create VM', 'Falha ao criar VM', 'Error al crear VM'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }, vmdetails
     );
   },
@@ -105,7 +111,9 @@ window.VMAddView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - Carregar Imagens', json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to fetch images', 'Falha ao carregar imagens', 'Error al cargar imágenes'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }
     );
   },

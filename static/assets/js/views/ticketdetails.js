@@ -7,14 +7,18 @@ window.TicketDetailsView = Backbone.View.extend({
   closeticket: function() {
     modem('DELETE', 'support/'+this.model.get('id'),
       function(json) {
-        showSuccess('SUCESSO', 'Ticket Fechado');
+        var sttl = ['Success!','Sucesso!','Éxito!'];
+        var smsg = ['Ticket closed', 'Ticket fechado', 'Ticket cerrado'];
+        showSuccess(sttl[getlang()], smsg[getlang()]);
         app.navigate('/support/closed', {
           trigger: true
         });
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - Abertura de Ticket', json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to close ticket', 'Falha ao fechar ticket', 'Error al cerrar ticket'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }
     );
   },
@@ -26,7 +30,9 @@ window.TicketDetailsView = Backbone.View.extend({
     };
     modem('POST', 'support/'+this.model.get('id'),
       function(json) {
-        showSuccess('SUCESSO', 'Resposta Enviada');
+        var sttl = ['Success!','Sucesso!','Éxito!'];
+        var smsg = ['Reply sent', 'Resposta enviada', 'Respuesta enviada'];
+        showSuccess(sttl[getlang()], smsg[getlang()]);
         self.t = self.model;
         self.t.fetch(self.model.get('id'), function() {
           self.render();
@@ -34,7 +40,9 @@ window.TicketDetailsView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - Abertura de Ticket', json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to reply ticket', 'Falha ao responder ticket', 'Error al responder ticket'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }, reply
     );
   },

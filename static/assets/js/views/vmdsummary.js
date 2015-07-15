@@ -54,44 +54,36 @@ window.VMDSummaryView = Backbone.View.extend({
     switch (option) {
       case 'start':
         uri = 'vm/' + this.model.get('id') + '/start';
-        title = 'Iniciar';
-        msg = 'VM ' + this.model.get('hostname') + ' Iniciada';
         break;
       case 'pause':
         uri = 'vm/' + this.model.get('id') + '/pause';
-        title = 'Pause';
-        msg = 'VM ' + this.model.get('hostname') + ' Pausada';
         break;
       case 'stop':
         uri = 'vm/' + this.model.get('id') + '/stop';
-        title = 'Parar';
-        msg = 'VM ' + this.model.get('hostname') + ' Desligada';
         break;
       case 'hstop':
         uri = 'vm/' + this.model.get('id') + '/stop/true';
-        title = 'Parar Forçado';
-        msg = 'VM ' + this.model.get('hostname') + ' Desligada';
         break;
       case 'reboot':
         uri = 'vm/' + this.model.get('id') + '/restart';
-        title = 'Reboot';
-        msg = 'VM ' + this.model.get('hostname') + ' Reboot';
         break;
       case 'hreboot':
         uri = 'vm/' + this.model.get('id') + '/restart/true';
-        title = 'Reboot Forçado';
-        msg = 'VM ' + this.model.get('hostname') + ' Reboot';
         break;
     }
 
     modem('POST', uri,
       function(json) {
-        showInfo(title, msg);
+        var ittl = ['Success!','Sucesso!','Éxito!'];
+        var imsg = ['', '', ''];
+        showInfo(sttl[getlang()], smsg[getlang()]);
         self.refreshState();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - ' + title, json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Action Failed', 'Acção Falhou', 'Acción Error'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }
     );
 

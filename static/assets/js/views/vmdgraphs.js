@@ -34,7 +34,9 @@ window.VMDGraphsView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - ' + title, json.error);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to load graphs', 'Falha ao carregar os gráficos', 'Error al cargar los gráficos'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }
     );
   },

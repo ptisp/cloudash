@@ -17,6 +17,17 @@ var getKeyo = function() {
   return ls || ss;
 };
 
+var getlang = function() {
+  var language = localStorage.getItem('cloudylang');
+  if (language === 'en-US') {
+    return 0;
+  } else if (language === 'pt-PT') {
+    return 1;
+  } else {
+    return 2;
+  }
+};
+
 var formatdate = function(date) {
   var mes = '' + (date.getMonth() + 1);
   if (mes.length == 1) {

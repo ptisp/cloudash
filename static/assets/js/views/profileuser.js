@@ -19,14 +19,17 @@ window.ProfileUserView = Backbone.View.extend({
     modem('PUT', 'user/'+this.model.get('id'),
       function(json) {
         window.profile.fetch(null, function(){
-          showInfo('Sucesso!', 'Informação Actualizada');
+          var sttl = ['Success!','Sucesso!','Éxito!'];
+          var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
+          showSuccess(sttl[getlang()], smsg[getlang()]);
         });
         console.log(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO! ', json.error);
-        console.log(json);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to update user', 'Falha ao atualizar utilizador', 'Error al actualizar el usuario'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
       }, user);
   },
   getuserinfo: function() {

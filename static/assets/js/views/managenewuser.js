@@ -32,15 +32,21 @@ window.ManageNewUserView = Backbone.View.extend({
       };
       modem('POST', 'user',
         function(json) {
-          showInfo('Sucesso!', 'Utilizador Adicionado');
+          var sttl = ['Success!','Sucesso!','Éxito!'];
+          var smsg = ['User created', 'Utilizador criado', 'Usuario creado'];
+          showSuccess(sttl[getlang()], smsg[getlang()]);
         },
         function(xhr, ajaxOptions, thrownError) {
           var json = JSON.parse(xhr.responseText);
-          showError('ERRO! ', json.error);
+          var ettl = ['Error!','Erro!','Error!'];
+          var emsg = ['Failed to add user', 'Falha ao adicionar utilizador', 'Error al agregar el usuario'];
+          showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
         }, user
       );
     } else {
-      showWarning('Aviso!', 'Pls check email and/or password');
+      var wttl = ['Warning!','Aviso!','Advertencia!'];
+      var wmsg = ['Please check your email and/or password', 'Por favor, verifique seu e-mail e/ou password', 'Por favor, consultar su correo electrónico y / o contraseña'];
+      showWarning(wttl[getlang()], wmsg[getlang()]);
     }
   },
   availablemail: function() {

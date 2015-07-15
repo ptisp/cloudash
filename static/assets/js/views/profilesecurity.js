@@ -3,31 +3,14 @@ window.ProfileSecurityView = Backbone.View.extend({
     'click .update': 'updatepwd',
   },
   updatepwd: function(evt) {
-
     var user = {
-      'auth': {},
-      'about': {
-        'name': this.model.get('name'),
-        'phone': this.model.get('phone'),
-        'nif': this.model.get('nif')
-      },
-      'address': {
-        'street': this.model.get('street'),
-        'city': this.model.get('city'),
-        'country': this.model.get('country'),
-        'zip': this.model.get('zip')
-      },
-      'maxresources': {
-        'memory': this.model.get('memory'),
-        'storage': this.model.get('storage'),
-        'cpu': this.model.get('cpu')
-      },
-      'type': this.model.get('type'),
-      'status': this.model.get('status')
+      'auth': {}
     };
     if ($(evt.target).attr('data-action') === 'pwd') {
       if (! this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {
-        showError('ERRO! ', 'Verifique a password');
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Please check your password', 'Por favor, verifique a sua password', 'Por favor, consultar su contraseña'];
+        showError(ettl[getlang()], emsg[getlang()]);
         return;
       } else {
         user.auth.password = $('.iprepass').val();
@@ -37,10 +20,15 @@ window.ProfileSecurityView = Backbone.View.extend({
     }
     modem('PUT', 'user/'+this.model.get('id'),
       function(json) {
-        showSuccess('Sucesso!', 'Utilizador Modificado');
+        var sttl = ['Success!','Sucesso!','Éxito!'];
+        var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
+        showSuccess(sttl[getlang()], smsg[getlang()]);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
+        var ettl = ['Error!','Erro!','Error!'];
+        var emsg = ['Failed to update user', 'Falha ao atualizar utilizador', 'Error al actualizar el usuario'];
+        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
         showError('ERRO! ', json.error);
       }, user
     );
