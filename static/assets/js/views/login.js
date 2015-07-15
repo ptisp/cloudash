@@ -1,7 +1,21 @@
 window.LoginView = Backbone.View.extend({
   events: {
-    'submit .form-login': 'logina'
+    'submit .form-login': 'logina',
+    'click .recoverpass': 'recoverpass'
   },
+  recoverpass: function() {
+    //user/:user/recover
+    modem('POST', 'user/'+$('#emailfp').val()+'/recover',
+      function(json) {
+        alert('Email was sent with recovery instructions');
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json);
+      }
+    );
+  },
+
   logina: function() {
     var self = this;
 
