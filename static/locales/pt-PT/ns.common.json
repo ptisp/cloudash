@@ -43,8 +43,8 @@
       "list": "Gerir Utilizadores"
     },
     "new": {
-      "title": "Criar Novo Utilizador",
-      "subtitle": "...",
+      "title": "Novo Utilizador",
+      "subtitle": "Criar um novo utilizador",
       "name": "Nome",
       "country": "País",
       "address": "Morada",
@@ -64,8 +64,8 @@
       "emailerr": "Email invalido ou já utilizado"
     },
     "list": {
-      "title": "Lista de Utilizadores",
-      "subtitle": "...",
+      "title": "Utilizadores",
+      "subtitle": "Lista de utilizadores",
       "tblhead1": "Nome",
       "tblhead2": "Email",
       "tblhead3": "Tipo",
@@ -97,7 +97,7 @@
   "vm": {
     "add": {
       "title": "Criar nova Máquina Virtual",
-      "subtitle": "...",
+      "subtitle": "Detalhes da nova Máquina Virtual",
       "name": "Hostname",
       "config": "Configuração",
       "image": "Imagem"
@@ -122,7 +122,7 @@
       },
       "console": {
         "title": "Consola",
-        "subtitle": "..."
+        "subtitle": "acceso a la consola KVM/VNC"
       },
       "stats": {
         "title": "Estatisticas",
@@ -136,17 +136,17 @@
         "subtitle": "..."
       },
       "resources": {
-        "title": "Configurações",
-        "subtitle": "...",
+        "title": "Recursos",
+        "subtitle": "Adicionar ou remover recursos",
         "wrntitle": "Atenção",
         "wrnsubtitle": "Tem de parar a sua VM antes de modificar os recursos.",
-        "inttitle": "",
-        "intsubtitle": "..."
+        "inttitle": "Adaptadores de Rede",
+        "intsubtitle": "Adicionar ou remover adaptadores de rede"
       },
       "options": {
-        "title": "",
-        "subtitle": "...",
-        "newowner": ""
+        "title": "Dono da Vm",
+        "subtitle": "Alterar o dono da VM",
+        "newowner": "Novo dono"
       }
     }
   },

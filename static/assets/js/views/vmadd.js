@@ -42,7 +42,6 @@ window.VMAddView = Backbone.View.extend({
         }
       };
     }
-    console.log(vmdetails);
     modem('POST', 'vm',
       function(json) {
         var smsg = ['VM crated', 'VM criada', 'VM creada'];

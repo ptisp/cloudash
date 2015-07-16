@@ -43,8 +43,8 @@
       "list": "Administrar Usuarios"
     },
     "new": {
-      "title": "Añadir Nuevo Usuario",
-      "subtitle": "...",
+      "title": "Nuevo Usuario",
+      "subtitle": "Añadir Nuevo Usuario",
       "name": "Nombre",
       "country": "País",
       "address": "Dirección",
@@ -64,8 +64,8 @@
       "emailerr": "Email no es válida o ya en uso"
     },
     "list": {
-      "title": "Lista de Usuarios",
-      "subtitle": "...",
+      "title": "Usuarios",
+      "subtitle": "Lista de Usuarios",
       "tblhead1": "Nombre",
       "tblhead2": "Email",
       "tblhead3": "Tipo",
@@ -97,7 +97,7 @@
   "vm": {
     "add": {
       "title": "Crear nueva máquina virtual",
-      "subtitle": "...",
+      "subtitle": "Los detalles de la nueva máquina virtual",
       "name": "Hostname",
       "config": "Configurar",
       "image": "Imagen"
@@ -137,16 +137,16 @@
       },
       "resources": {
         "title": "Recursos",
-        "subtitle": "...",
+        "subtitle": "Agregar o quitar recursos",
         "wrntitle": "Aviso",
         "wrnsubtitle": "Debe apagar su máquina virtual antes de modificar los recursos.",
-        "inttitle": "",
-        "intsubtitle": "..."
+        "inttitle": "Adaptadores de red",
+        "intsubtitle": "Agregar o quitar adaptadores de red"
       },
       "options": {
-        "title": "",
-        "subtitle": "...",
-        "newowner": ""
+        "title": "Propietario de Vm",
+        "subtitle": "Cambie el propietario de la máquina virtual",
+        "newowner": "Nuevo propietario"
       }
     }
   },
