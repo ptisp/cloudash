@@ -81,9 +81,8 @@ window.VMDSummaryView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Action Failed', 'Acção Falhou', 'Acción Error'];
-        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()]+'<br>'+json.error);
       }
     );
 
@@ -99,7 +98,8 @@ window.VMDSummaryView = Backbone.View.extend({
   deletevm: function() {
     modem('DELETE', 'vm/' + this.model.get('id'),
       function(json) {
-        showSuccess('SUCESSO', 'VM Apagada');
+        var smsg = ['VM deleted', 'VM apagada', 'VM apagada'];
+        showSuccess(smsg[getlang()]);
         $('#modal_confirm_delete').modal('hide');
         app.navigate('home', {
           trigger: true
@@ -107,7 +107,8 @@ window.VMDSummaryView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO - Criação de VM', json.error);
+        var emsg = ['Failed to delete VM', 'Falha ao eliminar VM', 'Error al eliminar VM'];
+        showError(emsg[getlang()]+'<br>'+json.error);
       }
     );
   },

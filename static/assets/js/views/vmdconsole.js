@@ -31,9 +31,8 @@ window.VMDConsoleView = Backbone.View.extend({
         },
         function(xhr, ajaxOptions, thrownError) {
           var json = JSON.parse(xhr.responseText);
-          var ettl = ['Error!','Erro!','Error!'];
           var emsg = ['Failed to get console settings', 'Falha ao carregar definições da consola', 'Error al cargar configuración de la consola'];
-          showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
+          showError(emsg[getlang()]+'<br>'+json.error);
         }
       );
     }, 500);

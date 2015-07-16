@@ -12,18 +12,16 @@ window.VMDOptionsView = Backbone.View.extend({
     };
     modem('PUT', 'vm/' + this.model.get('id') + '/owner',
       function(json) {
-        var sttl = ['Success!','Sucesso!','Éxito!'];
         var smsg = ['Owner updated', 'Informação actualizada', 'Información actualizada'];
-        showSuccess(sttl[getlang()], smsg[getlang()]);
+        showSuccess(smsg[getlang()]);
         app.navigate('/vm/info/' + self.model.get('id') + '/summary', {
           trigger: true
         });
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Failed to change owner', 'Falha ao actualizar informação', 'Error al actualizar la información'];
-        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()]+'<br>'+json.error);
       }, data
     );
   },
@@ -49,9 +47,8 @@ window.VMDOptionsView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Failed to load users', 'Falha ao carregar utilizadores', 'Error al cargar los usuarios'];
-        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()]+'<br>'+json.error);
       }
     );
   },

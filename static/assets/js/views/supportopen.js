@@ -22,9 +22,8 @@ window.SupportOpenView = Backbone.View.extend({
     console.log(data);
     modem('POST', 'support',
       function(json) {
-        var sttl = ['Success!','Sucesso!','Éxito!'];
         var smsg = ['Ticket created', 'Ticket criado', 'Ticket creado'];
-        showSuccess(sttl[getlang()], smsg[getlang()]);
+        showSuccess(smsg[getlang()]);
         app.navigate('/support/'+json.id, {
           trigger: true
         });
@@ -32,9 +31,8 @@ window.SupportOpenView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Failed to create ticket', 'Falha ao criar ticket', 'Error al crear ticket'];
-        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()]+'<br>'+json.error);
       }, data
     );
   },
@@ -80,9 +78,8 @@ window.SupportOpenView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Failed to get tickets', 'Falha ao carregar tickets', 'Error al cargar tickets'];
-        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()]+'<br>'+json.error);
       }
     );
   },

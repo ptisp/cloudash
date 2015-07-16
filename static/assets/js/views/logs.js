@@ -43,9 +43,8 @@ window.LogsView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Failed to get logs', 'Falha ao obter registos', 'No se pudo obtener registros'];
-        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()]+'<br>'+json.error);
       }
     );
   },

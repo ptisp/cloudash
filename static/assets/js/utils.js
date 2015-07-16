@@ -1,16 +1,6 @@
 var timer = 2500;
 var errTimer = 15000;
 
-var showError = function (title, msg) {
-  window.scrollTo(0,0);
-  $('.dng-title').html(title);
-  $('.dng-msg').html(msg);
-  $('.alert-danger').show();
-  setTimeout(function () {
-    $('.alert-danger').hide();
-  }, errTimer);
-};
-
 var getKeyo = function() {
   var ls = localStorage.getItem('keyo');
   var ss = sessionStorage.getItem('keyo');
@@ -54,9 +44,21 @@ var formatdate = function(date) {
   return sdate;
 };
 
-var showSuccess = function (title, msg) {
+var showError = function (msg, title) {
+  var ettl = ['Error!','Erro!','Error!'];
   window.scrollTo(0,0);
-  $('.suc-title').html(title);
+  $('.dng-title').html(title || ettl[getlang()]);
+  $('.dng-msg').html(msg);
+  $('.alert-danger').show();
+  setTimeout(function () {
+    $('.alert-danger').hide();
+  }, errTimer);
+};
+
+var showSuccess = function (msg, title) {
+  var sttl = ['Success!','Sucesso!','Éxito!'];
+  window.scrollTo(0,0);
+  $('.suc-title').html(title || sttl[getlang()]);
   $('.suc-msg').html(msg);
   $('.alert-success').show();
   setTimeout(function () {

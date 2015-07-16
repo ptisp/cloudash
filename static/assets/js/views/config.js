@@ -15,9 +15,8 @@ window.ConfigView = Backbone.View.extend({
     };
     modem('DELETE', 'config/logo',
       function(json) {
-        var sttl = ['Success!','Sucesso!','Éxito!'];
         var smsg = ['Logo restored', 'Logotipo reposto', 'Logo restaurado'];
-        showSuccess(sttl[getlang()], smsg[getlang()]);
+        showSuccess(smsg[getlang()]);
         self.render();
       },
       function(xhr, ajaxOptions, thrownError) {
@@ -34,11 +33,11 @@ window.ConfigView = Backbone.View.extend({
     var data = {
       rawfile: this.file,
     };
-    var sttl = ['Success!','Sucesso!','Éxito!'];
-    var smsg = ['Logo updated', 'Logotipo actualizado', 'Logo actualiza'];
+
     modem('POST', 'config/logo',
       function(json) {
-        showSuccess(sttl[getlang()], smsg[getlang()]);
+        var smsg = ['Logo updated', 'Logotipo actualizado', 'Logo actualiza'];
+        showSuccess(smsg[getlang()]);
         self.render();
       },
       function(xhr, ajaxOptions, thrownError) {
@@ -52,11 +51,11 @@ window.ConfigView = Backbone.View.extend({
     var data = {
       support: $("[name='my-checkbox']").is(':checked')
     };
-    var sttl = ['Success!','Sucesso!','Éxito!'];
-    var smsg = ['Updated support settings', 'Definições de suporte actualizadas', 'Configuraciones de soporte actualizado'];
+
     modem('POST', 'config/support',
       function(json) {
-        showSuccess(sttl[getlang()], smsg[getlang()]);
+        var smsg = ['Updated support settings', 'Definições de suporte actualizadas', 'Configuraciones de soporte actualizado'];
+        showSuccess(smsg[getlang()]);
         location.reload();
         //self.render();
       },

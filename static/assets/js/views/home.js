@@ -104,7 +104,6 @@ window.HomeView = Backbone.View.extend({
               icon = '<span class="f-12 m-r-5 c-gold">&#9612&#9612</span>';
             }
             return icon + full.details.hostname;
-
           }
         }, {
           "data": null,
@@ -182,7 +181,8 @@ window.HomeView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO! ', json.error);
+        var emsg = ['Failed to load VMs', 'Falha ao carregar VMs', 'Error al cargar VMs'];
+        showError(emsg[getlang()]+'<br>'+json.error);
       }
     );
   },

@@ -23,10 +23,7 @@ window.ManageUsersView = Backbone.View.extend({
       function(json) {
         handler(json);
       },
-      function(xhr, ajaxOptions, thrownError) {
-        var json = JSON.parse(xhr.responseText);
-        //showError('ERRO! ', json.error);
-      }
+      function(xhr, ajaxOptions, thrownError) {}
     );
   },
   showmodal: function(e) {
@@ -66,22 +63,21 @@ window.ManageUsersView = Backbone.View.extend({
         },
         function(xhr, ajaxOptions, thrownError) {
           var json = JSON.parse(xhr.responseText);
-          showError('ERRO! ', json.error);
+          var emsg = ['Failed to delete VM', 'Falha ao eliminar VM', 'Error al eliminar VM'];
+          showError(emsg[getlang()]+'<br>'+json.error);
         }
       );
     }
     modem('DELETE', 'user/remove/'+id,
       function(json) {
-        var sttl = ['Success!','Sucesso!','Éxito!'];
         var smsg = ['User deleted', 'Utilizador removido', 'Usuario eliminado'];
-        showSuccess(sttl[getlang()], smsg[getlang()]);
+        showSuccess(smsg[getlang()]);
         self.getusers();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Failed to delete user', 'Falha ao eliminar utilizador', 'Error al eliminar el usuario'];
-        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()]+'<br>'+json.error);
       }
     );
 
@@ -110,10 +106,8 @@ window.ManageUsersView = Backbone.View.extend({
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        showError('ERRO! ', json.error);
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Failed to load users', 'Falha ao carregar utilizadores', 'Error al cargar los usuarios'];
-        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()]+'<br>'+json.error);
       }
     );
   },

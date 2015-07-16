@@ -8,9 +8,8 @@ window.ProfileSecurityView = Backbone.View.extend({
     };
     if ($(evt.target).attr('data-action') === 'pwd') {
       if (! this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Please check your password', 'Por favor, verifique a sua password', 'Por favor, consultar su contraseña'];
-        showError(ettl[getlang()], emsg[getlang()]);
+        showError(emsg[getlang()]);
         return;
       } else {
         user.auth.password = $('.iprepass').val();
@@ -20,16 +19,13 @@ window.ProfileSecurityView = Backbone.View.extend({
     }
     modem('PUT', 'user/'+this.model.get('id'),
       function(json) {
-        var sttl = ['Success!','Sucesso!','Éxito!'];
         var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
-        showSuccess(sttl[getlang()], smsg[getlang()]);
+        showSuccess(smsg[getlang()]);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
-        var ettl = ['Error!','Erro!','Error!'];
         var emsg = ['Failed to update user', 'Falha ao atualizar utilizador', 'Error al actualizar el usuario'];
-        showError(ettl[getlang()], emsg[getlang()]+'<br>'+json.error);
-        showError('ERRO! ', json.error);
+        showError(emsg[getlang()]+'<br>'+json.error);
       }, user
     );
   },
