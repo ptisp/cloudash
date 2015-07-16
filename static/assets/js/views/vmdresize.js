@@ -72,7 +72,6 @@ window.VMDResizeView = Backbone.View.extend({
   setinterfaces: function() {
     var intf = this.model.get('interfaces');
     $('#interfaces', this.el).html('');
-    console.log(intf);
     for (var i = 0; i < intf.length; i++) {
       var disabled = '';
       if (intf[i].id === '0') disabled = 'disabled';
