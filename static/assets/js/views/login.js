@@ -1,6 +1,6 @@
 window.LoginView = Backbone.View.extend({
   events: {
-    'click .form-login': 'logina',
+    'click .btnlogin': 'logina',
     'click .recoverpass': 'recoverpass'
   },
   recoverpass: function() {
