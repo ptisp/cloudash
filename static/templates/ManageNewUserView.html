@@ -9,7 +9,7 @@
             <h2 class="m-t-0 m-b-5">
               <span data-i18n="manage.new.title"></span>
             </h2>
-            <p class="" data-i18n="manage.new.subtitle">...</p>
+            <p data-i18n="manage.new.subtitle"></p>
             <hr>
           </div>
         </div>
@@ -409,7 +409,7 @@
                 <div class="clip-body">
                   <p class="text-left">RAM GB</p>
                   <div class="range range-cloudy">
-                    <input id="newram" class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value/2">
+                    <input id="newram" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeInfo.value=value/2">
                     <output id="rangeInfo">1</output>
                   </div>
                 </div>
@@ -419,7 +419,7 @@
                 <div class="clip-body">
                   <p class="text-left">DISK SSD GB</p>
                   <div class="range range-cloudy">
-                    <input id="newdisk" class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
+                    <input id="newdisk" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeGold.value=value">
                     <output id="rangeGold">1</output>
                   </div>
                 </div>
@@ -429,7 +429,7 @@
                 <div class="clip-body">
                   <p class="text-left">VCPU</p>
                   <div class="range range-cloudy">
-                    <input id="newvcpu" class="bg-cream" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
+                    <input id="newvcpu" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeDanger.value=value">
                     <output id="rangeDanger">1</output>
                   </div>
                 </div>

@@ -371,7 +371,7 @@
 					<div class="clip-body">
 						<p class="text-left">RAM GB</p>
 						<div class="range range-cloudy">
-							<input id="editram" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" onchange="rangeInfo.value=value/2">
+							<input id="editram" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" oninput="rangeInfo.value=value/2">
 							<output id="rangeInfo">1</output>
 						</div>
 					</div>
@@ -384,7 +384,7 @@
 				<div class="clip-body">
 					<p class="text-left">DISK SSD GB</p>
 					<div class="range range-cloudy">
-						<input id="editdisk" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" onchange="rangeGold.value=value">
+						<input id="editdisk" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" oninput="rangeGold.value=value">
 						<output id="rangeGold">1</output>
 					</div>
 				</div>
@@ -394,7 +394,7 @@
 				<div class="clip-body">
 					<p class="text-left">VCPU</p>
 					<div class="range range-cloudy">
-						<input id="editvcpu" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" onchange="rangeDanger.value=value">
+						<input id="editvcpu" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" oninput="rangeDanger.value=value">
 						<output id="rangeDanger">1</output>
 					</div>
 				</div>
