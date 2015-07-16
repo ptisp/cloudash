@@ -88,9 +88,9 @@
       "accstatus": "Estado da Conta",
       "option1": "Activa",
       "option2": "Suspender",
-      "ssh": {
-        "title": "",
-        "subtitle": ""
+      "vms": {
+        "title": "Resumo das VMs",
+        "subtitle": "Resumo das vms do utilizador"
       }
     }
   },

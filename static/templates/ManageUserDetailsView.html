@@ -411,73 +411,93 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h2 class="m-t-0 m-b-5">
-					<span data-i18n="manage.edit.ssh.title">Summary VMs</span>
+					<span data-i18n="manage.edit.vms.title"></span>
 				</h2>
-				<p class="" data-i18n="manage.edit.ssh.subtitle">...</p>
+				<p data-i18n="manage.edit.vms.subtitle"></p>
 				<hr>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-3 stat">
-				<div class="pallete-item m-b-0">
-					<dl class="palette palette-default pal">
-						<i class="icon-cloud_servers f-22 m-r-10"></i>
-						<span class="f-16">Total VMs</span>
-					</dl>
-					<dl class="palette palette-default-hover pal">
-						<span class="f-22 c-blue-cl ramusage">3</span>
-					</dl>
-					<div class="progress animation-sm bg-cristal">
-						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="10" style="width: 10%;">10</div>
+			<div class="col-md-3 stat m-l-0">
+	      <div class="pallete-item m-b-0">
+	        <dl class="palette palette-default pal">
+	          <div><i class="icon-cloud_servers f-22 m-r-10"></i>
+	            <span class="f-16" data-i18n="home.header1"></span>
+	          </div>
+	        </dl>
+	        <dl class="palette palette-default-hover pal">
+	          <div>
+	            <span class="f-18 activevm"></span> /
+	            <span class="f-18 vmtotal"></span>
+	          </div>
+	        </dl>
+	        <div class="progress animation-sm bg-background">
+						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbvms" style="width: 0%;"></div>
 					</div>
-				</div>
-			</div>
+	      </div>
+	    </div>
 
-			<div class="col-md-3 stat">
-				<div class="pallete-item m-b-0">
-					<dl class="palette palette-default pal">
-						<i class="icon-ram_memory f-22 m-r-10"></i>
-						<span class="f-16">Memória</span>
-					</dl>
-					<dl class="palette palette-default-hover pal">
-						<span class="f-22 c-blue-cl ramusage">12 GB</span>
-					</dl>
-					<div class="progress animation-sm bg-cristal">
-						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="20" style="width: 20%;">20</div>
+	    <div class="col-md-3 stat">
+	      <div class="pallete-item m-b-0">
+	        <dl class="palette palette-default pal">
+	          <div><i class="icon-ram_memory f-22 m-r-10"></i>
+	            <span class="f-16" data-i18n="home.header2"></span>
+	          </div>
+	        </dl>
+	        <dl class="palette palette-default-hover pal">
+	          <div>
+	            <div class="f-18">
+	              <span class="c-blue-cl ramusage"></span> /
+	              <span class="c-blue-cl ramtotal"></span> MB
+	            </div>
+	          </div>
+	        </dl>
+	        <div class="progress animation-sm bg-background">
+						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbram" style="width: 0%;"></div>
 					</div>
-				</div>
-			</div>
+	      </div>
+	    </div>
 
-			<div class="col-md-3 stat">
-				<div class="pallete-ite mm-b-0">
-					<dl class="palette palette-default pal">
-						<i class="icon-cpu f-22 m-r-10"></i>
-						<span class="f-16">Processors</span>
-					</dl>
-					<dl class="palette palette-default-hover pal">
-						<span class="f-22 c-blue-cl">2</span>
-					</dl>
-					<div class="progress animation-sm bg-cristal">
-						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="45" style="width: 45%;">45</div>
+	    <div class="col-md-3 stat">
+	      <div class="pallete-item m-b-0">
+	        <dl class="palette palette-default pal">
+	          <div><i class="icon-hardware f-22 m-r-10"></i>
+	            <span class="f-16" data-i18n="home.header3"></span>
+	          </div>
+	        </dl>
+	        <dl class="palette palette-default-hover pal">
+	          <div>
+	            <span class="f-18 ">
+	              <span class="c-blue-cl diskusage"></span> /
+	              <span class="c-blue-cl disktotal"></span> GB
+	            </span>
+	          </div>
+	        </dl>
+	        <div class="progress animation-sm bg-background">
+						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbhdd" style="width: 0%;"></div>
 					</div>
-				</div>
-			</div>
+	      </div>
+	    </div>
 
-			<div class="col-md-3 stat">
-				<div class="pallete-item m-b-0">
-					<dl class="palette palette-default pal">
-						<i class="icon-hardware f-22 m-r-10"></i>
-						<span class="f-16">Storage</span>
-					</dl>
-					<dl class="palette palette-default-hover pal">
-						<span class="f-22 c-blue-cl diskusage">45 GB</span>
-					</dl>
-					<div class="progress animation-sm bg-cristal">
-						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out" aria-valuetransitiongoal="10" style="width: 10%;">10</div>
+	    <div class="col-md-3 stat">
+	      <div class="pallete-item m-b-0">
+	        <dl class="palette palette-default pal">
+	          <div><i class="icon-cloud_activated f-22 m-r-10"></i>
+	            <span class="f-16" data-i18n="home.header4"></span>
+	          </div>
+	        </dl>
+	        <dl class="palette palette-default-hover pal">
+	          <div>
+	            <span class="f-18 cpuusage"></span> /
+	            <span class="f-18 cputotal"></span>
+	          </div>
+	        </dl>
+	        <div class="progress animation-sm bg-background">
+						<div class="progress-bar progress-bar-cloudy six-sec-ease-in-out pbcpu" style="width: 0%;"></div>
 					</div>
-				</div>
-			</div>
+	      </div>
+	    </div>
 		</div>
 	</section>
 

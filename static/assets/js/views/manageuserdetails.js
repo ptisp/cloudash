@@ -6,7 +6,56 @@ window.ManageUserDetailsView = Backbone.View.extend({
     'click .edit': 'enableedit',
     'click .btnedituser': 'update'
   },
+  fillheaders: function(vms, user) {
+    var vm = vms.length,
+      ram = 0,
+      hdd = 0,
+      active = 0,
+      cpu = 0;
+    for (var i = 0; i < vms.length; i++) {
+      ram += parseInt(vms[i].details.ram);
+      hdd += parseInt(vms[i].details.disk);
+      cpu += parseInt(vms[i].details.vcpu);
+      if (vms[i].details.status === 'running') {
+        active++;
+      }
+    }
+    ram = parseInt(ram);
+    $('.vmtotal', this.el).html(vm);
+    $('.ramusage', this.el).html(ram);
+    $('.diskusage', this.el).html(hdd);
+    $('.cpuusage', this.el).html(cpu);
+    $('.activevm', this.el).html(active);
+
+    $('.ramtotal', this.el).html(user.maxresources.memory);
+    $('.disktotal', this.el).html(user.maxresources.storage);
+    $('.cputotal', this.el).html(user.maxresources.cpu);
+    $('.pbram', self.el).width(parseInt(parseInt(ram)/parseInt(user.maxresources.memory)*100)+'%');
+    $('.pbhdd', self.el).width(parseInt(parseInt(hdd)/parseInt(user.maxresources.storage)*100)+'%');
+    $('.pbcpu', self.el).width(parseInt(parseInt(cpu)/parseInt(user.maxresources.cpu)*100)+'%');
+    $('.pbvms', self.el).width(parseInt(parseInt(active)/parseInt(vm)*100)+'%');
+  },
+  getvms: function(user) {
+    var self = this;
+    modem('GET', 'vm',
+      function(json) {
+        var vms = [];
+        for (var i = 0; i < json.length; i++) {
+          if (json[i].owner === user._id) {
+            vms.push(json[i]);
+          }
+        }
+        self.fillheaders(vms, user);
+      },
+      function(xhr, ajaxOptions, thrownError) {
+        var json = JSON.parse(xhr.responseText);
+        var emsg = ['Failed to load VMs', 'Falha ao carregar VMs', 'Error al cargar VMs'];
+        showError(emsg[getlang()]+'<br>'+json.error);
+      }
+    );
+  },
   update: function() {
+    var self = this;
     var user = {
       'about': {
         'name': $('.ipname').val(),
@@ -31,6 +80,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
       function(json) {
         var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
         showSuccess(smsg[getlang()]);
+        self.render();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
@@ -75,6 +125,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
     modem('GET', 'user/'+self.id,
       function(json) {
         self.showdetails(json);
+        self.getvms(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
