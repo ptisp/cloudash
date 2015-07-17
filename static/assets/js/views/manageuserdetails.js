@@ -57,6 +57,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
   update: function() {
     var self = this;
     var user = {
+      'auth': {},
       'about': {
         'name': $('.ipname').val(),
         'phone': $('.ipphone').val(),
@@ -76,6 +77,18 @@ window.ManageUserDetailsView = Backbone.View.extend({
       'type': $('.iptype').val(),
       'status': $('.ipstatus').val()
     };
+    if ($('.ippass').val().trim() !=='') {
+      if (this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {
+        user.auth = {
+          'password': $('.iprepass').val()
+        };
+      } else {
+        var wttl = ['Warning!','Aviso!','Advertencia!'];
+        var wmsg = ['Please check your password', 'Por favor, verifique a sua password', 'Por favor, consultar su contraseña'];
+        showWarning(wttl[getlang()], wmsg[getlang()]);
+        return;
+      }
+    }
     modem('PUT', 'user/'+this.id,
       function(json) {
         var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
@@ -89,9 +102,19 @@ window.ManageUserDetailsView = Backbone.View.extend({
       }, user
     );
   },
+  passwordcheck: function(pass, repass) {
+    pass = pass.trim();
+    repass = repass.trim();
+    if (pass == repass && pass.length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  },
   enableedit: function() {
     $('.btnedituser', this.el).show();
     $('.editable', this.el).prop('disabled', false);
+    $('.btnslider', this.el).show();
   },
   showdetails: function(info) {
     $('.ipemail', this.el).val(info.auth.username);
@@ -149,6 +172,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
     this.setslider();
     $('.user-details', this.el).i18n();
     $('.editable', this.el).prop('disabled', true);
+    $('.btnslider', this.el).hide();
     $('.managemenu li').removeClass('active');
     this.getdetails();
     return this;

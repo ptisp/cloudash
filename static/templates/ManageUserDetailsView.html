@@ -35,6 +35,31 @@
       		</div>
       		<hr>
 		</div>
+		<div class="row m-b-50">
+			<!-- Password -->
+			<div class="col-md-6">
+				<div class="clip-body">
+					<p class="text-left">
+						<span data-i18n="manage.new.pass"></span>
+					</p>
+					<div class="input-group">
+						<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
+						<input type="password" class="form-control cloudy ippass editable" placeholder="Password">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="clip-body">
+					<p class="text-left">
+						<span data-i18n="manage.new.rpass"></span>
+					</p>
+					<div class="input-group">
+						<span class="input-group-addon cloudy"><i class="icon-lock"></i></span>
+						<input type="password" class="form-control cloudy iprepass editable" placeholder="Retype Password">
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<h4 data-i18n="manage.new.row2"></h4>
 		<div class="row m-b-50">
@@ -371,10 +396,10 @@
 					<div class="clip-body">
 						<p class="text-left">RAM GB</p>
 						<div class="range range-cloudy">
-							<span class="btn btn-sm btn-cloudy" onclick="editram.stepDown();rangeInfo.value=editram.value/2"><i class="icon-less"></i></span>
-							<input id="editram" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeInfo.value=value/2">
+							<span class="btn btn-sm btn-cloudy btnslider" onclick="editram.stepDown();rangeInfo.value=editram.value/2"><i class="icon-less"></i></span>
+							<input id="editram" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" oninput="rangeInfo.value=value/2">
 							<output id="rangeInfo">1</output>
-							<span class="btn btn-sm btn-cloudy" onclick="editram.stepUp();rangeInfo.value=editram.value/2"><i class="icon-add"></i></span>
+							<span class="btn btn-sm btn-cloudy btnslider" onclick="editram.stepUp();rangeInfo.value=editram.value/2"><i class="icon-add"></i></span>
 						</div>
 					</div>
 				</div>
@@ -386,10 +411,10 @@
 				<div class="clip-body">
 					<p class="text-left">DISK SSD GB</p>
 					<div class="range range-cloudy">
-						<span class="btn btn-sm btn-cloudy" onclick="editdisk.stepDown();rangeGold.value=editdisk.value"><i class="icon-less"></i></span>
-						<input id="editdisk" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeGold.value=value">
+						<span class="btn btn-sm btn-cloudy btnslider" onclick="editdisk.stepDown();rangeGold.value=editdisk.value"><i class="icon-less"></i></span>
+						<input id="editdisk" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" oninput="rangeGold.value=value">
 						<output id="rangeGold">1</output>
-						<span class="btn btn-sm btn-cloudy" onclick="editdisk.stepUp();rangeGold.value=editdisk.value"><i class="icon-add"></i></span>
+						<span class="btn btn-sm btn-cloudy btnslider" onclick="editdisk.stepUp();rangeGold.value=editdisk.value"><i class="icon-add"></i></span>
 					</div>
 				</div>
 			</div>
@@ -398,11 +423,10 @@
 				<div class="clip-body">
 					<p class="text-left">VCPU</p>
 					<div class="range range-cloudy">
-
-						<span class="btn btn-sm btn-cloudy" onclick="editvcpu.stepDown();rangeDanger.value=editvcpu.value"><i class="icon-less"></i></span>
-						<input id="editvcpu" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeDanger.value=value">
+						<span class="btn btn-sm btn-cloudy btnslider" onclick="editvcpu.stepDown();rangeDanger.value=editvcpu.value"><i class="icon-less"></i></span>
+						<input id="editvcpu" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" oninput="rangeDanger.value=value">
 						<output id="rangeDanger">1</output>
-						<span class="btn btn-sm btn-cloudy" onclick="editvcpu.stepUp();rangeDanger.value=editvcpu.value"><i class="icon-add"></i></span>
+						<span class="btn btn-sm btn-cloudy btnslider" onclick="editvcpu.stepUp();rangeDanger.value=editvcpu.value"><i class="icon-add"></i></span>
 					</div>
 				</div>
 			</div>

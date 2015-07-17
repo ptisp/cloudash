@@ -40,6 +40,10 @@ window.LoginView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         console.log(json);
+        $('.alert-danger').show();
+        setTimeout(function () {
+          $('.alert-danger').hide();
+        }, errTimer);
       }
     );
   },
