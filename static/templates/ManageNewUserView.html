@@ -409,8 +409,10 @@
                 <div class="clip-body">
                   <p class="text-left">RAM GB</p>
                   <div class="range range-cloudy">
+                    <span class="btn btn-sm btn-cloudy" onclick="newram.stepDown();rangeInfo.value=newram.value/2"><i class="icon-less"></i></span>
                     <input id="newram" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeInfo.value=value/2">
                     <output id="rangeInfo">1</output>
+                    <span class="btn btn-sm btn-cloudy" onclick="newram.stepUp();rangeInfo.value=newram.value/2"><i class="icon-add"></i></span>
                   </div>
                 </div>
               </div>
@@ -419,8 +421,10 @@
                 <div class="clip-body">
                   <p class="text-left">DISK SSD GB</p>
                   <div class="range range-cloudy">
+                    <span class="btn btn-sm btn-cloudy" onclick="newdisk.stepDown();rangeGold.value=newdisk.value"><i class="icon-less"></i></span>
                     <input id="newdisk" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeGold.value=value">
                     <output id="rangeGold">1</output>
+                    <span class="btn btn-sm btn-cloudy" onclick="newdisk.stepUp();rangeGold.value=newdisk.value"><i class="icon-add"></i></span>
                   </div>
                 </div>
               </div>
@@ -429,8 +433,10 @@
                 <div class="clip-body">
                   <p class="text-left">VCPU</p>
                   <div class="range range-cloudy">
+                    <span class="btn btn-sm btn-cloudy" onclick="newvcpu.stepDown();rangeDanger.value=newvcpu.value"><i class="icon-less"></i></span>
                     <input id="newvcpu" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeDanger.value=value">
                     <output id="rangeDanger">1</output>
+                    <span class="btn btn-sm btn-cloudy" onclick="newvcpu.stepUp();rangeDanger.value=newvcpu.value"><i class="icon-add"></i></span>
                   </div>
                 </div>
               </div>

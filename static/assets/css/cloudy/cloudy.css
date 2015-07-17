@@ -640,14 +640,14 @@ strong {
 }
 .btn-cloudy {
   color: #fff;
-  border: none;
+  /*border: none;*/
   border-radius: 1px;
   background-color: #29b5c7;
 }
 .btn-cloudy:hover {
   color: #fff;
-  border: none;
-  border-radius: 1px;
+  /*border: none;*/
+  /*border-radius: 1px;*/
   background-color: #008798;
 }
 .panel-group.joined>.panel>.panel-heading h4 a:before {
@@ -910,7 +910,7 @@ section {
 .btn-cloudy:hover, .btn-cloudy:focus, .btn-cloudy.focus, .btn-cloudy:active, .btn-cloudy.active, .open > .dropdown-toggle.btn-cloudy {
   color: #fff;
   background-color: #008798;
-  border-color: #008798;
+  /*border-color: #008798;*/
 }
 /* CLOUDY PLANS CONFIG VM */
 .bg-config-vm {
