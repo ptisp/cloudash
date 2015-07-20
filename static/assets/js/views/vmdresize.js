@@ -96,12 +96,14 @@ window.VMDResizeView = Backbone.View.extend({
     if (this.model.get('status') !== 'stopped') {
       $('#sliderCPU', this.el).prop('disabled', true);
       $('#sliderRAM', this.el).prop('disabled', true);
+      $('.slidercontrol', this.el).hide();
       $('#addinterface', this.el).removeClass('disabled');
       $('#resizevm', this.el).addClass('disabled');
       $('#showwarning', this.el).show();
     } else {
       $('#sliderCPU', this.el).prop('disabled', false);
       $('#sliderRAM', this.el).prop('disabled', false);
+      $('.slidercontrol', this.el).show();
       $('#addinterface', this.el).addClass('disabled');
       $('#resizevm', this.el).removeClass('disabled');
       $('#showwarning', this.el).hide();

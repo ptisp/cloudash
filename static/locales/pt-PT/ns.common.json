@@ -122,7 +122,7 @@
       },
       "console": {
         "title": "Consola",
-        "subtitle": "acceso a la consola KVM/VNC"
+        "subtitle": "Acesso a consola KVM/VNC"
       },
       "stats": {
         "title": "Estatisticas",
@@ -208,12 +208,13 @@
     "closeticket": "Fechar Ticket",
     "reset": "Reset",
     "continue": "Continuar",
-    "edit": "Editar"
+    "edit": "Editar",
+    "delete": "Apagar"
   },
   "config": {
     "title": "Configurações Gerais",
-    "subtitle": "Configurações gerais de logotipo e suporte",
-    "infologo": "Imagem Logotipo Dimensões: 190x80px",
+    "subtitle": "Configurações do logotipo e suporte",
+    "infologo": "Dimensões do Logotipo: 190x80px",
     "infosupport": "Active ou desactive o suporte ticket?"
   },
   "dropdown": {

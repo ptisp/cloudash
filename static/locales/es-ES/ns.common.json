@@ -208,7 +208,8 @@
     "closeticket": "Cerrar Ticket",
     "reset": "Reset",
     "continue": "Continuar",
-    "edit": "Editar"
+    "edit": "Editar",
+    "delete": "Apagar"
   },
   "config": {
     "title": "Configuración General",
