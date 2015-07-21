@@ -137,7 +137,7 @@
       },
       "resources": {
         "title": "Resources",
-        "subtitle": "Add of remove resources",
+        "subtitle": "Add or remove resources",
         "wrntitle": "Warning",
         "wrnsubtitle": "VM must be stopped before modifying resources.",
         "inttitle": "Network interfaces",
