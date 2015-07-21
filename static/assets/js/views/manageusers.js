@@ -2,7 +2,28 @@ window.ManageUsersView = Backbone.View.extend({
   events: {
     'click .btnedit': 'edituser',
     'click .btn_delete': 'deleteuser',
-    'click .btndelete': 'showmodal'
+    'click .btndelete': 'showmodal',
+    'keyup #pesquisa': 'filtro',
+    'change #ddshow': 'show',
+    'click #example tbody tr': 'gotouser'
+  },
+  gotouser: function(evt) {
+    if ($(evt.target).parent().attr('data-id')) {
+      app.navigate('config/user/'+$(evt.target).parent().attr('data-id'), {
+        trigger: true
+      });
+    }
+  },
+  show: function() {
+    var index = document.getElementById('ddshow').selectedIndex;
+    var oTable = $('#example').dataTable();
+    var oSettings = oTable.fnSettings();
+    oSettings._iDisplayLength = parseInt(document.getElementsByTagName('option')[index].value);
+    oTable.fnDraw();
+  },
+  filtro: function() {
+    var oTable = $('#example').dataTable();
+    oTable.fnFilter($('#pesquisa').val());
   },
   getuservm: function(id) {
     var self = this;
@@ -80,29 +101,40 @@ window.ManageUsersView = Backbone.View.extend({
         showError(emsg[getlang()]+'<br>'+json.error);
       }
     );
-
-  },
-  fillusertable: function(users) {
-    var html = '';
-    for (var i = 0; i < users.length; i++) {
-      html = '<tr><td>'+users[i].about.name+'</td>';
-      html += '<td>'+users[i].auth.username+'</td>';
-      html += '<td>'+users[i].type+'</td>';
-      html += '<td>'+users[i].status+'</td>';
-      var enabled = '';
-      if (this.model.get('username') === users[i].auth.username) {
-        enabled = 'disabled';
-      }
-      html += '<td><button type="button" class="btn btn-xs btn-success btnedit" data-id="'+users[i]._id+'"><i class="icon-managed"></i> Edit</button><button type="button" class="btn btn-xs btn-danger btndelete" data-id="'+users[i]._id+'" '+enabled+' data-name="'+users[i].about.name+'" data-email="'+users[i].auth.username+'" data-type="'+users[i].type+'" data-status="'+users[i].status+'"><i class="icon-delete"></i> Delete</button></td></tr>';
-      $('.userstable', this.el).append(html);
-    }
   },
   getusers: function() {
     var self = this;
+    var handler = function(json) {
+      var oTable = $('#example', self.el).dataTable({
+        "data": json,
+        "bAutoWidth": false,
+        "columns": [
+          { "data": "about.name", "sWidth": "20%"},
+          { "data": "auth.username", "sWidth": "20%"},
+          { "data": "type", "sWidth": "20%"},
+          { "data": "status", "sWidth": "20%"},
+          { "data": null,
+            "sWidth": "20%",
+            "mRender": function(data, type, full) {
+              var enabled = '';
+              if (self.model.get('username') === full.auth.username) {
+                enabled = 'disabled';
+              }
+              var html = '<button type="button" class="btn btn-xs btn-success btnedit" data-id="'+full._id+'"><i class="icon-managed"></i> Edit</button><button type="button" class="btn btn-xs btn-danger btndelete" data-id="'+full._id+'" '+enabled+' data-name="'+full.about.name+'" data-email="'+full.auth.username+'" data-type="'+full.type+'" data-status="'+full.status+'"><i class="icon-delete"></i> Delete</button>';
+              return html;
+            }}
+        ],
+        "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+          $(nRow).addClass('likehref');
+          $(nRow).attr('data-id', aData._id);
+          return nRow;
+        }
+      });
+    };
     modem('GET', 'user/listusers',
       function(json) {
         $('.userstable', self.el).html('');
-        self.fillusertable(json);
+        handler(json);
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);

@@ -5,19 +5,41 @@
 
       <section class="bg-white border-section">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-5">
             <h2 class="m-t-0 m-b-5">
               <span data-i18n="manage.list.title"></span>
             </h2>
             <p class="" data-i18n="manage.list.subtitle">...</p>
-            <hr>
+
+          </div>
+          <div class="col-md-3">
+            <div>
+              <div class="input-group">
+                <select id="ddshow" class="form-control cloudy iptype">
+                  <option value="10" data-i18n="dropdown.ten"></option>
+                  <option value="25" data-i18n="dropdown.tfive"></option>
+                  <option value="50" data-i18n="dropdown.fifty"></option>
+                  <option value="100" data-i18n="dropdown.hundred"></option>
+                </select>
+                <span class="input-group-addon cloudy"><i class="icon-align_center"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div>
+              <div class="input-group">
+                <span class="input-group-addon cloudy"><i class="icon-search"></i></span>
+                <input type="search" id="pesquisa" class="form-control cloudy" placeholder="Search">
+              </div>
+            </div>
           </div>
         </div>
-
+        <hr>
         <div class="row">
           <div class="col-md-12">
             <div class="table-responsive">
-              <table class="table table-striped table-hover m-b-0 clip">
+              <table class="table table-striped table-hover clip" id="example">
                 <thead>
                   <tr>
                     <th><i class="icon-user"></i>
@@ -37,8 +59,7 @@
                     </th>
                   </tr>
                 </thead>
-                <tbody class="userstable">
-
+                <tbody>
                 </tbody>
               </table>
             </div>
