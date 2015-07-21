@@ -4,7 +4,7 @@
 /* GLOBAL */
 
 body {
-  padding-top: 40px;
+  padding-top: 30px;
   background-color: #f1f1f5;
   font-family: 'Lato', sans-serif, Helvetica, Arial !important;
 }
@@ -875,7 +875,7 @@ table.table.clip th {
 
 .header {
   margin-bottom: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 /* FOOTER */
