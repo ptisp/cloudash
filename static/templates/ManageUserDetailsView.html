@@ -6,11 +6,6 @@
 				<h2 class="m-t-0 m-b-5"><span data-i18n="manage.edit.title"></span></h2>
 				<p class="c-dark" data-i18n="manage.edit.subtitle"></p>
 			</div>
-			<div class="col-md-4">
-				<button type="button" class="btn btn-block btn-xl btn-cloudy btn-icon f-right edit">
-					<span data-i18n="btns.edit"></span><i class="icon-email_corporate"></i>
-				</button>
-			</div>
 		</div>
 		<hr>
 
@@ -412,8 +407,8 @@
 					<p class="text-left">DISK SSD GB</p>
 					<div class="range range-cloudy">
 						<span class="btn btn-sm btn-cloudy btnslider" onclick="editdisk.stepDown();rangeGold.value=editdisk.value"><i class="icon-less"></i></span>
-						<input id="editdisk" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" oninput="rangeGold.value=value">
-						<output id="rangeGold">1</output>
+						<input id="editdisk" class="bg-cream editable" type="range" name="range" min="5" max="100" value="5" step="5" oninput="rangeGold.value=value">
+						<output id="rangeGold">5</output>
 						<span class="btn btn-sm btn-cloudy btnslider" onclick="editdisk.stepUp();rangeGold.value=editdisk.value"><i class="icon-add"></i></span>
 					</div>
 				</div>
@@ -432,7 +427,7 @@
 			</div>
 		</div>
 
-		<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5 btnedituser" style="display:none">
+		<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-lg btn-success btn-icon m-b-5 btnedituser">
 			<span data-i18n="btns.update"></span>
 		</button>
 

@@ -3,7 +3,6 @@ window.ManageUserDetailsView = Backbone.View.extend({
     this.id = options.id;
   },
   events: {
-    'click .edit': 'enableedit',
     'click .btnedituser': 'update'
   },
   fillheaders: function(vms, user) {
@@ -111,11 +110,6 @@ window.ManageUserDetailsView = Backbone.View.extend({
       return false;
     }
   },
-  enableedit: function() {
-    $('.btnedituser', this.el).show();
-    $('.editable', this.el).prop('disabled', false);
-    $('.btnslider', this.el).show();
-  },
   showdetails: function(info) {
     $('.ipemail', this.el).val(info.auth.username);
     $('.ipname', this.el).val(info.about.name);
@@ -171,8 +165,6 @@ window.ManageUserDetailsView = Backbone.View.extend({
     $(this.el).html(this.template());
     this.setslider();
     $('.user-details', this.el).i18n();
-    $('.editable', this.el).prop('disabled', true);
-    $('.btnslider', this.el).hide();
     $('.managemenu li').removeClass('active');
     this.getdetails();
     return this;

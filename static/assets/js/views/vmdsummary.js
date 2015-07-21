@@ -27,7 +27,7 @@ window.VMDSummaryView = Backbone.View.extend({
         $('#btnhreboot', this.el).addClass('disabled');
         $('#btnpause', this.el).addClass('disabled');
         break;
-      case 'suspended':
+      case 'paused':
         $('#btstop', this.el).addClass('disabled');
         $('#btnreboot', this.el).addClass('disabled');
         $('#btnhreboot', this.el).addClass('disabled');
@@ -76,7 +76,7 @@ window.VMDSummaryView = Backbone.View.extend({
       function(json) {
         var ittl = ['Success!','Sucesso!','Éxito!'];
         var imsg = ['', '', ''];
-        showInfo(sttl[getlang()], smsg[getlang()]);
+        showInfo(ittl[getlang()], imsg[getlang()]);
         self.refreshState();
       },
       function(xhr, ajaxOptions, thrownError) {
@@ -142,11 +142,11 @@ window.VMDSummaryView = Backbone.View.extend({
       $('.state', this.el).removeClass('c-gold');
       $('.state', this.el).addClass('c-red');
       $('.state', this.el).html('<i class="icon-stop m-r-10 c-red"></i> Stopped');
-    } else if (this.model.get('status') === 'suspended') {
+    } else if (this.model.get('status') === 'paused') {
       $('.state', this.el).removeClass('c-green');
       $('.state', this.el).removeClass('c-red');
       $('.state', this.el).addClass('c-gold');
-      $('.state', this.el).html('<i class="m-r-10 c-gold">&#9612&#9612</i> Suspended');
+      $('.state', this.el).html('<i class="m-r-10 c-gold">&#9612&#9612</i> Paused');
     } else {
       $('.state', this.el).removeClass('c-green');
       $('.state', this.el).removeClass('c-red');
@@ -169,11 +169,11 @@ window.VMDSummaryView = Backbone.View.extend({
         $('.state', self.el).removeClass('c-gold');
         $('.state', self.el).addClass('c-red');
         $('.state', self.el).html('<i class="icon-stop m-r-10 c-red"></i> Stopped');
-      } else if (self.model.get('status') === 'suspended') {
+      } else if (self.model.get('status') === 'paused') {
         $('.state', self.el).removeClass('c-green');
         $('.state', self.el).removeClass('c-red');
         $('.state', self.el).addClass('c-gold');
-        $('.state', self.el).html('<i class="m-r-10 c-gold">&#9612&#9612</i> Suspended');
+        $('.state', self.el).html('<i class="m-r-10 c-gold">&#9612&#9612</i> Paused');
       } else {
         $('.state', self.el).removeClass('c-green');
         $('.state', self.el).removeClass('c-red');

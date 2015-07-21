@@ -422,9 +422,9 @@
                   <p class="text-left">DISK SSD GB</p>
                   <div class="range range-cloudy">
                     <span class="btn btn-sm btn-cloudy" onclick="newdisk.stepDown();rangeGold.value=newdisk.value"><i class="icon-less"></i></span>
-                    <input id="newdisk" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeGold.value=value">
-                    <output id="rangeGold">1</output>
-                    <span class="btn btn-sm btn-cloudy" onclick="newdisk.stepUp();rangeGold.value=newdisk.value"><i class="icon-add"></i></span>
+                    <input id="newdisk" class="bg-cream" type="range" name="range" min="5" max="100" value="1" step="5" oninput="rangeGold.value=value">
+                    <output id="rangeGold">5</output>
+                    <span class="btn btn-sm btn-cloudy" onpressed="newdisk.stepUp();rangeGold.value=newdisk.value"><i class="icon-add"></i></span>
                   </div>
                 </div>
               </div>

@@ -105,6 +105,7 @@ window.ManageUsersView = Backbone.View.extend({
   getusers: function() {
     var self = this;
     var handler = function(json) {
+      $('#example', self.el).dataTable().fnDestroy();
       var oTable = $('#example', self.el).dataTable({
         "data": json,
         "bAutoWidth": false,

@@ -100,7 +100,7 @@ window.HomeView = Backbone.View.extend({
               icon = '<i class="icon-stop f-18 m-r-5 c-red"></i>';
             } else if (full.details.status === 'running') {
               icon = '<i class="icon-play f-14 m-r-5 c-green"></i>';
-            } else if (full.details.status === 'suspended') {
+            } else if (full.details.status === 'paused') {
               icon = '<span class="f-12 m-r-5 c-gold">&#9612&#9612</span>';
             }
             return icon + full.details.hostname;
@@ -127,7 +127,7 @@ window.HomeView = Backbone.View.extend({
               }
               html += full.details.interfaces[i].ip;
             }
-            
+
             var ip = '';
             if(full.details.interfaces.length > 0) {
               ip = full.details.interfaces[0].ip;
