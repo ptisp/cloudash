@@ -387,18 +387,39 @@
 					</div>
 				</div>
 
-				<div class="col-md-6 useronly">
-					<div class="clip-body">
-						<p class="text-left">RAM GB</p>
-						<div class="range range-cloudy">
-							<span class="btn btn-sm btn-cloudy btnslider" onclick="editram.stepDown();rangeInfo.value=editram.value/2"><i class="icon-less"></i></span>
-							<input id="editram" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" oninput="rangeInfo.value=value/2">
-							<output id="rangeInfo">1</output>
-							<span class="btn btn-sm btn-cloudy btnslider" onclick="editram.stepUp();rangeInfo.value=editram.value/2"><i class="icon-add"></i></span>
-						</div>
+
+			</div>
+		</div>
+
+		<div class="row useronly">
+
+			<div class="col-md-6">
+				<div class="clip-body">
+					<p class="text-left">VMs</p>
+					<div class="range range-cloudy">
+						<span class="btn btn-sm btn-cloudy" onclick="newvms.stepDown();vmsInfo.value=newvms.value">
+							<i class="icon-less"></i></span>
+						<input id="newvms" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="vmsInfo.value=value">
+						<output id="vmsInfo">1</output>
+						<span class="btn btn-sm btn-cloudy" onclick="newvms.stepUp();vmsInfo.value=newvms.value">
+							<i class="icon-add"></i></span>
 					</div>
 				</div>
 			</div>
+
+			<div class="col-md-6 useronly">
+				<div class="clip-body">
+					<p class="text-left">RAM GB</p>
+					<div class="range range-cloudy">
+						<span class="btn btn-sm btn-cloudy btnslider" onclick="editram.stepDown();rangeInfo.value=editram.value/2"><i class="icon-less"></i></span>
+						<input id="editram" class="bg-cream editable" type="range" name="range" min="1" max="100" value="1" oninput="rangeInfo.value=value/2">
+						<output id="rangeInfo">1</output>
+						<span class="btn btn-sm btn-cloudy btnslider" onclick="editram.stepUp();rangeInfo.value=editram.value/2"><i class="icon-add"></i></span>
+					</div>
+				</div>
+			</div>
+
+
 		</div>
 
 		<div class="row useronly">
@@ -413,7 +434,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="col-md-6">
 				<div class="clip-body">
 					<p class="text-left">VCPU</p>

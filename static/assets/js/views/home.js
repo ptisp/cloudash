@@ -32,25 +32,22 @@ window.HomeView = Backbone.View.extend({
 
   },
   fillheaders: function(vms) {
+    var self = this;
     var vm = vms.length,
       ram = 0,
       hdd = 0,
-      active = 0,
       cpu = 0;
     for (var i = 0; i < vms.length; i++) {
       ram += parseInt(vms[i].details.ram);
       hdd += parseInt(vms[i].details.disk);
       cpu += parseInt(vms[i].details.vcpu);
-      if (vms[i].details.status === 'running') {
-        active++;
-      }
     }
     ram = parseInt(ram);
-    $('.vmtotal', this.el).html(vm);
+    $('.vmtotal', this.el).html(self.model.get('vms'));
     $('.ramusage', this.el).html(ram);
     $('.diskusage', this.el).html(hdd);
     $('.cpuusage', this.el).html(cpu);
-    $('.activevm', this.el).html(active);
+    $('.activevm', this.el).html(vm);
 
     modem('GET', 'config/resources',
       function(json) {
@@ -60,7 +57,7 @@ window.HomeView = Backbone.View.extend({
         $('.pbram', self.el).width(parseInt(parseInt(ram)/parseInt(json.memory)*100)+'%');
         $('.pbhdd', self.el).width(parseInt(parseInt(hdd)/parseInt(json.storage)*100)+'%');
         $('.pbcpu', self.el).width(parseInt(parseInt(cpu)/parseInt(json.cpu)*100)+'%');
-        $('.pbvms', self.el).width(parseInt(parseInt(active)/parseInt(vm)*100)+'%');
+        $('.pbvms', self.el).width(parseInt(parseInt(vm)/parseInt(self.model.get('vms'))*100)+'%');
       },
       function(xhr, ajaxOptions, thrownError) {}
     );

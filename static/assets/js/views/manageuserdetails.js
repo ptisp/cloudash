@@ -71,6 +71,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
       'maxresources': {
         'memory': parseInt($('#editram').val()/2*1024),
         'storage': parseInt($('#editdisk').val()),
+        'vms': parseInt($('#newvms').val()),
         'cpu': parseInt($('#editvcpu').val())
       },
       'type': $('.iptype').val(),
@@ -121,9 +122,11 @@ window.ManageUserDetailsView = Backbone.View.extend({
     $('#editram', this.el).val(parseInt(info.maxresources.memory)/1024*2);
     $('#editdisk', this.el).val(parseInt(info.maxresources.storage));
     $('#editvcpu', this.el).val(parseInt(info.maxresources.cpu));
+    $('#newvms', this.el).val(parseInt(info.maxresources.vms));
     $('#rangeInfo', this.el).val(parseInt(info.maxresources.memory)/1024);
     $('#rangeGold', this.el).val(parseInt(info.maxresources.storage));
     $('#rangeDanger', this.el).val(parseInt(info.maxresources.cpu));
+    $('#vmsInfo', this.el).val(parseInt(info.maxresources.vms));
     $('.ipcountry option').filter(function() {
       return $(this).text().toLowerCase() == info.address.country.toLowerCase();
     }).prop('selected', true);
@@ -157,6 +160,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
         $('#editram', self.el).attr('max',parseInt(json.memory)/1024*2);
         $('#editdisk', self.el).attr('max',parseInt(json.storage));
         $('#editvcpu', self.el).attr('max',parseInt(json.cpu));
+        $('#newvms', self.el).attr('max',parseInt(json.cpu));
       },
       function(xhr, ajaxOptions, thrownError) {}
     );

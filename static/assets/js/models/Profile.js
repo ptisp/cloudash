@@ -21,6 +21,7 @@
     self.set('memory', user.maxresources.memory);
     self.set('storage', user.maxresources.storage);
     self.set('cpu', user.maxresources.cpu);
+    self.set('vms', user.maxresources.vms);
     self.set('created', user.details.created);
     self.set('lastlogin', user.details.lastlogin);
     self.set('flastip', user.details.lastip);

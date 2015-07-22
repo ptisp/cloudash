@@ -23,6 +23,7 @@ window.ManageNewUserView = Backbone.View.extend({
           'zip': $('.ipzipcode').val()
         },
         'maxresources': {
+          'vms': parseInt($('#newvms').val()),
           'memory': parseInt($('#newram').val()/2*1024),
           'storage': parseInt($('#newdisk').val()),
           'cpu': parseInt($('#newvcpu').val())
@@ -105,6 +106,7 @@ window.ManageNewUserView = Backbone.View.extend({
         $('#newram', self.el).attr('max',parseInt(json.memory)/1024*2);
         $('#newdisk', self.el).attr('max',parseInt(json.storage));
         $('#newvcpu', self.el).attr('max',parseInt(json.cpu));
+        $('#newvms', self.el).attr('max',parseInt(json.cpu));
       },
       function(xhr, ajaxOptions, thrownError) {}
     );
