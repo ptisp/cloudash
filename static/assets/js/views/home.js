@@ -172,7 +172,9 @@ window.HomeView = Backbone.View.extend({
           return nRow;
         }
       });
-      getowner(json);
+      if (self.model.get('type') === 'admin') {
+        getowner(json);
+      }
     };
     modem('GET', 'vm',
       function(json) {
@@ -188,6 +190,9 @@ window.HomeView = Backbone.View.extend({
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
+    if (this.model.get('type') === 'admin') {
+      $('#example', this.el).removeClass('hometable');
+    }
     $('.vmtable', this.el).html('');
     $('.home', this.el).i18n();
     $('.menulateral li').removeClass('active');

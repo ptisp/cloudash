@@ -8,6 +8,12 @@ body {
   background-color: #f1f1f5;
   font-family: 'Lato', sans-serif, Helvetica, Arial !important;
 }
+table.hometable td:nth-child(2) {
+   display: none;
+}
+table.hometable th:nth-child(2) {
+   display: none;
+}
 .heart {
   text-decoration: none;
   margin: 0;
