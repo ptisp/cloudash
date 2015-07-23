@@ -28,8 +28,6 @@ window.HomeView = Backbone.View.extend({
         trigger: true
       });
     }
-
-
   },
   fillheaders: function(vms) {
     var self = this;
@@ -57,7 +55,12 @@ window.HomeView = Backbone.View.extend({
         $('.pbram', self.el).width(parseInt(parseInt(ram)/parseInt(json.memory)*100)+'%');
         $('.pbhdd', self.el).width(parseInt(parseInt(hdd)/parseInt(json.storage)*100)+'%');
         $('.pbcpu', self.el).width(parseInt(parseInt(cpu)/parseInt(json.cpu)*100)+'%');
-        $('.pbvms', self.el).width(parseInt(parseInt(vm)/parseInt(self.model.get('vms'))*100)+'%');
+        if (self.model.get('type') === 'admin'){
+          $('.vmtotal', this.el).html(' &infin; ');
+          $('.pbvms', self.el).width('100%');
+        } else {
+          $('.pbvms', self.el).width(parseInt(parseInt(vm)/parseInt(self.model.get('vms'))*100)+'%');
+        }
       },
       function(xhr, ajaxOptions, thrownError) {}
     );
@@ -79,8 +82,7 @@ window.HomeView = Backbone.View.extend({
           function(xhr, ajaxOptions, thrownError) {
             var json = JSON.parse(xhr.responseText);
             console.log(json);
-          }
-        );
+          });
       }
     };
     var handler = function(json) {
@@ -124,7 +126,6 @@ window.HomeView = Backbone.View.extend({
               }
               html += full.details.interfaces[i].ip;
             }
-
             var ip = '';
             if(full.details.interfaces.length > 0) {
               ip = full.details.interfaces[0].ip;
@@ -150,7 +151,8 @@ window.HomeView = Backbone.View.extend({
           }
         }, {
           "data": "details.status", "sWidth": "13%"
-        }, ],
+          }
+        ],
         "fnRowCallback": function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
           var classe;
           switch (aData.details.status) {
