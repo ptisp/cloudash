@@ -1,6 +1,6 @@
 {
   "name": "cloudash",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "http://cloudash.one",
   "description": "Cloudash Dashboard",
   "dependencies": {
