@@ -62,7 +62,7 @@ app.post('/api/config/support', auth, admin, api.conf.updateSupport);
 
 var port = config.port || process.env.CLOUD_PORT || 8080;
 
-console.log('(SYSTEM) Cloudy Dashboard - github.com/ptisp/cloudy'.green);
+console.log('(SYSTEM) Cloudash Dashboard - github.com/ptisp/cloudash'.green);
 
 console.log('(SYSTEM) Starting...'.green);
 setTimeout(function() {

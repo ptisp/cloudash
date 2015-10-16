@@ -1,8 +1,8 @@
 {
-  "name": "cloudy",
+  "name": "cloudash",
   "version": "0.0.1",
-  "homepage": "http://ptisp.pt",
-  "description": "Cloudy Dashboard",
+  "homepage": "http://cloudash.one",
+  "description": "Cloudash Dashboard",
   "dependencies": {
     "express": "4.1.x",
     "emailjs": "0.3.x",
@@ -16,7 +16,8 @@
     "request": "2.58.x"
   },
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "install": "node install.js"
   },
   "author": "PTisp <dev@ptisp.pt>"
 }

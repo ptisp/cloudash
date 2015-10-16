@@ -83,16 +83,6 @@ var UI;
 
       UI.updateVisualState();
 
-      // Show mouse selector buttons on touch screen devices
-      if (UI.isTouchDevice) {
-        // Show mobile buttons
-        $D('noVNC_mobile_buttons').style.display = "inline";
-        // Remove the address bar
-        setTimeout(function() {
-          window.scrollTo(0, 1);
-        }, 100);
-      }
-
       Util.addEvent(window, 'resize', function() {
         UI.onresize();
       });
