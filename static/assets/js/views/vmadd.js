@@ -44,7 +44,7 @@ window.VMAddView = Backbone.View.extend({
     }
     modem('POST', 'vm',
       function(json) {
-        var smsg = ['VM crated', 'VM criada', 'VM creada'];
+        var smsg = ['VM created', 'VM criada', 'VM creada'];
         showSuccess(smsg[getlang()]);
         app.navigate('/vm/info/'+json.id, {
           trigger: true
