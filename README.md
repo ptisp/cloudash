@@ -1,6 +1,6 @@
 # cloudash
 
-Cloudash is an opensource cloud panel abstracting lower level IaaS clouds/infrastructures.
+Cloudash is an opensource cloud web panel/dashboard abstracting lower level IaaS clouds/infrastructures.
 
 * Abstracts infrastructure from multiple IaaS clouds. (currently supporting OpenNebula)
 * Multi tenant with independent resources for each users.
