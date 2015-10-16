@@ -30,7 +30,12 @@ table.hometable th:nth-child(2) {
 }
 
 /* FONT SIZE */
-
+.f-10 {
+  font-size: 10px;
+}
+.f-12 {
+  font-size: 12px;
+}
 .f-22 {
   font-size: 22px;
 }
@@ -626,6 +631,11 @@ strong {
   white-space: normal;
 }
 
+.txt-center {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
 /* MAKE SIDE BAR NAV VERTICAL/RESPONSIVE */
 
 
