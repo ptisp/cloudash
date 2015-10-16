@@ -2,6 +2,8 @@ var MongoClient = require('mongodb').MongoClient,
   ObjectId = require('mongodb').ObjectID,
   config = require('./config');
 
+console.log('Running install script.');
+
 var insertUser = function(db, callback) {
   db.collection('users').insertOne({
     'auth': {
@@ -40,5 +42,7 @@ var insertUser = function(db, callback) {
 MongoClient.connect(config.mongodb || process.env.CLOUDY_MONGODB, function(err, db) {
   insertUser(db, function() {
     db.close();
+    console.log('Installation finished.');
+    console.log('Use credentials admin:admin at ' + config.url);
   });
 });
