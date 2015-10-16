@@ -17,6 +17,7 @@ Cloudash is an opensource cloud panel abstracting lower level IaaS clouds/infras
 
 ## Installation
 
+* `git clone https://github.com/ptisp/cloudash`
 * `mv config.js.example config.js`
 * `vi config.js`
 * `npm install`
