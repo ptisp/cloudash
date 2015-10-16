@@ -1,8 +1,17 @@
 var MongoClient = require('mongodb').MongoClient,
   ObjectId = require('mongodb').ObjectID,
-  config = require('./config');
+  fs = require('fs');
 
 console.log('Running install script.');
+
+try {
+  fs.statSync('./config').isFile();
+} catch (err) {
+  console.log('ERROR: config.js missing!');
+  process.exit(1);
+}
+
+var config = require('./config');
 
 var insertUser = function(db, callback) {
   db.collection('users').insertOne({
