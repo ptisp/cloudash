@@ -39,7 +39,7 @@ var insertUser = function(db, callback) {
   });
 };
 
-MongoClient.connect(config.mongodb || process.env.CLOUDY_MONGODB, function(err, db) {
+MongoClient.connect(config.mongodb || process.env.CLOUDASH_MONGODB, function(err, db) {
   insertUser(db, function() {
     db.close();
     console.log('Installation finished.');

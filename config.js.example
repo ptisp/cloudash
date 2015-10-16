@@ -1,6 +1,6 @@
 module.exports = {
   'url': 'http://127.0.0.1:8080',
-  'mongodb': 'mongodb://127.0.0.1:27017/cloudy',
+  'mongodb': 'mongodb://127.0.0.1:27017/cloudash',
 
   'resources': {
     'memory': 6500,
