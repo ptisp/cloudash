@@ -1,8 +1,8 @@
 # cloudash
 
-Cloudash is an opensource cloud web panel/dashboard abstracting lower level IaaS clouds/infrastructures.
+Cloudash is an opensource cloud web panel/dashboard abstracting lower level IaaS infrastructures.
 
-* Abstracts infrastructure from multiple IaaS clouds. (currently supporting OpenNebula)
+* DigitalOcean'ish feeling on top of lower level IaaS. (supporting OpenNebula)
 * Multi tenant with independent resources for each users.
 * Builtin optional ticketing system.
 * Action logging system.
@@ -22,6 +22,27 @@ Cloudash is an opensource cloud web panel/dashboard abstracting lower level IaaS
 * `vi config.js`
 * `npm install`
 * `npm start`
+
+## SSL (optional)
+
+Easiest and cleanest way to use SSL is using `nginx` as a reverse proxy in front of cloudash.
+
+Example `nginx` conf file.
+```
+server {
+  listen   443 ssl;
+  server_name ~^(.+)$;
+
+  location / {
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $host;
+    proxy_pass http://127.0.0.1:8080/;
+
+    ssl_certificate     /var/cert/ssl.crt;
+    ssl_certificate_key /var/cert/ssl.key;
+  }
+}
+```
 
 ## License
 
