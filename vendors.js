@@ -11,11 +11,12 @@ MongoClient.connect(config.mongodb || process.env.CLOUDY_MONGODB, function(err, 
   console.log('(SYSTEM) Connected to MongoDB.'.green);
 });
 
+
 exports.email = function(message, destination, subject, from, callback) {
   var email = emailjs.server.connect({
-    user: process.env.MAIL_USER,
-    password: process.env.MAIL_PASSWORD,
-    host: process.env.MAIL_HOST
+    user: config.email.user || process.env.MAIL_USER,
+    password: config.email.password || process.env.MAIL_PASSWORD,
+    host: config.email.smtp || process.env.MAIL_HOST
   });
 
   email.send({
