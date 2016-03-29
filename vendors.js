@@ -5,7 +5,7 @@ var MongoClient = require('mongodb').MongoClient,
   config = require('./config'),
   emailjs = require('emailjs');
 
-MongoClient.connect(config.mongodb || process.env.CLOUDY_MONGODB, function(err, db) {
+MongoClient.connect(config.mongodb, function(err, db) {
   if (err) throw err;
   exports.mongo = db;
   console.log('(SYSTEM) Connected to MongoDB.'.green);
@@ -14,17 +14,17 @@ MongoClient.connect(config.mongodb || process.env.CLOUDY_MONGODB, function(err, 
 
 exports.email = function(message, destination, subject, from, callback) {
   var email = emailjs.server.connect({
-    user: config.email.user || process.env.MAIL_USER,
-    password: config.email.password || process.env.MAIL_PASSWORD,
-    host: config.email.smtp || process.env.MAIL_HOST
+    user: config.email.user,
+    password: config.email.password,
+    host: config.email.smtp
   });
 
   email.send({
     text: message,
-    'reply-to': from || process.env.MAIL_USER,
-    from: from || process.env.MAIL_USER,
-    to: destination || 'pedrodias@ptisp.pt',
-    subject: subject || 'API Notification!'
+    'reply-to': from || config.email.user,
+    from: from || config.email.user,
+    to: destination,
+    subject: subject || 'Cloudash'
   }, function(err, message) {
     if (callback) callback(err, message);
   });
