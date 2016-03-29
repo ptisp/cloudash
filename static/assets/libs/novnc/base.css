@@ -130,6 +130,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 100% !important;
+  height: 95% !important;
 }
 
 #VNC_clipboard_clear_button {
