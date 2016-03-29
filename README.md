@@ -2,9 +2,9 @@
 
 Cloudash is an opensource cloud web panel/dashboard abstracting lower level IaaS infrastructures.
 
-* DigitalOcean'ish feeling on top of lower level IaaS. (supporting OpenNebula)
-* Multi tenant with independent resources for each users.
-* Builtin optional ticketing system.
+* DigitalOcean'ish feeling on top of a lower level IaaS. (supporting OpenNebula)
+* Multi tenant with independent resources plans.
+* Built-in optional ticketing system.
 * Action logging system.
 * VM ownership.
 * Feature rich VM. (metrics, console, editable resources and network)
@@ -18,10 +18,11 @@ Cloudash is an opensource cloud web panel/dashboard abstracting lower level IaaS
 ## Installation
 
 * `git clone https://github.com/ptisp/cloudash`
+* `cd cloudash`
 * `mv config.js.example config.js`
 * `vi config.js`
-* `npm install`
-* `npm start`
+* `node install.js`
+* `node main.js`
 
 ## SSL (optional)
 

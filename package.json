@@ -16,8 +16,7 @@
     "request": "2.58.x"
   },
   "scripts": {
-    "start": "node main.js",
-    "install": "node install.js"
+    "start": "node main.js"
   },
   "author": "PTisp <dev@ptisp.pt>"
 }

@@ -24,7 +24,8 @@ request.post({
   }, function(err, res, body) {
     cookie = cookie + '; ' + res.headers['set-cookie'][0].split(';')[0];
 
-    var aux = body.indexOf('csrftoken') + 11;
+    var aux = body.indexOf('csrftoken');
+    aux = body.indexOf('\'', aux) + 1;
     csrftoken = body.slice(aux, aux + 32);
 
     request.post({

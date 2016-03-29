@@ -1,6 +1,7 @@
 var MongoClient = require('mongodb').MongoClient,
   ObjectId = require('mongodb').ObjectID,
-  fs = require('fs');
+  fs = require('fs'),
+  crypto = require('crypto');
 
 console.log('Running install script.');
 
@@ -12,12 +13,13 @@ try {
 }
 
 var config = require('./config');
+var password = Math.random().toString(36).substr(2, 12);
 
 var insertUser = function(db, callback) {
   db.collection('users').insertOne({
     'auth': {
       'username': 'admin',
-      'password': '21232f297a57a5a743894a0e4a801fc3'
+      'password': crypto.createHash('md5').update(password).digest("hex")
     },
     'about': {
       'name': 'ADMIN',
@@ -52,6 +54,6 @@ MongoClient.connect(config.mongodb || process.env.CLOUDASH_MONGODB, function(err
   insertUser(db, function() {
     db.close();
     console.log('Installation finished.');
-    console.log('Use credentials admin:admin at ' + config.url);
+    console.log('Login with username: admin and password: ' + password + ' at ' + config.url);
   });
 });
