@@ -5,7 +5,7 @@ var MongoClient = require('mongodb').MongoClient,
 console.log('Running install script.');
 
 try {
-  fs.statSync('./config').isFile();
+  fs.statSync('./config.js').isFile();
 } catch (err) {
   console.log('ERROR: config.js missing!');
   process.exit(1);
