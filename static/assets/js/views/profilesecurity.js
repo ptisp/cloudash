@@ -1,23 +1,33 @@
 window.ProfileSecurityView = Backbone.View.extend({
   events: {
-    'click .update': 'updatepwd',
+    'click .updatepwd': 'updatepwd',
+    'click .updatekey': 'updatekey',
   },
   updatepwd: function(evt) {
     var user = {
       'auth': {}
     };
-    if ($(evt.target).attr('data-action') === 'pwd') {
-      if (! this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {
-        var emsg = ['Please check your password', 'Por favor, verifique a sua password', 'Por favor, consultar su contraseña'];
-        showError(emsg[getlang()]);
-        return;
-      } else {
-        user.auth.password = $('.iprepass').val();
-      }
+
+    if (!this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {
+      var emsg = ['Please check your password', 'Por favor, verifique a sua password', 'Por favor, consultar su contraseña'];
+      showError(emsg[getlang()]);
+      return;
     } else {
-      user.auth.ssh = $('.sshkey').val();
+      user.auth.password = $('.iprepass').val();
     }
-    modem('PUT', 'user/'+this.model.get('id'),
+
+    this.save(user);
+  },
+  updatessh: function(evt) {
+    var user = {
+      'auth': {
+        'ssh': $('.sshkey').val()
+      }
+    };
+    this.save(user);
+  },
+  save: function(user) {
+    modem('PUT', 'user/' + this.model.get('id'),
       function(json) {
         var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
         showSuccess(smsg[getlang()]);
@@ -25,7 +35,7 @@ window.ProfileSecurityView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         var emsg = ['Failed to update user', 'Falha ao atualizar utilizador', 'Error al actualizar el usuario'];
-        showError(emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()] + '<br>' + json.error);
       }, user
     );
   },
