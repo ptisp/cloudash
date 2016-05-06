@@ -18,7 +18,7 @@ window.ProfileSecurityView = Backbone.View.extend({
 
     this.save(user);
   },
-  updatessh: function(evt) {
+  updatekey: function(evt) {
     var user = {
       'auth': {
         'ssh': $('.sshkey').val()
@@ -27,7 +27,7 @@ window.ProfileSecurityView = Backbone.View.extend({
     this.save(user);
   },
   save: function(user) {
-    modem('PUT', 'user/' + this.model.get('id'),
+    modem('PUT', 'user',
       function(json) {
         var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
         showSuccess(smsg[getlang()]);

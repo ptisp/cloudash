@@ -16,7 +16,7 @@ window.ProfileUserView = Backbone.View.extend({
         'zip': $('.editzipcode').val()
       }
     };
-    modem('PUT', 'user/'+this.model.get('id'),
+    modem('PUT', 'user',
       function(json) {
         window.profile.fetch(null, function(){
           var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];

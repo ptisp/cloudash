@@ -1,5 +1,5 @@
 window.ManageUserDetailsView = Backbone.View.extend({
-  initialize: function (options) {
+  initialize: function(options) {
     this.id = options.id;
   },
   events: {
@@ -29,10 +29,10 @@ window.ManageUserDetailsView = Backbone.View.extend({
     $('.ramtotal', this.el).html(user.maxresources.memory);
     $('.disktotal', this.el).html(user.maxresources.storage);
     $('.cputotal', this.el).html(user.maxresources.cpu);
-    $('.pbram', self.el).width(parseInt(parseInt(ram)/parseInt(user.maxresources.memory)*100)+'%');
-    $('.pbhdd', self.el).width(parseInt(parseInt(hdd)/parseInt(user.maxresources.storage)*100)+'%');
-    $('.pbcpu', self.el).width(parseInt(parseInt(cpu)/parseInt(user.maxresources.cpu)*100)+'%');
-    $('.pbvms', self.el).width(parseInt(parseInt(active)/parseInt(vm)*100)+'%');
+    $('.pbram', self.el).width(parseInt(parseInt(ram) / parseInt(user.maxresources.memory) * 100) + '%');
+    $('.pbhdd', self.el).width(parseInt(parseInt(hdd) / parseInt(user.maxresources.storage) * 100) + '%');
+    $('.pbcpu', self.el).width(parseInt(parseInt(cpu) / parseInt(user.maxresources.cpu) * 100) + '%');
+    $('.pbvms', self.el).width(parseInt(parseInt(active) / parseInt(vm) * 100) + '%');
   },
   getvms: function(user) {
     var self = this;
@@ -49,7 +49,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         var emsg = ['Failed to load VMs', 'Falha ao carregar VMs', 'Error al cargar VMs'];
-        showError(emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()] + '<br>' + json.error);
       }
     );
   },
@@ -69,7 +69,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
         'zip': $('.ipzipcode').val()
       },
       'maxresources': {
-        'memory': parseInt($('#editram').val()/2*1024),
+        'memory': parseInt($('#editram').val() / 2 * 1024),
         'storage': parseInt($('#editdisk').val()),
         'vms': parseInt($('#newvms').val()),
         'cpu': parseInt($('#editvcpu').val())
@@ -77,19 +77,19 @@ window.ManageUserDetailsView = Backbone.View.extend({
       'type': $('.iptype').val(),
       'status': $('.ipstatus').val()
     };
-    if ($('.ippass').val().trim() !=='') {
+    if ($('.ippass').val().trim() !== '') {
       if (this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {
         user.auth = {
           'password': $('.iprepass').val()
         };
       } else {
-        var wttl = ['Warning!','Aviso!','Advertencia!'];
+        var wttl = ['Warning!', 'Aviso!', 'Advertencia!'];
         var wmsg = ['Please check your password', 'Por favor, verifique a sua password', 'Por favor, consultar su contraseña'];
         showWarning(wttl[getlang()], wmsg[getlang()]);
         return;
       }
     }
-    modem('PUT', 'user/'+this.id,
+    modem('PUT', 'user/' + this.id,
       function(json) {
         var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
         showSuccess(smsg[getlang()]);
@@ -98,7 +98,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         var emsg = ['Failed to update user', 'Falha ao atualizar utilizador', 'Error al actualizar el usuario'];
-        showError(emsg[getlang()]+'<br>'+json.error);
+        showError(emsg[getlang()] + '<br>' + json.error);
       }, user
     );
   },
@@ -119,11 +119,11 @@ window.ManageUserDetailsView = Backbone.View.extend({
     $('.ipphone', this.el).val(info.about.phone);
     $('.ipvat', this.el).val(info.about.nif);
     $('.ipzipcode', this.el).val(info.address.zip);
-    $('#editram', this.el).val(parseInt(info.maxresources.memory)/1024*2);
+    $('#editram', this.el).val(parseInt(info.maxresources.memory) / 1024 * 2);
     $('#editdisk', this.el).val(parseInt(info.maxresources.storage));
     $('#editvcpu', this.el).val(parseInt(info.maxresources.cpu));
     $('#newvms', this.el).val(parseInt(info.maxresources.vms));
-    $('#rangeInfo', this.el).val(parseInt(info.maxresources.memory)/1024);
+    $('#rangeInfo', this.el).val(parseInt(info.maxresources.memory) / 1024);
     $('#rangeGold', this.el).val(parseInt(info.maxresources.storage));
     $('#rangeDanger', this.el).val(parseInt(info.maxresources.cpu));
     $('#vmsInfo', this.el).val(parseInt(info.maxresources.vms));
@@ -142,7 +142,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
   },
   getdetails: function() {
     var self = this;
-    modem('GET', 'user/'+self.id,
+    modem('GET', 'user/' + self.id,
       function(json) {
         self.showdetails(json);
         self.getvms(json);
@@ -157,10 +157,10 @@ window.ManageUserDetailsView = Backbone.View.extend({
     var self = this;
     modem('GET', 'config/resources',
       function(json) {
-        $('#editram', self.el).attr('max',parseInt(json.memory)/1024*2);
-        $('#editdisk', self.el).attr('max',parseInt(json.storage));
-        $('#editvcpu', self.el).attr('max',parseInt(json.cpu));
-        $('#newvms', self.el).attr('max',parseInt(json.cpu));
+        $('#editram', self.el).attr('max', parseInt(json.memory) / 1024 * 2);
+        $('#editdisk', self.el).attr('max', parseInt(json.storage));
+        $('#editvcpu', self.el).attr('max', parseInt(json.cpu));
+        $('#newvms', self.el).attr('max', parseInt(json.cpu));
       },
       function(xhr, ajaxOptions, thrownError) {}
     );
