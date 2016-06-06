@@ -59,7 +59,7 @@ window.HeaderView = Backbone.View.extend({
   },
   getgravatar: function() {
     var pic = this.model.get('gravatar');
-    $('.headgravatar',this.el).attr('src','http://www.gravatar.com/avatar/'+pic);
+    $('.headgravatar', this.el).attr('src', 'https://www.gravatar.com/avatar/' + pic);
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
