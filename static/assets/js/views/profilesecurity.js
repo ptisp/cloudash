@@ -16,7 +16,9 @@ window.ProfileSecurityView = Backbone.View.extend({
       user.auth.password = $('.iprepass').val();
     }
 
-    this.save(user);
+    this.save(user, function() {
+      window.location.href = window.location.href;
+    });
   },
   updatekey: function(evt) {
     var user = {
@@ -26,16 +28,18 @@ window.ProfileSecurityView = Backbone.View.extend({
     };
     this.save(user);
   },
-  save: function(user) {
+  save: function(user, callback) {
     modem('PUT', 'user',
       function(json) {
         var smsg = ['User updated', 'Utilizador actualizado', 'Usuario se actualiza'];
         showSuccess(smsg[getlang()]);
+        if(callback) callback();
       },
       function(xhr, ajaxOptions, thrownError) {
         var json = JSON.parse(xhr.responseText);
         var emsg = ['Failed to update user', 'Falha ao atualizar utilizador', 'Error al actualizar el usuario'];
         showError(emsg[getlang()] + '<br>' + json.error);
+        if(callback) callback();
       }, user
     );
   },
