@@ -17,7 +17,7 @@ window.ProfileSecurityView = Backbone.View.extend({
     }
 
     this.save(user, function() {
-      window.location.href = window.location.href;
+      location.reload();
     });
   },
   updatekey: function(evt) {
