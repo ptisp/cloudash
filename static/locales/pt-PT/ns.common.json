@@ -100,7 +100,9 @@
       "subtitle": "Detalhes da nova Máquina Virtual",
       "name": "Hostname",
       "config": "Configuração",
-      "image": "Imagem"
+      "image": "Imagem",
+      "openebulaid-placeholder": "ID do Openebula",
+      "openebulaid": "Importar VM existente no OpenNebula"
     },
     "edit": {
       "tab": {
