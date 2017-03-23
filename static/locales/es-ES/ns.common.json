@@ -101,7 +101,7 @@
       "name": "Hostname",
       "config": "Configurar",
       "image": "Imagen",
-      "openebulaid-placeholder": "ID del Openebula",
+      "openebulaid-placeholder": "ID del OpenNebula",
       "openebulaid": "Importar VM existente en el OpenNebula"
     },
     "edit": {
