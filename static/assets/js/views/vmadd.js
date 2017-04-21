@@ -27,7 +27,8 @@ window.VMAddView = Backbone.View.extend({
           'vcpu': parseInt($('#newvcpu').val()),
           'hostname': $('.hostname').val(),
           'interfaces': ['']
-        }
+        },
+        'openebulaid': $('#openebulaid').val()
       };
     } else {
       vmdetails = {
@@ -39,14 +40,15 @@ window.VMAddView = Backbone.View.extend({
           'vcpu': parseInt($('.config.active').attr('data-cpu')),
           'hostname': $('.hostname').val(),
           'interfaces': ['']
-        }
+        },
+        'openebulaid': $('#openebulaid').val()
       };
     }
     modem('POST', 'vm',
       function(json) {
         var smsg = ['VM created', 'VM criada', 'VM creada'];
         showSuccess(smsg[getlang()]);
-        app.navigate('/vm/info/'+json.id, {
+        app.navigate('/vm/info/' + json.id + '/summary', {
           trigger: true
         });
       },
@@ -115,6 +117,9 @@ window.VMAddView = Backbone.View.extend({
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
     $('.vm-add', this.el).i18n();
+    if (this.model.get('type') !== 'admin') {
+      $('#customid-block', this.el).remove();
+    }
     this.getimages();
     this.setslider();
     $('.menulateral li').removeClass('active');

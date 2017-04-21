@@ -124,7 +124,7 @@
 								<span class="m-r-10">RAM GB</span>
 							</p>
 							<div class="range range-cloudy">
-								<span class="btn btn-sm btn-cloudy" onclick="newram.stepDown();rangeInfo.value=newram.value/2"><i class="icon-less"></i></span> 
+								<span class="btn btn-sm btn-cloudy" onclick="newram.stepDown();rangeInfo.value=newram.value/2"><i class="icon-less"></i></span>
 								<input id="newram" class="bg-cream" type="range" name="range" min="1" max="100" value="1" oninput="rangeInfo.value=value/2">
 								<output id="rangeInfo">1</output>
 								<span class="btn btn-sm btn-cloudy" onclick="newram.stepUp();rangeInfo.value=newram.value/2"><i class="icon-add"></i></span>
@@ -170,7 +170,21 @@
 				<div class="btn-group plans plansimg soft w-100" data-toggle="buttons"></div>
 			</div>
 		</div>
-		<div class="row">
+		<div id='customid-block'>
+			<hr>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="text-left"><i class="icon-vms"></i>
+						<span data-i18n="vm.add.openebulaid"></span>
+					</p>
+					<div class="input-group">
+						<span class="input-group-addon cloudy"><i class="icon-vms"></i></span>
+						<input id="openebulaid" type="text" class="form-control cloudy" data-i18n="[placeholder]vm.add.openebulaid-placeholder">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row m-t-20">
 			<div class="col-md-12">
 				<button type="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="btn btn-block btn-xl btn-success btn-icon m-b-5 btncreatevm">
 					<span data-i18n="btns.create"></span>

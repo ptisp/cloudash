@@ -67,25 +67,38 @@ window.HomeView = Backbone.View.extend({
   },
   getvms: function() {
     var self = this;
-    var getowner = function(vms){
-      var users = [];
-      for (var i = 0; i < vms.length; i++){
-        if ($.inArray(vms[i].owner, users) < 0) {
-            users.push(vms[i].owner);
-          }
-      }
-      for (i = 0; i < users.length; i++){
-        modem('GET', 'user/'+users[i],
-          function(json) {
-            $('span[data-owner="'+json._id+'"]').html(json.auth.username);
-          },
-          function(xhr, ajaxOptions, thrownError) {
-            var json = JSON.parse(xhr.responseText);
-            console.log(json);
-          });
-      }
+    var users = {};
+
+    var getUsername = function(owner, cb) {
+      modem('GET', 'user/' + owner,
+        function(json) {
+          users[owner] = {};
+          users[owner].username = json.auth.username;
+          return cb();
+        },
+        function(xhr, ajaxOptions, thrownError) {
+          var json = JSON.parse(xhr.responseText);
+          console.log(json);
+          return cb();
+        });
     };
-    var handler = function(json) {
+
+    var loadUsernames = function(vms, cb){
+      async.mapSeries(vms,
+        function(vm, callback) {
+          if(users[vm.owner]){
+            return callback();
+          }
+          getUsername(vm.owner, callback);
+        },
+        function(err, result) {
+          cb(undefined, vms);
+        }
+      );
+    };
+
+    var loadDatatable = function(json, cb) {
+      var vms = json;
       var oTable = $('#example', self.el).dataTable({
         "data": json,
         "bAutoWidth": false,
@@ -109,7 +122,7 @@ window.HomeView = Backbone.View.extend({
           "sWidth": "25%",
           "bSortable": true,
           "mRender": function(data, type, full) {
-            var html = '<span data-id="'+full._id+'"data-owner="'+full.owner+'">'+full.owner+'</span>';
+            var html = '<span data-id="'+full._id+'"data-owner="'+full.owner+'">'+ (users[full.owner] ? users[full.owner].username : full.owner) +'</span>';
             return html;
           }
         }, {
@@ -169,23 +182,39 @@ window.HomeView = Backbone.View.extend({
           $(nRow).addClass(classe);
           $(nRow).attr('data-id', aData._id);
           return nRow;
+        },
+        "initComplete": function(settings, json) {
+          cb(undefined, vms);
         }
       });
-      if (self.model.get('type') === 'admin') {
-        getowner(json);
-      }
     };
-    modem('GET', 'vm',
-      function(json) {
-        handler(json);
-        self.fillheaders(json);
-      },
-      function(xhr, ajaxOptions, thrownError) {
-        var json = JSON.parse(xhr.responseText);
-        var emsg = ['Failed to load VMs', 'Falha ao carregar VMs', 'Error al cargar VMs'];
-        showError(emsg[getlang()]+'<br>'+json.error);
+
+    async.waterfall([function(callback) {
+      modem('GET', 'vm',
+        function(json) {
+          callback(undefined, json);
+        },
+        function(xhr, ajaxOptions, thrownError) {
+          var json = JSON.parse(xhr.responseText);
+          var emsg = ['Failed to load VMs', 'Falha ao carregar VMs', 'Error al cargar VMs'];
+          showError(emsg[getlang()] + '<br>' + json.error);
+          callback(json.error);
+        }
+      );
+    }, function(json, callback) {
+      if (self.model.get('type') === 'admin') {
+        return loadUsernames(json, callback);
       }
-    );
+      return callback(undefined, json);
+    }, function(json, callback) {
+      loadDatatable(json, callback);
+    }, function(json, callback) {
+      self.fillheaders(json);
+    }], function(err, result) {
+      if (err) {
+        return console.log(err);
+      }
+    });
   },
   render: function() {
     $(this.el).html(this.template(this.model.toJSON()));
