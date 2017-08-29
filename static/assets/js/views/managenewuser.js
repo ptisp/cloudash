@@ -3,6 +3,59 @@ window.ManageNewUserView = Backbone.View.extend({
     'keyup .ipemail': 'availablemail',
     'keyup .iprepass': 'matchpass',
     'click .btnadduser': 'adduser',
+    'click .range-cloudy .btn-cloudy.stepup': 'plus',
+    'input .range-cloudy .slider': 'slider',
+    'click .range-cloudy .btn-cloudy.stepdown': 'minus',
+    'focusout .range-cloudy .inout': 'focusout',
+    'keyup .range-cloudy .inout': 'enter'
+  },
+  slider: function(e){
+    var $slider = $(e.target);
+    var $input = $(e.target).parents('.range-cloudy').find('.inout');
+    $input.val($slider.val());
+    $slider.removeAttr('data-unlimited');
+  },
+  minus: function(e){
+    var $btn = $(e.target);
+    var $slider = $(e.target).parents('.range-cloudy').find('.slider');
+    var $input = $(e.target).parents('.range-cloudy').find('.inout');
+    $slider[0].stepDown();
+    $input.val($slider.val());
+    $slider.removeAttr('data-unlimited');
+  },
+  plus: function(e){
+    var $btn = $(e.target);
+    var $slider = $(e.target).parents('.range-cloudy').find('.slider');
+    var $input = $(e.target).parents('.range-cloudy').find('.inout');
+    $slider[0].stepUp();
+    $input.val($slider.val());
+    $slider.removeAttr('data-unlimited');
+  },
+  focusout: function(e){
+    var $input = $(e.target);
+    var $slider = $(e.target).parents('.range-cloudy').find('.slider');
+
+    if (this.model.get('type') == 'admin' && $input.val() == -1) {
+      $slider.val($slider.attr('max'));
+      $slider.attr('data-unlimited', true);
+      $input.val('\u221E');
+      return;
+    }
+    if(parseFloat($input.val()) >= parseFloat($slider.attr('min')) && parseFloat($input.val()) <= parseFloat($slider.attr('max'))) {
+      var v = parseFloat($input.val());
+      $slider.val(v);
+      $input.val($slider.val());
+    }
+    else {
+      $slider.val($slider.attr('min'));
+      $input.val($slider.attr('min'));
+    }
+    $slider.removeAttr('data-unlimited');
+  },
+  enter: function(e){
+    if(e.keyCode == 13){
+      $(e.target).blur();
+    }
   },
   adduser: function() {
     if (this.valemail && this.passwordcheck($('.ippass').val(), $('.iprepass').val())) {
@@ -23,10 +76,10 @@ window.ManageNewUserView = Backbone.View.extend({
           'zip': $('.ipzipcode').val()
         },
         'maxresources': {
-          'vms': parseInt($('#newvms').val()),
-          'memory': parseInt($('#newram').val()/2*1024),
-          'storage': parseInt($('#newdisk').val()),
-          'cpu': parseInt($('#newvcpu').val())
+          'vms': ($('#newvms').attr('data-unlimited') === 'true' ? -1 : parseInt($('#newvms').val())),
+          'memory': ($('#newram').attr('data-unlimited') === 'true' ? -1 : parseInt($('#newram').val()*1024)),
+          'storage': ($('#newdisk').attr('data-unlimited') === 'true' ? -1 : parseInt($('#newdisk').val())),
+          'cpu': ($('#newvcpu').attr('data-unlimited') === 'true' ? -1 : parseInt($('#newvcpu').val()))
         },
         'type': $('.iptype').val(),
         'status': 'active'
@@ -103,7 +156,7 @@ window.ManageNewUserView = Backbone.View.extend({
     var self = this;
     modem('GET', 'config/resources',
       function(json) {
-        $('#newram', self.el).attr('max',parseInt(json.memory)/1024*2);
+        $('#newram', self.el).attr('max',parseInt(json.memory)/1024);
         $('#newdisk', self.el).attr('max',parseInt(json.storage));
         $('#newvcpu', self.el).attr('max',parseInt(json.cpu));
         $('#newvms', self.el).attr('max',parseInt(json.cpu));
