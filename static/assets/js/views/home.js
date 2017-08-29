@@ -29,6 +29,9 @@ window.HomeView = Backbone.View.extend({
       });
     }
   },
+  _cInfinity: function(v){
+    return v == -1 ? '\u221E' : v;
+  },
   fillheaders: function(vms) {
     var self = this;
     var vm = vms.length,
@@ -41,7 +44,7 @@ window.HomeView = Backbone.View.extend({
       cpu += parseInt(vms[i].details.vcpu);
     }
     ram = parseInt(ram);
-    $('.vmtotal', this.el).html(self.model.get('vms'));
+    $('.vmtotal', this.el).html(this._cInfinity(self.model.get('vms')));
     $('.ramusage', this.el).html(ram);
     $('.diskusage', this.el).html(hdd);
     $('.cpuusage', this.el).html(cpu);
@@ -49,9 +52,9 @@ window.HomeView = Backbone.View.extend({
 
     modem('GET', 'config/resources',
       function(json) {
-        $('.ramtotal', this.el).html(json.memory);
-        $('.disktotal', this.el).html(json.storage);
-        $('.cputotal', this.el).html(json.cpu);
+        $('.ramtotal', this.el).html(self._cInfinity(json.memory));
+        $('.disktotal', this.el).html(self._cInfinity(json.storage));
+        $('.cputotal', this.el).html(self._cInfinity(json.cpu));
         $('.pbram', self.el).width(parseInt(parseInt(ram)/parseInt(json.memory)*100)+'%');
         $('.pbhdd', self.el).width(parseInt(parseInt(hdd)/parseInt(json.storage)*100)+'%');
         $('.pbcpu', self.el).width(parseInt(parseInt(cpu)/parseInt(json.cpu)*100)+'%');

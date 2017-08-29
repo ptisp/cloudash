@@ -1800,3 +1800,14 @@ ul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {
 .dataTables_info {
   display: none;
 }
+
+output input {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  background-color: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+}

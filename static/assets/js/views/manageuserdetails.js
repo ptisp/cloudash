@@ -3,7 +3,73 @@ window.ManageUserDetailsView = Backbone.View.extend({
     this.id = options.id;
   },
   events: {
-    'click .btnedituser': 'update'
+    'click .btnedituser': 'update',
+    'click .range-cloudy .btn-cloudy.stepup': 'plus',
+    'input .range-cloudy .slider': 'slider',
+    'click .range-cloudy .btn-cloudy.stepdown': 'minus',
+    'focusout .range-cloudy .inout': 'focusout',
+    'keyup .range-cloudy .inout': 'enter'
+  },
+  slider: function(e){
+    var $slider = $(e.target);
+    var $input = $(e.target).parents('.range-cloudy').find('.inout');
+    $input.val($slider.val());
+    $slider.removeAttr('data-unlimited');
+  },
+  minus: function(e){
+    var $btn = $(e.target);
+    var $slider = $(e.target).parents('.range-cloudy').find('.slider');
+    var $input = $(e.target).parents('.range-cloudy').find('.inout');
+    $slider[0].stepDown();
+    $input.val($slider.val());
+    $slider.removeAttr('data-unlimited');
+  },
+  plus: function(e){
+    var $btn = $(e.target);
+    var $slider = $(e.target).parents('.range-cloudy').find('.slider');
+    var $input = $(e.target).parents('.range-cloudy').find('.inout');
+    $slider[0].stepUp();
+    $input.val($slider.val());
+    $slider.removeAttr('data-unlimited');
+  },
+  focusout: function(e){
+    var $input = $(e.target);
+    var $slider = $(e.target).parents('.range-cloudy').find('.slider');
+
+    if ($input.val() == -1) {
+      $slider.val($slider.attr('max'));
+      $slider.attr('data-unlimited', true);
+      $input.val('\u221E');
+      return;
+    }
+    if(parseFloat($input.val()) >= parseFloat($slider.attr('min')) && parseFloat($input.val()) <= parseFloat($slider.attr('max'))) {
+      var v = parseFloat($input.val());
+      $slider.val(v);
+      $input.val($slider.val());
+    }
+    else {
+      $slider.val($slider.attr('min'));
+      $input.val($slider.attr('min'));
+    }
+    $slider.removeAttr('data-unlimited');
+  },
+  enter: function(e){
+    if(e.keyCode == 13){
+      $(e.target).blur();
+    }
+  },
+  _getSliderValue: function(slider, mult){
+    mult = mult || 1;
+    var unlim = slider.attr('data-unlimited');
+
+    if(unlim == 'true'){
+      return -1;
+    }
+
+    return parseFloat(slider.val()) * mult;
+  },
+  _cInfinity: function(v){
+    return v == -1 ? '\u221E' : v;
   },
   fillheaders: function(vms, user) {
     var vm = vms.length,
@@ -26,12 +92,13 @@ window.ManageUserDetailsView = Backbone.View.extend({
     $('.cpuusage', this.el).html(cpu);
     $('.activevm', this.el).html(active);
 
-    $('.ramtotal', this.el).html(user.maxresources.memory);
-    $('.disktotal', this.el).html(user.maxresources.storage);
-    $('.cputotal', this.el).html(user.maxresources.cpu);
-    $('.pbram', self.el).width(parseInt(parseInt(ram) / parseInt(user.maxresources.memory) * 100) + '%');
-    $('.pbhdd', self.el).width(parseInt(parseInt(hdd) / parseInt(user.maxresources.storage) * 100) + '%');
-    $('.pbcpu', self.el).width(parseInt(parseInt(cpu) / parseInt(user.maxresources.cpu) * 100) + '%');
+    $('.ramtotal', this.el).html(this._cInfinity(user.maxresources.memory));
+    $('.disktotal', this.el).html(this._cInfinity(user.maxresources.storage));
+    $('.cputotal', this.el).html(this._cInfinity(user.maxresources.cpu));
+
+    $('.pbram', self.el).width(user.maxresources.memory == -1 ? '0%' : (parseInt(parseInt(ram) / parseInt(user.maxresources.memory) * 100) + '%'));
+    $('.pbhdd', self.el).width(user.maxresources.storage == -1 ? '0%' : (parseInt(parseInt(hdd) / parseInt(user.maxresources.storage) * 100) + '%'));
+    $('.pbcpu', self.el).width(user.maxresources.cpu == -1 ? '0%' : (parseInt(parseInt(cpu) / parseInt(user.maxresources.cpu) * 100) + '%'));
     $('.pbvms', self.el).width(parseInt(parseInt(active) / parseInt(vm) * 100) + '%');
   },
   getvms: function(user) {
@@ -69,10 +136,10 @@ window.ManageUserDetailsView = Backbone.View.extend({
         'zip': $('.ipzipcode').val()
       },
       'maxresources': {
-        'memory': parseInt($('#editram').val() / 2 * 1024),
-        'storage': parseInt($('#editdisk').val()),
-        'vms': parseInt($('#newvms').val()),
-        'cpu': parseInt($('#editvcpu').val())
+        'memory': this._getSliderValue($('#editram'), 1024),
+        'storage': this._getSliderValue($('#editdisk')),
+        'vms': this._getSliderValue($('#newvms')),
+        'cpu': this._getSliderValue($('#editvcpu'))
       },
       'type': $('.iptype').val(),
       'status': $('.ipstatus').val()
@@ -119,14 +186,46 @@ window.ManageUserDetailsView = Backbone.View.extend({
     $('.ipphone', this.el).val(info.about.phone);
     $('.ipvat', this.el).val(info.about.nif);
     $('.ipzipcode', this.el).val(info.address.zip);
-    $('#editram', this.el).val(parseInt(info.maxresources.memory) / 1024 * 2);
-    $('#editdisk', this.el).val(parseInt(info.maxresources.storage));
-    $('#editvcpu', this.el).val(parseInt(info.maxresources.cpu));
-    $('#newvms', this.el).val(parseInt(info.maxresources.vms));
-    $('#rangeInfo', this.el).val(parseInt(info.maxresources.memory) / 1024);
-    $('#rangeGold', this.el).val(parseInt(info.maxresources.storage));
-    $('#rangeDanger', this.el).val(parseInt(info.maxresources.cpu));
-    $('#vmsInfo', this.el).val(parseInt(info.maxresources.vms));
+
+    if(parseInt(info.maxresources.memory) === -1){
+      $('#editram', this.el).attr('data-unlimited', true);
+      $('#editram', this.el).val($('#editram', this.el).attr('max'));
+      $('#rangeInfo', this.el).val('\u221E');
+    }
+    else{
+      $('#editram', this.el).val(parseInt(info.maxresources.memory) / 1024);
+      $('#rangeInfo', this.el).val(parseInt(info.maxresources.memory) / 1024);
+    }
+
+    if(parseInt(info.maxresources.storage) === -1){
+      $('#editdisk', this.el).attr('data-unlimited', true);
+      $('#editdisk', this.el).val($('#editdisk', this.el).attr('max'));
+      $('#rangeGold', this.el).val('\u221E');
+    }
+    else{
+      $('#editdisk', this.el).val(parseInt(info.maxresources.storage));
+      $('#rangeGold', this.el).val(parseInt(info.maxresources.storage));
+    }
+
+    if(parseInt(info.maxresources.cpu) === -1){
+      $('#editvcpu', this.el).attr('data-unlimited', true);
+      $('#editvcpu', this.el).val($('#editvcpu', this.el).attr('max'));
+      $('#rangeDanger', this.el).val('\u221E');
+    } else{
+      $('#editvcpu', this.el).val(parseInt(info.maxresources.cpu));
+      $('#rangeDanger', this.el).val(parseInt(info.maxresources.cpu));
+    }
+
+    if(parseInt(info.maxresources.vms) === -1){
+      $('#newvms', this.el).attr('data-unlimited', true);
+      //$('#newvms', this.el).val($('#newvms', this.el).attr('max'));
+      $('#newvms', this.el).val($('#newvms', this.el).attr('max'));
+      $('#vmsInfo', this.el).val('\u221E');
+    } else{
+      $('#newvms', this.el).val(parseInt(info.maxresources.vms));
+      $('#vmsInfo', this.el).val(parseInt(info.maxresources.vms));
+    }
+
     $('.ipcountry option').filter(function() {
       return $(this).text().toLowerCase() == info.address.country.toLowerCase();
     }).prop('selected', true);
@@ -157,7 +256,7 @@ window.ManageUserDetailsView = Backbone.View.extend({
     var self = this;
     modem('GET', 'config/resources',
       function(json) {
-        $('#editram', self.el).attr('max', parseInt(json.memory) / 1024 * 2);
+        $('#editram', self.el).attr('max', parseInt(json.memory) / 1024);
         $('#editdisk', self.el).attr('max', parseInt(json.storage));
         $('#editvcpu', self.el).attr('max', parseInt(json.cpu));
         $('#newvms', self.el).attr('max', parseInt(json.cpu));
